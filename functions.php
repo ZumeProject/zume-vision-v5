@@ -35,17 +35,17 @@ require_once( 'functions/utilities/debugger-log.php' ); // debug logger used for
  */
 
 // Language Files
-require_once( 'translations/translation.php' ); // Adds support for multiple languages
-require_once( 'functions/zume-polylang-integration.php' ); // Adds support for multiple languages
+//require_once( 'translations/translation.php' ); // Adds support for multiple languages
+//require_once( 'functions/zume-polylang-integration.php' ); // Adds support for multiple languages
 
 // Zume Theme Files
-require_once( 'functions/login/zume-login.php' ); // Customize the login page
-require_once( 'functions/enqueue-scripts.php' ); // Register scripts and stylesheets
-require_once( 'functions/utilities/tgm-config.php' ); // monitors required plugin dependencies
-require_once( 'functions/utilities/theme-support.php' ); // Theme support options
-require_once( 'functions/utilities/cleanup.php' ); // WP Head and other cleanup functions
-require_once( 'functions/utilities/menu.php' ); // Register custom menus and menu walkers
-require_once( 'functions/multi-role/multi-role.php' ); // Adds multi role features
+//require_once( 'functions/login/zume-login.php' ); // Customize the login page
+//require_once( 'functions/enqueue-scripts.php' ); // Register scripts and stylesheets
+//require_once( 'functions/utilities/tgm-config.php' ); // monitors required plugin dependencies
+//require_once( 'functions/utilities/theme-support.php' ); // Theme support options
+//require_once( 'functions/utilities/cleanup.php' ); // WP Head and other cleanup functions
+//require_once( 'functions/utilities/menu.php' ); // Register custom menus and menu walkers
+//require_once( 'functions/multi-role/multi-role.php' ); // Adds multi role features
 
 //require_once( 'functions/restrict-rest-api.php' ); // Restricts the default REST API to logged in users
 //remove_action( 'rest_api_init', 'create_initial_rest_routes', 99 );
@@ -91,9 +91,9 @@ require_once( 'functions/multi-role/multi-role.php' ); // Adds multi role featur
 /**
  * redirect all logins to the home page
  */
-add_filter( 'login_redirect', function( $url, $query, $user ) {
-    return zume_dashboard_url();
-}, 10, 3 );
+//add_filter( 'login_redirect', function( $url, $query, $user ) {
+//    return zume_dashboard_url();
+//}, 10, 3 );
 
 /**
  * A simple function to assist with development and non-disruptive debugging.
