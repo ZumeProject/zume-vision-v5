@@ -1,142 +1,47 @@
 <?php
-/**
- * Zume Project
- */
-require_once( 'functions/utilities/debugger-log.php' ); // debug logger used for development.
-
-//require_once( 'dt-mapping/loader.php' );
-//new DT_Mapping_Module_Loader('theme');
-
-/**
- * Add custom table
- */
-//global $wpdb;
-//require_once 'functions/activator.php';
-//$wpdb->zume_logging = $wpdb->prefix . 'zume_logging';
-//require_once( 'functions/post-types/video-post-type.php' );
-//require_once( 'functions/post-types/pdf-download-post-type.php' );
-
-
-
-/**
- * We want to make sure migrations are run on updates.
+/** 
+ * For more info: https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @see https://www.sitepoint.com/wordpress-plugin-updates-right-way/
- */
-//try {
-//    require_once( 'functions/class-migration-engine.php' );
-//    Zume_Migration_Engine::migrate( 0 );
-//} catch ( Throwable $e ) {
-//    new WP_Error( 'migration_error', 'Migration engine failed to migrate.' );
-//}
+ */			
+	
+// Theme support options
+require_once(get_template_directory().'/functions/theme-support.php'); 
 
-/**
- * INCLUDED FILES
- */
+// WP Head and other cleanup functions
+require_once(get_template_directory().'/functions/cleanup.php'); 
 
-// Language Files
-require_once( 'translations/translation.php' ); // Adds support for multiple languages
-require_once( 'functions/zume-polylang-integration.php' ); // Adds support for multiple languages
+// Register scripts and stylesheets
+require_once(get_template_directory().'/functions/enqueue-scripts.php'); 
 
-// Zume Theme Files
-require_once( 'functions/login/zume-login.php' ); // Customize the login page
-require_once( 'functions/enqueue-scripts.php' ); // Register scripts and stylesheets
-require_once( 'functions/utilities/tgm-config.php' ); // monitors required plugin dependencies
-require_once( 'functions/utilities/theme-support.php' ); // Theme support options
-require_once( 'functions/utilities/cleanup.php' ); // WP Head and other cleanup functions
-require_once( 'functions/utilities/menu.php' ); // Register custom menus and menu walkers
-require_once( 'functions/multi-role/multi-role.php' ); // Adds multi role features
+// Register custom menus and menu walkers
+require_once(get_template_directory().'/functions/menu.php'); 
 
-//require_once( 'functions/restrict-rest-api.php' ); // Restricts the default REST API to logged in users
-//remove_action( 'rest_api_init', 'create_initial_rest_routes', 99 );
-//require_once( 'functions/restrict-xml-rpc-pingback.php' ); // Restricts RPC vulnerability
+// Register sidebars/widget areas
+require_once(get_template_directory().'/functions/sidebar.php'); 
 
-// Zume Core Files
-//require_once( 'functions/zume-course.php' ); // zume course
-//$zume_course = Zume_Course::instance();
-//require_once( 'functions/zume-functions.php' ); // general zume functions
-//require_once( 'functions/zume-dashboard.php' ); // zume dashboard
-//require_once( 'functions/zume-welcome-messages.php' ); // zume welcome messages
-//require_once( 'functions/logging/zume-logging.php' ); // zume logging of critical path actions
-//require_once( 'functions/zume-stats.php' ); // zume logging of critical path actions
-//require_once( 'functions/zume-three-month-plan.php' );
-//
-//require_once( 'functions/logging/zume-mailchimp.php' ); // zume logging of critical path actions
-//require_once( 'functions/zume-dt-integration/zume-dashboard-sync.php' ); // zume dashboard sync
+// Makes WordPress comments suck less
+require_once(get_template_directory().'/functions/comments.php'); 
 
-// REST API
-//require_once( 'functions/zume-rest-api.php' );
+// Replace 'older/newer' post links with numbered navigation
+require_once(get_template_directory().'/functions/page-navi.php'); 
 
+// Adds support for multiple languages
+require_once(get_template_directory().'/functions/translation/translation.php'); 
 
+// Adds site styles to the WordPress editor
+// require_once(get_template_directory().'/functions/editor-styles.php'); 
 
-// Zume - DT - Integration
-//require_once( 'functions/zume-dt-integration/site-link-post-type.php' );
-//Site_Link_System::instance();
-//require_once( 'functions/zume-dt-integration/wp-async-request.php' );
-//require_once( 'functions/zume-dt-integration/zume.php' );
-//require_once( 'functions/zume-dt-integration/zume-hooks.php' );
-//require_once( 'functions/zume-dt-integration/zume-async-send.php' );
-//require_once( 'functions/zume-dt-integration/zume-endpoints.php' );
-//require_once( 'functions/zume-dt-integration/zume-site-stats.php' );
+// Remove Emoji Support
+// require_once(get_template_directory().'/functions/disable-emoji.php'); 
 
+// Related post function - no need to rely on plugins
+// require_once(get_template_directory().'/functions/related-posts.php'); 
 
-//if ( is_admin() ) {
-//    require_once( 'functions/tab-keys.php' );
-//    require_once( 'functions/zume-dt-integration/menu-and-tabs.php' );
-//    require_once( 'functions/zume-resource-metabox.php' ); // zume logging of critical path actions
-//    require_once( 'functions/zume-dt-integration/system-check-metabox.php' );
-//}
+// Use this as a template for custom post types
+// require_once(get_template_directory().'/functions/custom-post-type.php');
 
+// Customize the WordPress login menu
+// require_once(get_template_directory().'/functions/login.php'); 
 
-/**
- * redirect all logins to the home page
- */
-add_filter( 'login_redirect', function( $url, $query, $user ) {
-    return zume_dashboard_url();
-}, 10, 3 );
-
-/**
- * A simple function to assist with development and non-disruptive debugging.
- * -----------
- * -----------
- * REQUIREMENT:
- * WP Debug logging must be set to true in the wp-config.php file.
- * Add these definitions above the "That's all, stop editing! Happy blogging." line in wp-config.php
- * -----------
- * define( 'WP_DEBUG', true ); // Enable WP_DEBUG mode
- * define( 'WP_DEBUG_LOG', true ); // Enable Debug logging to the /wp-content/debug.log file
- * define( 'WP_DEBUG_DISPLAY', false ); // Disable display of errors and warnings
- * @ini_set( 'display_errors', 0 );
- * -----------
- * -----------
- * EXAMPLE USAGE:
- * (string)
- * write_log('THIS IS THE START OF MY CUSTOM DEBUG');
- * -----------
- * (array)
- * $an_array_of_things = ['an', 'array', 'of', 'things'];
- * write_log($an_array_of_things);
- * -----------
- * (object)
- * $an_object = new An_Object
- * write_log($an_object);
- */
-if ( ! function_exists( 'dt_write_log' ) ) {
-    /**
-     * A function to assist development only.
-     * This function allows you to post a string, array, or object to the WP_DEBUG log.
-     *
-     * @param $log
-     */
-    // @codingStandardsIgnoreLine
-    function dt_write_log( $log )
-    {
-        if ( true === WP_DEBUG ) {
-            if ( is_array( $log ) || is_object( $log ) ) {
-                error_log( print_r( $log, true ) );
-            } else {
-                error_log( $log );
-            }
-        }
-    }
-}
+// Customize the WordPress admin
+// require_once(get_template_directory().'/functions/admin.php'); 
