@@ -10,7 +10,7 @@
             <ul class="menu">
                 <li class="zume-logo-in-top-bar">
                     <a href="">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/zume-logo-white.png"
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/zume-vision-logo.svg"
                              class="zume-logo-in-top-bar">
                     </a>
                 </li>

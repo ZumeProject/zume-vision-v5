@@ -132,7 +132,8 @@ NAVIGATION STYLES
 
 .zume-logo-in-top-bar {
     padding: 0;
-    max-width: 79px;
+    height: 35px;
+    width: 140px;
 }
 
 .menu > li.zume-logo-in-top-bar > a {
@@ -620,7 +621,9 @@ FOOTER STYLES
 *********************/
 .footer {
 	clear: both;
-	margin-top: 1em;
+	margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1px solid $light-gray;
 }
 
 /*********************

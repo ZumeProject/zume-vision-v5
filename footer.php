@@ -12,13 +12,9 @@
 
 					<div class="inner-footer grid-x grid-margin-x grid-padding-x">
 
-						<div class="small-12 medium-12 large-12 cell">
-							<nav role="navigation">
 
-	    					</nav>
-	    				</div>
 
-						<div class="small-12 medium-12 large-12 cell">
+						<div class="small-12 medium-12 large-12 cell center text-gray">
 							<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
 						</div>
 
