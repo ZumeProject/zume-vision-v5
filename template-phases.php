@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Zúme Progress
+Template Name: Zúme Phases
 */
 
 get_header();
