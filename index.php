@@ -22,7 +22,7 @@ get_header(); ?>
                     
                 <?php endwhile; ?>  
 
-                    <?php joints_page_navi(); ?>
+                    <?php zume_page_navi(); ?>
                     
                 <?php else : ?>
                                             

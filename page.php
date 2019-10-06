@@ -10,6 +10,7 @@ get_header(); ?>
     <div class="content">
 
         <div class="inner-content grid-x grid-margin-x grid-padding-x">
+
             <div class="cell small-1"></div>
 
             <main class="main small-10 cell" role="main">
@@ -18,8 +19,7 @@ get_header(); ?>
 
                         <?php get_template_part( 'parts/loop', 'page' ); ?>
 
-                <?php endwhile;
-endif; ?>
+                <?php endwhile; endif; ?>
 
             </main> <!-- end #main -->
 

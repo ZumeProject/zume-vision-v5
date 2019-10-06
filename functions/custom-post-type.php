@@ -1,5 +1,5 @@
 <?php
-/* joints Custom Post Type Example
+/* zume Custom Post Type Example
 This page walks you through creating
 a custom post type and taxonomies. You
 can edit this one or copy the following code
@@ -20,21 +20,21 @@ function custom_post_example() {
         // let's now add all the options for this post type
         array(
         'labels' => array(
-            'name' => __( 'Custom Types', 'jointswp' ), /* This is the Title of the Group */
-            'singular_name' => __( 'Custom Post', 'jointswp' ), /* This is the individual type */
-            'all_items' => __( 'All Custom Posts', 'jointswp' ), /* the all items menu item */
-            'add_new' => __( 'Add New', 'jointswp' ), /* The add new menu item */
-            'add_new_item' => __( 'Add New Custom Type', 'jointswp' ), /* Add New Display Title */
-            'edit' => __( 'Edit', 'jointswp' ), /* Edit Dialog */
-            'edit_item' => __( 'Edit Post Types', 'jointswp' ), /* Edit Display Title */
-            'new_item' => __( 'New Post Type', 'jointswp' ), /* New Display Title */
-            'view_item' => __( 'View Post Type', 'jointswp' ), /* View Display Title */
-            'search_items' => __( 'Search Post Type', 'jointswp' ), /* Search Custom Type Title */
-            'not_found' => __( 'Nothing found in the Database.', 'jointswp' ), /* This displays if there are no entries yet */
-            'not_found_in_trash' => __( 'Nothing found in Trash', 'jointswp' ), /* This displays if there is nothing in the trash */
+            'name' => __( 'Custom Types', 'zume' ), /* This is the Title of the Group */
+            'singular_name' => __( 'Custom Post', 'zume' ), /* This is the individual type */
+            'all_items' => __( 'All Custom Posts', 'zume' ), /* the all items menu item */
+            'add_new' => __( 'Add New', 'zume' ), /* The add new menu item */
+            'add_new_item' => __( 'Add New Custom Type', 'zume' ), /* Add New Display Title */
+            'edit' => __( 'Edit', 'zume' ), /* Edit Dialog */
+            'edit_item' => __( 'Edit Post Types', 'zume' ), /* Edit Display Title */
+            'new_item' => __( 'New Post Type', 'zume' ), /* New Display Title */
+            'view_item' => __( 'View Post Type', 'zume' ), /* View Display Title */
+            'search_items' => __( 'Search Post Type', 'zume' ), /* Search Custom Type Title */
+            'not_found' => __( 'Nothing found in the Database.', 'zume' ), /* This displays if there are no entries yet */
+            'not_found_in_trash' => __( 'Nothing found in Trash', 'zume' ), /* This displays if there is nothing in the trash */
             'parent_item_colon' => ''
             ), /* end of arrays */
-            'description' => __( 'This is the example custom post type', 'jointswp' ), /* Custom Type Description */
+            'description' => __( 'This is the example custom post type', 'zume' ), /* Custom Type Description */
             'public' => true,
             'publicly_queryable' => true,
             'exclude_from_search' => false,
@@ -75,16 +75,16 @@ function custom_post_example() {
         array(
         'hierarchical' => true,     /* if this is true, it acts like categories */
             'labels' => array(
-                'name' => __( 'Custom Categories', 'jointswp' ), /* name of the custom taxonomy */
-                'singular_name' => __( 'Custom Category', 'jointswp' ), /* single taxonomy name */
-                'search_items' => __( 'Search Custom Categories', 'jointswp' ), /* search title for taxomony */
-                'all_items' => __( 'All Custom Categories', 'jointswp' ), /* all title for taxonomies */
-                'parent_item' => __( 'Parent Custom Category', 'jointswp' ), /* parent title for taxonomy */
-                'parent_item_colon' => __( 'Parent Custom Category:', 'jointswp' ), /* parent taxonomy title */
-                'edit_item' => __( 'Edit Custom Category', 'jointswp' ), /* edit custom taxonomy title */
-                'update_item' => __( 'Update Custom Category', 'jointswp' ), /* update title for taxonomy */
-                'add_new_item' => __( 'Add New Custom Category', 'jointswp' ), /* add new title for taxonomy */
-                'new_item_name' => __( 'New Custom Category Name', 'jointswp' ) /* name title for taxonomy */
+                'name' => __( 'Custom Categories', 'zume' ), /* name of the custom taxonomy */
+                'singular_name' => __( 'Custom Category', 'zume' ), /* single taxonomy name */
+                'search_items' => __( 'Search Custom Categories', 'zume' ), /* search title for taxomony */
+                'all_items' => __( 'All Custom Categories', 'zume' ), /* all title for taxonomies */
+                'parent_item' => __( 'Parent Custom Category', 'zume' ), /* parent title for taxonomy */
+                'parent_item_colon' => __( 'Parent Custom Category:', 'zume' ), /* parent taxonomy title */
+                'edit_item' => __( 'Edit Custom Category', 'zume' ), /* edit custom taxonomy title */
+                'update_item' => __( 'Update Custom Category', 'zume' ), /* update title for taxonomy */
+                'add_new_item' => __( 'Add New Custom Category', 'zume' ), /* add new title for taxonomy */
+                'new_item_name' => __( 'New Custom Category Name', 'zume' ) /* name title for taxonomy */
             ),
             'show_admin_column' => true,
             'show_ui' => true,
@@ -99,16 +99,16 @@ function custom_post_example() {
         array(
         'hierarchical' => false,    /* if this is false, it acts like tags */
             'labels' => array(
-                'name' => __( 'Custom Tags', 'jointswp' ), /* name of the custom taxonomy */
-                'singular_name' => __( 'Custom Tag', 'jointswp' ), /* single taxonomy name */
-                'search_items' => __( 'Search Custom Tags', 'jointswp' ), /* search title for taxomony */
-                'all_items' => __( 'All Custom Tags', 'jointswp' ), /* all title for taxonomies */
-                'parent_item' => __( 'Parent Custom Tag', 'jointswp' ), /* parent title for taxonomy */
-                'parent_item_colon' => __( 'Parent Custom Tag:', 'jointswp' ), /* parent taxonomy title */
-                'edit_item' => __( 'Edit Custom Tag', 'jointswp' ), /* edit custom taxonomy title */
-                'update_item' => __( 'Update Custom Tag', 'jointswp' ), /* update title for taxonomy */
-                'add_new_item' => __( 'Add New Custom Tag', 'jointswp' ), /* add new title for taxonomy */
-                'new_item_name' => __( 'New Custom Tag Name', 'jointswp' ) /* name title for taxonomy */
+                'name' => __( 'Custom Tags', 'zume' ), /* name of the custom taxonomy */
+                'singular_name' => __( 'Custom Tag', 'zume' ), /* single taxonomy name */
+                'search_items' => __( 'Search Custom Tags', 'zume' ), /* search title for taxomony */
+                'all_items' => __( 'All Custom Tags', 'zume' ), /* all title for taxonomies */
+                'parent_item' => __( 'Parent Custom Tag', 'zume' ), /* parent title for taxonomy */
+                'parent_item_colon' => __( 'Parent Custom Tag:', 'zume' ), /* parent taxonomy title */
+                'edit_item' => __( 'Edit Custom Tag', 'zume' ), /* edit custom taxonomy title */
+                'update_item' => __( 'Update Custom Tag', 'zume' ), /* update title for taxonomy */
+                'add_new_item' => __( 'Add New Custom Tag', 'zume' ), /* add new title for taxonomy */
+                'new_item_name' => __( 'New Custom Tag Name', 'zume' ) /* name title for taxonomy */
             ),
             'show_admin_column' => true,
             'show_ui' => true,

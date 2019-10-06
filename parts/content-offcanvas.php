@@ -2,7 +2,7 @@
 /**
  * The template part for displaying offcanvas content
  *
- * For more info: http://jointswp.com/docs/off-canvas-menu/
+ * For more info: http://zume.com/docs/off-canvas-menu/
  */
 ?>
 

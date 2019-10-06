@@ -17,10 +17,10 @@
 
     <footer class="article-footer">
         <?php wp_link_pages( array(
-            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'jointswp' ),
+            'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'zume' ),
             'after'  => '</div>'
         ) ); ?>
-        <p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', '' ); ?></p>
+        <p class="tags"><?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'zume' ) . '</span> ', ', ', '' ); ?></p>
     </footer> <!-- end article footer -->
 
     <?php comments_template(); ?>

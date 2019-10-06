@@ -12,7 +12,7 @@ var gulp  = require('gulp'),
 // Modify these variables to match your project needs
 
 // Set local URL if using Browser-Sync
-const LOCAL_URL = 'http://jointswp.local/';
+const LOCAL_URL = 'http://zume.local/';
 
 // Set path to Foundation files
 const FOUNDATION = 'node_modules/foundation-sites';
@@ -144,7 +144,7 @@ gulp.task('images', function() {
  gulp.task( 'translate', function () {
      return gulp.src( SOURCE.php )
          .pipe(plugin.wpPot( {
-             domain: 'jointswp',
+             domain: 'zume',
              package: 'Example project'
          } ))
         .pipe(gulp.dest('file.pot'));
