@@ -1,10 +1,8 @@
 <?php
 /*
-Template Name: Zúme Phases
+Template Name: Phases
 */
-
 get_header();
-
 ?>
 
 <div id="content" class="grid-x grid-padding-x"><div class="cell">

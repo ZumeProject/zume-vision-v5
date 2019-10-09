@@ -21,15 +21,7 @@ Template Name: Home
                     <div class="medium-2 small-1 cell"></div>
                     <div class="medium-8 small-10 cell">
 
-                        <div class="max-width-1024-wrapper">
-                            <div class="laptop">
-                                <div class="laptop__screen">
-                                    <div class="laptop__video-wrapper">
 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                     </div> <!-- end cell-->
                     <div class="medium-2 small-1 cell"></div>
@@ -46,7 +38,7 @@ Template Name: Home
                     </div>
                     <div class="medium-3 small-2 cell"></div>
                     <div class="medium-6 small-8 cell center">
-                        <?php esc_html_e( "Zúme Training is an on-line and in-life learning experience designed for small groups who follow Jesus to learn how to obey His Great Commission and make disciples who multiply.", 'zume' ) ?>
+                        <?php esc_html_e( "Zúme Vision - a multiplying spiritual family in every neighborhood.", 'zume' ) ?>
                     </div>
                     <div class="medium-3 small-2 cell"></div>
                 </div>
@@ -57,45 +49,7 @@ Template Name: Home
                 </div>
 
 
-                <div class="grid-x grid-margin-x grid-margin-y vertical-padding" style="max-width:900px; margin:0 auto; padding:17px; color: white; font-size: 24px">
-                    <div class="cell small-12" style="max-width:900px;margin-left:auto;margin-right:auto">
-                        <h3 class="center"><strong style="color: white" ><?php esc_html_e( "Zúme consists of 10 sessions, 2 hours each:", 'zume' ) ?></strong></h3>
-                    </div>
-                    <div class="cell small-12" style="max-width:800px;margin-left:auto;margin-right:auto;font-size: 20px">
-                        <div class="grid-x grid-margin-x vertical-padding" >
-                            <div class="cell small-2">
-                                <img height="20px" width="30px" style="float:right;margin-top:10px" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/home/'; ?>play.svg">
-                            </div>
-                            <div class="cell small-10">
-                                <?php esc_html_e( "Video and Audio to help your group understand basic principles of multiplying disciples.", 'zume' ) ?>
-                            </div>
-                        </div>
-                        <div class="grid-x grid-margin-x vertical-padding" >
-                            <div class="cell small-2">
-                                <img height="20px" width="30px" style="float:right;margin-top:10px" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/home/'; ?>discuss.svg">
-                            </div>
-                            <div class="cell small-10">
-                                <?php esc_html_e( "Group Discussions to help your group think through what’s being shared.", 'zume' ) ?>
-                            </div>
-                        </div>
-                        <div class="grid-x grid-margin-x vertical-padding" >
-                            <div class="cell small-2">
-                                <img height="20px" width="30px" style="float:right;margin-top:10px" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/home/'; ?>run.svg">
-                            </div>
-                            <div class="cell small-10">
-                                <?php esc_html_e( "Simple Exercises to help your group put what you’re learning into practice.", 'zume' ) ?>
-                            </div>
-                        </div>
-                        <div class="grid-x grid-margin-x vertical-padding" >
-                            <div class="cell small-2">
-                                <img height="20px" width="30px" style="float:right;margin-top:10px" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/home/'; ?>plant-ground.svg">
-                            </div>
-                            <div class="cell small-10">
-                                <?php esc_html_e( "Session Challenges to help your group keep learning and growing between sessions.", 'zume' ) ?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
 
                 <!----------------------------------->
                 <!-- CHALLENGE RIBBON -->

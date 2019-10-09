@@ -41,7 +41,7 @@ $nonce = wp_create_nonce();
         background-color: #fff;
         border-radius: 5px;
         bottom: 30px;
-        top: 30px;
+        top: 10px;
         box-shadow: 0 1px 2px rgba(0,0,0,0.10);
         font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
         padding: 10px;
@@ -67,7 +67,7 @@ $nonce = wp_create_nonce();
     .logo {
         background-color: #fff;
         border-radius: 5px;
-        top: 30px;
+        top: 10px;
         left: 10px;
         box-shadow: 0 1px 2px rgba(0,0,0,0.10);
         padding: 10px;
@@ -76,7 +76,7 @@ $nonce = wp_create_nonce();
         opacity: .8;
     }
     .logo-image {
-        width: 120px;
+        width: 70px;
         height: 29px;
     }
 
@@ -95,7 +95,7 @@ $nonce = wp_create_nonce();
 
 <div id='map'></div>
 
-<div id="logo" class="logo"><a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/zume-vision-logo.svg" alt="Zume Logo" class="logo-image" /></a></div>
+<div id="logo" class="logo"><a href="/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/zume-logo.svg" alt="Zume Logo" class="logo-image" /></a></div>
 
 <div id='world-legend' class='legend'>
     <h4>Explorer</h4>
