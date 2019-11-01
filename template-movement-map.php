@@ -79,6 +79,9 @@ $nonce = wp_create_nonce();
         width: 70px;
         height: 29px;
     }
+    .button {
+        padding:10px 20px;
+    }
 
     /*#target {*/
     /*font-size:5em;*/
@@ -101,8 +104,17 @@ $nonce = wp_create_nonce();
     <h4>Explorer</h4>
     <hr>
     <div id="data">
-        Zoom in and out to view different parts of the map. Click on the map to pull available data for the area you have
-        clicked on. Some regions have security protections in place and will not reveal lowest level movement data.
+        <button class="button">Country Level</button><br>
+        <p>Country level view of goal achievement.</p>
+        <button class="button">State Level</button><br>
+        <p>Country level view of goal achievement.</p>
+        <button class="button">Tract Level</button><br>
+        <button class="button">Saturation Heat Map</button><br>
+        <button class="button">Activity Heat Map</button><br><br>
+
+        <button class="button">Export/Print Map</button><br>
+
+
     </div>
 </div>
 <!--<div id="target">+</div>-->
