@@ -2,9 +2,9 @@
 /*
 Template Name: Movement Map
 */
-if ( ! class_exists( 'DT_Mapping_Module') ) {
-    require_once ( get_template_directory().'/dt-mapping/loader.php' );
-    new DT_Mapping_Module_Loader('theme');
+if ( ! class_exists( 'DT_Mapping_Module' ) ) {
+    require_once( get_template_directory().'/dt-mapping/loader.php' );
+    new DT_Mapping_Module_Loader( 'theme' );
 }
 if ( ! class_exists( 'DT_Mapping_Module' ) ) {
     echo 'Our apologies. Our map is offline. <a href="/">Back to home</a>';

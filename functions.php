@@ -32,7 +32,7 @@ require_once( get_template_directory().'/functions/translation/translation.php' 
 // require_once(get_template_directory().'/functions/editor-styles.php');
 
 // Remove Emoji Support
-require_once(get_template_directory().'/functions/disable-emoji.php');
+require_once( get_template_directory().'/functions/disable-emoji.php' );
 
 // Related post function - no need to rely on plugins
 // require_once(get_template_directory().'/functions/related-posts.php');
@@ -46,4 +46,4 @@ require_once(get_template_directory().'/functions/disable-emoji.php');
 // Customize the WordPress admin
 require_once( get_template_directory().'/functions/admin.php' );
 require_once( get_template_directory().'/functions/admin-page.php' );
-require_once ( get_template_directory().'/dt-mapping/loader.php' );
+require_once( get_template_directory().'/dt-mapping/loader.php' );

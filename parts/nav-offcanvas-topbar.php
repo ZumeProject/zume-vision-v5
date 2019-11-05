@@ -1,39 +1,28 @@
 <!-- By default, this menu will use off-canvas for small
      and a topbar for medium-up -->
 
-<div class="top-bar" id="top-bar-menu">
+<?php
+    $zume_is_logged_in = is_user_logged_in();
 
-    <div class="" style="display: flex; flex-direction: row; justify-content: space-around; width:100%">
+?>
 
-        <!-- Show for large -->
-        <div class="menu-item" id="nav-logo">
-            <ul class="menu">
-                <li class="zume-logo-in-top-bar">
-                    <a href="/">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/zume-vision-logo.svg"
-                             class="zume-logo-in-top-bar">
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div id="zume-main-menu" class="menu-item show-for-large">
+<div class="grid-x top-bar">
+    <div class="cell hide-for-small-only medium-1"></div>
+    <div class="cell small-3 medium-2" id="top-logo-div">
+        <a href="">
+            <div class="zume-logo-in-top-bar"></div>
+        </a>
+    </div>
+    <div class="cell medium-5 show-for-medium center" id="top-full-menu-div-wrapper">
+        <div id="top-full-menu-div">
             <?php zume_top_nav(); ?>
         </div>
-        <!-- End show for large -->
-        <div class="menu-item" id="nav-logo">
-            <ul class="menu">
-                <li class="zume-logo-in-top-bar">
-                    <!-- Spacing -->
-                </li>
-            </ul>
-        </div>
-        <!-- Show for small/med -->
-        <div class="show-for-small hide-for-large">
-            <ul class="menu float-right" id="nav-menu">
-                <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li>
-                <li><a data-toggle="off-canvas"><?php esc_html_e( 'Menu', 'zume' ); ?></a></li>
-            </ul>
-        </div>
-        <!-- End show for small/med -->
     </div>
+    <div class="cell small-6 medium-2" id="top-lang-div"></div>
+    <div class="cell small-3 medium-2 show-for-small hide-for-large" id="top-mobile-menu-div">
+        <div class="mobile-menu">
+            <a data-toggle="off-canvas"><?php esc_html_e( 'Menu', 'zume' ); ?></a>
+        </div>
+    </div>
+    <div class="cell hide-for-small-only medium-1"></div>
 </div>

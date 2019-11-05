@@ -19,7 +19,8 @@ get_header(); ?>
 
                         <?php get_template_part( 'parts/loop', 'page' ); ?>
 
-                <?php endwhile; endif; ?>
+                <?php endwhile;
+endif; ?>
 
             </main> <!-- end #main -->
 
