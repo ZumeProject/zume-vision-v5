@@ -25,7 +25,23 @@ Sections
 }
 .deep-blue-section {
     background-color: $primary;
-    border-bottom: 1px solid #323a68;
+    border-bottom: 1px solid $primary;
+    color: $white;
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size: 3.5em;
+        color: $white;
+        padding-bottom: .8em;
+        text-align:center;
+    }
+    h3 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 1.5em;
+        color: $white;
+    }
 }
 .light-blue-section {
     background-color: $secondary;
@@ -33,6 +49,22 @@ Sections
 .white-section {
     background:white;
     border-bottom: 1px solid $white;
+    color: $primary;
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size: 3.5em;
+        color: $primary;
+        padding-bottom: .8em;
+        text-align:center;
+    }
+    h3 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 1.5em;
+        color: $primary;
+    }
 }
 .white-notch {
     width: 0;

@@ -26,7 +26,7 @@ Template Name: Home
 
             <!-- White Section-->
             <div class="grid-x grid-margin-x grid-margin-y vertical-padding white-section">
-                <div class="cell show-for-small hide-for-large  center">
+                <div class="cell show-for-small hide-for-large center">
                     <a href="" alt="Register" class="button large center">
                         <?php esc_html_e( 'Get Started', 'zume' ) ?>
                     </a>
