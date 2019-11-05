@@ -13,7 +13,7 @@
             <div class="zume-logo-in-top-bar"></div>
         </a>
     </div>
-    <div class="cell medium-5 show-for-medium center" id="top-full-menu-div-wrapper">
+    <div class="cell medium-6 show-for-medium center" id="top-full-menu-div-wrapper">
         <div id="top-full-menu-div">
             <?php zume_top_nav(); ?>
         </div>

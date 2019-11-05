@@ -11,18 +11,67 @@ Template Name: Home
 
     <div id="inner-content grid-x grid-padding-x">
 
-        <div id="main" class="cell" role="main">
+        <div id="main" class="cell padding-top-1" role="main">
+
+            <!-- Deep Blue Ribbon-->
+            <div class="grid-x grid-margin-x grid-margin-y deep-blue-section">
+                <div class="large-2 cell"></div>
+                <div class="cell large-8 center white">
+                    <span class="thin-title">Zume.Vision</span>
+                </div>
+                <div class="large-2 cell"></div>
+            </div>
+            <!-- End Deep Blue Ribbon-->
+            <!--Blue notch --><div class="white-section"><div class="cell center blue-notch"></div></div>
+
+            <!-- White Section-->
+            <div class="grid-x grid-margin-x grid-margin-y vertical-padding white-section">
+                <div class="cell show-for-small hide-for-large  center">
+                    <a href="" alt="Register" class="button large center">
+                        <?php esc_html_e( 'Get Started', 'zume' ) ?>
+                    </a>
+                    <a href="/" alt="Login" class="button large center white-button">
+                        <?php esc_html_e( 'Login', 'zume' ) ?>
+                    </a>
+                </div>
+                <div class="medium-3 small-2 cell"></div>
+                <div class="medium-6 small-8 cell center">
+                    <?php esc_html_e( "Zúme Vision - a multiplying spiritual family in every neighborhood.", 'zume' ) ?>
+                </div>
+                <div class="medium-3 small-2 cell"></div>
+
+            </div>
+            <div class="deep-blue-section"><div class="cell center white-notch"></div></div>
+            <!-- White Notch-->
+
+
+            <!-- Gradient Wrapper-->
+            <div class="gradient-wrapper">
+
+
+
+
+            </div> <!-- End Gradient Wrapper-->
+
+            <!-- Deep Blue Ribbon-->
+            <div class="grid-x grid-margin-x grid-margin-y vertical-padding deep-blue-section">
+                <div class="large-2 cell"></div>
+                <div class="cell large-8 center white">
+                    <span class="thin-title">Zume.Vision</span>
+                </div>
+                <div class="large-2 cell"></div>
+            </div>
+            <!-- End Deep Blue Ribbon-->
+            <!--Blue notch --><div class="white-section"><div class="cell center blue-notch"></div></div>
 
             <!----------------------------------->
             <!-- VIDEO RIBBON -->
             <!----------------------------------->
-            <div style="background: linear-gradient(#2CA2E2, #21336A)">
+            <div class="gradient-wrapper">
                 <div class="grid-x grid-margin-x " style="padding-top:30px">
                     <div class="medium-2 small-1 cell"></div>
-                    <div class="medium-8 small-10 cell">
-
-
-
+                    <div class="medium-8 small-10 cell center">
+                        <span class="thin-title white">Gradient Background</span>
                     </div> <!-- end cell-->
                     <div class="medium-2 small-1 cell"></div>
                 </div>
@@ -48,9 +97,6 @@ Template Name: Home
                     </div>
                 </div>
 
-
-
-
                 <!----------------------------------->
                 <!-- CHALLENGE RIBBON -->
                 <!----------------------------------->
@@ -69,7 +115,7 @@ Template Name: Home
                 <!-- GET STARTED RIBBON -->
                 <!----------------------------------->
                 <!-- triangle -->
-                <div class="center" style="width: 0; height: 0; border-left: 30px solid transparent; border-right: 30px solid transparent; border-top: 30px solid white; margin-top:0px;"></div>
+                <div class="center white-notch"></div>
                 <div class="row vertical-padding">
                     <div class="large-6 medium-8 small-10  center">
                         <h3><strong style="color: white"><?php esc_html_e( "It's as easy as 1-2-3", 'zume' ) ?></strong></h3>

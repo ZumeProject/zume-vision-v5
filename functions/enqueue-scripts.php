@@ -56,8 +56,17 @@ function site_scripts() {
         )
     );
 
-
     wp_enqueue_style( 'foundations-icons', get_template_directory_uri() .'/assets/styles/foundation-icons/foundation-icons.css', array(), '3' );
+
+    if ( 'template-maps.php' === basename( get_page_template() ) ) {
+        wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
+        wp_enqueue_script( 'lodash' );
+
+        wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js', ['jquery'], '1.2.0' );
+        wp_enqueue_script( 'mapbox' );
+
+        wp_enqueue_style( 'mapbox-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css', array(), '3' );
+    }
 
 }
 add_action( 'wp_enqueue_scripts', 'site_scripts', 999 );
