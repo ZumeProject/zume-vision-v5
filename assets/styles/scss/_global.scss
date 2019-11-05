@@ -8,6 +8,10 @@ Stylesheet: Global Stylesheet
 /*********************
 POSTS & CONTENT STYLES
 *********************/
+.center {
+    text-align: center;
+    margin: 0 auto;
+}
 .page-title {
 
 	// Remove Foundation vcard styling from author page titles
@@ -92,6 +96,7 @@ body {
 .center-text {
     text-align: center;
 }
+
 
 /*********************
 IMAGE GALLERY STYLES

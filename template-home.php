@@ -41,7 +41,7 @@ Template Name: Home
                 <div class="medium-3 small-2 cell"></div>
 
             </div>
-            <div class="deep-blue-section"><div class="cell center white-notch"></div></div>
+            <div class="grid-x deep-blue-section"><div class="cell center white-notch"></div></div>
             <!-- White Notch-->
 
 
