@@ -3,7 +3,8 @@
  */
 window.API = {
 
-  update_progress: (key, state) => makeRequest('POST', 'progress/update', { key: key, state: state }),
+  update_statics_profile: (key, state) => makeRequest('POST', 'progress/update', { key: key, state: state }),
+
 
 }
 function makeRequest (type, url, data, base = 'zume/v4/') {
@@ -11,9 +12,9 @@ function makeRequest (type, url, data, base = 'zume/v4/') {
     type: type,
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
-    url: url.startsWith('http') ? url : `${zumeTraining.root}${base}${url}`,
+    url: url.startsWith('http') ? url : `${siteAPI.root}${base}${url}`,
     beforeSend: xhr => {
-      xhr.setRequestHeader('X-WP-Nonce', zumeTraining.nonce);
+      xhr.setRequestHeader('X-WP-Nonce', siteAPI.nonce);
     }
   }
 
@@ -32,7 +33,7 @@ function handleAjaxError (err) {
 }
 jQuery(document).ajaxComplete((event, xhr, settings) => {
   if (_.get(xhr, 'responseJSON.data.status') === 401) {
-    window.location.replace(zumeTraining.site_urls.login);
+    window.location.replace(siteAPI.site_urls.login);
   }
 }).ajaxError((event, xhr) => {
   handleAjaxError(xhr)

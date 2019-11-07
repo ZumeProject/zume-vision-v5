@@ -2,7 +2,10 @@
 /*
 Template Name: Home
 */
+if ( ! class_exists( 'DT_Ipstack_API') ) {
 
+}
+$geocode_from_ip = DT_Ipstack_API::geocode_ip_address('178.241.202.197');
 ?>
 
 <?php get_header(); ?>
@@ -15,11 +18,19 @@ Template Name: Home
 
             <!-- Deep Blue Ribbon-->
             <div class="grid-x grid-margin-x grid-margin-y deep-blue-section">
-                <div class="large-2 cell"></div>
-                <div class="cell large-8 center white">
-                    <span class="thin-title">Zume.Vision</span>
+                <div class="large-1 cell"></div>
+                <div class="cell large-10">
+                    <div class="grid-x margin-2 center">
+                        <div class="cell">
+                            <h2>a multiplying spiritual family in every neighborhood</h2>
+                        </div>
+                        <div class="cell"><img alt="Map Image" src="https://api.mapbox.com/styles/v1/mapbox/streets-v9/static/pin-m-marker+0096ff(<?php echo esc_attr( $geocode_from_ip['longitude'] ) ?>,<?php echo esc_attr( $geocode_from_ip['latitude'] ) ?>)/<?php echo esc_attr( $geocode_from_ip['longitude'] ) ?>,<?php echo esc_attr( $geocode_from_ip['latitude'] ) ?>,7,0/400x150@2x?access_token=<?php echo DT_Mapbox_API::get_key(); ?>" /></div>
+                        <div class="cell">
+                            <h2>what about here?</h2>
+                        </div>
+                    </div>
                 </div>
-                <div class="large-2 cell"></div>
+                <div class="large-1 cell"></div>
             </div>
             <!-- End Deep Blue Ribbon-->
             <!--Blue notch --><div class="white-section"><div class="cell center blue-notch"></div></div>

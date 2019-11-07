@@ -34,6 +34,15 @@ function site_scripts() {
 
     // Adding scripts file in the footer
     wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/scripts/js' ), true );
+    wp_localize_script(
+        "site-js", "siteAPI", array(
+            'root' => esc_url_raw( rest_url() ),
+            'nonce' => wp_create_nonce( 'wp_rest' ),
+            'current_user_login' => wp_get_current_user()->user_login,
+            'current_user_id' => get_current_user_id(),
+            'theme_uri' => get_stylesheet_directory_uri()
+        )
+    );
 
     // Register main stylesheet
     wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/styles/style.css', array(), filemtime( get_template_directory() . '/assets/styles/scss' ), 'all' );
@@ -44,28 +53,54 @@ function site_scripts() {
         wp_enqueue_script( 'comment-reply' );
     }
 
-    wp_enqueue_script( 'zume', get_template_directory_uri() . '/assets/scripts/maps.js', array( 'jquery' ), 1.1, true );
-    wp_localize_script(
-        "zume", "zumeMaps", array(
-            'root' => esc_url_raw( rest_url() ),
-            'nonce' => wp_create_nonce( 'wp_rest' ),
-            'current_user_login' => wp_get_current_user()->user_login,
-            'current_user_id' => get_current_user_id(),
-            'theme_uri' => get_stylesheet_directory_uri(),
-            "translations" => []
-        )
-    );
-
     wp_enqueue_style( 'foundations-icons', get_template_directory_uri() .'/assets/styles/foundation-icons/foundation-icons.css', array(), '3' );
 
     if ( 'template-maps.php' === basename( get_page_template() ) ) {
+
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
+
+        wp_enqueue_script( 'zume', get_template_directory_uri() . '/assets/scripts/maps.js', array( 'jquery' ), 1.1, true );
+        wp_localize_script(
+            "zume", "zumeMaps", array(
+                'root' => esc_url_raw( rest_url() ),
+                'nonce' => wp_create_nonce( 'wp_rest' ),
+                'current_user_login' => wp_get_current_user()->user_login,
+                'current_user_id' => get_current_user_id(),
+                'theme_uri' => get_stylesheet_directory_uri(),
+                "translations" => []
+            )
+        );
 
         wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js', ['jquery'], '1.2.0' );
         wp_enqueue_script( 'mapbox' );
 
         wp_enqueue_style( 'mapbox-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css', array(), '3' );
+    }
+
+    if ( 'template-statistics.php' === basename( get_page_template() ) ) {
+        wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
+        wp_enqueue_script( 'lodash' );
+
+        wp_enqueue_script( 'statistics', get_template_directory_uri() . '/assets/scripts/statistics.js', array( 'jquery' ), 1.1, true );
+        wp_localize_script(
+            "statistics", "zumeStats", array(
+                'root' => esc_url_raw( rest_url() ),
+                'nonce' => wp_create_nonce( 'wp_rest' ),
+                'current_user_login' => wp_get_current_user()->user_login,
+                'current_user_id' => get_current_user_id(),
+                'theme_uri' => get_stylesheet_directory_uri(),
+                "translations" => []
+            )
+        );
+
+        wp_enqueue_script( 'mapping-drill-down', get_template_directory_uri() . '/dt-mapping/drill-down.js', [ 'jquery', 'lodash' ], '1.1' );
+        $module = DT_Mapping_Module::instance();
+        wp_localize_script(
+            'mapping-drill-down', 'mappingModule', array(
+                'mapping_module' => $module->localize_script(),
+            )
+        );
     }
 
 }

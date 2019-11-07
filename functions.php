@@ -4,6 +4,9 @@
  *
  */
 
+require_once( 'dt-mapping/loader.php' );
+new DT_Mapping_Module_Loader( 'theme' );
+
 // Theme support options
 require_once( get_template_directory().'/functions/theme-support.php' );
 
