@@ -4,8 +4,14 @@
  *
  */
 
-require_once( 'dt-mapping/loader.php' );
-new DT_Mapping_Module_Loader( 'theme' );
+// Add permission for mapping system
+$current_user = wp_get_current_user();
+$current_user->add_cap( 'view_mapping' );
+if ( ! class_exists( 'DT_Mapping_Module') ) {
+    require_once( 'dt-mapping/loader.php' );
+    new DT_Mapping_Module_Loader( 'theme' );
+}
+// end mapping system load
 
 // Theme support options
 require_once( get_template_directory().'/functions/theme-support.php' );
@@ -49,4 +55,3 @@ require_once( get_template_directory().'/functions/disable-emoji.php' );
 // Customize the WordPress admin
 require_once( get_template_directory().'/functions/admin.php' );
 require_once( get_template_directory().'/functions/admin-page.php' );
-require_once( get_template_directory().'/dt-mapping/loader.php' );

@@ -93,18 +93,24 @@ function site_scripts() {
                 "translations" => []
             )
         );
+        if ( ! class_exists( 'DT_Mapping_Module') ) {
+            require_once( '../dt-mapping/loader.php' );
+            new DT_Mapping_Module_Loader( 'theme' );
+        }
 
         wp_enqueue_script( 'mapping-drill-down', get_template_directory_uri() . '/dt-mapping/drill-down.js', [ 'jquery', 'lodash' ], '1.1' );
-        $module = DT_Mapping_Module::instance();
         wp_localize_script(
             'mapping-drill-down', 'mappingModule', array(
-                'mapping_module' => $module->localize_script(),
+                'mapping_module' => DT_Mapping_Module::instance()->localize_script(),
             )
         );
+
     }
 
 }
 add_action( 'wp_enqueue_scripts', 'site_scripts', 999 );
+
+
 
 function zume_login_css() {
     zume_enqueue_style( 'zume_login_css', 'assets/styles/login.css', array() );

@@ -1,4 +1,5 @@
 _ = _ || window.lodash
+// console.log(DRILLDOWN)
 
 jQuery(document).ready(function(){
   let chart = jQuery('#chart')
@@ -33,6 +34,7 @@ jQuery(document).ready(function(){
         </div>
     </div>
   `)
+
 
   // set the depth of the drill down
   DRILLDOWNDATA.settings.hide_final_drill_down = true
