@@ -13,6 +13,8 @@ if ( ! class_exists( 'DT_Mapping_Module') ) {
 }
 // end mapping system load
 
+require_once( get_template_directory().'/functions/report-send-integration.php' );
+
 // Theme support options
 require_once( get_template_directory().'/functions/theme-support.php' );
 
@@ -55,3 +57,9 @@ require_once( get_template_directory().'/functions/disable-emoji.php' );
 // Customize the WordPress admin
 require_once( get_template_directory().'/functions/admin.php' );
 require_once( get_template_directory().'/functions/admin-page.php' );
+
+require_once( get_template_directory().'/functions/site-link-post-type.php' );
+Site_Link_System::instance();
+
+
+

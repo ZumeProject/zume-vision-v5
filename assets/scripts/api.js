@@ -1,10 +1,9 @@
 /**
  * REST API
  */
-window.API = {
+window.zumeAPI = {
 
-  update_statics_profile: (key, state) => makeRequest('POST', 'progress/update', { key: key, state: state }),
-
+  send_report: ( data ) => makeRequest('POST', 'send_report', { data: data } ),
 
 }
 function makeRequest (type, url, data, base = 'zume/v4/') {
@@ -12,9 +11,9 @@ function makeRequest (type, url, data, base = 'zume/v4/') {
     type: type,
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
-    url: url.startsWith('http') ? url : `${siteAPI.root}${base}${url}`,
+    url: url.startsWith('http') ? url : `${restAPI.root}${base}${url}`,
     beforeSend: xhr => {
-      xhr.setRequestHeader('X-WP-Nonce', siteAPI.nonce);
+      xhr.setRequestHeader('X-WP-Nonce', restAPI.nonce);
     }
   }
 
@@ -33,7 +32,7 @@ function handleAjaxError (err) {
 }
 jQuery(document).ajaxComplete((event, xhr, settings) => {
   if (_.get(xhr, 'responseJSON.data.status') === 401) {
-    window.location.replace(siteAPI.site_urls.login);
+    window.location.replace(restAPI.site_urls.login);
   }
 }).ajaxError((event, xhr) => {
   handleAjaxError(xhr)
