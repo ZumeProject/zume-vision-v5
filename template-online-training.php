@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Zume About
+Template Name: Online Training
 */
 ?>
 
@@ -11,12 +11,10 @@ Template Name: Zume About
         <div id="inner-content">
 
             <!-- Challenge -->
-            <div class="grid-x grid-margin-x grid-margin-y vertical-padding" style="max-width:100%; margin:0; background:white; padding:17px">
+            <div class="grid-x grid-margin-x grid-margin-y white-section">
                 <div class="medium-2 small-1 cell"></div>
                 <div class="medium-8 small-10 cell center">
-                    <h3 style="margin-bottom:0px">
-                        <strong><?php esc_html_e( 'Zúme Training', 'zume' ) ?></strong>
-                    </h3>
+                    <h2><?php esc_html_e( 'Zúme Training', 'zume' ) ?></h2>
                 </div>
                 <div class="medium-2 small-1 cell"></div>
             </div>
@@ -27,13 +25,13 @@ Template Name: Zume About
                 <div class="large-8 small-12 cell">
 
                     <!-- Video -->
-                    <div class="responsive-embed widescreen">
+                    <div class="responsive-embed widescreen" style="border: 1px solid gray;">
                         <iframe src="https://player.vimeo.com/video/248149797" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
                     </div>
 
                     <div class="grid-x">
                         <div class="cell center">
-                            <a href="https://zume.training" target="_blank" class="button large secondary-button" >Visit Zume Training</a>
+                            <a href="https://zume.training" target="_blank" class="button large secondary-button" >Go to www.zume.training</a>
                         </div>
                     </div>
 
@@ -49,7 +47,7 @@ Template Name: Zume About
 
 
             <!-- Goals of the Zume Project -->
-            <div class="grid-x grid-margin-x grid-margin-y vertical-padding" style="background-color:#323A68;">
+            <div class="grid-x grid-margin-x grid-margin-y vertical-padding deep-blue-section">
                 <div class="large-2 cell"></div>
                 <div class="cell large-8" style="color: white;">
                     <h3 class="secondary" style="color: white;"><?php esc_html_e( 'Goals of the Zúme Project:', 'zume' ) ?></h3>
@@ -64,11 +62,12 @@ Template Name: Zume About
             </div>
 
             <!-- Description -->
-            <div class="grid-x vertical-padding">
+            <div class="grid-x margin-top-2 white-section">
                 <div class="medium-2 cell"></div>
                 <div class="medium-8 cell ">
 
                     <div class="grid-x grid-padding-x grid-padding-y">
+                        <div class="cell center"><h2>Overview</h2></div>
                         <div class="medium-4 cell center">
                             <img src="<?php echo esc_url( get_stylesheet_directory_uri()) ?>/assets/images/pages/training2.png"
                                  alt="Zúme consists of 10 sessions, 2 hours each" height="150"/>
@@ -116,6 +115,13 @@ Template Name: Zume About
                                 <li><?php esc_html_e( 'Consider connecting to a TV or projector so everyone in your group can view the content.', 'zume' ) ?>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="grid-x">
+                        <div class="cell center">
+                            <a href="https://zume.training" target="_blank" class="button large secondary-button" >Go to www.zume.training</a>
                         </div>
                     </div>
 
