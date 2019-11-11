@@ -138,3 +138,8 @@ function zume_login_css() {
     zume_enqueue_style( 'zume_login_css', 'assets/styles/login.css', array() );
 }
 add_action( 'login_enqueue_scripts', 'zume_login_css', 999 );
+
+
+// calling it only on the login page
+add_action( 'login_enqueue_scripts', 'zume_login_css', 10 );
+
