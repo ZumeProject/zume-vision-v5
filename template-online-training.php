@@ -25,8 +25,15 @@ Template Name: Online Training
                 <div class="large-8 small-12 cell">
 
                     <!-- Video -->
-                    <div class="responsive-embed widescreen" style="border: 1px solid gray;">
-                        <iframe src="https://player.vimeo.com/video/248149797" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div class="grid-x grid-margin-x grid-margin-y">
+                        <div class="cell small-3"></div>
+                        <div class="small-6 small-centered cell video-section">
+                            <iframe style="border: 1px solid lightgrey;"  src="https://player.vimeo.com/video/248149797" width="560" height="315"
+                                    frameborder="1"
+                                    webkitallowfullscreen mozallowfullscreen allowfullscreen>
+                            </iframe>
+                        </div>
+                        <div class="cell small-3"></div>
                     </div>
 
                     <div class="grid-x">

@@ -74,7 +74,7 @@ function zume_profile_url() {
  * @return string
  */
 function zume_images_uri( $sub_folder = '' ) {
-    $zume_images_uri = site_url( '/wp-content/themes/zume-training/assets/images/' );
+    $zume_images_uri = site_url( '/wp-content/themes/zume-vision/assets/images/' );
     if ( empty( $sub_folder ) ) {
         return $zume_images_uri;
     } else {
