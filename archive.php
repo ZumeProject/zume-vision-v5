@@ -37,7 +37,7 @@ get_header(); ?>
 
             </main> <!-- end #main -->
 
-            <?php get_sidebar(); ?>
+<!--            --><?php //get_sidebar(); ?>
 
             <div class="cell hide-for-small-only medium-1"></div>
 

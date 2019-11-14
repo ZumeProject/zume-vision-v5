@@ -132,3 +132,12 @@ Layout
 .wp-block-media-text {
     margin-bottom: 1em;
 }
+
+.highlight-background {
+    background-color: $white;
+    transition: 0.3s;
+}
+
+.highlight-background:hover {
+    background-color: #f1faff;
+}
