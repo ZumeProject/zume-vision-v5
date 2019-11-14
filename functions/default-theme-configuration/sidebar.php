@@ -12,6 +12,16 @@ function zume_register_sidebars() {
     ));
 
     register_sidebar(array(
+        'id' => 'sidebar2',
+        'name' => __( 'Sidebar 2', 'zume' ),
+        'description' => __( 'Sidebar for single posts.', 'zume' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+    ));
+
+    register_sidebar(array(
         'id' => 'offcanvas',
         'name' => __( 'Offcanvas', 'zume' ),
         'description' => __( 'The offcanvas sidebar.', 'zume' ),

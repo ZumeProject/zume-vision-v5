@@ -47,6 +47,9 @@ require_once( get_template_directory().'/functions/admin/admin-page.php' );
 require_once( get_template_directory().'/functions/login/zume-login.php' );
 require_once( get_template_directory().'/functions/urls.php' );
 
+
+require_once( get_template_directory().'/functions/playbook-post-type.php' );
+
 // Integrations
 require_once( get_template_directory().'/functions/report-send-integration.php' );
 require_once( get_template_directory().'/functions/site-link-post-type.php' );

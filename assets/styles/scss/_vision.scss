@@ -141,3 +141,47 @@ Layout
 .highlight-background:hover {
     background-color: #f1faff;
 }
+
+.sidebar {
+    .widget {
+        padding: 1em;
+    }
+    .widgettitle {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+    }
+}
+
+/**
+Post Section
+ */
+.content {
+    font-family: 'Roboto', sans-serif;
+
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+        font-size: 3.5em;
+        color: $primary;
+        text-align:center;
+    }
+    h3 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 300;
+        font-size: 1.5em;
+        color: $primary;
+    }
+}
+.page-title {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 3.5em;
+    color: $primary;
+    text-align:center;
+}
+.article-header {
+    h2 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 100;
+    }
+}

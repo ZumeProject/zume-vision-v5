@@ -36,9 +36,11 @@ get_header(); ?>
 
                         <?php endif; ?>
                     </div>
+
                     <div class="cell medium-4">
                         <?php get_sidebar(); ?>
                     </div>
+
                 </div>
 
             </main> <!-- end #main -->

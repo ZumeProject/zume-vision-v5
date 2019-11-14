@@ -7,42 +7,46 @@
 
 get_header(); ?>
 
-    <div class="content">
+<div class="content white-section">
 
-        <div class="inner-content grid-x grid-margin-x grid-padding-x">
+    <div class="inner-content grid-x grid-margin-x grid-padding-x padding-vertical-1">
 
-            <div class="cell hide-for-small-only medium-1"></div>
+        <div class="cell medium-1"></div>
 
-            <main class="main small-12 medium-7 large-7 cell" role="main">
+        <main class="main small-12 medium-10 large-10 cell" role="main">
 
-                <header>
-                    <h1 class="page-title"><?php the_archive_title();?></h1>
-                    <?php the_archive_description( '<div class="taxonomy-description">', '</div>' );?>
-                </header>
+            <div class="grid-x grid-margin-x">
 
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <div class="cell medium-8">
 
-                    <!-- To see additional archive styles, visit the /parts directory -->
-                        <?php get_template_part( 'parts/loop', 'archive-grid' ); ?>
+                    <header><h2 class="center"><?php the_archive_title();?></h2></header>
 
-                <?php endwhile; ?>
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                    <?php zume_page_navi(); ?>
+                        <!-- To see additional archive styles, visit the /parts directory -->
+                        <?php get_template_part( 'parts/loop', 'archive' ); ?>
 
-                <?php else : ?>
+                    <?php endwhile; ?>
 
-                    <?php get_template_part( 'parts/content', 'missing' ); ?>
+                        <?php zume_page_navi(); ?>
 
-                <?php endif; ?>
+                    <?php else : ?>
 
-            </main> <!-- end #main -->
+                        <?php get_template_part( 'parts/content', 'missing' ); ?>
 
-<!--            --><?php //get_sidebar(); ?>
+                    <?php endif; ?>
+                </div>
+                <div class="cell medium-4">
+                    <?php get_sidebar(); ?>
+                </div>
+            </div>
 
-            <div class="cell hide-for-small-only medium-1"></div>
+        </main> <!-- end #main -->
 
-        </div> <!-- end #inner-content -->
+        <div class="cell medium-1"></div>
 
-    </div> <!-- end #content -->
+    </div> <!-- end #inner-content -->
+
+</div> <!-- end #content -->
 
 <?php get_footer(); ?>

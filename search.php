@@ -7,36 +7,45 @@
 
 get_header(); ?>
 
-    <div class="content">
+<div class="content white-section">
 
-        <div class="inner-content grid-x grid-margin-x grid-padding-x">
+    <div class="inner-content grid-x grid-margin-x grid-padding-x padding-vertical-1">
 
-            <main class="main small-12 medium-8 large-8 cell" role="main">
-                <header>
-                    <h1 class="archive-title"><?php _e( 'Search Results for:', 'zume' ); ?> <?php echo esc_attr( get_search_query() ); ?></h1>
-                </header>
+        <div class="cell medium-1"></div>
 
-                <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <main class="main small-12 medium-10 large-10 cell" role="main">
 
-                    <!-- To see additional archive styles, visit the /parts directory -->
+            <div class="grid-x grid-margin-x">
+
+                <div class="cell medium-8">
+                    <header><h2 class="center"><?php _e( 'Results for:', 'zume' ); ?> <?php echo esc_attr( get_search_query() ); ?></h2></header>
+
+                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+                        <!-- To see additional archive styles, visit the /parts directory -->
                         <?php get_template_part( 'parts/loop', 'archive' ); ?>
 
-                <?php endwhile; ?>
+                    <?php endwhile; ?>
 
-                    <?php zume_page_navi(); ?>
+                        <?php zume_page_navi(); ?>
 
-                <?php else : ?>
+                    <?php else : ?>
 
-                    <?php get_template_part( 'parts/content', 'missing' ); ?>
+                        <?php get_template_part( 'parts/content', 'missing' ); ?>
 
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+                <div class="cell medium-4">
+                    <?php get_sidebar(); ?>
+                </div>
+            </div>
 
-            </main> <!-- end #main -->
+        </main> <!-- end #main -->
 
-            <?php get_sidebar(); ?>
+        <div class="cell medium-1"></div>
 
-        </div> <!-- end #inner-content -->
+    </div> <!-- end #inner-content -->
 
-    </div> <!-- end #content -->
+</div> <!-- end #content -->
 
 <?php get_footer(); ?>
