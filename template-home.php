@@ -2,10 +2,6 @@
 /*
 Template Name: Home
 */
-//if ( ! class_exists( 'DT_Ipstack_API') ) {
-//
-//}
-//$geocode_from_ip = DT_Ipstack_API::geocode_ip_address('174.16.154.113');
 ?>
 
 <?php get_header(); ?>
@@ -39,8 +35,6 @@ Template Name: Home
                     <div class="grid-x margin-2 center">
                         <div class="cell">
                         </div>
-                         <div class="cell padding-bottom-2"><img alt="Map Image" src="https://api.mapbox.com/styles/v1/mapbox/streets-v9/static/pin-m-marker+0096ff(<?php //echo esc_attr( $geocode_from_ip['longitude'] ) ?>,<?php //echo esc_attr( $geocode_from_ip['latitude'] ) ?>)/<?php //echo esc_attr( $geocode_from_ip['longitude'] ) ?>,<?php //echo esc_attr( $geocode_from_ip['latitude'] ) ?>,7,0/500x300@2x?access_token=<?php echo DT_Mapbox_API::get_key(); ?>" /></div>
-<!---->
                     </div>
                 </div>
                 <div class="large-1 cell"></div>
