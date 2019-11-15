@@ -95,7 +95,7 @@ class Zume_Playbook_Post_Type
      * @param array $args
      * @param array $taxonomies
      */
-    public function __construct($post_type = 'zume_playbook', $singular = 'Playbook', $plural = 'Playbooks', $args = [], $taxonomies = [])
+    public function __construct($post_type = 'playbooks', $singular = 'Playbook', $plural = 'Playbooks', $args = [], $taxonomies = [])
     {
         $this->post_type = $post_type;
         $this->singular = $singular;
@@ -103,7 +103,8 @@ class Zume_Playbook_Post_Type
         $this->args = $args;
         $this->taxonomies = $taxonomies;
 
-        add_action('init', [$this, 'register_post_type']);
+        add_action( 'init', [ $this, 'register_post_type' ] );
+        add_action( 'init', [ $this, 'create_tag_taxonomies' ], 0 );
 
         if (is_admin()) {
             global $pagenow;
@@ -135,11 +136,11 @@ class Zume_Playbook_Post_Type
             // let's now add all the options for this post type
             array(
                 'labels' => array(
-                    'name' => 'Zume Playbook', /* This is the Title of the Group */
-                    'singular_name' => 'Zume Playbook', /* This is the individual type */
-                    'all_items' => 'All Zume Playbooks', /* the all items menu item */
+                    'name' => 'Playbooks', /* This is the Title of the Group */
+                    'singular_name' => 'Playbook', /* This is the individual type */
+                    'all_items' => 'All Playbooks', /* the all items menu item */
                     'add_new' => 'Add New', /* The add new menu item */
-                    'add_new_item' => 'Add New Zume Playbook', /* Add New Display Title */
+                    'add_new_item' => 'Add New Playbook', /* Add New Display Title */
                     'edit' => 'Edit', /* Edit Dialog */
                     'edit_item' => 'Edit Zume Playbook', /* Edit Display Title */
                     'new_item' => 'New Zume Playbook', /* New Display Title */
@@ -149,27 +150,58 @@ class Zume_Playbook_Post_Type
                     'not_found_in_trash' => 'Nothing found in Trash', /* This displays if there is nothing in the trash */
                     'parent_item_colon' => ''
                 ), /* end of arrays */
-                'description' => 'Zume video catalog for language videos', /* Custom Type Description */
-                'public' => false,
-                'publicly_queryable' => false,
-                'exclude_from_search' => true,
+                'description' => 'Movement playbook', /* Custom Type Description */
+                'public' => true,
+                'publicly_queryable' => true,
+                'exclude_from_search' => false,
                 'show_ui' => true,
                 'query_var' => true,
                 'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */
                 'menu_icon' => 'dashicons-book', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
                 'rewrite' => array(
-                    'slug' => 'zume_video',
-                    'with_front' => false
+                    'slug' => 'playbook',
+                    'with_front' => true
                 ), /* you can specify its url slug */
-                'has_archive' => 'zume_video', /* you can rename the slug here */
+                'has_archive' => 'playbooks', /* you can rename the slug here */
                 'capability_type' => 'post',
-                'hierarchical' => false,
+                'hierarchical' => true,
                 /* the next one is important, it tells what's enabled in the post editor */
-                'supports' => array('title', 'editor')
+                'supports' => array('title', 'editor', 'thumbnail', 'page-attributes')
             ) /* end of options */
         ); /* end of register post type */
     } // End register_post_type()
 
+    //create two taxonomies, genres and tags for the post type "tag"
+    public function create_tag_taxonomies()
+    {
+        // Add new taxonomy, NOT hierarchical (like tags)
+        $labels = array(
+            'name' => _x( 'Tags', 'taxonomy general name' ),
+            'singular_name' => _x( 'Tag', 'taxonomy singular name' ),
+            'search_items' =>  __( 'Search Tags' ),
+            'popular_items' => __( 'Popular Tags' ),
+            'all_items' => __( 'All Tags' ),
+            'parent_item' => null,
+            'parent_item_colon' => null,
+            'edit_item' => __( 'Edit Tag' ),
+            'update_item' => __( 'Update Tag' ),
+            'add_new_item' => __( 'Add New Tag' ),
+            'new_item_name' => __( 'New Tag Name' ),
+            'separate_items_with_commas' => __( 'Separate tags with commas' ),
+            'add_or_remove_items' => __( 'Add or remove tags' ),
+            'choose_from_most_used' => __( 'Choose from the most used tags' ),
+            'menu_name' => __( 'Tags' ),
+        );
+
+        register_taxonomy('playbook_tag','playbooks',array(
+            'hierarchical' => false,
+            'labels' => $labels,
+            'show_ui' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'query_var' => true,
+            'rewrite' => array( 'slug' => 'playbook-tag' ),
+        ));
+    }
 
     /**
      * Add custom columns for the "manage" screen of this post type.
@@ -286,7 +318,7 @@ class Zume_Playbook_Post_Type
      */
     public function meta_box_setup()
     {
-        add_meta_box($this->post_type . '_scribes', 'Video Scribes', array($this, 'load_video_meta_box'), $this->post_type, 'normal', 'high');
+        add_meta_box($this->post_type . '_scribes', 'Playbook', array($this, 'load_playbook_meta_box'), $this->post_type, 'normal', 'high');
     } // End meta_box_setup()
 
     /**
@@ -295,7 +327,7 @@ class Zume_Playbook_Post_Type
      * @access public
      * @since  0.1.0
      */
-    public function load_video_meta_box()
+    public function load_playbook_meta_box()
     {
         $this->meta_box_content('description'); // prints
     }
@@ -311,7 +343,7 @@ class Zume_Playbook_Post_Type
         $fields = get_post_custom($post_id);
         $field_data = $this->get_custom_fields_settings();
 
-        echo '<input type="hidden" name="' . esc_attr($this->post_type) . '_noonce" id="' . esc_attr($this->post_type) . '_noonce" value="' . esc_attr(wp_create_nonce('video_noonce_action')) . '" />';
+        echo '<input type="hidden" name="' . esc_attr($this->post_type) . '_noonce" id="' . esc_attr($this->post_type) . '_noonce" value="' . esc_attr(wp_create_nonce('playbook_noonce_action')) . '" />';
 
         if (0 < count($field_data)) {
             echo '<table class="form-table">' . "\n";
@@ -380,17 +412,7 @@ class Zume_Playbook_Post_Type
             }
             echo '</tbody>' . "\n";
             echo '</table>' . "\n";
-            echo "<script>
-                    function show_video( block, id ) {
-                        jQuery( '#' + block ).append('<iframe src=\"https://player.vimeo.com/video/' + id + '\" width=\"340\" height=\"160\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe><p><a onclick=\"jQuery(\'#' + block + '\').empty();\">Close video</a></p>')
-                    }
-                    function show_alt_video( block, id ) {
-                        jQuery( '#' + block ).append(`<video width=\"960\" height=\"540\" style=\"border: 1px solid lightgrey;margin: 0 15%;\" controls>
-                            <source src=\"`+id+`\" type=\"video/mp4\">
-                            Your browser does not support the video tag.
-                        </video><p><a onclick=\"jQuery('#`+block+`').empty();\">Close video</a></p>`)
-                    }
-                    </script>";
+
         }
     } // End meta_box_content()
 
@@ -413,7 +435,7 @@ class Zume_Playbook_Post_Type
         }
 
         $key = $this->post_type . '_noonce';
-        if (isset($_POST[$key]) && !wp_verify_nonce(sanitize_key($_POST[$key]), 'video_noonce_action')) {
+        if (isset($_POST[$key]) && !wp_verify_nonce(sanitize_key($_POST[$key]), 'playbook_noonce_action')) {
             return $post_id;
         }
 
@@ -500,7 +522,7 @@ class Zume_Playbook_Post_Type
 
 
 
-        return apply_filters('zume_video_fields_settings', $fields);
+        return apply_filters('zume_playbook_fields_settings', $fields);
     } // End get_custom_fields_settings()
 
     /**
