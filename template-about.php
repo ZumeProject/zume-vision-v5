@@ -14,28 +14,30 @@ Template Name: About
 
             <!-- White Section-->
             <div class="grid-x grid-margin-x grid-margin-y vertical-padding white-section">
-                <div class="medium-3 small-2 cell"></div>
-                <div class="medium-6 small-8 cell center">
-                    <div class="grid-x center">
-                        <div class="cell"><img src="<?php echo esc_url( zume_images_uri() )?>zume-logo.svg" style="max-width:300px" id="home-logo" alt="welcome-graphic" /></div>
-                        <div class="cell"><p class="large-text">to saturation the globe with multiplying disciples<br> in our generation by starting 1 training and 2 churches <br>among every 50,000 people globally.</p></div>
-                        <div class="cell"><img src="<?php echo esc_url( zume_images_uri() )?>vision/jesus-globe.png" alt="welcome-graphic" /></div>
+                <div class="center">
+                    <div class="grid-x center ">
+                        <div class="cell">
+                            <img src="<?php echo esc_url( zume_images_uri('zume_images') . 'V1.1/V1.1-A/ZumeLogo.svg' ) ?>" />
+                            <img src="<?php echo esc_url( zume_images_uri('zume_images') . 'V1.1/V1.1-C/crowd_large.svg' ) ?>" />
+                        </div>
+                        <div class="cell"><h2>Who We Are</h2></div>
+                        <div class="cell">No buildings.</div>
+                        <div class="cell">No staff.</div>
+                        <div class="cell">No budgets.</div>
+                        <div class="cell">No programs.</div>
+                        <div class="cell padding-top-2">A band of brothers and sisters<br>following Jesus.</div>
                     </div>
                 </div>
-                <div class="medium-3 small-2 cell"></div>
             </div>
-            <div class="grid-x deep-blue-section"><div class="cell center white-notch"></div></div><!-- White Notch-->
+            <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
             <!-- End White Section-->
 
 
             <!-- Deep Blue Ribbon-->
-            <div class="grid-x grid-margin-x grid-margin-y deep-blue-section" style="height:500px;">
+            <div class="grid-x grid-margin-x grid-margin-y deep-blue-section">
                 <div class="large-1 cell"></div>
                 <div class="cell large-10">
-                    <div class="grid-x margin-2 center">
-                        <div class="cell">
-                        </div>
-                    </div>
+
                 </div>
                 <div class="large-1 cell"></div>
             </div>
@@ -43,10 +45,21 @@ Template Name: About
             <!-- End Deep Blue Ribbon-->
 
             <!-- White Section-->
-            <div class="grid-x grid-margin-x grid-margin-y vertical-padding white-section" style="height:500px">
+            <div class="grid-x grid-margin-x grid-margin-y white-section">
                 <div class="medium-3 small-2 cell"></div>
                 <div class="medium-6 small-8 cell center">
-
+                    <div class="grid-x center">
+                        <div class="cell center"><h2>What does Zúme mean?</h2></div>
+                        <div class="cell content-large">
+                            <p>"Zúme" is the Greek word for “yeast” or “leaven”. </p>
+                            <p>In Matthew 13:33 and Luke 13:21 Jesus Christ is quoted as saying, “the kingdom of heaven
+                                is like a woman who took yeast and mixed it into a large amount of flour until it was
+                                all leavened”.</p>
+                        </div>
+                        <div class="cell">
+                            <img src="<?php echo esc_url( zume_images_uri('vision') . 'makingyeast.svg' ) ?>" />
+                        </div>
+                    </div>
                 </div>
                 <div class="medium-3 small-2 cell"></div>
             </div>

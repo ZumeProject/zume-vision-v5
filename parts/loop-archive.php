@@ -20,19 +20,13 @@ $post = get_post();
 
             <section class="entry-content" itemprop="text">
                 <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                    <?php echo wp_kses_post( wp_trim_words( get_the_content( ), 20 ) ); ?>
+                    <?php the_excerpt(); ?>
                 </a>
             </section> <!-- end article section -->
 
             <footer class="article-footer padding-top-1">
                 <p class="tags small-text">
-                    <?php
-
-                    $terms = get_the_terms( $post->ID ?? false, 'tag' );
-                    if ( ! empty( $terms ) ) {
-                        dt_write_log($terms);
-                    }
-                    the_tags( '<span class="tags-title">' . __( 'Tags:', 'zume' ) . '</span> ', ', ', '' ); ?> | <?php echo get_the_date() ?></p>
+                    <?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'zume' ) . '</span> ', ', ', '' ); ?> | <?php echo get_the_date() ?></p>
             </footer> <!-- end article footer -->
         </div>
     </div>

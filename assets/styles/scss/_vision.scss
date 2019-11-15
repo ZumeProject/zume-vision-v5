@@ -7,7 +7,6 @@ body {
 .thin-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    font-size: 5em;
 }
 .white {
     color: white;
@@ -26,11 +25,21 @@ body {
     font-size: $x-large-text;
 }
 
+
+
 /***********
 Home
 ***********/
 #home-logo {
     max-width:300px;
+}
+.home-counter {
+    font-size: 3em;
+    font-weight: 100;
+
+    @media (max-width: $breakpoint-medium ) {
+        font-size: 2em;
+    }
 }
 div.video-section {
     width:70%;
@@ -38,6 +47,13 @@ div.video-section {
 
     @media (max-width: $breakpoint-medium ) {
         width:100%;
+    }
+}
+.news-section {
+    img {
+        width:100%;
+        height:10em;
+        object-fit: cover;
     }
 }
 
@@ -52,6 +68,7 @@ Sections
 }
 .deep-blue-section {
     background-color: $primary;
+    padding-bottom: 3em;
     border-bottom: 1px solid $primary;
     color: $white;
 
@@ -74,6 +91,7 @@ Sections
 }
 .white-section {
     background:white;
+    padding-bottom: 3em;
     border-bottom: 1px solid $white;
     color: $primary;
 
@@ -91,6 +109,9 @@ Sections
         color: $primary;
     }
 }
+.white-notch-wrapper {
+    background-color: $primary;
+}
 .white-notch {
     width: 0;
     height: 0;
@@ -99,6 +120,9 @@ Sections
     border-top: 30px solid white;
     margin-top:0;
     margin-bottom:15px;
+}
+.blue-notch-wrapper {
+    background-color: $white;
 }
 .blue-notch {
     width: 0;
