@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 24.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 500 500;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st1{fill:none;}
+	.st2{font-family:'Roboto-Light';}
+	.st3{font-size:48px;}
+</style>
+<polygon class="st0" points="73.65,482.61 374.53,486 375.54,353.6 73.65,363.54 "/>
+<polygon class="st0" points="118.42,250.88 124.32,361.78 405.97,352.72 405.97,253.39 "/>
+<polygon class="st0" points="35.93,140.61 59.2,248.49 303.74,250.88 308.15,135.33 "/>
+<polygon class="st0" points="189.33,30.85 203.91,136.71 455,130.93 464.18,14 "/>
+<rect x="234.76" y="59.33" class="st1" width="198.47" height="57.65"/>
+<text transform="matrix(1 0 0 1 234.7549 95.3267)" class="st2 st3">Buildings</text>
+<rect x="176.76" y="401.33" class="st1" width="198.47" height="57.65"/>
+<text transform="matrix(1 0 0 1 176.7549 437.3267)" class="st2 st3">Staff</text>
+<rect x="182.76" y="284.33" class="st1" width="198.47" height="57.65"/>
+<text transform="matrix(1 0 0 1 182.7549 320.3267)" class="st2 st3">Budgets</text>
+<rect x="72.76" y="167.33" class="st1" width="232.24" height="57.65"/>
+<text transform="matrix(1 0 0 1 72.7549 203.3262)" class="st2 st3">Programs</text>
+</svg>
