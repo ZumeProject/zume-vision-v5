@@ -2,6 +2,7 @@
 /*
 Template Name: Zume Login
 */
+return;  // @todo disabled. needs fix.
 $zendesk_enable = true;
 
 /**

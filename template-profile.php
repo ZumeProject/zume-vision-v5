@@ -17,6 +17,8 @@ get_header(); ?>
 
     </div> <!-- end #inner-content -->
 
+    <?php get_template_part('parts/content', 'news'); ?>
+
 </div> <!-- end #content -->
 
 <?php get_template_part( "parts/content", "fullmodal" ); ?>

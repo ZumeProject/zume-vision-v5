@@ -4,7 +4,7 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
-
+return; // @todo disabled. needs fix.
 
 
 /********************************************************************************************************************
@@ -1435,12 +1435,12 @@ add_filter( 'authenticate', 'zume_verify_user_pass', 1, 3 );
  * Modify default link for login
  * @see zume-functions.php for the function
  */
-add_filter( 'login_url', 'zume_login_url', 99, 3 );
+//add_filter( 'login_url', 'zume_login_url', 99, 3 );
 
 /**
  * Update User IP Address location on login
  */
-add_action( 'wp_login', 'zume_login_update_ip_info', 10, 2 );
+//add_action( 'wp_login', 'zume_login_update_ip_info', 10, 2 );
 function zume_login_update_ip_info( $user_login, $user ) {
     zume_update_user_ip_address_and_location( $user->ID );
 }

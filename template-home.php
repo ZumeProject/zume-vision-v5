@@ -39,24 +39,17 @@ $post = get_post();
             <!-- End White Section-->
 
 
-            <!-- Deep Blue Ribbon-->
-            <div class="grid-x grid-margin-x grid-margin-y deep-blue-section" >
-                <div class="large-1 cell"></div>
-                <div class="cell large-10">
-                    <div class="grid-x center">
-                        <div class="cell large-text">
-                            <p>Ordinary  people, using ordinary resources, can have an extraordinary impact for
-                                the Kingdom of God.
-                            </p>
-                        </div>
-                    </div>
+            <div class="grid-x deep-blue-section">
+                <div class="cell center">
+                    <h2>Our Core Strategy</h2>
                 </div>
-                <div class="large-1 cell"></div>
             </div>
-            <div class="blue-notch-wrapper"><div class="cell center blue-notch"></div></div><!--Blue notch -->
-            <!-- End Deep Blue Ribbon-->
+            <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
+            <?php get_template_part('parts/content', 'strategy'); ?>
+
 
             <!-- White Section-->
+            <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
             <div class="grid-x grid-margin-x white-section">
                 <div class="medium-1 small-2 cell"></div>
                 <div class="medium-10 small-8 cell">
