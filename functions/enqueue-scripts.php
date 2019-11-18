@@ -46,7 +46,7 @@ function site_scripts() {
 
     wp_enqueue_style( 'foundations-icons', get_template_directory_uri() .'/assets/styles/foundation-icons/foundation-icons.css', array(), '3' );
 
-    wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', ['jquery'], '1.2.0' );
+    wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', ['jquery', 'lodash'], '1.2.0' );
     wp_enqueue_script( 'rest-api' );
     wp_localize_script(
         "rest-api", "restAPI", array(

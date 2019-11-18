@@ -69,6 +69,22 @@ Template Name: Training
                 <div class="medium-2 small-1 cell"></div>
             </div>
 
+            <!-- Deep Blue Ribbon-->
+            <div class="grid-x grid-margin-x grid-margin-y deep-blue-section" >
+                <div class="large-1 cell"></div>
+                <div class="cell large-10">
+                    <div class="grid-x center">
+                        <div class="cell">
+                            <h2><?php the_title() ?></h2>
+                            <p>Disciple Making Movement trainings are marketed by equipping believers with multiplication principles, processes, and practices.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="large-1 cell"></div>
+            </div>
+            <div class="blue-notch-wrapper"><div class="cell center blue-notch"></div></div><!--Blue notch -->
+            <!-- End Deep Blue Ribbon-->
+
         </div> <!-- end #inner-content -->
 
         </div> <!-- cell -->

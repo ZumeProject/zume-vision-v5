@@ -5,6 +5,8 @@ window.zumeAPI = {
 
   send_report: ( data ) => makeRequest('POST', 'send_report', { data: data } ),
 
+  get_population: ( data ) => makeRequest('POST', 'send_report', { data: data } ),
+
 }
 function makeRequest (type, url, data, base = 'zume/v4/') {
   const options = {
