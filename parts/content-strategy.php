@@ -1,5 +1,7 @@
 <div class="grid-x deep-blue-section">
     <div class="cell center">
+        <h2>Our Core Strategy</h2>
+        <h3>Holiness, Prayer, Training Saturation, Church Saturation</h3>
     </div>
 </div>
 <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
@@ -43,7 +45,7 @@
         <h3>We know that extraordinary prayer has proceeded every Spiritual movement in history.</h3>
         <img src="<?php echo esc_url(zume_images_uri( 'zume_images') ) ?>V1.2/V1.2-A/worshiping.svg" alt="Extraordinary Prayer" />
 
-        <div class="grid-x">
+        <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
                 <p>You have not because you ask not, says James. If we want to see movement, we need to ask for it.</p>
@@ -76,7 +78,7 @@
                 Every 50,000 People (Globally)</h3>
         </div>
 
-        <div class="grid-x">
+        <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
                 <p>Especially in places where the church has been (likely) we will need a training movement before we see a disciple making movement.</p>
@@ -84,7 +86,7 @@
             <div class="cell medium-3"></div>
         </div>
 
-        <a class="button primary-button-hollow large" href="#">Zúme Online Training</a>
+        <a class="button primary-button-hollow large" href="/training">Explore Training Resources</a>
     </div>
 
 </div>
@@ -105,24 +107,25 @@
         <h3>(2 Simple Churches &#xF7; Population)</h3>
 
         <div class="padding-vertical-2">
-            <h3 style="color: black;">1 Training</h3>
-            <img src="<?php echo esc_url(zume_images_uri( 'vision') ) ?>training-division-illustration.svg" style="max-width:800px;" alt="Training Saturation" /><br>
+            <h3 style="color: black;">2 Simple Churches</h3>
+            <img src="<?php echo esc_url(zume_images_uri( 'vision') ) ?>two-churches-illustration.svg" style="max-width:800px;" alt="Church Saturation" /><br>
             <h3 style="color: black;">Every 5,000 People (North America)<br>
                 Every 50,000 People (Globally)</h3>
         </div>
 
-        <div class="grid-x">
+        <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>Not just quantity of neighborhood simple churches, but a saturation of the populations to where there are two simple multiplying churches for every 5,000 people.</p>
+                <p>We care about equality. Many churches in one place is a blessing, but many churches in many places is a greater blessing.</p>
             </div>
             <div class="cell medium-3"></div>
         </div>
 
-        <a class="button primary-button-hollow large" href="#">View Saturation Map</a><br>
-        <a class="button primary-button-hollow large" href="#">Report Your Progress</a>
+        <a class="button primary-button-hollow large" href="#">View Progress Stats</a>
+        <a class="button primary-button-hollow large" href="#">View Maps</a>
+        <a class="button primary-button-hollow large" href="#">View Wins</a>
 
     </div>
 </div>
-<div class="grid-x deep-blue-section"><div class="cell center white-notch"></div></div><!-- White Notch-->
+<div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
 <!-- End White Section-->

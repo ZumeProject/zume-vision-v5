@@ -16,8 +16,7 @@ Template Name: Training
                 <div class="cell large-10">
                     <div class="grid-x center">
                         <div class="cell">
-                            <h2><?php the_title() ?></h2>
-                            <p>Disciple Making Movement trainings are marketed by equipping believers with multiplication principles, processes, and practices.</p>
+                            <h2>On-Demand Training</h2>
                         </div>
                     </div>
                 </div>
@@ -32,7 +31,8 @@ Template Name: Training
                 <div class="medium-8 small-10 cell ">
                     <div class="grid-x">
                         <div class="cell center"><h2><?php esc_html_e( 'Zúme.Training', 'zume' ) ?></h2></div>
-                        <div class="cell center"><?php esc_html_e( 'Online, in-life training', 'zume' ) ?></div>
+                        <div class="cell center">
+                            <h3><?php esc_html_e('Free, online, in-life training for small groups', 'zume') ?></h3></div>
                         <div class="cell center"><?php esc_html_e( 'Zúme uses an online training platform to equip participants in basic disciple-making and simple church planting multiplication principles, processes, and practices.', 'zume' ) ?></div>
                         <div class="cell center">
                             <div class="small-6 small-centered cell video-section">
@@ -75,7 +75,7 @@ Template Name: Training
                 <div class="cell large-10">
                     <div class="grid-x center">
                         <div class="cell">
-                            <h2><?php the_title() ?></h2>
+                            <h2>Live Trainings</h2>
                             <p>Disciple Making Movement trainings are marketed by equipping believers with multiplication principles, processes, and practices.</p>
                         </div>
                     </div>
@@ -84,6 +84,18 @@ Template Name: Training
             </div>
             <div class="blue-notch-wrapper"><div class="cell center blue-notch"></div></div><!--Blue notch -->
             <!-- End Deep Blue Ribbon-->
+
+            <!-- Challenge -->
+            <div class="grid-x white-section">
+                <div class="medium-2 small-1 cell"></div>
+                <div class="medium-8 small-10 cell ">
+                    <div class="grid-x">
+                        <div class="cell center"><h2><?php esc_html_e( 'MetaCamp', 'zume' ) ?></h2></div>
+
+                    </div>
+                </div>
+                <div class="medium-2 small-1 cell"></div>
+            </div>
 
         </div> <!-- end #inner-content -->
 

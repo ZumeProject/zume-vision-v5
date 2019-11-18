@@ -39,26 +39,28 @@ $post = get_post();
             <!-- End White Section-->
 
 
-            <div class="grid-x deep-blue-section">
-                <div class="cell center">
-                    <h2>Our Core Strategy</h2>
-                </div>
-            </div>
-            <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
+
             <?php get_template_part('parts/content', 'strategy'); ?>
 
 
             <!-- White Section-->
+            <!-- Deep Blue Ribbon-->
+            <div class="grid-x deep-blue-section">
+                <div class="cell center">
+                    <h2>Progress</h2>
+                    <h3>Our progress towards the goal.</h3>
+                </div>
+            </div>
             <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
             <div class="grid-x grid-margin-x white-section">
                 <div class="medium-1 small-2 cell"></div>
                 <div class="medium-10 small-8 cell">
-                    <h2 class="center">Progress</h2>
+
                     <div class="grid-x grid-padding-y news-section">
 
                         <div class="cell center">
-                            <hr>
-                            <div class="grid-x center">
+                            <h3 class="center padding-bottom-2">Live Statistics</h3>
+                            <div class="grid-x center callout">
                                 <div class="cell medium-4 ">
                                     Trainings<br>
                                     <span class="home-counter">490</span>
@@ -76,11 +78,11 @@ $post = get_post();
                         <div class="cell center">
                             <a href="/progress" class="button primary-button-hollow large">View Progress</a>
                             <a href="/maps" class="button primary-button-hollow large">View Maps</a>
-                            <hr>
+
                         </div>
 
                         <div class="cell">
-                            <h2 class="center padding-bottom-2">News</h2>
+                            <h3 class="center padding-bottom-2">News</h3>
                             <div class="grid-x">
                                 <?php
                                 $the_query = new WP_Query( 'posts_per_page=6' );
