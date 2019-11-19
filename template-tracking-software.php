@@ -22,7 +22,6 @@ get_header(); ?>
                         <p><a href="https://disciple.tools" class="button secondary-button large">Demo @ www.Disciple.Tools</a></p>
                         <div>
                             <img src="<?php echo esc_url( zume_images_uri('vision'))?>laptop5.png" alt="laptop" style="max-width:800px" />
-
                         </div>
                     </div>
 
@@ -33,7 +32,7 @@ get_header(); ?>
 
     </div>
 
-    <div class="grid-x" style="margin-top:250px;">
+    <div class="grid-x grid-padding-y" style="margin-top:250px;">
         <div class="cell medium-3"></div>
 
         <div class="cell medium-6">
@@ -51,6 +50,7 @@ get_header(); ?>
                     <li><strong>Multilingual</strong> – translatable, facilitating cross-cultural collaboration.</li>
                 </ul>
             </div>
+            <div class="center"><a href="https://disciple.tools" class="button secondary-button large">Demo @ www.Disciple.Tools</a></div>
         </div>
 
         <div class="cell medium-3"></div>
@@ -134,6 +134,7 @@ get_header(); ?>
                     <button data-slide="7"><span class="show-for-sr">Eighth slide details.</span></button>
                 </nav>
             </div>
+
 
         </div>
         <div class="cell medium-1"></div>
