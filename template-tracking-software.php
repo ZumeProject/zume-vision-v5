@@ -55,8 +55,8 @@ get_header(); ?>
 
         <div class="cell medium-3"></div>
 
-        <div class="cell medium-1"></div>
-        <div class="cell medium-10">
+        <div class="cell medium-1 large-2"></div>
+        <div class="cell medium-10 large-8">
             <div class="orbit" role="region" aria-label="Disciple Tools Screens" data-orbit>
                 <div class="orbit-wrapper">
                     <div class="orbit-controls">
@@ -137,10 +137,10 @@ get_header(); ?>
 
 
         </div>
-        <div class="cell medium-1"></div>
+        <div class="cell medium-1 large-2"></div>
     </div>
 
 </div> <!-- end #content -->
-<br style="clear: both" />
+<br><br><br><br><br><br><br><br>
 
 <?php get_footer(); ?>
