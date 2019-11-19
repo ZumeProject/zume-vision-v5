@@ -33,7 +33,7 @@
     "js-yaml": ">=3.13.1",
     "jshint-stylish": "^2.0.0",
     "lodash.template": ">=4.5.0",
-    "motion-ui": "^1.2.2",
+    "motion-ui": "github:zurb/motion-ui#master",
     "what-input": "^5.2.5"
   },
   "scripts": {

@@ -50,7 +50,7 @@ Template Name: Training
                                          alt="Zúme consists of 10 sessions, 2 hours each" height="150"/>
                                 </div>
                                 <div class="medium-8 cell ">
-                                    <h3><?php esc_html_e( 'Zúme consists of 10 sessions, 2 hours each, self-led, free', 'zume' ) ?>:</h3>
+                                    <h3>Zúme consists of 10 sessions, 2 hours each.<br>They are self-organized, participant-facilitated, and free.</h3>
                                     <ul>
                                         <li><?php esc_html_e( 'Video and Audio to help your group understand basic principles of multiplying disciples.', 'zume' ) ?></li>
                                         <li><?php esc_html_e( 'Group Discussions to help your group think through what’s being shared.', 'zume' ) ?></li>
