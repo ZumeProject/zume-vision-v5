@@ -45,15 +45,29 @@
         <h3>We know that extraordinary prayer has proceeded every Spiritual movement in history.</h3>
         <img src="<?php echo esc_url(zume_images_uri( 'zume_images') ) ?>V1.2/V1.2-A/worshiping.svg" alt="Extraordinary Prayer" />
 
-        <div class="grid-x padding-bottom-2">
+        <div class="grid-x padding-bottom-1">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>You have not because you ask not, says James. If we want to see movement, we need to ask for it.</p>
+                <p>You have not because you ask not (James). If we want to see movement, we need to ask for it.</p>
             </div>
             <div class="cell medium-3"></div>
         </div>
 
-        <a class="button primary-button-hollow large" href="#">Sign up and pray for your region</a>
+        <!-- Sign up -->
+        <div class="grid-x grid-padding-x">
+            <div class="cell medium-4"></div>
+            <div class="cell medium-4">
+<!--                <a href="/prayer" class="button primary-button-hollow ">Explore Prayer Resources</a>-->
+                <div class="input-group">
+                    <input class="input-group-field" type="email" placeholder="email address">
+                    <div class="input-group-button">
+                        <input type="submit" class="button primary-button-hollow" value="Sign up to pray for your region">
+                    </div>
+                </div>
+            </div>
+            <div class="cell medium-4"></div>
+        </div>
+
     </div>
 </div>
 <!-- End White Section-->
@@ -86,7 +100,7 @@
             <div class="cell medium-3"></div>
         </div>
 
-        <a class="button primary-button-hollow large" href="/training">Explore Training Resources</a>
+        <a class="button primary-button-hollow large" href="/training">Explore Trainings</a>
     </div>
 
 </div>
@@ -124,6 +138,8 @@
         <a class="button primary-button-hollow large" href="#">View Progress Stats</a>
         <a class="button primary-button-hollow large" href="#">View Maps</a>
         <a class="button primary-button-hollow large" href="#">View Wins</a>
+
+        <?php get_template_part('parts/content', 'joinus'); ?>
 
     </div>
 </div>

@@ -29,22 +29,25 @@ $post = get_post();
                             </div>
                         </div>
                     </div>
-                    <div class="cell medium-6 small-8 center padding-top-2">
-                        <a href="/about" class="button primary-button-hollow large">Learn More</a>
-                    </div>
+
+
                 </div>
                 <div class="medium-2 cell"></div>
+
+                <div class="cell center">
+                    <?php get_template_part('parts/content', 'joinus'); ?>
+                </div>
+
             </div>
             <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
             <!-- End White Section-->
 
 
-
+            <!-- Strategy Section -->
             <?php get_template_part('parts/content', 'strategy'); ?>
 
 
-            <!-- White Section-->
-            <!-- Deep Blue Ribbon-->
+            <!-- Progress Section-->
             <div class="grid-x deep-blue-section">
                 <div class="cell center">
                     <h2>Progress</h2>

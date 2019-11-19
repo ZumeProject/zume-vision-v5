@@ -85,6 +85,14 @@ function site_scripts() {
 
     }
 
+
+    if ( 'template-progress.php' === basename( get_page_template() ) ) {
+        wp_register_style('datatable-css', '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', false, '1.10');
+        wp_enqueue_style('datatable-css');
+        wp_register_script('datatable', '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js', ['jquery', 'rest-api', 'lodash'], '1.10');
+        wp_enqueue_script( 'datatable' );
+    }
+
     if ( 'template-statistics.php' === basename( get_page_template() ) ) {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
