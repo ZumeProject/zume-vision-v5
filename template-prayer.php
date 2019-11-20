@@ -32,6 +32,7 @@ get_header(); ?>
                     <div class="cell medium-6 callout">
                         <h3>Location Focused Prayer Subscription</h3>
                         <p>Subscribe to prayer updates for specific regions that you care about. You can sign up for daily, weekly, or bi monthly email updates.</p>
+                        <p><a href="#" class="button secondary-button large">Choose Your Locations</a></p>
                     </div>
                     <div class="cell medium-6 callout">
                         <h3>Whatsapp Live Prayer Feed</h3>
