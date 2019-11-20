@@ -51,7 +51,7 @@ get_header(); ?>
         <!-- World Changing Prayer Campaign-->
         <div class="grid-x deep-blue-section center">
             <div class="cell">
-                <h2>Launch a World Changing Prayer Campaign</h2>
+                <h2>Regional Prayer Networks</h2>
             </div>
         </div>
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
@@ -61,6 +61,7 @@ get_header(); ?>
             <div class="cell medium-1"></div>
 
             <div class="cell medium-10">
+                <h3>Launch a World Changing Prayer Network</h3>
                 <ol>
                     <li>First Decisions</li>
                     <li>Create an email address</li>
