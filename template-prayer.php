@@ -50,28 +50,22 @@ get_header(); ?>
         <!-- World Changing Prayer Campaign-->
         <div class="grid-x deep-blue-section center">
             <div class="cell">
-                <h2>How to Launch a World Changing Prayer Campaign</h2>
+                <h2>Launch a World Changing Prayer Campaign</h2>
             </div>
         </div>
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 
-        <div class="grid-x white-section center">
+        <div class="grid-x white-section">
 
             <div class="cell medium-1"></div>
 
             <div class="cell medium-10">
-                <div class="grid-x grid-margin-x">
-                    <div class="cell medium-6 callout">
-                        <h3>Location Focused Prayer Subscription</h3>
-                        <p>Subscribe to prayer updates for specific regions that you care about. You can sign up for daily, weekly, or bi monthly email updates.</p>
-                    </div>
-                    <div class="cell medium-6 callout">
-                        <h3>Whatsapp Live Prayer Feed</h3>
-                        <p>Join our real time prayer feed in Whatsapp. This is a live feed of disciple making steps people are taking globally through Zume.Training. Pray real time and encourage their faith and obedience.</p>
-                        <p><a href="#" class="button secondary-button large">Join Whatsapp Live Prayer Feed</a></p>
-                        <p><a href="#" class="tiny">Get Whatsapp for your phone</a></p>
-                    </div>
-                </div>
+                <ol>
+                    <li>First Decisions</li>
+                    <li>Create an email address</li>
+                    <li>Choose a Social Media Platform</li>
+                    <li>Organize Prayer Points</li>
+                </ol>
             </div>
 
             <div class="cell medium-1"></div>
