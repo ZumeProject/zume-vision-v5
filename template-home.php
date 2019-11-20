@@ -112,20 +112,7 @@ $post = get_post();
                 </div>
                 <div class="medium-1 small-2 cell"></div>
             </div>
-            <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
-            <!-- End White Section-->
 
-            <!-- Deep Blue Ribbon-->
-            <div class="grid-x grid-margin-x grid-margin-y deep-blue-section" style="height:500px;">
-                <div class="large-1 cell"></div>
-                <div class="cell large-10">
-                    <div class="grid-x margin-2 center">
-                        <div class="cell">
-                        </div>
-                    </div>
-                </div>
-                <div class="large-1 cell"></div>
-            </div>
 
         </div> <!-- end #main -->
 

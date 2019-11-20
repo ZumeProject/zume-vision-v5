@@ -6,16 +6,17 @@
 
 <div id="playbook" class="sidebar small-12 medium-3 large-3 cell" role="complementary">
 
+    <?php get_template_part( 'parts/widget', 'search' ); ?>
+
     <?php if ( is_active_sidebar( 'playbook' ) ) : ?>
 
         <?php dynamic_sidebar( 'playbook' ); ?>
 
     <?php endif; ?>
 
-    <div class="widget">
+    <?php zume_related_posts() ?>
 
-        <?php zume_related_posts() ?>
-
-    </div>
+    <!-- subscribe section-->
+    <?php get_template_part( 'parts/widget', 'newsletter-subscribe' ); ?>
 
 </div>

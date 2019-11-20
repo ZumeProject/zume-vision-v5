@@ -365,3 +365,16 @@ Timeline
         right:inherit;
     }
 }
+
+
+/**
+Progress
+ */
+.progress-counter {
+    font-size: $jumbo-text;
+    font-weight: 100;
+
+    @media (max-width: $breakpoint-medium ) {
+        font-size: $x-large-text;
+    }
+}

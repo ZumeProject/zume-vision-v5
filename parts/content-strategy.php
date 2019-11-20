@@ -61,7 +61,7 @@
                 <div class="input-group">
                     <input class="input-group-field" type="email" placeholder="email address">
                     <div class="input-group-button">
-                        <input type="submit" class="button primary-button-hollow" value="Sign up to pray for your region">
+                        <input type="submit" class="button secondary-button" value="Sign up to pray for your region">
                     </div>
                 </div>
             </div>

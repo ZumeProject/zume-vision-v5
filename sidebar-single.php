@@ -12,10 +12,9 @@
 
     <?php endif; ?>
 
-    <div class="widget">
+    <?php zume_related_posts() ?>
 
-        <?php zume_related_posts() ?>
-
-    </div>
+    <!-- subscribe section-->
+    <?php get_template_part( 'parts/widget', 'newsletter-subscribe' ); ?>
 
 </div>

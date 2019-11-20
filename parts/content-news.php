@@ -7,7 +7,7 @@
 
         <div class="inner-content grid-x grid-margin-x grid-padding-x">
             <div class="cell">
-                <h2 class="center padding-bottom-2">News</h2>
+                <h2 class="center padding-bottom-2">Reports</h2>
                 <div class="grid-x">
                     <?php
                     $the_query = new WP_Query('posts_per_page=6');
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="cell center">
-                <a href="/news" class="button primary-button-hollow large">View News</a>
+                <a href="/reports" class="button primary-button-hollow large">View Reports</a>
             </div>
         </div>
     </div> <!-- end #main -->

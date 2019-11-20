@@ -20,7 +20,7 @@ get_header(); ?>
                 <div class="grid-x grid-margin-x">
 
                     <div class="cell medium-8">
-                        <h2 class="center">News</h2>
+                        <h2 class="center">Good Reports</h2>
                         <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
                             <!-- To see additional archive styles, visit the /parts directory -->
@@ -38,7 +38,11 @@ get_header(); ?>
                     </div>
 
                     <div class="cell medium-4">
+
+                        <!-- other sidebar elements -->
                         <?php get_sidebar(); ?>
+
+
                     </div>
 
                 </div>

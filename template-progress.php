@@ -36,10 +36,18 @@ get_header(); ?>
 
             <div class="cell small-10">
 
-                <div class="grid-x center ">
-                    <div class="cell medium-4 callout"><h3>World Population</h3><br><span class="home-counter">7,743,697,839</span></div>
-                    <div class="cell medium-4 callout"><h3>Trainings</h3><br>Needed<br><span class="home-counter">1,548,739</span><br>Reported<br><span class="home-counter">0</span></div>
-                    <div class="cell medium-4 callout"><h3>New Churches</h3><br>Needed<br><span class="home-counter">3,097,479</span><br>Reported<br><span class="home-counter">0</span></div>
+                <div class="grid-x center">
+                    <div class="cell medium-3 callout">
+                        <span class="large-text">World Population</span><br><span class="progress-counter">7,743,697,839</span><br>
+                        <span class="large-text">Births this year</span><br><span class="progress-counter">43,697,839</span><br>
+                        <span class="large-text">Deaths this year</span><br><span class="progress-counter">3,697,839</span>
+                    </div>
+                    <div class="cell medium-3 callout">
+                        <span class="large-text">With Christ</span><br><span class="progress-counter">3,743,697,839</span><br>
+                        <span class="large-text">Without Christ</span><br><span class="progress-counter">5,743,697,839</span><br>
+                    </div>
+                    <div class="cell medium-3 callout"><span class="large-text">Trainings</span><br><br>Needed<br><span class="progress-counter">1,548,739</span><br>Reported<br><span class="progress-counter">0</span></div>
+                    <div class="cell medium-3 callout"><span class="large-text">New Churches</span><br><br>Needed<br><span class="progress-counter">3,097,479</span><br>Reported<br><span class="progress-counter">0</span></div>
                 </div>
 
             </div>

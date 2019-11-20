@@ -15,6 +15,7 @@ function zume_related_posts() {
         );
         $related_posts = get_posts( $args );
         if ($related_posts) {
+            echo '<div class="widget">';
             echo __( '<h4 class="widgettitle">Related Posts</h4>', 'zume' );
             echo '<ul class="zume-related-posts">';
             foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
@@ -22,6 +23,7 @@ function zume_related_posts() {
                     <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>
                 </li>
             <?php endforeach; }
+            echo '</div>';
     }
     wp_reset_postdata();
     echo '</ul>';
