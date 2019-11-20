@@ -4,7 +4,6 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) { exit; } // Exit if accessed directly
-return; // @todo disabled. needs fix.
 
 
 /********************************************************************************************************************
@@ -1396,7 +1395,9 @@ function zume_verify_user_pass( $user, $username, $password) {
 }
 add_filter( 'authenticate', 'zume_verify_user_pass', 1, 3 );
 
-
+add_filter( 'login_redirect', function( $url, $query, $user ) {
+    return site_url();
+}, 10, 3 );
 
 
 

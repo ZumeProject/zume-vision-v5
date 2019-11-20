@@ -42,7 +42,7 @@
 <div class="grid-x white-section">
     <div class="cell center">
         <h2>Extraordinary Prayer</h2>
-        <h3>We know that extraordinary prayer has proceeded every Spiritual movement in history.</h3>
+        <h3>We know that extraordinary prayer has proceeded every disciple making movement in history.</h3>
         <img src="<?php echo esc_url(zume_images_uri( 'zume_images') ) ?>V1.2/V1.2-A/worshiping.svg" alt="Extraordinary Prayer" />
 
         <div class="grid-x padding-bottom-1">
@@ -57,11 +57,10 @@
         <div class="grid-x grid-padding-x">
             <div class="cell medium-4"></div>
             <div class="cell medium-4">
-<!--                <a href="/prayer" class="button primary-button-hollow ">Explore Prayer Resources</a>-->
                 <div class="input-group">
                     <input class="input-group-field" type="email" placeholder="email address">
                     <div class="input-group-button">
-                        <input type="submit" class="button secondary-button" value="Sign up to pray for your region">
+                        <input type="submit" class="button secondary-button large" value="Sign up to pray for your region">
                     </div>
                 </div>
             </div>
@@ -95,12 +94,15 @@
         <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>Especially in places where the church has been (likely) we will need a training movement before we see a disciple making movement.</p>
+                <p>Disciple multiplication ideas are scriptural but often missed. A simple but paradigm shifting training in multiplication can unlock even established believers from unfruitful lives.</p>
+                <p>Live trainings are often best. But the people who need trained, so vastly extends beyond the live trainings available.
+                    <a href="/training">Zume.Training</a> is an online, in-life, on-demand training for groups to get paradigm shifting multiplication training.</p>
+                <p>We suspect, especially in places where the church has been, we will need a training movement before we see a disciple making movement.</p>
             </div>
             <div class="cell medium-3"></div>
         </div>
 
-        <a class="button primary-button-hollow large" href="/training">Explore Trainings</a>
+        <a class="button primary-button-hollow large" href="/training">View Training</a>
     </div>
 
 </div>
@@ -130,14 +132,16 @@
         <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>We care about equality. Many churches in one place is a blessing, but many churches in many places is a greater blessing.</p>
+                <p>We care about equality. Many churches in one place is a blessing, but many churches in many places is a greater blessing. And churches moving into places where there has never been a church one of the greatest blessings</p>
+                <p>As the saying goes, "Plan your trust, don't trust your plan". We know it is the Father's heart to have families of believers in every tounge, tribe, and nation. He has also invited us to be his co-workers in reconciliations. So these goals of 1 training and 2 churches come from our trust in the one who can do it.,</p>
+
             </div>
             <div class="cell medium-3"></div>
         </div>
 
-        <a class="button primary-button-hollow large" href="#">View Progress Stats</a>
-        <a class="button primary-button-hollow large" href="#">View Maps</a>
-        <a class="button primary-button-hollow large" href="#">View Wins</a>
+        <a class="button primary-button-hollow large" href="/progress">View Progress</a>
+        <a class="button primary-button-hollow large" href="/maps">View Maps</a>
+        <a class="button primary-button-hollow large" href="/reports">View Reports</a>
 
         <?php get_template_part('parts/content', 'joinus'); ?>
 

@@ -22,9 +22,9 @@ get_header(); ?>
 
         <!-- Progress Section-->
         <div class="grid-x grid-padding-x deep-blue-section">
-            <div class="cell center">
+            <div class="cell center padding-top-1">
                 <h2>Progress</h2>
-                <h3>Our progress towards the goal.</h3>
+                <h3>Our progress towards the goal</h3>
             </div>
         </div>
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
@@ -56,6 +56,7 @@ get_header(); ?>
         </div>
 
         <!-- Country List -->
+        <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
         <div class="grid-x grid-padding-x deep-blue-section">
             <div class="cell center"></div>
         </div>
@@ -65,7 +66,7 @@ get_header(); ?>
             <div class="cell small-1"></div>
 
             <div class="cell small-10">
-                <h2></h2>
+                <h2 class="center">By Country</h2>
                 <table class="hover table-scroll display" id="country-list-table">
                     <thead>
                     <tr>

@@ -262,6 +262,9 @@ Timeline
 .content{
     padding-bottom:20px;
 }
+.image-width {
+    max-width: 800px;
+}
 .timeline ul li:nth-child(odd):before
 {
     content:'';

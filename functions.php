@@ -64,9 +64,7 @@ require_once( get_template_directory().'/functions/enqueue-scripts.php' );
 /**
  * GLOBAL FUNCTIONS
  */
-add_filter( 'login_redirect', function( $url, $query, $user ) {
-    return site_url() . 'profile';
-}, 10, 3 );
+
 
 function zume_get_user_meta( $user_id = null ) {
     if ( is_null( $user_id ) ) {

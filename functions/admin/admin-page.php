@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Disciple Tools Extension - Zume Vision
+ * Plugin Name: Disciple Tools Extension - Zúme Vision
  * Plugin URI: https://github.com/DiscipleTools/disciple-tools-one-page-extension
  * Description: One page extension of Disciple Tools
  * Version:  0.1.0
@@ -40,7 +40,7 @@ add_action( 'after_setup_theme', 'vision_page' );
 class Vision_Page {
 
     public $token = 'vision_page';
-    public $title = 'Zume Vision';
+    public $title = 'Zúme Vision';
     public $permissions = 'manage_options';
 
     /**  Singleton */

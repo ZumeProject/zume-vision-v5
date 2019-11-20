@@ -51,7 +51,7 @@ $post = get_post();
             <div class="grid-x deep-blue-section">
                 <div class="cell center">
                     <h2>Progress</h2>
-                    <h3>Our progress towards the goal.</h3>
+                    <h3>Our progress towards the goal</h3>
                 </div>
             </div>
             <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
@@ -63,19 +63,17 @@ $post = get_post();
 
                         <div class="cell center">
                             <h3 class="center padding-bottom-2">Live Statistics</h3>
-                            <div class="grid-x center callout">
-                                <div class="cell medium-4 ">
+                            <div class="grid-x center">
+                                <div class="cell medium-3"></div>
+                                <div class="cell medium-3  callout">
                                     Trainings<br>
                                     <span class="home-counter">490</span>
                                 </div>
-                                <div class="cell medium-4 ">
+                                <div class="cell medium-3  callout">
                                     Churches<br>
                                     <span class="home-counter">690</span>
                                 </div>
-                                <div class="cell medium-4 ">
-                                    Locations<br>
-                                    <span class="home-counter">140</span>
-                                </div>
+                                <div class="cell medium-3"></div>
                             </div>
                         </div>
                         <div class="cell center">

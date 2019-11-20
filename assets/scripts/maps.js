@@ -69,7 +69,7 @@ function open_bourndary_map() {
 
 <div id='map'></div>
 
-<div id="logo" class="logo"><a href="/"><img src="${zumeMaps.theme_uri}/assets/images/zume-logo.svg" alt="Zume Logo" class="logo-image" /></a></div>
+<div id="logo" class="logo"><a href="/"><img src="${zumeMaps.theme_uri}/assets/images/zume-logo.svg" alt="Zúme Logo" class="logo-image" /></a></div>
 
 <div id='world-legend' class='legend'>
     <h4>Explorer</h4>

@@ -142,10 +142,10 @@ class Zume_Playbook_Post_Type
                     'add_new' => 'Add New', /* The add new menu item */
                     'add_new_item' => 'Add New Playbook', /* Add New Display Title */
                     'edit' => 'Edit', /* Edit Dialog */
-                    'edit_item' => 'Edit Zume Playbook', /* Edit Display Title */
-                    'new_item' => 'New Zume Playbook', /* New Display Title */
-                    'view_item' => 'View Zume Playbook', /* View Display Title */
-                    'search_items' => 'Search Zume Playbooks', /* Search Custom Type Title */
+                    'edit_item' => 'Edit Zúme Playbook', /* Edit Display Title */
+                    'new_item' => 'New Zúme Playbook', /* New Display Title */
+                    'view_item' => 'View Zúme Playbook', /* View Display Title */
+                    'search_items' => 'Search Zúme Playbooks', /* Search Custom Type Title */
                     'not_found' => 'Nothing found in the Database.', /* This displays if there are no entries yet */
                     'not_found_in_trash' => 'Nothing found in Trash', /* This displays if there is nothing in the trash */
                     'parent_item_colon' => ''
@@ -285,8 +285,8 @@ class Zume_Playbook_Post_Type
                 $this->singular,
                 strtolower($this->singular)
             ),
-            2 => 'Zume Playbook updated.',
-            3 => 'Zume Playbook deleted.',
+            2 => 'Zúme Playbook updated.',
+            3 => 'Zúme Playbook deleted.',
             4 => sprintf('%s updated.', $this->singular),
             /* translators: %s: date and time of the revision */
             5 => isset($_GET['revision']) ? sprintf('%1$s restored to revision from %2$s', $this->singular, wp_post_revision_title((int)$_GET['revision'], false)) : false,
@@ -513,7 +513,7 @@ class Zume_Playbook_Post_Type
         $fields = [];
 
         $fields['1'] = [
-            'name' => 'Welcome to Zume (1)',
+            'name' => 'Welcome to Zúme (1)',
             'description' => '',
             'type' => 'link',
             'default' => '247062938',

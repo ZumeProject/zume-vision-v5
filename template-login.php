@@ -1,8 +1,8 @@
 <?php
 /*
-Template Name: Zume Login
+Template Name: Login
 */
-return;  // @todo disabled. needs fix.
+
 $zendesk_enable = true;
 
 /**
