@@ -15,9 +15,12 @@ get_header(); ?>
 
         <div class="cell small-1"></div>
 
+
+
     </div> <!-- end #inner-content -->
 
-    <?php get_template_part('parts/content', 'news'); ?>
+
+    <?php get_template_part('parts/widget', 'reports'); ?>
 
 </div> <!-- end #content -->
 
