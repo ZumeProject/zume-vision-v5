@@ -1,5 +1,4 @@
 _ = _ || window.lodash
-// console.log(DRILLDOWN)
 
 jQuery(document).ready(function(){
   let chart = jQuery('#chart')

@@ -23,9 +23,9 @@ $post = get_post();
                         <div class="cell"><img src="<?php echo esc_url( zume_images_uri() )?>vision/jesus-globe.png" alt="welcome-graphic" /></div>
                         <div class="cell padding-top-2">
                             <div class="grid-x center ">
-                                <div class="cell medium-4">World Population<br><span class="home-counter">7,743,697,839</span></div>
-                                <div class="cell medium-4">Trainings Needed<br><span class="home-counter">1,548,739</span></div>
-                                <div class="cell medium-4">New Churches Needed<br><span class="home-counter">3,097,479</span></div>
+                                <div class="cell medium-4">World Population<br><span class="home-counter" id="world-population-count">0</span></div>
+                                <div class="cell medium-4">Trainings Needed<br><span class="home-counter" id="trainings-needed-count">0</span></div>
+                                <div class="cell medium-4">New Churches Needed<br><span class="home-counter" id="churches-needed-count">0</span></div>
                             </div>
                         </div>
                     </div>
@@ -67,11 +67,11 @@ $post = get_post();
                                 <div class="cell medium-3"></div>
                                 <div class="cell medium-3  callout">
                                     Trainings<br>
-                                    <span class="home-counter">490</span>
+                                    <span class="home-counter" id="trainings-count">unknown</span>
                                 </div>
                                 <div class="cell medium-3  callout">
                                     Churches<br>
-                                    <span class="home-counter">690</span>
+                                    <span class="home-counter" id="churches-count">unknown</span>
                                 </div>
                                 <div class="cell medium-3"></div>
                             </div>

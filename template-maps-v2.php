@@ -64,7 +64,7 @@ get_header(); ?>
 
         <div class="cell small-1"></div>
 
-        <?php get_template_part('parts/content', 'prayer-of-saturation'); ?>
+<!--        --><?php //get_template_part('parts/content', 'prayer-of-saturation'); ?>
 
     </div> <!-- end #inner-content -->
 

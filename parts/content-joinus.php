@@ -1,4 +1,5 @@
-<!-- Sign up -->
+<!-- Sign up @todo add signup system
+
 <div class="grid-x grid-padding-x padding-top-2">
     <div class="cell medium-4"></div>
     <div class="cell medium-4">
@@ -11,3 +12,4 @@
     </div>
     <div class="cell medium-4"></div>
 </div>
+-->

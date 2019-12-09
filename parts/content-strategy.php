@@ -53,19 +53,7 @@
             <div class="cell medium-3"></div>
         </div>
 
-        <!-- Sign up -->
-        <div class="grid-x grid-padding-x">
-            <div class="cell medium-4"></div>
-            <div class="cell medium-4">
-                <div class="input-group">
-                    <input class="input-group-field" type="email" placeholder="email address">
-                    <div class="input-group-button">
-                        <input type="submit" class="button secondary-button large" value="Sign up to pray for your region">
-                    </div>
-                </div>
-            </div>
-            <div class="cell medium-4"></div>
-        </div>
+        <?php get_template_part('parts/content', 'joinus'); ?>
 
     </div>
 </div>

@@ -14,17 +14,6 @@ Template Name: Media Kits
 
             <!-- White Section-->
             <div class="grid-x white-section">
-                <div class="cell"><h2>Media Kits</h2></div>
-            </div>
-            <!-- End White Section-->
-
-            <!-- Deep Blue Ribbon-->
-            <div class="grid-x deep-blue-section"></div>
-            <div class="blue-notch-wrapper"><div class="cell center blue-notch"></div></div><!--Blue notch -->
-            <!-- End Deep Blue Ribbon-->
-
-            <!-- White Section-->
-            <div class="grid-x white-section">
                 <div class="cell medium-2"></div>
                 <div class="cell medium-8">
                     <div class="grid-x grid-margin-x center">
