@@ -124,9 +124,9 @@ function site_scripts() {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
 
-        wp_enqueue_script( 'home', get_template_directory_uri() . '/assets/scripts/home.js', array( 'jquery', 'lodash' ), 1.1, true );
+        wp_enqueue_script( 'counters', get_template_directory_uri() . '/assets/scripts/counters.js', array( 'jquery', 'lodash' ), 1.1, true );
         wp_localize_script(
-            "home", "zumeHome", array(
+            "counters", "zumeCounters", array(
                 'root' => esc_url_raw( rest_url() ),
                 'nonce' => wp_create_nonce( 'wp_rest' ),
                 'current_user_login' => wp_get_current_user()->user_login,
