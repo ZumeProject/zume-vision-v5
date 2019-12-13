@@ -97,11 +97,11 @@ $post = get_post();
                                 <div class="cell medium-3"></div>
                                 <div class="cell medium-3  callout">
                                     Trainings<br>
-                                    <span class="home-counter" id="trainings-reported-count-1">unknown</span>
+                                    <span class="home-counter" id="live-trainings-reported-count-1">unknown</span>
                                 </div>
                                 <div class="cell medium-3  callout">
                                     Churches<br>
-                                    <span class="home-counter" id="churches-reported-count-1">unknown</span>
+                                    <span class="home-counter" id="live-churches-reported-count-1">unknown</span>
                                 </div>
                                 <div class="cell medium-3"></div>
                             </div>

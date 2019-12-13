@@ -57,6 +57,10 @@ class Zume_Statistics
         $current_timestamp = time(); // unix time stamp for right now
         $births_per_second = 4.3;
         $deaths_per_second = 1.8;
+        $births_millisecond_interval = 232.55814;
+        $deaths_millisecond_interval = 555.555556;
+        $non_christian_population = 68.8;
+        $deaths_without_christ_interval = $deaths_millisecond_interval * ( .01 * $non_christian_population );
 
         $seconds_since_world_population_timestamp = $current_timestamp - $world_population_timestamp;
 
@@ -64,8 +68,8 @@ class Zume_Statistics
         $trainings_per_population = ceil( $calculated_population / 5000 );
         $churches_per_population = ceil( $calculated_population / 2500 );
 
+        $population_growth_interval =
         // today
-        $non_christian_population = 68.8;
         $seconds_since_midnight = $current_timestamp - strtotime('midnight');
         $calculated_population_today = ceil( $seconds_since_midnight / $deaths_per_second );
         $deaths_without_christ_today = ceil($calculated_population_today / $non_christian_population );
@@ -77,8 +81,9 @@ class Zume_Statistics
                 1 => [
                     'calculated_population_year' => $calculated_population,
                     'deaths_without_christ_today' => $deaths_without_christ_today,
-                    'births_per_second' => $births_per_second,
-                    'deaths_per_second' => $deaths_per_second,
+                    'births_interval' => $births_millisecond_interval,
+                    'deaths_interval' => $deaths_millisecond_interval,
+                    'deaths_without_christ_interval' => $deaths_without_christ_interval,
                     'trainings_needed' => $trainings_per_population,
                     'churches_needed' => $churches_per_population,
                     'trainings_reported' => 222,

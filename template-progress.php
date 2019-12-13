@@ -38,7 +38,7 @@ get_header(); ?>
 
                 <div class="grid-x center">
                     <div class="cell medium-3 callout">
-                        <span class="large-text">World Population</span><br><span class="progress-counter">7,743,697,839</span><br>
+                        <span class="large-text">World Population</span><br><span class="progress-counter" id="population-count-1">7,743,697,839</span><br>
                         <span class="large-text">Births this year</span><br><span class="progress-counter">43,697,839</span><br>
                         <span class="large-text">Deaths this year</span><br><span class="progress-counter">3,697,839</span>
                     </div>
