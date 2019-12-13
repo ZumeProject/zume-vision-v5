@@ -30,7 +30,7 @@ $post = get_post();
                                         </div>
 
                                         <div class="cell">
-                                            Deaths Without Christ Today<br><span class="home-counter" id="deaths-without-christ-today-count-1">0</span>
+                                            Deaths Without Christ Today<br><span class="home-counter" id="christless-deaths-today-count-1">0</span>
                                         </div>
                                     </div>
                                 </div>

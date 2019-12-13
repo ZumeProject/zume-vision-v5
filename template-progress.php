@@ -38,16 +38,37 @@ get_header(); ?>
 
                 <div class="grid-x center">
                     <div class="cell medium-3 callout">
-                        <span class="large-text">World Population</span><br><span class="progress-counter" id="population-count-1">7,743,697,839</span><br>
-                        <span class="large-text">Births this year</span><br><span class="progress-counter">43,697,839</span><br>
-                        <span class="large-text">Deaths this year</span><br><span class="progress-counter">3,697,839</span>
+                        <h3>Current</h3>
+                        <hr>
+                        World Population<br>
+                        <span class="progress-counter" id="population-count-1">?</span><br>
+                        
                     </div>
                     <div class="cell medium-3 callout">
-                        <span class="large-text">With Christ</span><br><span class="progress-counter">3,743,697,839</span><br>
-                        <span class="large-text">Without Christ</span><br><span class="progress-counter">5,743,697,839</span><br>
+                        <h3>Today</h3>
+                        <hr>
+                        Births<br><span class="progress-counter" id="births-today-count-1">?</span><br>
+                        Deaths<br><span class="progress-counter" id="deaths-today-count-1">?</span><br>
+                        Population Growth<br><span class="progress-counter" id="population-growth-today-count-1">?</span><br>
+                        Christless Deaths<br><span class="progress-counter" id="christless-deaths-today-count-1">?</span><br>
+
                     </div>
-                    <div class="cell medium-3 callout"><span class="large-text">Trainings</span><br><br>Needed<br><span class="progress-counter">1,548,739</span><br>Reported<br><span class="progress-counter">0</span></div>
-                    <div class="cell medium-3 callout"><span class="large-text">New Churches</span><br><br>Needed<br><span class="progress-counter">3,097,479</span><br>Reported<br><span class="progress-counter">0</span></div>
+                    <div class="cell medium-3 callout">
+                        <h3>Trainings</h3>
+                        <hr>
+                        Needed<br>
+                        <span class="progress-counter" id="trainings-needed-count-1">?</span><br>
+                        Reported<br>
+                        <span class="progress-counter" id="trainings-reported-count-1">0</span>
+                    </div>
+                    <div class="cell medium-3 callout">
+                        <h3>New Churches</h3>
+                        <hr>
+                        Needed<br>
+                        <span class="progress-counter" id="churches-needed-count-1">?</span><br>
+                        Reported<br>
+                        <span class="progress-counter" id="churches-reported-count-1">0</span>
+                    </div>
                 </div>
 
             </div>

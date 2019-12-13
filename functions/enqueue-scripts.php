@@ -120,7 +120,7 @@ function site_scripts() {
         );
     }
 
-    if ( 'template-home.php' === basename( get_page_template() ) ) {
+    if ( 'template-home.php' === basename( get_page_template() ) || 'template-progress.php' === basename( get_page_template() ) ) {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
 

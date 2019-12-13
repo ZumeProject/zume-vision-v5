@@ -19,12 +19,12 @@ jQuery(document).ready(function($){
   }, stats.counter[1].deaths_interval);
 
   // deaths without Christ
-  let dwc = $('#deaths-without-christ-today-count-1')
-  dwc.html(stats.counter[1].deaths_without_christ_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  let dwc = $('#christless-deaths-today-count-1')
+  dwc.html(stats.counter[1].christless_deaths_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
   setInterval(function() {
-    stats.counter[1].deaths_without_christ_today++;
-    dwc.html(stats.counter[1].deaths_without_christ_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-  }, stats.counter[1].deaths_without_christ_interval);
+    stats.counter[1].christless_deaths_today++;
+    dwc.html(stats.counter[1].christless_deaths_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  }, stats.counter[1].christless_deaths_interval);
 
 
   // Trainings
@@ -43,6 +43,36 @@ jQuery(document).ready(function($){
     stats.counter[1].churches_needed++;
     churches.html(stats.counter[1].churches_needed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
   }, 7000);
+
+  // births today
+  let births_today = $('#births-today-count-1')
+  births_today.html(stats.counter[1].births_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  setInterval(function() { // births
+    stats.counter[1].births_today++;
+    births_today.html(stats.counter[1].births_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  }, stats.counter[1].births_interval);
+
+
+  // deaths today
+  let deaths_today = $('#deaths-today-count-1')
+  deaths_today.html(stats.counter[1].deaths_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  setInterval(function() { // deaths
+    stats.counter[1].deaths_today++;
+    deaths_today.html(stats.counter[1].deaths_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  }, stats.counter[1].deaths_interval);
+
+  // population growth today
+  let pop_today = $('#population-growth-today-count-1')
+  pop_today.html(stats.counter[1].calculated_population_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  setInterval(function() { // births
+    stats.counter[1].calculated_population_today++;
+    pop_today.html(stats.counter[1].calculated_population_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  }, stats.counter[1].births_interval);
+  setInterval(function() { // deaths
+    stats.counter[1].calculated_population_today--;
+    pop_today.html(stats.counter[1].calculated_population_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  }, stats.counter[1].deaths_interval);
+
 
   $('#churches-reported-count-1').html(stats.counter[1].churches_reported)
   $('#trainings-reported-count-1').html(stats.counter[1].trainings_reported)
