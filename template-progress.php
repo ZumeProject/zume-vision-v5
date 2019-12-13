@@ -77,7 +77,7 @@ get_header(); ?>
 
         <!-- Country List -->
         <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
-        
+
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
         <div class="grid-x white-section">
 
@@ -99,6 +99,9 @@ get_header(); ?>
                     <?php
                     if ( ! empty( $country_data ) ) {
                         foreach( $country_data as $country ) {
+                            if ( $country['population'] < 1 ) {
+                                continue;
+                            }
                             $trainings_needed = $country['population'] / 5000;
                             $churches_needed = $country['population'] / 5000 * 2;
                             ?>
