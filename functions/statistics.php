@@ -57,7 +57,6 @@ class Zume_Statistics
         $current_timestamp = time(); // unix time stamp for right now
         $births_per_second = 4.3;
         $deaths_per_second = 1.8;
-        $non_christian_population = 68.8;
         $christless_deaths_per_second = 1.2384; // 68.8 percent of the population is not Christian
         $births_millisecond_interval = 1000 / $births_per_second;
         $deaths_millisecond_interval = 1000 / $deaths_per_second;
@@ -76,7 +75,6 @@ class Zume_Statistics
         $christless_deaths_today = ceil( $christless_deaths_per_second * $seconds_since_midnight );
 
         $calculated_population_today = ceil( $births_today - $deaths_today );
-        $deaths_without_christ_today = ceil($calculated_population_today / $non_christian_population );
 
 
         return [

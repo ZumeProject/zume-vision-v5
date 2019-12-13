@@ -42,7 +42,7 @@ get_header(); ?>
                         <hr>
                         World Population<br>
                         <span class="progress-counter" id="population-count-1">?</span><br>
-                        
+
                     </div>
                     <div class="cell medium-3 callout">
                         <h3>Today</h3>

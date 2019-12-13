@@ -26,23 +26,13 @@ jQuery(document).ready(function($){
     dwc.html(stats.counter[1].christless_deaths_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
   }, stats.counter[1].christless_deaths_interval);
 
-
   // Trainings
   let trainings = $('#trainings-needed-count-1')
   trainings.html(stats.counter[1].trainings_needed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-  setInterval(function() {
-    stats.counter[1].trainings_needed++;
-    trainings.html(stats.counter[1].trainings_needed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-  }, 5000);
-
 
   // Churches
   let churches = $('#churches-needed-count-1')
   churches.html(stats.counter[1].churches_needed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-  setInterval(function() {
-    stats.counter[1].churches_needed++;
-    churches.html(stats.counter[1].churches_needed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
-  }, 7000);
 
   // births today
   let births_today = $('#births-today-count-1')
