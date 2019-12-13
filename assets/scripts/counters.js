@@ -26,6 +26,13 @@ jQuery(document).ready(function($){
     dwc.html(stats.counter[1].christless_deaths_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
   }, stats.counter[1].christless_deaths_interval);
 
+  let birth_unreached = $('#births-among-unreached-today-count-1')
+  birth_unreached.html(stats.counter[1].births_among_unreached_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  setInterval(function() {
+    stats.counter[1].births_among_unreached_today++;
+    birth_unreached.html(stats.counter[1].births_among_unreached_today.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
+  }, stats.counter[1].births_among_unreached_interval);
+
   // Trainings
   let trainings = $('#trainings-needed-count-1')
   trainings.html(stats.counter[1].trainings_needed.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))

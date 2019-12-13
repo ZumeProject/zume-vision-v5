@@ -37,21 +37,20 @@ get_header(); ?>
             <div class="cell small-10">
 
                 <div class="grid-x center">
-                    <div class="cell medium-3 callout">
-                        <h3>Current</h3>
+                    <div class="cell medium-3  callout">
+                        <h3>Facts</h3>
                         <hr>
                         World Population<br>
                         <span class="progress-counter" id="population-count-1">?</span><br>
-
+                        Births Today<br><span class="progress-counter" id="births-today-count-1">?</span><br>
+                        Deaths Today<br><span class="progress-counter" id="deaths-today-count-1">?</span><br>
+                        Population Growth Today<br><span class="progress-counter" id="population-growth-today-count-1">?</span><br>
                     </div>
                     <div class="cell medium-3 callout">
-                        <h3>Today</h3>
+                        <h3>Crisis</h3>
                         <hr>
-                        Births<br><span class="progress-counter" id="births-today-count-1">?</span><br>
-                        Deaths<br><span class="progress-counter" id="deaths-today-count-1">?</span><br>
-                        Population Growth<br><span class="progress-counter" id="population-growth-today-count-1">?</span><br>
-                        Christless Deaths<br><span class="progress-counter" id="christless-deaths-today-count-1">?</span><br>
-
+                        Christless Deaths Today<br><span class="progress-counter" id="christless-deaths-today-count-1">?</span><br>
+                        Born with No Access <br>to the Gospel Today<br><span class="progress-counter" id="births-among-unreached-today-count-1">?</span><br>(unreached people)<br>
                     </div>
                     <div class="cell medium-3 callout">
                         <h3>Trainings</h3>
@@ -78,9 +77,7 @@ get_header(); ?>
 
         <!-- Country List -->
         <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
-        <div class="grid-x grid-padding-x deep-blue-section">
-            <div class="cell center"></div>
-        </div>
+        
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
         <div class="grid-x white-section">
 
@@ -92,9 +89,10 @@ get_header(); ?>
                     <thead>
                     <tr>
                         <th>Location</th>
-                        <th>Population</th>
-                        <th>Trainings<br>Needed/Reported</th>
-                        <th>Churches<br>Needed/Reported</th>
+                        <th>Trainings Needed</th>
+                        <th>Trainings Reported</th>
+                        <th>Churches Needed</th>
+                        <th>Churches Reported</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -106,9 +104,11 @@ get_header(); ?>
                             ?>
                             <tr>
                                 <td><strong><?php echo esc_html( $country['name'] ) ?></strong></td>
-                                <td><?php echo esc_html( number_format($country['population'] ) ) ?></td>
-                                <td><?php echo esc_html( number_format(ceil( $trainings_needed ) ) ) ?> / 0</td>
-                                <td><?php echo esc_html( number_format( ceil( $churches_needed ) ) ) ?> / 0</td>
+
+                                <td><?php echo esc_html( number_format(ceil( $trainings_needed ) ) ) ?></td>
+                                <td>0</td>
+                                <td><?php echo esc_html( number_format( ceil( $churches_needed ) ) ) ?></td>
+                                <td>0</td>
                             </tr>
                             <?php
                         }

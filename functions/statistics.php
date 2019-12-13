@@ -58,9 +58,11 @@ class Zume_Statistics
         $births_per_second = 4.3;
         $deaths_per_second = 1.8;
         $christless_deaths_per_second = 1.2384; // 68.8 percent of the population is not Christian
+        $births_among_unreached_per_second = 1.8146; // 42.2 percent of the population is unreached
         $births_millisecond_interval = 1000 / $births_per_second;
         $deaths_millisecond_interval = 1000 / $deaths_per_second;
         $christless_deaths_millisecond_interval = 1000 / $christless_deaths_per_second;
+        $births_among_unreached_interval = 1000 / $births_among_unreached_per_second;
 
         $seconds_since_world_population_timestamp = $current_timestamp - $world_population_timestamp;
 
@@ -73,6 +75,7 @@ class Zume_Statistics
         $births_today = ceil( $births_per_second * $seconds_since_midnight );
         $deaths_today = ceil( $deaths_per_second * $seconds_since_midnight );
         $christless_deaths_today = ceil( $christless_deaths_per_second * $seconds_since_midnight );
+        $births_among_unreached_today = ceil( $births_among_unreached_per_second * $seconds_since_midnight );
 
         $calculated_population_today = ceil( $births_today - $deaths_today );
 
@@ -87,6 +90,8 @@ class Zume_Statistics
                     'deaths_today' => $deaths_today,
                     'christless_deaths_today' => $christless_deaths_today,
                     'christless_deaths_interval' => $christless_deaths_millisecond_interval,
+                    'births_among_unreached_today' => $births_among_unreached_today,
+                    'births_among_unreached_interval' => $births_among_unreached_interval,
                     'births_interval' => $births_millisecond_interval,
                     'deaths_interval' => $deaths_millisecond_interval,
                     'trainings_needed' => $trainings_per_population,
@@ -104,6 +109,7 @@ class Zume_Statistics
      * @link https://data.worldbank.org/indicator/SP.DYN.CBRT.IN (birth)
      * @link https://www.rapidtables.com/calc/time/seconds-in-year.html ( seconds in a year 31556952 )
      * @link https://www.census.gov/popclock/
+     * @link https://www.pioneerseurope.org/en/Stories/Unreached-Peoples unreached peoples 40%
      */
 
 }

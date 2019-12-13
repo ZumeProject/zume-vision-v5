@@ -65,7 +65,7 @@ $post = get_post();
                 <div class="medium-1 cell"></div>
 
                 <div class="cell center">
-                    <?php get_template_part('parts/content', 'joinus'); ?>
+                    <a href="/progress" class="button primary-button-hollow large">View Progress</a>
                 </div>
 
             </div>

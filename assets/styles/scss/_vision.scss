@@ -374,8 +374,8 @@ Timeline
 Progress
  */
 .progress-counter {
-    font-size: $jumbo-text;
-    font-weight: 100;
+    font-size: $x-large-text;
+    font-weight: 500;
 
     @media (max-width: $breakpoint-medium ) {
         font-size: $x-large-text;
