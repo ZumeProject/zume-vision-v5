@@ -96,7 +96,7 @@ class Zume_Statistics
                     'deaths_interval' => $deaths_millisecond_interval,
                     'trainings_needed' => $trainings_per_population,
                     'churches_needed' => $churches_per_population,
-                    'trainings_reported' => 222,
+                    'trainings_reported' => 343,
                     'churches_reported' => 8,
                 ]
             ]
