@@ -8,13 +8,13 @@ if (!defined('ABSPATH')) {
 } // Exit if accessed directly.
 
 /**
- * Zume_Playbook_Post_Type Post Type Class
- * All functionality pertaining to project update post types in Zume_Playbook_Post_Type.
+ * Zume_Reports_Post_Type Post Type Class
+ * All functionality pertaining to project update post types in Zume_Reports_Post_Type.
  *
  * @package  Disciple_Tools
  * @since    0.1.0
  */
-class Zume_Playbook_Post_Type
+class Zume_Reports_Post_Type
 {
     /**
      * The post type token.
@@ -62,7 +62,7 @@ class Zume_Playbook_Post_Type
     public $taxonomies;
 
     /**
-     * Zume_Playbook_Post_Type The single instance of Zume_Playbook_Post_Type.
+     * Zume_Reports_Post_Type The single instance of Zume_Reports_Post_Type.
      * @var     object
      * @access  private
      * @since   0.1
@@ -70,11 +70,11 @@ class Zume_Playbook_Post_Type
     private static $_instance = null;
 
     /**
-     * Main Zume_Playbook_Post_Type Instance
+     * Main Zume_Reports_Post_Type Instance
      *
-     * Ensures only one instance of Zume_Playbook_Post_Type is loaded or can be loaded.
+     * Ensures only one instance of Zume_Reports_Post_Type is loaded or can be loaded.
      *
-     * @return Zume_Playbook_Post_Type instance
+     * @return Zume_Reports_Post_Type instance
      * @since 0.1
      * @static
      */
@@ -550,4 +550,4 @@ class Zume_Playbook_Post_Type
     } // End flush_rewrite_rules()
 
 } // End Class
-Zume_Playbook_Post_Type::instance();
+Zume_Reports_Post_Type::instance();

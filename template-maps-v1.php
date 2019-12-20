@@ -17,9 +17,14 @@ get_header(); ?>
 
                     <div style="background:url('<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/spinner.svg') center center no-repeat;">
 
-                        <iframe src="https://global.zumeproject.com/wp-content/plugins/disciple-tools-public-map/map.php?token=876543456789" frameborder="0" marginheight="0" marginwidth="0" style="border: 0; scroll-behavior: unset; width:100%; max-width:1300px; height:650px">Loading...</iframe><br>
 
-                        <span style="color:gray;font-size:.8em;">map powered by <a href="https://disciple.tools">Disciple.Tools</a> - <a href="https://github.com/DiscipleTools/location-grid-project">Location Grid</a> version 1</span>
+                        <?php
+                        if ( have_posts() ) :
+                            while ( have_posts() ) : the_post();
+                                the_content();
+                            endwhile;
+                        endif;
+                        ?>
 
                     </div>
 
