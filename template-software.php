@@ -17,8 +17,8 @@ get_header(); ?>
                         <img src="<?php echo esc_url( zume_images_uri('vision'))?>dt-logo-white@2x.png" alt="disciple tools" style="max-width:400px"/>
                     </div>
                     <div class="cell">
-                        <h3 class="white">Collaboratively multiplying disciples and churches generationally</h3>
-                        <p class="large-text">A software for disciple making movements</p>
+                        <h3 class="white">A software for disciple making movements</h3>
+                        <p class="large-text">Partnering to power Zúme.Vision</p>
                         <p><a href="https://disciple.tools" class="button secondary-button large">Demo @ www.Disciple.Tools</a></p>
                         <div>
                             <img src="<?php echo esc_url( zume_images_uri('vision'))?>laptop5.png" alt="laptop" style="max-width:800px" />
@@ -135,6 +135,9 @@ get_header(); ?>
                 </nav>
             </div>
 
+            <div class="cell center">
+                <p class="large-text">Collaboratively multiplying disciples and churches generationally</p>
+            </div>
 
         </div>
         <div class="cell medium-1 large-2"></div>

@@ -10,29 +10,20 @@ Template Name: Training
 
         <div id="inner-content">
 
-            <!-- Deep Blue Ribbon-->
-            <div class="grid-x grid-margin-x grid-margin-y deep-blue-section" >
-                <div class="large-1 cell"></div>
-                <div class="cell large-10">
-                    <div class="grid-x center">
-                        <div class="cell">
-                            <h2>On-Demand Training</h2>
-                        </div>
-                    </div>
-                </div>
-                <div class="large-1 cell"></div>
-            </div>
-            <div class="blue-notch-wrapper"><div class="cell center blue-notch"></div></div><!--Blue notch -->
-            <!-- End Deep Blue Ribbon-->
 
             <!-- Challenge -->
             <div class="grid-x white-section">
                 <div class="medium-2 small-1 cell"></div>
                 <div class="medium-8 small-10 cell ">
+
                     <div class="grid-x">
                         <div class="cell center"><h2><?php esc_html_e( 'Zúme.Training', 'zume' ) ?></h2></div>
                         <div class="cell center">
-                            <h3><?php esc_html_e('Free, online, in-life training for small groups', 'zume') ?></h3></div>
+                            <h3><?php esc_html_e('Free, online, in-life training for small groups', 'zume') ?></h3>
+                        </div>
+                        <div class="cell center">
+                            <a href="https://zume.training" target="_blank" class="button large secondary-button" >Go to www.zume.training</a>
+                        </div>
                         <div class="cell center"><?php esc_html_e( 'Zúme uses an online training platform to equip participants in basic disciple-making and simple church planting multiplication principles, processes, and practices.', 'zume' ) ?></div>
                         <div class="cell center">
                             <div class="small-6 small-centered cell video-section">

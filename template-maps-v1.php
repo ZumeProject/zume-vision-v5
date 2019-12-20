@@ -15,9 +15,6 @@ get_header(); ?>
 
                 <div class="center">
 
-                    <div style="background:url('<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/spinner.svg') center center no-repeat;">
-
-
                         <?php
                         if ( have_posts() ) :
                             while ( have_posts() ) : the_post();
@@ -36,7 +33,7 @@ get_header(); ?>
 
             <div class="cell small-1"></div>
 
-            <?php get_template_part('parts/content', 'prayer-of-saturation'); ?>
+
 
         </div> <!-- end #inner-content -->
 

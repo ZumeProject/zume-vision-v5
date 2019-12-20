@@ -30,6 +30,15 @@ function zume_register_sidebars() {
         'before_title' => '<h4 class="widgettitle">',
         'after_title' => '</h4>',
     ));
+    register_sidebar(array(
+        'id' => 'report',
+        'name' => __( 'Report', 'zume' ),
+        'description' => __( 'Sidebar for reports', 'zume' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget' => '</div>',
+        'before_title' => '<h4 class="widgettitle">',
+        'after_title' => '</h4>',
+    ));
 
 //    register_sidebar(array(
 //        'id' => 'offcanvas',

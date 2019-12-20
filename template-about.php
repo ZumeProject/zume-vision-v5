@@ -11,27 +11,6 @@ Template Name: About
     <div id="inner-content grid-x grid-padding-x">
 
         <div id="main" class="cell padding-top-1" role="main">
-            <!-- Deep Blue Ribbon-->
-            <div class="grid-x grid-margin-x grid-margin-y deep-blue-section">
-                <div class="cell medium-3"></div>
-                <div class="cell medium-6">
-                    <div class="grid-x center">
-                        <div class="cell center"><h2>What does Zúme mean?</h2></div>
-                        <div class="cell content-large">
-                            <p>"Zúme" is the Greek word for “yeast” or “leaven”. </p>
-                            <p >In Matthew 13:33 and Luke 13:21 Jesus Christ is quoted as saying, “the kingdom of heaven
-                                is like a woman who took yeast and mixed it into a large amount of flour until it was
-                                all leavened”.</p>
-                        </div>
-                        <div class="cell">
-                            <img src="<?php echo esc_url( zume_images_uri('vision') . 'yeastwhite.svg' ) ?>" class="float-center image-width" />
-                        </div>
-                    </div>
-                </div>
-                <div class="cell medium-3"></div>
-            </div>
-            <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
-            <!-- End Deep Blue Ribbon-->
 
             <!-- White Section-->
             <div class="grid-x grid-margin-x grid-margin-y vertical-padding white-section">
@@ -71,6 +50,7 @@ Template Name: About
             </div>
             <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
             <!-- End White Section-->
+
 
 
 

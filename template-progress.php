@@ -21,62 +21,67 @@ get_header(); ?>
     <div id="main" class="cell" role="main">
 
         <!-- Progress Section-->
-        <div class="grid-x grid-padding-x deep-blue-section">
-            <div class="cell center padding-top-1">
+        <div class="grid-x grid-padding-x deep-blue-section padding-bottom-0">
+            <div class="cell center">
                 <h2>Progress</h2>
-                <h3>Our progress towards the goal</h3>
             </div>
         </div>
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 
         <!-- Hero Stats-->
-        <div class="grid-x white-section">
+        <div class="grid-x grid-padding-x white-section">
+<!--            <div class="cell small-1"></div>-->
 
-            <div class="cell small-1"></div>
-
-            <div class="cell small-10">
+            <div class="cell small-12">
 
                 <div class="grid-x center">
-                    <div class="cell medium-3  callout">
+                    <div class="cell small-1"></div>
+                    <div class="cell medium-2">
                         <h3>Facts</h3>
                         <hr>
-                        World Population<br>
-                        <span class="progress-counter" id="population-count-1">?</span><br>
-                        Births Today<br><span class="progress-counter" id="births-today-count-1">?</span><br>
-                        Deaths Today<br><span class="progress-counter" id="deaths-today-count-1">?</span><br>
-                        Population Growth Today<br><span class="progress-counter" id="population-growth-today-count-1">?</span><br>
+                        <p>World population<br><span class="progress-counter" id="population-count-1">?</span><br></p>
+                        <p>Births today<br><span class="progress-counter" id="births-today-count-1">?</span><br></p>
+                        <p>Deaths today<br><span class="progress-counter" id="deaths-today-count-1">?</span><br></p>
+                        <p>Population growth today<br><span class="progress-counter"
+                                                            id="population-growth-today-count-1">?</span><br></p>
                     </div>
-                    <div class="cell medium-3 callout">
+                    <div class="cell medium-2">
                         <h3>Crisis</h3>
                         <hr>
-                        Christless Deaths Today<br><span class="progress-counter" id="christless-deaths-today-count-1">?</span><br>
-                        Born with No Access <br>to the Gospel Today<br><span class="progress-counter" id="births-among-unreached-today-count-1">?</span><br>(unreached people)<br>
+                        <p>Christless deaths today<br><span class="progress-counter" id="christless-deaths-today-count-1">?</span></p>
+                        <p>Born with no access <br>to the gospel today<br><span class="progress-counter" id="births-among-unreached-today-count-1">?</span></p>
                     </div>
-                    <div class="cell medium-3 callout">
+                    <div class="cell medium-2">
+                        <img src="<?php echo esc_url( zume_images_uri() )?>vision/jesus-globe.png" alt="welcome-graphic" />
+                    </div>
+                    <div class="cell medium-2">
                         <h3>Trainings</h3>
                         <hr>
-                        Needed<br>
-                        <span class="progress-counter" id="trainings-needed-count-1">?</span><br>
-                        Reported<br>
-                        <span class="progress-counter" id="trainings-reported-count-1">0</span>
+                        <p>Needed<br><span class="progress-counter" id="trainings-needed-count-1">?</span><br></p>
+                        <p>Reported<br><span class="progress-counter" id="trainings-reported-count-1">?</span></p>
                     </div>
-                    <div class="cell medium-3 callout">
+                    <div class="cell medium-2">
                         <h3>New Churches</h3>
                         <hr>
-                        Needed<br>
-                        <span class="progress-counter" id="churches-needed-count-1">?</span><br>
-                        Reported<br>
-                        <span class="progress-counter" id="churches-reported-count-1">0</span>
+                        <p>Needed<br>
+                            <span class="progress-counter" id="churches-needed-count-1">?</span><br></p>
+                        <p>Reported<br>
+                            <span class="progress-counter" id="churches-reported-count-1">0</span></p>
                     </div>
+                    <div class="cell small-1"></div>
                 </div>
 
             </div>
 
-            <div class="cell small-1"></div>
+<!--            <div class="cell small-1"></div>-->
         </div>
 
         <!-- Country List -->
-        <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
+        <div class="grid-x grid-padding-x deep-blue-section padding-bottom-0">
+            <div class="cell center">
+                <h2>By Country</h2>
+            </div>
+        </div>
 
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
         <div class="grid-x white-section">
@@ -84,7 +89,7 @@ get_header(); ?>
             <div class="cell small-1"></div>
 
             <div class="cell small-10">
-                <h2 class="center">By Country</h2>
+
                 <table class="hover table-scroll display" id="country-list-table">
                     <thead>
                     <tr>

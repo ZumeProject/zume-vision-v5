@@ -49,6 +49,7 @@ require_once( get_template_directory().'/functions/urls.php' );
 
 
 require_once( get_template_directory().'/functions/playbook-post-type.php' );
+require_once( get_template_directory().'/functions/reports-post-type.php' );
 require_once( get_template_directory().'/functions/population-counters.php' );
 
 // Integrations
