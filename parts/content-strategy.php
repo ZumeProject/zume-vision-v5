@@ -82,9 +82,9 @@
         <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>Disciple multiplication ideas are scriptural but often missed. A simple but paradigm-shifting training in multiplication can unlock even established believers from unfruitful lives.</p>
+                <p>Disciple multiplication ideas are scriptural, but often missed. A simple training in multiplication principles can unlock even established believers from unfruitful lives.</p>
                 <p>Live trainings are often best. But the people who need trained, so vastly extends beyond the live trainings available.
-                    <a href="/training">Zume.Training</a> is an online, in-life, on-demand training for groups to get paradigm shifting multiplication training.</p>
+                    <a href="/training">Zume.Training</a> is an online, in-life, on-demand training for groups to get paradigm-shifting multiplication training.</p>
                 <p>We suspect, especially in places where the church has been, we will need a training movement before we see a disciple making movement.</p>
             </div>
             <div class="cell medium-3"></div>
@@ -120,8 +120,8 @@
         <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>Many churches in one place is a blessing, but many churches in many places is a greater blessing. And churches moving into places where there has never been a church one of the greatest blessings</p>
-                <p>As the saying goes, "Plan your trust, don't trust your plan". We know it is the Father's heart to have families of believers in every tounge, tribe, and nation. He has also invited us to be his co-workers in reconciliations. So these goals of 1 training and 2 churches come from our trust in the one who can do it.,</p>
+                <p>Many churches in one place is a blessing, but many churches in many places is a greater blessing. And churches moving into places where there has never been a church one of the greatest blessings.</p>
+                <p>As the saying goes, "Plan your trust, don't trust your plan". We know it is the Father's heart to have families of believers in every tongue, tribe, and nation. He has also invited us to be his co-workers in reconciliation. So these goals of 1 training and 2 churches come from our trust in the one who can do it.,</p>
 
             </div>
             <div class="cell medium-3"></div>
