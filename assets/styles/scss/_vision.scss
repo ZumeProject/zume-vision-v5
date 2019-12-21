@@ -25,7 +25,10 @@ body {
     font-size: $x-large-text;
 }
 
-
+.narrow-width {
+    max-width: 780px;
+    margin: 0 auto;
+}
 
 /***********
 Home
@@ -172,6 +175,11 @@ Layout
 }
 
 .highlight-background:hover {
+    background-color: #f1faff;
+}
+
+.highlight-background-hover {
+    font-weight: 900 !important;
     background-color: #f1faff;
 }
 
