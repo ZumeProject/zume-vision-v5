@@ -120,7 +120,7 @@
         <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>We care about equality. Many churches in one place is a blessing, but many churches in many places is a greater blessing. And churches moving into places where there has never been a church one of the greatest blessings</p>
+                <p>Many churches in one place is a blessing, but many churches in many places is a greater blessing. And churches moving into places where there has never been a church one of the greatest blessings</p>
                 <p>As the saying goes, "Plan your trust, don't trust your plan". We know it is the Father's heart to have families of believers in every tounge, tribe, and nation. He has also invited us to be his co-workers in reconciliations. So these goals of 1 training and 2 churches come from our trust in the one who can do it.,</p>
 
             </div>
