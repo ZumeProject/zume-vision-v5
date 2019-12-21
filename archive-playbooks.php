@@ -17,9 +17,9 @@ get_header(); ?>
 
             <div class="grid-x grid-margin-x">
 
-                <div class="cell medium-8">
+                <div class="cell medium-8 no-underline">
 
-                    <header><h2 class="center">Playbooks</h2></header>
+                    <header><h2 class="center padding-bottom-2 border-bottom">Playbooks</h2></header>
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

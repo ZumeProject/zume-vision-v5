@@ -30,6 +30,7 @@ body {
     margin: 0 auto;
 }
 
+
 /***********
 Home
 ***********/
@@ -388,4 +389,8 @@ Progress
     @media (max-width: $breakpoint-medium ) {
         font-size: $x-large-text;
     }
+}
+.underline {
+    text-decoration: underline solid !important;
+
 }

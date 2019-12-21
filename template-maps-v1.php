@@ -9,9 +9,9 @@ get_header(); ?>
 
         <div class="inner-content grid-x grid-margin-x grid-padding-x">
 
-            <div class="cell small-1"></div>
+            <div class="cell medium-1"></div>
 
-            <main class="main small-10 cell" role="main">
+            <main class="main medium-10 cell" role="main">
 
                 <div class="center">
 
@@ -31,7 +31,7 @@ get_header(); ?>
 
             </main> <!-- end #main -->
 
-            <div class="cell small-1"></div>
+            <div class="cell medium-1"></div>
 
 
 

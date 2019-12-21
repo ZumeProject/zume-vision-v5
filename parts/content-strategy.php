@@ -42,13 +42,13 @@
 <div class="grid-x white-section">
     <div class="cell center">
         <h2>Extraordinary Prayer</h2>
-        <h3>We know that extraordinary prayer has proceeded every disciple making movement in history.</h3>
+        <h3>Extraordinary prayer has proceeded every <a href="/articles/what-is-a-disciple-making-movement" class="underline">disciple making movement</a> in history.</h3>
         <img src="<?php echo esc_url(zume_images_uri( 'zume_images') ) ?>V1.2/V1.2-A/worshiping.svg" alt="Extraordinary Prayer" />
 
         <div class="grid-x padding-bottom-1">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>You have not because you ask not (James). If we want to see movement, we need to ask for it.</p>
+                <p>You have not because you ask not (James 4:2). If we want to see movement, we need to ask for it.</p>
             </div>
             <div class="cell medium-3"></div>
         </div>
@@ -82,7 +82,7 @@
         <div class="grid-x padding-bottom-2">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>Disciple multiplication ideas are scriptural but often missed. A simple but paradigm shifting training in multiplication can unlock even established believers from unfruitful lives.</p>
+                <p>Disciple multiplication ideas are scriptural but often missed. A simple but paradigm-shifting training in multiplication can unlock even established believers from unfruitful lives.</p>
                 <p>Live trainings are often best. But the people who need trained, so vastly extends beyond the live trainings available.
                     <a href="/training">Zume.Training</a> is an online, in-life, on-demand training for groups to get paradigm shifting multiplication training.</p>
                 <p>We suspect, especially in places where the church has been, we will need a training movement before we see a disciple making movement.</p>

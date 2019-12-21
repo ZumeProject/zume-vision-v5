@@ -17,9 +17,9 @@ get_header(); ?>
 
             <div class="grid-x grid-margin-x">
 
-                <div class="cell medium-8">
+                <div class="cell medium-8 no-underline">
 
-                    <header><h2 class="center padding-bottom-2 border-bottom">Reports</h2></header>
+                    <header><h2 class="center padding-bottom-2 border-bottom">Articles</h2></header>
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -39,7 +39,7 @@ get_header(); ?>
 
                 <div class="cell medium-4">
 
-                    <?php get_sidebar( 'reports'); ?>
+                    <?php get_sidebar( 'articles'); ?>
 
                 </div>
 
