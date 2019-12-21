@@ -1,6 +1,6 @@
 <?php
 /**
-Template Name: Narrow Width (No Sidebar)
+ * Template Name: Narrow Width (No Sidebar)
  */
 
 get_header(); ?>
