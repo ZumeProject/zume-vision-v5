@@ -75,7 +75,7 @@ get_header(); ?>
 
 <!--            <div class="cell small-1"></div>-->
         </div>
-
+<?php if ( false ) : ?>
         <!-- Country List -->
         <div class="grid-x grid-padding-x deep-blue-section padding-bottom-0">
             <div class="cell center">
@@ -146,6 +146,8 @@ get_header(); ?>
                 }
             })
         </script>
+
+<?php endif; ?>
 
     </div> <!-- end #main -->
 
