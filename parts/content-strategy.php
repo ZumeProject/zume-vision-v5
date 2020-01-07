@@ -42,7 +42,7 @@
 <div class="grid-x white-section">
     <div class="cell center">
         <h2>Extraordinary Prayer</h2>
-        <h3>Extraordinary prayer has proceeded every <a href="/articles/what-is-a-disciple-making-movement" class="underline">disciple making movement</a> in history.</h3>
+        <h3>Extraordinary prayer has proceeded every disciple making movement in history.</h3>
         <img src="<?php echo esc_url(zume_images_uri( 'zume_images') ) ?>V1.2/V1.2-A/worshiping.svg" alt="Extraordinary Prayer" />
 
         <div class="grid-x padding-bottom-1">
