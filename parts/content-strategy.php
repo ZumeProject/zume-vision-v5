@@ -16,10 +16,10 @@
             <div class="cell medium-6">
                 <p>Jesus is our measurement.</p>
                 <p>Not you. Not me. Not history. Not ideals. Not rituals. Jesus and
-                    Jesus alone.</p>
+                    Jesus alone is our measurement.</p>
                 <p>How he lived. What he said. How he loved. Everything. In this, we aspire to be marked by immediate, radical, costly obedience to Jesus, like the heroes of the faith that came before us.</p>
-                <p>Jesus is both the measurement and His Spirit is our hope to become like Him. And the day we see
-                    kingdom fruit surrounding our lives and the loves of our friends, it will be because his Spirit has
+                <p>Jesus is both our measurement and His Spirit is our hope to become like Him. And the day we see
+                    kingdom fruit surrounding our lives and the lives of our friends, family, and cities ... it will be because his Spirit has
                     moved through us.</p>
             </div>
             <div class="cell medium-3"></div>
