@@ -180,7 +180,7 @@ Layout
 }
 
 .highlight-background-hover {
-    font-weight: 900 !important;
+    font-weight: 700 !important;
     background-color: #f1faff;
 }
 
@@ -392,5 +392,81 @@ Progress
 }
 .underline {
     text-decoration: underline solid !important;
+
+}
+
+
+/*********************/
+// Posts
+/*********************/
+#post-nav {
+    padding: $small-text $small-text 0;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .breadcrumb {
+        color: $black;
+
+        a {
+            color: $primary-color;
+        }
+    }
+    .breadcrumb-mobile {
+        text-align: center;
+
+        a {
+            color: $primary-color;
+            text-decoration: underline;
+        }
+    }
+}
+#post-main {
+    padding: $medium-text;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    h1 {
+        font-size: $x-large-text;
+        font-weight:700;
+        text-align: left;
+        padding: $medium-text 0;
+        color: $primary-color;
+    }
+    h2 {
+
+    }
+    h3 {
+
+    }
+    h4 {
+
+    }
+
+    .blog {
+        max-width: 600px;
+
+        article {
+
+            header {
+
+                .hero-image {
+                    width:600px;
+                    height: 300px;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    border: 1px solid $medium-gray;
+
+                    @media (max-width: $breakpoint-medium ) {
+                        width:100%;
+                        height: 150px;
+                    }
+                }
+            }
+        }
+    }
+
+    .sidebar {
+
+    }
 
 }

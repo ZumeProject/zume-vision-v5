@@ -46,30 +46,39 @@ function site_scripts() {
 
     wp_enqueue_style( 'foundations-icons', get_template_directory_uri() .'/assets/styles/foundation-icons/foundation-icons.css', array(), '3' );
 
-    wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', ['jquery', 'lodash'], '1.2.0' );
-    wp_enqueue_script( 'rest-api' );
-    wp_localize_script(
-        "rest-api", "restAPI", array(
-            'root' => esc_url_raw( rest_url() ),
-            'nonce' => wp_create_nonce( 'wp_rest' ),
-            'current_user_login' => wp_get_current_user()->user_login,
-            'current_user_id' => get_current_user_id(),
-            'theme_uri' => get_stylesheet_directory_uri(),
-            'transfer_token' => Site_Link_System::generate_token(),
-        )
-    );
 
-    wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js', ['jquery'], '1.2.0' );
-    wp_enqueue_script( 'mapbox' );
+    /**
+     * All Data Driven Pages
+     */
+    if ( 'template-maps' === substr( basename( get_page_template() ), 0, 13 )
+        || 'template-progress.php' === basename( get_page_template() )
+        || 'template-statistics.php' === basename( get_page_template() )
+    ) {
+        wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', ['jquery', 'lodash'], '1.2.0' );
+        wp_enqueue_script( 'rest-api' );
+        wp_localize_script(
+            "rest-api", "restAPI", array(
+                'root' => esc_url_raw( rest_url() ),
+                'nonce' => wp_create_nonce( 'wp_rest' ),
+                'current_user_login' => wp_get_current_user()->user_login,
+                'current_user_id' => get_current_user_id(),
+                'theme_uri' => get_stylesheet_directory_uri(),
+                'transfer_token' => Site_Link_System::generate_token(),
+            )
+        );
 
-    wp_enqueue_style( 'mapbox-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css', array(), '3' );
-
-
-
-    if ( 'template-maps' === substr( basename( get_page_template() ), 0, 13 ) ) {
+        wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js', ['jquery'], '1.2.0' );
+        wp_enqueue_script( 'mapbox' );
+        wp_enqueue_style( 'mapbox-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css', array(), '3' );
 
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
+    }
+
+    /**
+     * Maps Page
+     */
+    if ( 'template-maps' === substr( basename( get_page_template() ), 0, 13 ) ) {
 
         wp_enqueue_script( 'zume', get_template_directory_uri() . '/assets/scripts/maps.js', array( 'jquery' ), 1.1, true );
         wp_localize_script(
@@ -84,7 +93,10 @@ function site_scripts() {
         );
     }
 
-
+    /**
+     * Progress Page
+     * @todo is this still needed?
+     */
     if ( 'template-progress.php' === basename( get_page_template() ) ) {
         wp_register_style('datatable-css', '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', false, '1.10');
         wp_enqueue_style('datatable-css');
@@ -92,9 +104,11 @@ function site_scripts() {
         wp_enqueue_script( 'datatable' );
     }
 
+    /**
+     * Statistics Page
+     */
     if ( 'template-statistics.php' === basename( get_page_template() ) ) {
-        wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
-        wp_enqueue_script( 'lodash' );
+
 
         wp_enqueue_script( 'statistics', get_template_directory_uri() . '/assets/scripts/statistics.js', array( 'jquery' ), 1.1, true );
         wp_localize_script(
@@ -120,6 +134,9 @@ function site_scripts() {
         );
     }
 
+    /**
+     * Home Page
+     */
     if ( 'template-home.php' === basename( get_page_template() ) || 'template-progress.php' === basename( get_page_template() ) ) {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
@@ -138,6 +155,9 @@ function site_scripts() {
 
     }
 
+    /**
+     * Profile Page
+     */
     if ( 'template-profile.php' === basename( get_page_template() ) ) {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
