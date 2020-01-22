@@ -1,5 +1,5 @@
 <div id="search-2" class="widget widget_search">
-    <form role="search" method="get" class="search-form" action="https://zume-vision/">
+    <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url() ) ?>">
         <div class="input-group large">
             <input type="search" class="input-group-field search-field" placeholder="Search..." value="" name="s" title="Search for:">
             <div class="input-group-button">

@@ -39,7 +39,7 @@ get_header(); ?>
 
                 <div class="cell medium-4">
 
-                    <?php get_sidebar( 'reports'); ?>
+                    <?php get_sidebar( 'reports-archive'); ?>
 
                 </div>
 

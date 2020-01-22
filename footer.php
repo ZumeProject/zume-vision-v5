@@ -18,6 +18,21 @@
 
                     </div> <!-- end #inner-footer -->
 
+                    <div class="reveal" id="search-box" data-reveal>
+                        <h1>Search</h1>
+                        <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url() ) ?>">
+                            <div class="input-group large">
+                                <input type="search" class="input-group-field search-field" placeholder="Search..." value="" name="s" title="Search for:">
+                                <div class="input-group-button">
+                                    <input type="submit" class="search-submit button" value="Search">
+                                </div>
+                            </div>
+                            <button class="close-button" data-close aria-label="Close modal" type="button">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </form>
+                    </div>
+
                 </footer> <!-- end .footer -->
 
             </div>  <!-- end .off-canvas-content -->

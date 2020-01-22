@@ -6,8 +6,9 @@
 
 <div id="report" class="sidebar cell" role="complementary">
 
-    <?php get_template_part( 'parts/widget', 'sidebar-recent-posts' ); ?>
-    <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
+    <img src="<?php echo esc_url( zume_images_uri('vision') ) ?>map-with-jesus.jpg" alt="map with jesus" />
+    <hr />
+
 
     <!-- subscribe section-->
     <?php get_template_part( 'parts/widget', 'newsletter-subscribe' ); ?>
