@@ -4,7 +4,8 @@ register_nav_menus(
     array(
         'main-nav' => __( 'The Main Menu', 'zume' ),   // Main nav in header
         'offcanvas-nav' => __( 'The Off-Canvas Menu', 'zume' ),
-        'footer-links' => __( 'Footer Links', 'zume' ) // Secondary nav in footer
+        'footer-links' => __( 'Footer Links', 'zume' ), // Secondary nav in footer
+        'playbooks' => __( 'Playbooks', 'zume' ) // Secondary nav in footer
     )
 );
 
