@@ -5,43 +5,47 @@
 
 get_header(); ?>
 
-<div class="content">
+<!-- Bread Crumbs-->
+<nav id="post-nav">
+    <div class="breadcrumb hide-for-small-only">
+        <a href="<?php echo esc_url( home_url() ); ?>" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;
+        <a href="<?php echo esc_url( home_url() ); ?>/reports">Playbooks</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;
+        <?php echo esc_html( the_title() ) ?>
+    </div>
+    <div class="breadcrumb-mobile show-for-small-only"><a href="<?php echo esc_url( home_url() ); ?>/reports">Playbooks</a></div>
+</nav>
 
-    <div class="inner-content grid-x grid-margin-x grid-padding-x">
+<!-- Main -->
+<main role="main" id="post-main">
 
-        <div class="cell medium-1"></div>
+    <div class="grid-x grid-margin-x">
 
-        <main class="main small-12 medium-10 large-10 cell" role="main">
+        <div class="blog cell large-8">
 
-            <div class="grid-x grid-margin-x">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <div class="cell medium-8">
+                <?php get_template_part( 'parts/loop', 'playbook' ); ?>
 
+            <?php endwhile; else : ?>
 
-                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php get_template_part( 'parts/content', 'missing' ); ?>
 
-                        <?php get_template_part( 'parts/loop', 'singleplaybook' ); ?>
+            <?php endif; ?>
 
-                    <?php endwhile; else : ?>
+            <?php get_template_part( 'parts/content', 'training-ad-horizontal' ); ?>
 
-                        <?php get_template_part( 'parts/content', 'missing' ); ?>
+        </div>
 
-                    <?php endif; ?>
+        <div class="sidebar cell large-4">
 
-                </div>
+            <?php get_sidebar('playbook'); ?>
 
-                <div class="cell medium-4">
+        </div>
 
-                    <?php get_sidebar('playbook'); ?>
+    </div>
 
-                </div>
+</main> <!-- end #main -->
 
-        </main> <!-- end #main -->
-
-        <div class="cell medium-1"></div>
-
-    </div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
 
 <?php get_footer(); ?>
+

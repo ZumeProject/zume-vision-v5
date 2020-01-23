@@ -6,6 +6,8 @@
 
 <div id="report" class="sidebar cell" role="complementary">
 
+    <hr class="show-for-small-only" />
+
     <img src="<?php echo esc_url( zume_images_uri('vision') ) ?>map-with-jesus.jpg" alt="map with jesus" />
     <hr />
 

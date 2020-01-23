@@ -10,6 +10,7 @@ register_nav_menus(
 
 // The Top Menu
 function zume_top_nav() {
+
     wp_nav_menu(array(
         'container' => false,                           // Remove nav container
         'menu_class' => 'vertical medium-horizontal menu float-right',       // Adding custom nav class
@@ -31,6 +32,8 @@ class Zume_Topbar_Menu_Walker extends Walker_Nav_Menu {
 
 // The Off Canvas Menu
 function zume_off_canvas_nav() {
+    echo '<button class="button expanded primary-button" style="font-weight: bold; cursor:pointer;" data-open="search-box"><i class="fi-magnifying-glass"></i> Search</button>';
+
     wp_nav_menu(array(
         'container' => false,                           // Remove nav container
         'menu_class' => 'vertical menu top-padding',       // Adding custom nav class

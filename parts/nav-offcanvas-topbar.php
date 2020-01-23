@@ -19,7 +19,9 @@
         </div>
     </div>
 
-    <div class="cell large-2 hide-for-small show-for-large"><a href="javascript:void(0)" data-open="search-box" rel="nofollow"><i class="fi-magnifying-glass large-text float-right"></i></a></div>
+    <div class="cell large-2 hide-for-small show-for-large">
+        <a href="javascript:void(0)" data-open="search-box" rel="nofollow"><i class="fi-magnifying-glass large-text float-right"></i></a>
+    </div>
 
     <div class="cell small-3 show-for-small hide-for-large" id="top-mobile-menu-div">
         <div class="mobile-menu">

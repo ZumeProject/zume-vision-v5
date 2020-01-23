@@ -6,6 +6,8 @@
 
 <div id="report" class="sidebar cell" role="complementary">
 
+    <hr class="show-for-small-only" />
+
     <?php get_template_part( 'parts/widget', 'sidebar-recent-reports' ); ?>
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
 

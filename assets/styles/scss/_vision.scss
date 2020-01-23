@@ -431,6 +431,10 @@ Progress
         text-align: left;
         padding: $medium-text 0;
         color: $primary-color;
+
+        @media (max-width: $breakpoint-medium ) {
+            font-size: 2.2rem;
+        }
     }
     h2 {
         font-size: 2.2rem;
@@ -470,6 +474,19 @@ Progress
             }
 
         }
+    }
+
+    figure.wp-block-pullquote {
+        border-top: 1px solid $light-gray;
+        border-bottom: 1px solid $light-gray;
+
+        blockquote {
+            border-left: 0 solid $white !important;
+        }
+    }
+
+    blockquote.wp-block-quote {
+        font-style: italic;
     }
 
     .sidebar {
