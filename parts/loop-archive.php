@@ -25,8 +25,7 @@ $post = get_post();
             </section> <!-- end article section -->
 
             <footer class="article-footer padding-top-1">
-                <p class="tags small-text">
-                    <?php the_tags( '<span class="tags-title">' . __( 'Tags:', 'zume' ) . '</span> ', ', ', '' ); ?> | <?php echo get_the_date() ?></p>
+                <p class="tags small-text"><?php echo get_the_date() ?></p>
             </footer> <!-- end article footer -->
         </div>
     </div>

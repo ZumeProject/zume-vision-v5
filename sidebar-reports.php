@@ -6,7 +6,7 @@
 
 <div id="report" class="sidebar cell" role="complementary">
 
-    <?php get_template_part( 'parts/widget', 'sidebar-recent-posts' ); ?>
+    <?php get_template_part( 'parts/widget', 'sidebar-recent-reports' ); ?>
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
 
     <!-- subscribe section-->

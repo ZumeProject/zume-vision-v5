@@ -137,7 +137,7 @@ function site_scripts() {
     /**
      * Home Page
      */
-    if ( 'template-home.php' === basename( get_page_template() ) || 'template-progress.php' === basename( get_page_template() ) || is_single() ) {
+    if ( 'template-home.php' === basename( get_page_template() ) || 'template-progress.php' === basename( get_page_template() ) || is_single() || is_archive() ) {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
 
