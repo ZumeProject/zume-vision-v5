@@ -201,6 +201,20 @@ class Zume_Articles_Post_Type
             'update_count_callback' => '_update_post_term_count',
             'query_var' => true,
             'rewrite' => array( 'slug' => 'article-tag' ),
+            'show_in_rest' =>true,
+        ));
+        register_taxonomy('article_categories','articles',array(
+            'hierarchical' => true,
+            'labels' => [
+                'name' => _x( 'Category', 'taxonomy general name' ),
+                'singular_name' => _x( 'Categories', 'taxonomy singular name' ),
+                'menu_name' => __( 'Categories' ),
+            ],
+            'show_ui' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'query_var' => true,
+            'rewrite' => array( 'slug' => 'article-categories' ),
+            'show_in_rest' =>true,
         ));
     }
 

@@ -173,6 +173,7 @@ class Zume_Playbook_Post_Type
     } // End register_post_type()
 
     //create two taxonomies, genres and tags for the post type "tag"
+    //create two taxonomies, genres and tags for the post type "tag"
     public function create_tag_taxonomies()
     {
         // Add new taxonomy, NOT hierarchical (like tags)
@@ -201,6 +202,20 @@ class Zume_Playbook_Post_Type
             'update_count_callback' => '_update_post_term_count',
             'query_var' => true,
             'rewrite' => array( 'slug' => 'playbook-tag' ),
+            'show_in_rest' =>true,
+        ));
+        register_taxonomy('playbook_categories','playbooks',array(
+            'hierarchical' => true,
+            'labels' => [
+                'name' => _x( 'Category', 'taxonomy general name' ),
+                'singular_name' => _x( 'Categories', 'taxonomy singular name' ),
+                'menu_name' => __( 'Categories' ),
+            ],
+            'show_ui' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'query_var' => true,
+            'rewrite' => array( 'slug' => 'playbook-categories' ),
+            'show_in_rest' =>true,
         ));
     }
 
