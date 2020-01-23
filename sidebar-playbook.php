@@ -8,7 +8,14 @@
 
     <hr class="show-for-small-only" />
 
-    
+    <?php get_template_part( 'parts/widget', 'sidebar-recent-reports' ); ?>
 
+    <hr>
+
+    <?php if ( is_active_sidebar( 'playbook' ) ) : ?>
+
+        <?php dynamic_sidebar( 'playbook' ); ?>
+
+    <?php endif; ?>
 
 </div>
