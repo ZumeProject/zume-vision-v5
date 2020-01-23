@@ -453,6 +453,11 @@ Progress
         ul, ol {
             padding-left: $jumbo-text;
             padding-right: $jumbo-text;
+
+            @media (max-width: $breakpoint-medium ) {
+                padding-left: $large-text;
+                padding-right: $large-text;
+            }
         }
 
         article {
