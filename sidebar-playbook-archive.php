@@ -8,8 +8,8 @@
 
     <hr class="show-for-small-only" />
 
-    <h3>What is a play?</h3>
-    <p>A play is a movement strategy that has worked for others. You can take any of these, tweak them, and run them yourself.</p>
+    <h3>What is the playbook?</h3>
+    <p>The playbook is a collection of action plans for engaging the Zúme vision in your community. Each action plan we call a play. You can take any of these plays and tweak them for your context and then run them yourself.</p>
 
     <hr>
 
