@@ -9,7 +9,7 @@
     <hr class="show-for-small-only" />
 
     <!-- Description -->
-    <div class="padding-horizontal-1">
+    <div class="padding-horizontal-1 padding-top-1">
         <h3>What are these reports?</h3>
         <p>Progress can be reported through <a href="<?php echo get_post_permalink( 14 )?>">maps</a> and <a href="<?php echo get_post_permalink( 77 )?>">statistics</a>, but also through stories of kingdom wins and faith steps taken. These reports are the stories of the Zúme vision unfolding.</p>
     </div>

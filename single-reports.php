@@ -32,6 +32,10 @@ get_header(); ?>
 
             <?php endif; ?>
 
+            <hr>
+
+            <a class="button primary-button-hollow" href="/reports">Return to Reports</a>
+
         </div>
 
         <div class="sidebar cell large-4">
