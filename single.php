@@ -20,7 +20,7 @@ get_header(); ?>
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                        <?php get_template_part( 'parts/loop', 'single' ); ?>
+                            <?php get_template_part( 'parts/loop', 'single' ); ?>
 
                     <?php endwhile; else : ?>
 
@@ -32,7 +32,7 @@ get_header(); ?>
 
                 <div class="cell medium-4">
 
-                    <?php get_sidebar('single'); ?>
+                    <?php get_sidebar( 'single' ); ?>
 
                 </div>
 

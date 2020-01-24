@@ -22,7 +22,7 @@
             'hide_empty' => false,
         ]);
 
-        foreach( $categories as $category ) {
+        foreach ( $categories as $category ) {
             if ( $category->count > 0 ) {
                 echo '<div class="cell"><a href="'. site_url().'/playbook-categories/'.$category->slug.'/">' . $category->name . '<span class="float-right">('.$category->count.')</span></a></div>';
             } else {

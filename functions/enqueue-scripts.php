@@ -54,7 +54,7 @@ function site_scripts() {
         || 'template-progress.php' === basename( get_page_template() )
         || 'template-statistics.php' === basename( get_page_template() )
     ) {
-        wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', ['jquery', 'lodash'], '1.2.0' );
+        wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', [ 'jquery', 'lodash' ], '1.2.0' );
         wp_enqueue_script( 'rest-api' );
         wp_localize_script(
             "rest-api", "restAPI", array(
@@ -67,7 +67,7 @@ function site_scripts() {
             )
         );
 
-        wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js', ['jquery'], '1.2.0' );
+        wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js', [ 'jquery' ], '1.2.0' );
         wp_enqueue_script( 'mapbox' );
         wp_enqueue_style( 'mapbox-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css', array(), '3' );
 
@@ -98,9 +98,9 @@ function site_scripts() {
      * @todo is this still needed?
      */
     if ( 'template-progress.php' === basename( get_page_template() ) ) {
-        wp_register_style('datatable-css', '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', false, '1.10');
-        wp_enqueue_style('datatable-css');
-        wp_register_script('datatable', '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js', ['jquery', 'rest-api', 'lodash'], '1.10');
+        wp_register_style( 'datatable-css', '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', false, '1.10' );
+        wp_enqueue_style( 'datatable-css' );
+        wp_register_script( 'datatable', '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js', [ 'jquery', 'rest-api', 'lodash' ], '1.10' );
         wp_enqueue_script( 'datatable' );
     }
 
@@ -121,7 +121,7 @@ function site_scripts() {
                 "translations" => []
             )
         );
-        if ( ! class_exists( 'DT_Mapping_Module') ) {
+        if ( ! class_exists( 'DT_Mapping_Module' ) ) {
             require_once( '../dt-mapping/loader.php' );
             new DT_Mapping_Module_Loader( 'theme' );
         }

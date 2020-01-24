@@ -10,7 +10,7 @@
     <div class="cell center">
         <h2>Holiness, Obedience, and Love</h2>
         <h3>We need to be disciples worth multiplying.</h3>
-        <img src="<?php echo esc_url(zume_images_uri( 'zume_images') ) ?>V1.1/V1.1-C/Ruler.svg" alt="Jesus Measurement" />
+        <img src="<?php echo esc_url( zume_images_uri( 'zume_images' ) ) ?>V1.1/V1.1-C/Ruler.svg" alt="Jesus Measurement" />
         <div class="grid-x">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
@@ -43,7 +43,7 @@
     <div class="cell center">
         <h2>Extraordinary Prayer</h2>
         <h3>Extraordinary prayer has proceeded every <a href="/articles/what-is-a-disciple-making-movement" class="underline">disciple making movement</a> in history.</h3>
-        <img src="<?php echo esc_url(zume_images_uri( 'zume_images') ) ?>V1.2/V1.2-A/worshiping.svg" alt="Extraordinary Prayer" />
+        <img src="<?php echo esc_url( zume_images_uri( 'zume_images' ) ) ?>V1.2/V1.2-A/worshiping.svg" alt="Extraordinary Prayer" />
 
         <div class="grid-x padding-bottom-1">
             <div class="cell medium-3"></div>
@@ -53,7 +53,7 @@
             <div class="cell medium-3"></div>
         </div>
 
-        <?php get_template_part('parts/content', 'joinus'); ?>
+        <?php get_template_part( 'parts/content', 'joinus' ); ?>
 
     </div>
 </div>
@@ -74,7 +74,7 @@
 
         <div class="padding-vertical-2">
             <h3 style="color: black;">1 Training</h3>
-            <img src="<?php echo esc_url(zume_images_uri( 'vision') ) ?>training-division-illustration.svg" style="max-width:800px;" alt="Training Saturation" /><br>
+            <img src="<?php echo esc_url( zume_images_uri( 'vision' ) ) ?>training-division-illustration.svg" style="max-width:800px;" alt="Training Saturation" /><br>
             <h3 style="color: black;">Every 5,000 People (North America)<br>
                 Every 50,000 People (Globally)</h3>
         </div>
@@ -112,7 +112,7 @@
 
         <div class="padding-vertical-2">
             <h3 style="color: black;">2 Simple Churches</h3>
-            <img src="<?php echo esc_url(zume_images_uri( 'vision') ) ?>two-churches-illustration.svg" style="max-width:800px;" alt="Church Saturation" /><br>
+            <img src="<?php echo esc_url( zume_images_uri( 'vision' ) ) ?>two-churches-illustration.svg" style="max-width:800px;" alt="Church Saturation" /><br>
             <h3 style="color: black;">Every 5,000 People (North America)<br>
                 Every 50,000 People (Globally)</h3>
         </div>
@@ -131,7 +131,7 @@
         <a class="button primary-button-hollow large" href="/maps">View Maps</a>
         <a class="button primary-button-hollow large" href="/reports">View Reports</a>
 
-        <?php get_template_part('parts/content', 'joinus'); ?>
+        <?php get_template_part( 'parts/content', 'joinus' ); ?>
 
     </div>
 </div>

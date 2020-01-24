@@ -8,7 +8,7 @@
                 <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail() ?></a>
             </div>
             <div class="cell medium-9">
-        <?php else: ?>
+        <?php else : ?>
             <div class="cell"><!-- full width without image-->
         <?php endif; ?>
 
@@ -23,7 +23,7 @@
                 <?php
                 $categories = wp_get_object_terms( $post->ID, 'article_topics' );
 
-                if ( ! empty( $categories) ) {
+                if ( ! empty( $categories ) ) {
                     echo '<footer class="article-footer padding-bottom-1">Topics: ';
 
                     $i = 0;

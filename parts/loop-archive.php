@@ -14,7 +14,7 @@ $post = get_post();
                 <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail() ?></a>
             </div>
             <div class="cell medium-10">
-        <?php else: ?>
+        <?php else : ?>
             <div class="cell"><!-- full width without image-->
         <?php endif; ?>
 

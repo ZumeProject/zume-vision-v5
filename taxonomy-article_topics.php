@@ -1,2 +1,2 @@
 <?php
-require_once ('archive-articles.php');
+require_once( 'archive-articles.php' );

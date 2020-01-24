@@ -1,2 +1,2 @@
 <?php
-require_once ('archive-playbook.php');
+require_once( 'archive-playbook.php' );

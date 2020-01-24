@@ -20,7 +20,7 @@ get_header(); ?>
     </div> <!-- end #inner-content -->
 
 
-    <?php get_template_part('parts/widget', 'reports'); ?>
+    <?php get_template_part( 'parts/widget', 'reports' ); ?>
 
 </div> <!-- end #content -->
 

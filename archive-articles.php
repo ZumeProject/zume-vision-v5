@@ -17,14 +17,14 @@
 
             <?php /** Show Category Label on Category Pages */
             global $wp;
-            $url_parts = explode('/', $wp->request );
+            $url_parts = explode( '/', $wp->request );
             if ( 'article-topics' === $url_parts[0] ) {
                 the_archive_title();
             } ?>
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <?php get_template_part( 'parts/loop', 'articles-archive' ); ?>
+                    <?php get_template_part( 'parts/loop', 'articles-archive' ); ?>
 
             <?php endwhile; ?>
 
@@ -40,7 +40,7 @@
 
         <div class="sidebar cell large-4">
 
-            <?php get_sidebar( 'articles-archive'); ?>
+            <?php get_sidebar( 'articles-archive' ); ?>
 
         </div>
 

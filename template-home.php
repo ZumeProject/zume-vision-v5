@@ -74,7 +74,7 @@ $post = get_post();
 
 
             <!-- Strategy Section -->
-            <?php get_template_part('parts/content', 'strategy'); ?>
+            <?php get_template_part( 'parts/content', 'strategy' ); ?>
 
 
 

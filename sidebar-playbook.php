@@ -20,10 +20,10 @@
             global $post;
             $post_cat = wp_get_object_terms( $post->ID, 'playbook_categories' );
             $list = [];
-            foreach( $post_cat as $cat ) {
+            foreach ( $post_cat as $cat ) {
                 $list[] = $cat->term_id;
             }
-            foreach( $categories as $category ) {
+            foreach ( $categories as $category ) {
                 echo '<div class="cell">';
                 if ( array_search( $category->term_id, $list ) ) {
                     echo '<i class="fi-check"></i>';
@@ -34,7 +34,7 @@
                 if ( $category->count > 0 ) {
                     echo '<a href="'. site_url().'/playbook-categories/'.$category->slug.'/">' . $category->name . '</a>';
                 } else {
-                    echo $category->name ;
+                    echo $category->name;
                 }
                 echo '</div>';
             }
@@ -52,7 +52,7 @@
             <h3>Play Provided By</h3>
 
             <div class="padding-left-1">
-            <strong><?php echo esc_html($meta['contributor_name'][0]) ?></strong><br>
+            <strong><?php echo esc_html( $meta['contributor_name'][0] ) ?></strong><br>
 
             <?php if ( isset( $meta['contributor_website_url'][0] ) ) :  ?>
                 <a href="<?php echo esc_url( $meta['contributor_website_url'][0] ) ?>">Website</a><br>

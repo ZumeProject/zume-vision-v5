@@ -7,9 +7,8 @@ class Location_Grid_Counters
     /** Singleton @var null */
     private static $_instance = null;
 
-    public static function instance()
-    {
-        if (is_null(self::$_instance)) {
+    public static function instance() {
+        if (is_null( self::$_instance )) {
             self::$_instance = new self();
         }
         return self::$_instance;
@@ -21,19 +20,17 @@ class Location_Grid_Counters
      * @access  public
      * @since   0.1.0
      */
-    public function __construct()
-    {
+    public function __construct() {
         add_action( 'rest_api_init', array( $this,  'add_api_routes' ) );
     } // End __construct()
 
-    public function add_api_routes()
-    {
+    public function add_api_routes() {
         $namespace_v1 = 'grid/v1';
 
         register_rest_route( $namespace_v1, '/population', array(
             array(
                 'methods' => WP_REST_Server::CREATABLE,
-                'callback' => array($this, 'population'),
+                'callback' => array( $this, 'population' ),
             ),
         ));
     }

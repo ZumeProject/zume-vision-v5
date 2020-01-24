@@ -393,9 +393,9 @@ switch ($request_action) {
                         <p>
                             <?php if ( ! isset( $_GET['checkemail'] ) || ! in_array( wp_unslash( $_GET['checkemail'] ), array( 'confirm', 'newpass' ) ) ) : ?>
 
-                                <a href="<?php echo esc_url( zume_login_url( ) ) ?>"><?php esc_html_e( 'Login', 'zume' ) ?></a>
+                                <a href="<?php echo esc_url( zume_login_url() ) ?>"><?php esc_html_e( 'Login', 'zume' ) ?></a>
                                 &nbsp;|&nbsp;
-                                <a href="<?php echo esc_url( zume_lostpassword_url( ) ); ?>"><?php esc_html_e( 'Lost your password?', 'zume' ); ?></a>
+                                <a href="<?php echo esc_url( zume_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'zume' ); ?></a>
 
                             <?php endif; ?>
                         </p>

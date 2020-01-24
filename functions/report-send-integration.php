@@ -22,8 +22,8 @@ class Report_Send_Integration {
      */
     public function __construct() {
         add_action( 'rest_api_init', [ $this, 'add_api_routes' ] );
-        add_filter( 'site_link_type', [$this, 'dt_network_report_receiving_link'], 10, 1 );
-        add_filter( 'site_link_type_capabilities', [$this, 'dt_network_report_receiving_caps'], 10, 1 );
+        add_filter( 'site_link_type', [ $this, 'dt_network_report_receiving_link' ], 10, 1 );
+        add_filter( 'site_link_type_capabilities', [ $this, 'dt_network_report_receiving_caps' ], 10, 1 );
     } // End __construct()
 
     // Adds the type of network connection to the site link system
@@ -74,7 +74,7 @@ class Report_Send_Integration {
 
         $result = wp_remote_post( 'https://global.zume-vision/wp-json/dt-public/v1/network/report', $packet );
 
-        return wp_remote_retrieve_body($result) ;
+        return wp_remote_retrieve_body( $result );
     }
 }
 Report_Send_Integration::instance();

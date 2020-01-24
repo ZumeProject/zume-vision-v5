@@ -21,7 +21,7 @@ Template Name: About
                         </div>
                         <div class="cell">
                             <img src="<?php echo esc_url( zume_images_uri() . 'zume-logo.svg' ) ?>" style="width:300px;" />
-                            <img src="<?php echo esc_url( zume_images_uri('zume_images') . 'V1.1/V1.1-C/crowd_large.svg' ) ?>" />
+                            <img src="<?php echo esc_url( zume_images_uri( 'zume_images' ) . 'V1.1/V1.1-C/crowd_large.svg' ) ?>" />
                         </div>
                     </div>
                     <div class="grid-x grid-padding-y content-large">
@@ -54,7 +54,7 @@ Template Name: About
 
 
 
-            <?php get_template_part('parts/content', 'strategy'); ?>
+            <?php get_template_part( 'parts/content', 'strategy' ); ?>
 
 
         </div> <!-- end #main -->

@@ -23,7 +23,7 @@ $post = get_post();
             <?php
             $categories = wp_get_object_terms( $post->ID, 'report_categories' );
 
-            if ( ! empty( $categories) ) {
+            if ( ! empty( $categories ) ) {
                 echo '<footer class="article-footer padding-bottom-1">Categories: ';
 
                 $i = 0;

@@ -4,7 +4,7 @@
  */
 
 $thumb_id = get_post_thumbnail_id();
-$thumb_url_array = wp_get_attachment_image_src($thumb_id, 'thumbnail-size', true);
+$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'thumbnail-size', true );
 $thumb_url = $thumb_url_array[0];
 ?>
 
@@ -12,7 +12,7 @@ $thumb_url = $thumb_url_array[0];
 
     <header class="article-header center">
 
-        <?php if ( has_post_thumbnail( ) ) : ?>
+        <?php if ( has_post_thumbnail() ) : ?>
             <div class="hero-image" style="background: url('<?php echo esc_url( $thumb_url ) ?>');"></div>
         <?php endif; ?>
 

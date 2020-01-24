@@ -49,7 +49,6 @@ function zume_register_sidebars() {
 //        'before_title' => '<h4 class="widgettitle">',
 //        'after_title' => '</h4>',
 //    ));
-
 } /* end register sidebars */
 
 add_action( 'widgets_init', 'zume_register_sidebars' );

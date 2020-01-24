@@ -3,7 +3,7 @@
  * Post Type Playbook
  */
 
-if (!defined('ABSPATH')) {
+if ( !defined( 'ABSPATH' )) {
     exit;
 } // Exit if accessed directly.
 
@@ -78,9 +78,8 @@ class Zume_Playbook_Post_Type
      * @since 0.1
      * @static
      */
-    public static function instance()
-    {
-        if (is_null(self::$_instance)) {
+    public static function instance() {
+        if (is_null( self::$_instance )) {
             self::$_instance = new self();
         }
         return self::$_instance;
@@ -95,8 +94,7 @@ class Zume_Playbook_Post_Type
      * @param array $args
      * @param array $taxonomies
      */
-    public function __construct($post_type = 'playbook', $singular = 'Playbook', $plural = 'Playbook', $args = [], $taxonomies = [])
-    {
+    public function __construct( $post_type = 'playbook', $singular = 'Playbook', $plural = 'Playbook', $args = [], $taxonomies = []) {
         $this->post_type = $post_type;
         $this->singular = $singular;
         $this->plural = $plural;
@@ -109,16 +107,16 @@ class Zume_Playbook_Post_Type
         if (is_admin()) {
             global $pagenow;
 
-            add_action('admin_menu', [$this, 'meta_box_setup'], 20);
-            add_action('save_post', [$this, 'meta_box_save']);
-            add_filter('enter_title_here', [$this, 'enter_title_here']);
-            add_filter('post_updated_messages', [$this, 'updated_messages']);
+            add_action( 'admin_menu', [ $this, 'meta_box_setup' ], 20 );
+            add_action( 'save_post', [ $this, 'meta_box_save' ] );
+            add_filter( 'enter_title_here', [ $this, 'enter_title_here' ] );
+            add_filter( 'post_updated_messages', [ $this, 'updated_messages' ] );
 
-            if ($pagenow == 'edit.php' && isset($_GET['post_type'])) {
-                $pt = sanitize_text_field(wp_unslash($_GET['post_type']));
+            if ($pagenow == 'edit.php' && isset( $_GET['post_type'] )) {
+                $pt = sanitize_text_field( wp_unslash( $_GET['post_type'] ) );
                 if ($pt === $this->post_type) {
-                    add_filter('manage_edit-' . $this->post_type . '_columns', [$this, 'register_custom_column_headings'], 10, 1);
-                    add_action('manage_posts_custom_column', [$this, 'register_custom_columns'], 10, 2);
+                    add_filter( 'manage_edit-' . $this->post_type . '_columns', [ $this, 'register_custom_column_headings' ], 10, 1 );
+                    add_action( 'manage_posts_custom_column', [ $this, 'register_custom_columns' ], 10, 2 );
                 }
             }
         }
@@ -130,8 +128,7 @@ class Zume_Playbook_Post_Type
      * @access public
      * @return void
      */
-    public function register_post_type()
-    {
+    public function register_post_type() {
         register_post_type($this->post_type, /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
             // let's now add all the options for this post type
             array(
@@ -167,16 +164,14 @@ class Zume_Playbook_Post_Type
                 'hierarchical' => true,
                 /* the next one is important, it tells what's enabled in the post editor */
                 'show_in_rest' => true,
-                'supports' => array('title', 'editor', 'thumbnail', 'page-attributes', 'excerpt')
+                'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'excerpt' )
             ) /* end of options */
         ); /* end of register post type */
     } // End register_post_type()
 
     //create two taxonomies, genres and tags for the post type "tag"
-    //create two taxonomies, genres and tags for the post type "tag"
-    public function create_tag_taxonomies()
-    {
-        register_taxonomy('playbook_categories','playbook',array(
+    public function create_tag_taxonomies() {
+        register_taxonomy('playbook_categories', 'playbook', array(
             'hierarchical' => true,
             'labels' => [
                 'name' => _x( 'Playbook Categories', 'taxonomy general name' ),
@@ -201,8 +196,7 @@ class Zume_Playbook_Post_Type
      * @return void
      * @since  0.1.0
      */
-    public function register_custom_columns($column_name)
-    {
+    public function register_custom_columns( $column_name) {
 //        global $post;
 
         switch ($column_name) {
@@ -227,21 +221,20 @@ class Zume_Playbook_Post_Type
      * @return mixed/void
      * @since  0.1.0
      */
-    public function register_custom_column_headings($defaults)
-    {
+    public function register_custom_column_headings( $defaults) {
 
         $new_columns = []; //array( 'image' => __( 'Image', 'zume' ));
 
         $last_item = [];
 
-        if (count($defaults) > 2) {
-            $last_item = array_slice($defaults, -1);
+        if (count( $defaults ) > 2) {
+            $last_item = array_slice( $defaults, -1 );
 
-            array_pop($defaults);
+            array_pop( $defaults );
         }
-        $defaults = array_merge($defaults, $new_columns);
+        $defaults = array_merge( $defaults, $new_columns );
 
-        if (is_array($last_item) && 0 < count($last_item)) {
+        if (is_array( $last_item ) && 0 < count( $last_item )) {
             foreach ($last_item as $k => $v) {
                 $defaults[$k] = $v;
                 break;
@@ -260,38 +253,37 @@ class Zume_Playbook_Post_Type
      * @since  0.1.0
      *
      */
-    public function updated_messages($messages)
-    {
+    public function updated_messages( $messages) {
         global $post;
 
         $messages[$this->post_type] = [
             0 => '', // Unused. Messages start at index 1.
             1 => sprintf(
                 '%3$s updated. %1$sView %4$s%2$s',
-                '<a href="' . esc_url(get_permalink($post->ID)) . '">',
+                '<a href="' . esc_url( get_permalink( $post->ID ) ) . '">',
                 '</a>',
                 $this->singular,
-                strtolower($this->singular)
+                strtolower( $this->singular )
             ),
             2 => 'Zúme Playbook updated.',
             3 => 'Zúme Playbook deleted.',
-            4 => sprintf('%s updated.', $this->singular),
+            4 => sprintf( '%s updated.', $this->singular ),
             /* translators: %s: date and time of the revision */
-            5 => isset($_GET['revision']) ? sprintf('%1$s restored to revision from %2$s', $this->singular, wp_post_revision_title((int)$_GET['revision'], false)) : false,
-            6 => sprintf('%1$s published. %3$sView %2$s%4$s', $this->singular, strtolower($this->singular), '<a href="' . esc_url(get_permalink($post->ID)) . '">', '</a>'),
-            7 => sprintf('%s saved.', $this->singular),
-            8 => sprintf('%1$s submitted. %2$sPreview %3$s%4$s', $this->singular, strtolower($this->singular), '<a target="_blank" href="' . esc_url(add_query_arg('preview', 'true', get_permalink($post->ID))) . '">', '</a>'),
+            5 => isset( $_GET['revision'] ) ? sprintf( '%1$s restored to revision from %2$s', $this->singular, wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+            6 => sprintf( '%1$s published. %3$sView %2$s%4$s', $this->singular, strtolower( $this->singular ), '<a href="' . esc_url( get_permalink( $post->ID ) ) . '">', '</a>' ),
+            7 => sprintf( '%s saved.', $this->singular ),
+            8 => sprintf( '%1$s submitted. %2$sPreview %3$s%4$s', $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post->ID ) ) ) . '">', '</a>' ),
             9 => sprintf(
                 '%1$s scheduled for: %1$s. %2$sPreview %2$s%3$6$s',
                 $this->singular,
-                strtolower($this->singular),
+                strtolower( $this->singular ),
                 // translators: Publish box date format, see http://php.net/date
                 '<strong>' . date_i18n('M j, Y @ G:i',
-                    strtotime($post->post_date)) . '</strong>',
-                '<a target="_blank" href="' . esc_url(get_permalink($post->ID)) . '">',
+                strtotime( $post->post_date )) . '</strong>',
+                '<a target="_blank" href="' . esc_url( get_permalink( $post->ID ) ) . '">',
                 '</a>'
             ),
-            10 => sprintf('%1$s draft updated. %2$sPreview %3$s%4$s', $this->singular, strtolower($this->singular), '<a target="_blank" href="' . esc_url(add_query_arg('preview', 'true', get_permalink($post->ID))) . '">', '</a>'),
+            10 => sprintf( '%1$s draft updated. %2$sPreview %3$s%4$s', $this->singular, strtolower( $this->singular ), '<a target="_blank" href="' . esc_url( add_query_arg( 'preview', 'true', get_permalink( $post->ID ) ) ) . '">', '</a>' ),
         ];
 
         return $messages;
@@ -304,9 +296,8 @@ class Zume_Playbook_Post_Type
      * @return void
      * @since  0.1.0
      */
-    public function meta_box_setup()
-    {
-        add_meta_box($this->post_type . '_scribes', 'Play Contributor', array($this, 'load_playbook_meta_box'), $this->post_type, 'normal', 'high');
+    public function meta_box_setup() {
+        add_meta_box( $this->post_type . '_scribes', 'Play Contributor', array( $this, 'load_playbook_meta_box' ), $this->post_type, 'normal', 'high' );
     } // End meta_box_setup()
 
     /**
@@ -315,9 +306,8 @@ class Zume_Playbook_Post_Type
      * @access public
      * @since  0.1.0
      */
-    public function load_playbook_meta_box()
-    {
-        $this->meta_box_content('contributor'); // prints
+    public function load_playbook_meta_box() {
+        $this->meta_box_content( 'contributor' ); // prints
     }
 
     /**
@@ -325,15 +315,14 @@ class Zume_Playbook_Post_Type
      *
      * @param string $section
      */
-    public function meta_box_content($section = 'scribe')
-    {
+    public function meta_box_content( $section = 'scribe') {
         global $post_id;
-        $fields = get_post_custom($post_id);
+        $fields = get_post_custom( $post_id );
         $field_data = $this->get_custom_fields_settings();
 
-        echo '<input type="hidden" name="' . esc_attr($this->post_type) . '_noonce" id="' . esc_attr($this->post_type) . '_noonce" value="' . esc_attr(wp_create_nonce('playbook_noonce_action')) . '" />';
+        echo '<input type="hidden" name="' . esc_attr( $this->post_type ) . '_noonce" id="' . esc_attr( $this->post_type ) . '_noonce" value="' . esc_attr( wp_create_nonce( 'playbook_noonce_action' ) ) . '" />';
 
-        if (0 < count($field_data)) {
+        if (0 < count( $field_data )) {
             echo '<table class="form-table">' . "\n";
             echo '<tbody>' . "\n";
 
@@ -342,7 +331,7 @@ class Zume_Playbook_Post_Type
                 if ($v['section'] == $section) {
 
                     $data = $v['default'];
-                    if (isset($fields[$k]) && isset($fields[$k][0])) {
+                    if (isset( $fields[$k] ) && isset( $fields[$k][0] )) {
                         $data = $fields[$k][0];
                     }
 
@@ -351,45 +340,45 @@ class Zume_Playbook_Post_Type
                     switch ($type) {
 
                         case 'url':
-                            echo '<tr valign="top"><th scope="row"><label for="' . esc_attr($k) . '">' . esc_html($v['name']) . '</label></th><td><input name="' . esc_attr($k) . '" type="text" id="' . esc_attr($k) . '" class="regular-text" value="' . esc_attr($data) . '" />' . "\n";
-                            echo '<p class="description">' . esc_html($v['description']) . '</p>' . "\n";
+                            echo '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . esc_html( $v['name'] ) . '</label></th><td><input name="' . esc_attr( $k ) . '" type="text" id="' . esc_attr( $k ) . '" class="regular-text" value="' . esc_attr( $data ) . '" />' . "\n";
+                            echo '<p class="description">' . esc_html( $v['description'] ) . '</p>' . "\n";
                             echo '</td><tr/>' . "\n";
                             break;
                         case 'text':
-                            echo '<tr valign="top"><th scope="row"><label for="' . esc_attr($k) . '">' . esc_html($v['name']) . '</label></th>
-                                <td><input name="' . esc_attr($k) . '" type="text" id="' . esc_attr($k) . '" class="regular-text" value="' . esc_attr($data) . '" />' . "\n";
-                            echo '<p class="description">' . esc_html($v['description']) . '</p>' . "\n";
+                            echo '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . esc_html( $v['name'] ) . '</label></th>
+                                <td><input name="' . esc_attr( $k ) . '" type="text" id="' . esc_attr( $k ) . '" class="regular-text" value="' . esc_attr( $data ) . '" />' . "\n";
+                            echo '<p class="description">' . esc_html( $v['description'] ) . '</p>' . "\n";
                             echo '</td><tr/>' . "\n";
                             break;
                         case 'link':
-                            echo '<tr valign="top"><th scope="row"><label for="' . esc_attr($k) . '">' . esc_html($v['name']) . '</label></th>
-                                <td><input name="' . esc_attr($k) . '" type="text" id="' . esc_attr($k) . '" class="regular-text" value="' . esc_attr($data) . '" />' . "\n";
-                            $video_id = esc_attr($k) . 'video';
-                            echo '<p class="description"><a onclick="show_video( \'' . esc_attr($video_id) . '\', \'' . esc_attr($data) . '\' )">verify link</a><span id="' . esc_attr($video_id) . '"></span></p>' . "\n";
+                            echo '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . esc_html( $v['name'] ) . '</label></th>
+                                <td><input name="' . esc_attr( $k ) . '" type="text" id="' . esc_attr( $k ) . '" class="regular-text" value="' . esc_attr( $data ) . '" />' . "\n";
+                            $video_id = esc_attr( $k ) . 'video';
+                            echo '<p class="description"><a onclick="show_video( \'' . esc_attr( $video_id ) . '\', \'' . esc_attr( $data ) . '\' )">verify link</a><span id="' . esc_attr( $video_id ) . '"></span></p>' . "\n";
                             echo '</td><tr/>' . "\n";
                             break;
                         case 'alt_link':
-                            echo '<tr valign="top"><th scope="row"><label for="' . esc_attr($k) . '">' . esc_html($v['name']) . '</label></th>
-                                <td><input name="' . esc_attr($k) . '" type="text" id="' . esc_attr($k) . '" class="regular-text" value="' . esc_attr($data) . '" />' . "\n";
-                            $video_id = esc_attr($k) . 'video';
-                            echo '<p class="description"><a onclick="show_alt_video( \'' . esc_attr($video_id) . '\', \'' . esc_attr($data) . '\' )">verify link</a><span id="' . esc_attr($video_id) . '"></span></p>' . "\n";
+                            echo '<tr valign="top"><th scope="row"><label for="' . esc_attr( $k ) . '">' . esc_html( $v['name'] ) . '</label></th>
+                                <td><input name="' . esc_attr( $k ) . '" type="text" id="' . esc_attr( $k ) . '" class="regular-text" value="' . esc_attr( $data ) . '" />' . "\n";
+                            $video_id = esc_attr( $k ) . 'video';
+                            echo '<p class="description"><a onclick="show_alt_video( \'' . esc_attr( $video_id ) . '\', \'' . esc_attr( $data ) . '\' )">verify link</a><span id="' . esc_attr( $video_id ) . '"></span></p>' . "\n";
                             echo '</td><tr/>' . "\n";
                             break;
                         case 'select':
                             echo '<tr valign="top"><th scope="row">
-                                <label for="' . esc_attr($k) . '">' . esc_html($v['name']) . '</label></th>
+                                <label for="' . esc_attr( $k ) . '">' . esc_html( $v['name'] ) . '</label></th>
                                 <td>
-                                <select name="' . esc_attr($k) . '" id="' . esc_attr($k) . '" class="regular-text">';
+                                <select name="' . esc_attr( $k ) . '" id="' . esc_attr( $k ) . '" class="regular-text">';
                             // Iterate the options
                             foreach ($v['default'] as $vv) {
-                                echo '<option value="' . esc_attr($vv) . '" ';
+                                echo '<option value="' . esc_attr( $vv ) . '" ';
                                 if ($vv == $data) {
                                     echo 'selected';
                                 }
-                                echo '>' . esc_html($vv) . '</option>';
+                                echo '>' . esc_html( $vv ) . '</option>';
                             }
                             echo '</select>' . "\n";
-                            echo '<p class="description">' . esc_html($v['description']) . '</p>' . "\n";
+                            echo '<p class="description">' . esc_html( $v['description'] ) . '</p>' . "\n";
                             echo '</td><tr/>' . "\n";
                             break;
 
@@ -414,8 +403,7 @@ class Zume_Playbook_Post_Type
      * @since  0.1.0
      *
      */
-    public function meta_box_save($post_id)
-    {
+    public function meta_box_save( $post_id) {
 
         // Verify
         if (get_post_type() != $this->post_type) {
@@ -423,47 +411,47 @@ class Zume_Playbook_Post_Type
         }
 
         $key = $this->post_type . '_noonce';
-        if (isset($_POST[$key]) && !wp_verify_nonce(sanitize_key($_POST[$key]), 'playbook_noonce_action')) {
+        if (isset( $_POST[$key] ) && !wp_verify_nonce( sanitize_key( $_POST[$key] ), 'playbook_noonce_action' )) {
             return $post_id;
         }
 
-        if (isset($_POST['post_type']) && 'page' == sanitize_text_field(wp_unslash($_POST['post_type']))) {
-            if (!current_user_can('edit_page', $post_id)) {
+        if (isset( $_POST['post_type'] ) && 'page' == sanitize_text_field( wp_unslash( $_POST['post_type'] ) )) {
+            if ( !current_user_can( 'edit_page', $post_id )) {
                 return $post_id;
             }
         } else {
-            if (!current_user_can('edit_post', $post_id)) {
+            if ( !current_user_can( 'edit_post', $post_id )) {
                 return $post_id;
             }
         }
 
-        if (isset($_GET['action'])) {
+        if (isset( $_GET['action'] )) {
             if ($_GET['action'] == 'trash' || $_GET['action'] == 'untrash' || $_GET['action'] == 'delete') {
                 return $post_id;
             }
         }
 
         $field_data = $this->get_custom_fields_settings();
-        $fields = array_keys($field_data);
+        $fields = array_keys( $field_data );
 
         foreach ($fields as $f) {
-            if (!isset($_POST[$f])) {
+            if ( !isset( $_POST[$f] )) {
                 continue;
             }
 
-            ${$f} = strip_tags(trim(sanitize_text_field(wp_unslash($_POST[$f]))));
+            ${$f} = strip_tags( trim( sanitize_text_field( wp_unslash( $_POST[$f] ) ) ) );
 
             // Escape the URLs.
             if ('url' == $field_data[$f]['type']) {
-                ${$f} = esc_url(${$f});
+                ${$f} = esc_url( ${$f} );
             }
 
-            if (get_post_meta($post_id, $f) == '') {
-                add_post_meta($post_id, $f, ${$f}, true);
-            } elseif (${$f} != get_post_meta($post_id, $f, true)) {
-                update_post_meta($post_id, $f, ${$f});
+            if (get_post_meta( $post_id, $f ) == '') {
+                add_post_meta( $post_id, $f, ${$f}, true );
+            } elseif (${$f} != get_post_meta( $post_id, $f, true )) {
+                update_post_meta( $post_id, $f, ${$f} );
             } elseif (${$f} == '') {
-                delete_post_meta($post_id, $f, get_post_meta($post_id, $f, true));
+                delete_post_meta( $post_id, $f, get_post_meta( $post_id, $f, true ) );
             }
         }
         return $post_id;
@@ -480,8 +468,7 @@ class Zume_Playbook_Post_Type
      * @since  0.1.0
      *
      */
-    public function enter_title_here($title)
-    {
+    public function enter_title_here( $title) {
         if (get_post_type() == $this->post_type) {
             $title = 'Enter the title here';
         }
@@ -496,8 +483,7 @@ class Zume_Playbook_Post_Type
      * @return array
      * @since  0.1.0
      */
-    public function get_custom_fields_settings()
-    {
+    public function get_custom_fields_settings() {
         $fields = [];
 
         $fields['contributor_name'] = [
@@ -518,13 +504,16 @@ class Zume_Playbook_Post_Type
             'name' => 'Can Be Contacted?',
             'description' => '',
             'type' => 'select',
-            'default' => ['yes' => 'Yes', 'no' => 'No'],
+            'default' => [
+        'yes' => 'Yes',
+        'no' => 'No'
+            ],
             'section' => 'contributor',
         ];
 
 
 
-        return apply_filters('zume_playbook_fields_settings', $fields);
+        return apply_filters( 'zume_playbook_fields_settings', $fields );
     } // End get_custom_fields_settings()
 
     /**
@@ -533,8 +522,7 @@ class Zume_Playbook_Post_Type
      * @access public
      * @since  0.1.0
      */
-    public function activation()
-    {
+    public function activation() {
         $this->flush_rewrite_rules();
     } // End activation()
 
@@ -544,8 +532,7 @@ class Zume_Playbook_Post_Type
      * @access public
      * @since  0.1.0
      */
-    private function flush_rewrite_rules()
-    {
+    private function flush_rewrite_rules() {
         $this->register_post_type();
         flush_rewrite_rules();
     } // End flush_rewrite_rules()

@@ -7,7 +7,7 @@
 // Add permission for mapping system
 $current_user = wp_get_current_user();
 $current_user->add_cap( 'view_mapping' );
-if ( ! class_exists( 'DT_Mapping_Module') ) {
+if ( ! class_exists( 'DT_Mapping_Module' ) ) {
     require_once( 'dt-mapping/loader.php' );
     new DT_Mapping_Module_Loader( 'theme' );
 }
@@ -37,7 +37,7 @@ require_once( get_template_directory().'/functions/translation/translation.php' 
 require_once( get_template_directory().'/functions/default-theme-configuration/disable-emoji.php' );
 
 // Related post function - no need to rely on plugins
- require_once(get_template_directory().'/functions/default-theme-configuration/related-posts.php');
+ require_once( get_template_directory().'/functions/default-theme-configuration/related-posts.php' );
 
 // Customize the WordPress admin
 require_once( get_template_directory().'/functions/admin/admin.php' );

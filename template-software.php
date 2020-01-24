@@ -14,14 +14,14 @@ get_header(); ?>
             <div class="cell medium-10">
                 <div class="grid-x center">
                     <div class="cell padding-vertical-2">
-                        <img src="<?php echo esc_url( zume_images_uri('vision'))?>dt-logo-white@2x.png" alt="disciple tools" style="max-width:400px"/>
+                        <img src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-logo-white@2x.png" alt="disciple tools" style="max-width:400px"/>
                     </div>
                     <div class="cell">
                         <h3 class="white">A software for disciple making movements</h3>
                         <p class="large-text">Partnering to power Zúme.Vision</p>
                         <p><a href="https://disciple.tools" class="button secondary-button large">Demo @ www.Disciple.Tools</a></p>
                         <div>
-                            <img src="<?php echo esc_url( zume_images_uri('vision'))?>laptop5.png" alt="laptop" style="max-width:800px" />
+                            <img src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>laptop5.png" alt="laptop" style="max-width:800px" />
                         </div>
                     </div>
 
@@ -66,55 +66,55 @@ get_header(); ?>
                     <ul class="orbit-container">
                         <li class="is-active orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-dashboard.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-dashboard.png" alt="Space">
                                 <figcaption class="orbit-caption">Disciple Maker (Multiplier) Dashboard</figcaption>
                             </figure>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-clist.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-clist.png" alt="Space">
                                 <figcaption class="orbit-caption">Contacts List</figcaption>
                             </figure>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-cdetails.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-cdetails.png" alt="Space">
                                 <figcaption class="orbit-caption">Contact Details</figcaption>
                             </figure>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-glist.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-glist.png" alt="Space">
                                 <figcaption class="orbit-caption">Groups List</figcaption>
                             </figure>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-gdetails.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-gdetails.png" alt="Space">
                                 <figcaption class="orbit-caption">Groups Details</figcaption>
                             </figure>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-metrics.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-metrics.png" alt="Space">
                                 <figcaption class="orbit-caption">Metrics : Critical Path</figcaption>
                             </figure>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-generations.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-generations.png" alt="Space">
                                 <figcaption class="orbit-caption">Metrics : Generational Mapping</figcaption>
                             </figure>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-mappinggulpd.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-mappinggulpd.png" alt="Space">
                                 <figcaption class="orbit-caption">Metrics : Saturation Mapping & Activity</figcaption>
                             </figure>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri('vision'))?>dt-screen-netdash.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-netdash.png" alt="Space">
                                 <figcaption class="orbit-caption">(Optional) Network Dashboard</figcaption>
                             </figure>
                         </li>

@@ -19,7 +19,7 @@ Template Name: Training
                     <div class="grid-x">
                         <div class="cell center"><h2><?php esc_html_e( 'Zúme.Training', 'zume' ) ?></h2></div>
                         <div class="cell center">
-                            <h3><?php esc_html_e('Free, online, in-life training for small groups', 'zume') ?></h3>
+                            <h3><?php esc_html_e( 'Free, online, in-life training for small groups', 'zume' ) ?></h3>
                         </div>
                         <div class="cell center">
                             <a href="https://zume.training" target="_blank" class="button large secondary-button" >Go to www.zume.training</a>
@@ -37,7 +37,7 @@ Template Name: Training
                         <div class="cell">
                             <div class="grid-x grid-padding-x grid-padding-y">
                                 <div class="medium-4 cell center">
-                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri()) ?>/assets/images/pages/training2.png"
+                                    <img src="<?php echo esc_url( get_stylesheet_directory_uri() ) ?>/assets/images/pages/training2.png"
                                          alt="Zúme consists of 10 sessions, 2 hours each" height="150"/>
                                 </div>
                                 <div class="medium-8 cell ">

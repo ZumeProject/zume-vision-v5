@@ -24,7 +24,7 @@ get_header(); ?>
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <?php get_template_part( 'parts/loop', 'reports' ); ?>
+                    <?php get_template_part( 'parts/loop', 'reports' ); ?>
 
             <?php endwhile; else : ?>
 
@@ -40,7 +40,7 @@ get_header(); ?>
 
         <div class="sidebar cell large-4">
 
-            <?php get_sidebar('reports'); ?>
+            <?php get_sidebar( 'reports' ); ?>
 
         </div>
 
