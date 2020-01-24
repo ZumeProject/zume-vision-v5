@@ -9,10 +9,10 @@ get_header(); ?>
 <nav id="post-nav">
     <div class="breadcrumb hide-for-small-only">
         <a href="<?php echo esc_url( home_url() ); ?>" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;
-        <a href="<?php echo esc_url( home_url() ); ?>/playbooks">Playbooks</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;
+        <a href="<?php echo esc_url( home_url() ); ?>/playbook">Playbook</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;
         <?php echo esc_html( the_title() ) ?>
     </div>
-    <div class="breadcrumb-mobile show-for-small-only"><a href="<?php echo esc_url( home_url() ); ?>/playbooks">Playbooks</a></div>
+    <div class="breadcrumb-mobile show-for-small-only"><a href="<?php echo esc_url( home_url() ); ?>/playbook">Playbook</a></div>
 </nav>
 
 <!-- Main -->

@@ -1,7 +1,7 @@
-<h3><a href="/playbooks">Newest Playbooks</a></h3>
+<h3><a href="/playbook">Newest Playbook</a></h3>
 <ul>
     <?php
-    $recent_posts = wp_get_recent_posts( ['post_type' => 'playbooks', 'numberposts'  => 4,'post_status' => 'publish']);
+    $recent_posts = wp_get_recent_posts( ['post_type' => 'playbook', 'numberposts'  => 4,'post_status' => 'publish']);
     foreach( $recent_posts as $recent ) {
         printf( '<li><a href="%1$s">%2$s (%3$s)</a></li>',
             esc_url( get_permalink( $recent['ID'] ) ),

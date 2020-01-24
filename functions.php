@@ -48,9 +48,9 @@ require_once( get_template_directory().'/functions/login/zume-login.php' );
 require_once( get_template_directory().'/functions/urls.php' );
 
 
-require_once( get_template_directory().'/functions/playbook-post-type.php' );
-require_once( get_template_directory().'/functions/reports-post-type.php' );
-require_once( get_template_directory().'/functions/articles-post-type.php' );
+require_once( get_template_directory().'/functions/post-type-playbook.php' );
+require_once( get_template_directory().'/functions/post-type-reports.php' );
+require_once( get_template_directory().'/functions/post-type-articles.php' );
 require_once( get_template_directory().'/functions/population-counters.php' );
 
 // Integrations

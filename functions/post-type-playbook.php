@@ -1,6 +1,6 @@
 <?php
 /**
- * Post Type Playbooks
+ * Post Type Playbook
  */
 
 if (!defined('ABSPATH')) {
@@ -95,7 +95,7 @@ class Zume_Playbook_Post_Type
      * @param array $args
      * @param array $taxonomies
      */
-    public function __construct($post_type = 'playbooks', $singular = 'Playbook', $plural = 'Playbooks', $args = [], $taxonomies = [])
+    public function __construct($post_type = 'playbook', $singular = 'Playbook', $plural = 'Playbook', $args = [], $taxonomies = [])
     {
         $this->post_type = $post_type;
         $this->singular = $singular;
@@ -136,16 +136,16 @@ class Zume_Playbook_Post_Type
             // let's now add all the options for this post type
             array(
                 'labels' => array(
-                    'name' => 'Playbooks', /* This is the Title of the Group */
+                    'name' => 'Playbook', /* This is the Title of the Group */
                     'singular_name' => 'Playbook', /* This is the individual type */
-                    'all_items' => 'All Playbooks', /* the all items menu item */
+                    'all_items' => 'All Playbook', /* the all items menu item */
                     'add_new' => 'Add New', /* The add new menu item */
                     'add_new_item' => 'Add New Playbook', /* Add New Display Title */
                     'edit' => 'Edit', /* Edit Dialog */
                     'edit_item' => 'Edit Zúme Playbook', /* Edit Display Title */
                     'new_item' => 'New Zúme Playbook', /* New Display Title */
                     'view_item' => 'View Zúme Playbook', /* View Display Title */
-                    'search_items' => 'Search Zúme Playbooks', /* Search Custom Type Title */
+                    'search_items' => 'Search Zúme Playbook', /* Search Custom Type Title */
                     'not_found' => 'Nothing found in the Database.', /* This displays if there are no entries yet */
                     'not_found_in_trash' => 'Nothing found in Trash', /* This displays if there is nothing in the trash */
                     'parent_item_colon' => ''
@@ -162,7 +162,7 @@ class Zume_Playbook_Post_Type
                     'slug' => 'playbook',
                     'with_front' => true
                 ), /* you can specify its url slug */
-                'has_archive' => 'playbooks', /* you can rename the slug here */
+                'has_archive' => 'playbook', /* you can rename the slug here */
                 'capability_type' => 'post',
                 'hierarchical' => true,
                 /* the next one is important, it tells what's enabled in the post editor */
@@ -178,7 +178,7 @@ class Zume_Playbook_Post_Type
     {
         // Add new taxonomy, NOT hierarchical (like tags)
         $labels = array(
-            'name' => _x( 'Tags', 'taxonomy general name' ),
+            'name' => _x( 'Playbook Tags', 'taxonomy general name' ),
             'singular_name' => _x( 'Tag', 'taxonomy singular name' ),
             'search_items' =>  __( 'Search Tags' ),
             'popular_items' => __( 'Popular Tags' ),
@@ -195,7 +195,7 @@ class Zume_Playbook_Post_Type
             'menu_name' => __( 'Tags' ),
         );
 
-        register_taxonomy('playbook_tag','playbooks',array(
+        register_taxonomy('playbook_tag','playbook',array(
             'hierarchical' => false,
             'labels' => $labels,
             'show_ui' => true,
@@ -204,11 +204,11 @@ class Zume_Playbook_Post_Type
             'rewrite' => array( 'slug' => 'playbook-tag' ),
             'show_in_rest' =>true,
         ));
-        register_taxonomy('playbook_categories','playbooks',array(
+        register_taxonomy('playbook_categories','playbook',array(
             'hierarchical' => true,
             'labels' => [
-                'name' => _x( 'Category', 'taxonomy general name' ),
-                'singular_name' => _x( 'Categories', 'taxonomy singular name' ),
+                'name' => _x( 'Playbook Categories', 'taxonomy general name' ),
+                'singular_name' => _x( 'Category', 'taxonomy singular name' ),
                 'menu_name' => __( 'Categories' ),
             ],
             'show_ui' => true,

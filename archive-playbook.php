@@ -19,7 +19,7 @@ get_header(); ?>
 
                 <div class="cell medium-8 no-underline">
 
-                    <header><h2 class="center padding-bottom-2 border-bottom">Playbooks</h2></header>
+                    <header><h2 class="center padding-bottom-2 border-bottom">Playbook</h2></header>
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -39,7 +39,7 @@ get_header(); ?>
 
                 <div class="cell medium-4">
 
-                    <?php get_sidebar( 'playbook'); ?>
+                    <?php get_sidebar( 'playbook-archive'); ?>
 
                 </div>
 

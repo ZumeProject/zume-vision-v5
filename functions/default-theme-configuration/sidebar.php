@@ -24,7 +24,7 @@ function zume_register_sidebars() {
     register_sidebar(array(
         'id' => 'playbook',
         'name' => __( 'Playbook', 'zume' ),
-        'description' => __( 'Sidebar for playbooks', 'zume' ),
+        'description' => __( 'Sidebar for playbook', 'zume' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h4 class="widgettitle">',

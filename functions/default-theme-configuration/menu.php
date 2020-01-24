@@ -5,7 +5,7 @@ register_nav_menus(
         'main-nav' => __( 'The Main Menu', 'zume' ),   // Main nav in header
         'offcanvas-nav' => __( 'The Off-Canvas Menu', 'zume' ),
         'footer-links' => __( 'Footer Links', 'zume' ), // Secondary nav in footer
-        'playbooks' => __( 'Playbooks', 'zume' ) // Secondary nav in footer
+        'playbook' => __( 'Playbook', 'zume' ) // Secondary nav in footer
     )
 );
 
@@ -33,6 +33,7 @@ class Zume_Topbar_Menu_Walker extends Walker_Nav_Menu {
 
 // The Off Canvas Menu
 function zume_off_canvas_nav() {
+
     echo '<button class="button expanded primary-button" style="font-weight: bold; cursor:pointer;" data-open="search-box"><i class="fi-magnifying-glass"></i> Search</button>';
 
     wp_nav_menu(array(
@@ -47,6 +48,26 @@ function zume_off_canvas_nav() {
 }
 
 class Zume_Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
+    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat( "\t", $depth );
+        $output .= "\n$indent<ul class=\"vertical is-active menu\">\n";
+    }
+}
+
+// The Off Canvas Menu
+function zume_playbook_nav() {
+    wp_nav_menu(array(
+        'container' => false,                           // Remove nav container
+        'menu_class' => 'vertical menu accordion-menu playbook-menu',       // Adding custom nav class
+        'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
+        'theme_location' => 'playbook',                 // Where it's located in the theme
+        'depth' => 5,                                   // Limit the depth of the nav
+        'fallback_cb' => false,                         // Fallback function (see below)
+        'walker' => new Zume_Off_Canvas_Menu_Walker()
+    ));
+}
+
+class Zume_Playbook_Menu_Walker extends Walker_Nav_Menu {
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat( "\t", $depth );
         $output .= "\n$indent<ul class=\"vertical is-active menu\">\n";
