@@ -1,4 +1,4 @@
-<h3><a href="/playbook">Newest Playbook</a></h3>
+<h3><a href="/playbook">Newest Plays</a></h3>
 <ul>
     <?php
     $recent_posts = wp_get_recent_posts( ['post_type' => 'playbook', 'numberposts'  => 4,'post_status' => 'publish']);

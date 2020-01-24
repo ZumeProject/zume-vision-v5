@@ -13,6 +13,23 @@
 
     <hr>
 
-    <?php get_template_part( 'parts/widget', 'sidebar-play-menu' ); ?>
+    <h3>Target Audience</h3>
+    <div class="grid-x padding-left-1">
+        <?php
+        /** Category List */
+        $categories = get_categories( [
+            'taxonomy' => 'playbook_categories',
+            'hide_empty' => false,
+        ]);
+
+        foreach( $categories as $category ) {
+            if ( $category->count > 0 ) {
+                echo '<div class="cell"><a href="'. site_url().'/playbook-categories/'.$category->slug.'/">' . $category->name . '<span class="float-right">('.$category->count.')</span></a></div>';
+            } else {
+                echo '<div class="cell">' . $category->name . '<span class="float-right">(0)</span></div>';
+            }
+        }
+        ?>
+    </div>
 
 </div>

@@ -9,7 +9,7 @@
     <?php if ( is_search() ) : ?>
 
         <header class="article-header">
-            <h1><?php _e( 'Sorry, No Results.', 'zume' );?></h1>
+            <h3><?php _e( 'Sorry, No Results.', 'zume' );?></h3>
         </header>
 
         <section class="entry-content">
@@ -27,7 +27,7 @@
     <?php else : ?>
 
         <header class="article-header">
-            <h1><?php _e( 'Oops, Post Not Found!', 'zume' ); ?></h1>
+            <h3><?php _e( 'Oops, Post Not Found!', 'zume' ); ?></h3>
         </header>
 
         <section class="entry-content">
@@ -39,7 +39,7 @@
         </section> <!-- end search section -->
 
         <footer class="article-footer">
-          <p><?php _e( 'This is the error message in the parts/content-missing.php template.', 'zume' ); ?></p>
+
         </footer>
 
     <?php endif; ?>

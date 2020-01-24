@@ -500,6 +500,15 @@ Progress
 
     }
 
+    .fi-check {
+        color: $secondary-color;
+        padding-right: $medium-text;
+    }
+    .fi-x {
+        color: $medium-gray;
+        padding-right: $medium-text;
+    }
+
 }
 
 #menu-playbook {
