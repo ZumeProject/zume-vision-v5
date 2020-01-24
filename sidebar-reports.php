@@ -9,15 +9,7 @@
     <hr class="show-for-small-only" />
 
     <?php get_template_part( 'parts/widget', 'sidebar-recent-reports' ); ?>
+
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
-
-    <!-- subscribe section-->
-    <?php get_template_part( 'parts/widget', 'newsletter-subscribe' ); ?>
-
-    <?php if ( is_active_sidebar( 'report' ) ) : ?>
-
-        <?php dynamic_sidebar( 'report' ); ?>
-
-    <?php endif; ?>
 
 </div>

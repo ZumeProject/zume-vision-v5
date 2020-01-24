@@ -48,8 +48,8 @@ get_header(); ?>
                     <div class="cell medium-2">
                         <h3>Crisis</h3>
                         <hr>
-                        <p>Christless deaths today<br><span class="progress-counter" id="christless-deaths-today-count-1">?</span></p>
                         <p>Born with no access <br>to the gospel today<br><span class="progress-counter" id="births-among-unreached-today-count-1">?</span></p>
+                        <p>Christless deaths today<br><span class="progress-counter" id="christless-deaths-today-count-1">?</span></p>
                     </div>
                     <div class="cell medium-2">
                         <img src="<?php echo esc_url( zume_images_uri() )?>vision/jesus-globe.png" alt="welcome-graphic" />

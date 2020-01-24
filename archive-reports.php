@@ -7,50 +7,45 @@
 
 get_header(); ?>
 
-<div class="content white-section">
+<!-- Progress Section-->
+<div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
+    <div class="cell center">
+        <h1 class="center">Reports</h1>
+    </div>
+</div>
+<div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 
-    <div class="inner-content grid-x grid-margin-x grid-padding-x padding-vertical-1">
+<!-- Main -->
+<main role="main" id="post-main">
 
-        <div class="cell medium-1"></div>
+    <div class="grid-x grid-margin-x">
 
-        <main class="main small-12 medium-10 large-10 cell" role="main">
+        <div class="blog cell large-8">
 
-            <div class="grid-x grid-margin-x">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <div class="cell medium-8">
+                <?php get_template_part( 'parts/loop', 'report-archive' ); ?>
 
-                    <header><h2 class="center padding-bottom-2 border-bottom">Reports</h2></header>
+            <?php endwhile; ?>
 
-                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                <?php zume_page_navi(); ?>
 
-                        <!-- To see additional archive styles, visit the /parts directory -->
-                        <?php get_template_part( 'parts/loop', 'archive' ); ?>
+            <?php else : ?>
 
-                    <?php endwhile; ?>
+                <?php get_template_part( 'parts/content', 'missing' ); ?>
 
-                        <?php zume_page_navi(); ?>
+            <?php endif; ?>
 
-                    <?php else : ?>
+        </div>
 
-                        <?php get_template_part( 'parts/content', 'missing' ); ?>
+        <div class="sidebar cell large-4">
 
-                    <?php endif; ?>
-                </div>
+            <?php get_sidebar( 'reports-archive'); ?>
 
-                <div class="cell medium-4">
+        </div>
 
-                    <?php get_sidebar( 'reports-archive'); ?>
+    </div>
 
-                </div>
-
-            </div>
-
-        </main> <!-- end #main -->
-
-        <div class="cell medium-1"></div>
-
-    </div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
+</main> <!-- end #main -->
 
 <?php get_footer(); ?>

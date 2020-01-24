@@ -446,9 +446,6 @@ Progress
 
     }
 
-
-
-
     .blog {
         max-width: 700px;
 
@@ -481,6 +478,33 @@ Progress
             }
 
         }
+
+        .reports-content {
+            h1 {
+                font-weight: bold;
+                font-size: 100%;
+            }
+            h2 {
+                font-weight: bold;
+                font-size: 100%;
+            }
+            h3 {
+                font-weight: bold;
+                font-size: 100%;
+            }
+            h4 {
+                font-weight: bold;
+                font-size: 100%;
+            }
+            h5 {
+                font-weight: bold;
+                font-size: 100%;
+            }
+            h6 {
+                font-weight: bold;
+                font-size: 100%;
+            }
+        }
     }
 
     figure.wp-block-pullquote {
@@ -511,8 +535,21 @@ Progress
 
 }
 
-#menu-playbook {
+.sidebar-menu {
     .submenu {
         padding-left: $medium-text;
+    }
+    li {
+        background-color: $white;
+        transition: 0.3s;
+    }
+    li:hover {
+        background-color: #f1faff;
+    }
+}
+
+.pagination {
+    a {
+        color: $primary-color;
     }
 }

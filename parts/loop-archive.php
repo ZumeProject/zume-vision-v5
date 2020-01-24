@@ -10,22 +10,25 @@ $post = get_post();
 
 <article id="post-<?php the_ID(); ?>" role="article">
     <div class="grid-x grid-padding-x grid-padding-y article-section highlight-background border-bottom padding-top-1" data-post-id="<?php the_ID(); ?>">
-        <div class="cell medium-2 hide-for-small-only">
-            <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail() ?></a>
-        </div>
-        <div class="cell medium-10">
+        <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+            <div class="cell medium-2 hide-for-small-only">
+                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_post_thumbnail() ?></a>
+            </div>
+            <div class="cell medium-10">
+        <?php else: ?>
+            <div class="cell"><!-- full width without image-->
+        <?php endif; ?>
+
             <header class="article-header">
                 <h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
             </header> <!-- end article header -->
 
             <section class="entry-content" itemprop="text">
-                <a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
-                    <?php the_excerpt(); ?>
-                </a>
+                <?php the_excerpt(); ?>
             </section> <!-- end article section -->
 
-            <footer class="article-footer padding-top-1">
-                <p class="tags small-text"><?php echo get_the_date() ?></p>
+            <footer class="article-footer">
+                <p class="tags small-text"><?php echo get_the_date() ?> | Found in: <a href="<?php echo site_url() . '/' . esc_html( $post->post_type ) . '/'  ?>"><?php echo esc_html( ucwords( $post->post_type ) ) ?></a></p>
             </footer> <!-- end article footer -->
         </div>
     </div>

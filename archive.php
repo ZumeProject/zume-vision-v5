@@ -7,6 +7,14 @@
 
 get_header(); ?>
 
+<!-- Progress Section-->
+<div class="grid-x grid-padding-x deep-blue-section padding-vertical-2">
+    <div class="cell center">
+        <h2 class="center"><?php the_archive_title();?></h2>
+    </div>
+</div>
+<div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
+
 <div class="content white-section">
 
     <div class="inner-content grid-x grid-margin-x grid-padding-x padding-vertical-1">
@@ -17,9 +25,7 @@ get_header(); ?>
 
             <div class="grid-x grid-margin-x">
 
-                <div class="cell medium-8">
-
-                    <header><h2 class="center"><?php the_archive_title();?></h2></header>
+                <div class="cell ">
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -36,9 +42,7 @@ get_header(); ?>
 
                     <?php endif; ?>
                 </div>
-                <div class="cell medium-4">
-                    <?php get_sidebar(); ?>
-                </div>
+
             </div>
 
         </main> <!-- end #main -->

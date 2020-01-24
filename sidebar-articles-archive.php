@@ -8,19 +8,30 @@
 
     <hr class="show-for-small-only" />
 
-    <img src="<?php echo esc_url( zume_images_uri('vision') ) ?>map-with-jesus.jpg" alt="map with jesus" />
-    <hr />
 
+
+
+    <h3>Topics</h3>
+    <div class="grid-x padding-left-1">
+        <?php
+        /** Category List */
+        $categories = get_categories( [
+            'taxonomy' => 'article_topics',
+            'hide_empty' => false,
+        ]);
+
+        foreach( $categories as $category ) {
+            if ( $category->count > 0 ) {
+                echo '<div class="cell"><a href="'. site_url().'/article-topics/'.$category->slug.'/">' . $category->name . '<span class="float-right">('.$category->count.')</span></a></div>';
+            } else {
+                echo '<div class="cell">' . $category->name . '<span class="float-right">(0)</span></div>';
+            }
+        }
+        ?>
+    </div>
+    <hr>
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
 
-    <!-- subscribe section-->
-    <?php get_template_part( 'parts/widget', 'newsletter-subscribe' ); ?>
-
-    <?php if ( is_active_sidebar( 'article' ) ) : ?>
-
-        <?php dynamic_sidebar( 'article' ); ?>
-
-    <?php endif; ?>
-
+    <img src="<?php echo esc_url( zume_images_uri('vision') ) ?>map-with-jesus.jpg" alt="map with jesus" />
 
 </div>

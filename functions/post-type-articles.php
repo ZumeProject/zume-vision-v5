@@ -159,7 +159,7 @@ class Zume_Articles_Post_Type
                 'menu_position' => 10, /* this is what order you want it to appear in on the left hand side menu */
                 'menu_icon' => 'dashicons-book', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
                 'rewrite' => array(
-                    'slug' => 'article',
+                    'slug' => 'articles',
                     'with_front' => true
                 ), /* you can specify its url slug */
                 'has_archive' => 'articles', /* you can rename the slug here */
@@ -175,45 +175,18 @@ class Zume_Articles_Post_Type
     //create two taxonomies, genres and tags for the post type "tag"
     public function create_tag_taxonomies()
     {
-        // Add new taxonomy, NOT hierarchical (like tags)
-        $labels = array(
-            'name' => _x( 'Article Tags', 'taxonomy general name' ),
-            'singular_name' => _x( 'Tag', 'taxonomy singular name' ),
-            'search_items' =>  __( 'Search Tags' ),
-            'popular_items' => __( 'Popular Tags' ),
-            'all_items' => __( 'All Tags' ),
-            'parent_item' => null,
-            'parent_item_colon' => null,
-            'edit_item' => __( 'Edit Tag' ),
-            'update_item' => __( 'Update Tag' ),
-            'add_new_item' => __( 'Add New Tag' ),
-            'new_item_name' => __( 'New Tag Name' ),
-            'separate_items_with_commas' => __( 'Separate tags with commas' ),
-            'add_or_remove_items' => __( 'Add or remove tags' ),
-            'choose_from_most_used' => __( 'Choose from the most used tags' ),
-            'menu_name' => __( 'Tags' ),
-        );
 
-        register_taxonomy('article_tag','articles',array(
-            'hierarchical' => false,
-            'labels' => $labels,
-            'show_ui' => true,
-            'update_count_callback' => '_update_post_term_count',
-            'query_var' => true,
-            'rewrite' => array( 'slug' => 'article-tag' ),
-            'show_in_rest' => true,
-        ));
-        register_taxonomy('article_categories','articles',array(
+        register_taxonomy('article_topics','articles',array(
             'hierarchical' => true,
             'labels' => [
-                'name' => _x( 'Article Categories', 'taxonomy general name' ),
-                'singular_name' => _x( 'Category', 'taxonomy singular name' ),
-                'menu_name' => __( 'Categories' ),
+                'name' => _x( 'Article Topics', 'taxonomy general name' ),
+                'singular_name' => _x( 'Topic', 'taxonomy singular name' ),
+                'menu_name' => __( 'Topics' ),
             ],
             'show_ui' => true,
             'update_count_callback' => '_update_post_term_count',
             'query_var' => true,
-            'rewrite' => array( 'slug' => 'article-categories' ),
+            'rewrite' => array( 'slug' => 'article-topics' ),
             'show_in_rest' => true,
         ));
     }

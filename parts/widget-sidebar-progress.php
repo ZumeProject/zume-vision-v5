@@ -17,6 +17,6 @@
         <span class="progress-counter" id="churches-needed-count-1">--</span>
     </p>
 
-    <a href="/progress" class="button primary-button-hollow">See Progress</a> <a href="/maps" class="button primary-button-hollow">See Maps</a>
+    <a href="/progress" class="button primary-button-hollow">Progress</a> <a href="/maps" class="button primary-button-hollow">Maps</a> <a href="/reports" class="button primary-button-hollow">Reports</a>
 </div>
-<hr>
+

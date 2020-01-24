@@ -7,6 +7,14 @@
 
 get_header(); ?>
 
+<!-- Progress Section-->
+<div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
+    <div class="cell center">
+        <h1 class="center">Articles</h1>
+    </div>
+</div>
+<div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
+
 <div class="content white-section">
 
     <div class="inner-content grid-x grid-margin-x grid-padding-x padding-vertical-1">
@@ -19,7 +27,7 @@ get_header(); ?>
 
                 <div class="cell medium-8 no-underline">
 
-                    <header><h2 class="center padding-bottom-2 border-bottom">Articles</h2></header>
+
 
                     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
