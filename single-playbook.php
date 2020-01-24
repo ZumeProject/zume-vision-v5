@@ -32,8 +32,6 @@ get_header(); ?>
 
             <?php endif; ?>
 
-            <?php get_template_part( 'parts/content', 'training-ad-horizontal' ); ?>
-
         </div>
 
         <div class="sidebar cell large-4">
