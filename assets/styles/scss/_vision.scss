@@ -426,11 +426,12 @@ Progress
     margin: 0 auto;
 
     h1 {
-        font-size: 3rem;
+        font-size: $x-jumbo-text;
         font-weight:700;
         text-align: left;
         padding: $medium-text 0;
         color: $primary-color;
+        line-height: $x-jumbo-text;
 
         @media (max-width: $breakpoint-medium ) {
             font-size: 2.2rem;
@@ -531,6 +532,12 @@ Progress
     .fi-x {
         color: $medium-gray;
         padding-right: $medium-text;
+    }
+
+    .recent-articles {
+        li {
+            line-height: $large-text;
+        }
     }
 
 }

@@ -8,9 +8,6 @@
 
     <hr class="show-for-small-only" />
 
-
-
-
     <h3>Topics</h3>
     <div class="grid-x padding-left-1">
         <?php
@@ -31,7 +28,5 @@
     </div>
     <hr>
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
-
-    <img src="<?php echo esc_url( zume_images_uri('vision') ) ?>map-with-jesus.jpg" alt="map with jesus" />
 
 </div>

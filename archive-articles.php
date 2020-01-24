@@ -1,64 +1,51 @@
-<?php
-/**
- * Displays archive pages if a speicifc template is not set.
- *
- * For more info: https://developer.wordpress.org/themes/basics/template-hierarchy/
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <!-- Progress Section-->
 <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
-    <div class="cell center">
+    <div class="cell center" style="cursor:pointer;" onclick="window.location = '<?php site_url() ?>/articles'">
         <h1 class="center">Articles</h1>
     </div>
 </div>
 <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 
-<div class="content white-section">
+<!-- Main -->
+<main role="main" id="post-main">
 
-    <div class="inner-content grid-x grid-margin-x grid-padding-x padding-vertical-1">
+    <div class="grid-x grid-margin-x">
 
-        <div class="cell medium-1"></div>
+        <div class="blog cell large-8">
 
-        <main class="main small-12 medium-10 large-10 cell" role="main">
+            <?php /** Show Category Label on Category Pages */
+            global $wp;
+            $url_parts = explode('/', $wp->request );
+            if ( 'article-topics' === $url_parts[0] ) {
+                the_archive_title();
+            } ?>
 
-            <div class="grid-x grid-margin-x">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <div class="cell medium-8 no-underline">
+                <?php get_template_part( 'parts/loop', 'articles-archive' ); ?>
 
+            <?php endwhile; ?>
 
+                <?php zume_page_navi(); ?>
 
-                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <?php else : ?>
 
-                        <!-- To see additional archive styles, visit the /parts directory -->
-                        <?php get_template_part( 'parts/loop', 'archive' ); ?>
+                <?php get_template_part( 'parts/content', 'missing' ); ?>
 
-                    <?php endwhile; ?>
+            <?php endif; ?>
 
-                        <?php zume_page_navi(); ?>
+        </div>
 
-                    <?php else : ?>
+        <div class="sidebar cell large-4">
 
-                        <?php get_template_part( 'parts/content', 'missing' ); ?>
+            <?php get_sidebar( 'articles-archive'); ?>
 
-                    <?php endif; ?>
-                </div>
+        </div>
 
-                <div class="cell medium-4">
+    </div>
 
-                    <?php get_sidebar( 'articles-archive'); ?>
-
-                </div>
-
-            </div>
-
-        </main> <!-- end #main -->
-
-        <div class="cell medium-1"></div>
-
-    </div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
+</main> <!-- end #main -->
 
 <?php get_footer(); ?>

@@ -306,7 +306,7 @@ class Zume_Playbook_Post_Type
      */
     public function meta_box_setup()
     {
-//        add_meta_box($this->post_type . '_scribes', 'Playbook', array($this, 'load_playbook_meta_box'), $this->post_type, 'normal', 'high');
+        add_meta_box($this->post_type . '_scribes', 'Play Contributor', array($this, 'load_playbook_meta_box'), $this->post_type, 'normal', 'high');
     } // End meta_box_setup()
 
     /**
@@ -317,7 +317,7 @@ class Zume_Playbook_Post_Type
      */
     public function load_playbook_meta_box()
     {
-        $this->meta_box_content('description'); // prints
+        $this->meta_box_content('contributor'); // prints
     }
 
     /**
@@ -500,12 +500,26 @@ class Zume_Playbook_Post_Type
     {
         $fields = [];
 
-        $fields['1'] = [
-            'name' => 'Welcome to Zúme (1)',
+        $fields['contributor_name'] = [
+            'name' => 'Contributor Name',
             'description' => '',
-            'type' => 'link',
-            'default' => '247062938',
-            'section' => 'scribe',
+            'type' => 'text',
+            'default' => '',
+            'section' => 'contributor',
+        ];
+        $fields['contributor_website_url'] = [
+            'name' => 'Contributor URL',
+            'description' => '',
+            'type' => 'text',
+            'default' => '',
+            'section' => 'contributor',
+        ];
+        $fields['contributor_can_be_contacted'] = [
+            'name' => 'Can Be Contacted?',
+            'description' => '',
+            'type' => 'select',
+            'default' => ['yes' => 'Yes', 'no' => 'No'],
+            'section' => 'contributor',
         ];
 
 

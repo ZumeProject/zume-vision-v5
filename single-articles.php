@@ -6,7 +6,7 @@
 get_header(); ?>
 
 <!-- Bread Crumbs-->
-<nav id="post-nav">
+<nav id="post-nav" class="padding-bottom-1">
     <div class="breadcrumb hide-for-small-only">
         <a href="<?php echo esc_url( home_url() ); ?>" rel="nofollow">Home</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;
         <a href="<?php echo esc_url( home_url() ); ?>/articles">Articles</a>&nbsp;&nbsp;&#187;&nbsp;&nbsp;

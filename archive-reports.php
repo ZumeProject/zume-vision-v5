@@ -1,11 +1,4 @@
-<?php
-/**
- * Displays archive pages if a speicifc template is not set.
- *
- * For more info: https://developer.wordpress.org/themes/basics/template-hierarchy/
- */
-
-get_header(); ?>
+<?php get_header(); ?>
 
 <!-- Progress Section-->
 <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
@@ -21,6 +14,13 @@ get_header(); ?>
     <div class="grid-x grid-margin-x">
 
         <div class="blog cell large-8">
+
+            <?php /** Show Category Label on Category Pages */
+            global $wp;
+            $url_parts = explode('/', $wp->request );
+            if ( 'report-categories' === $url_parts[0] ) {
+                the_archive_title();
+            } ?>
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
