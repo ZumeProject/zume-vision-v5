@@ -306,7 +306,7 @@ class Zume_Playbook_Post_Type
      */
     public function meta_box_setup()
     {
-        add_meta_box($this->post_type . '_scribes', 'Playbook', array($this, 'load_playbook_meta_box'), $this->post_type, 'normal', 'high');
+//        add_meta_box($this->post_type . '_scribes', 'Playbook', array($this, 'load_playbook_meta_box'), $this->post_type, 'normal', 'high');
     } // End meta_box_setup()
 
     /**

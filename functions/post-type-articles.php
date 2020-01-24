@@ -333,7 +333,7 @@ class Zume_Articles_Post_Type
      */
     public function meta_box_setup()
     {
-        add_meta_box($this->post_type . '_scribes', 'Article', array($this, 'load_article_meta_box'), $this->post_type, 'normal', 'high');
+//        add_meta_box($this->post_type . '_scribes', 'Article', array($this, 'load_article_meta_box'), $this->post_type, 'normal', 'high');
     } // End meta_box_setup()
 
     /**
