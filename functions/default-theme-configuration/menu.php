@@ -63,14 +63,14 @@ function zume_playbook_nav() {
         'theme_location' => 'playbook',                 // Where it's located in the theme
         'depth' => 5,                                   // Limit the depth of the nav
         'fallback_cb' => false,                         // Fallback function (see below)
-        'walker' => new Zume_Off_Canvas_Menu_Walker()
+        'walker' => new Zume_Playbook_Menu_Walker()
     ));
 }
 
 class Zume_Playbook_Menu_Walker extends Walker_Nav_Menu {
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat( "\t", $depth );
-        $output .= "\n$indent<ul class=\"vertical is-active menu\">\n";
+        $output .= "\n$indent<ul class=\"vertical menu\">\n";
     }
 }
 
