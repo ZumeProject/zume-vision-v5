@@ -9,7 +9,7 @@ get_header(); ?>
 
 <!-- Progress Section-->
 <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
-    <div class="cell center">
+    <div class="cell center" style="cursor:pointer;" onclick="window.location = '<?php site_url() ?>/reports'">
         <h1 class="center">Reports</h1>
     </div>
 </div>

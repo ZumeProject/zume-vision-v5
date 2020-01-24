@@ -16,36 +16,21 @@
 
     <hr><!-- Divider -->
 
-    <!-- Key Reports-->
-    <div class="padding-horizontal-1">
-        <h3>Key Reports</h3>
-        <?php zume_reports_nav() ?>
-    </div>
-
-    <hr><!-- Divider -->
-
-    <!-- Progress -->
-    <div class="padding-horizontal-1">
-        <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
-    </div>
-
-    <hr><!-- Divider -->
-
     <div class="padding-horizontal-1">
 
-        <p>Archives<br>
-        <select onchange="window.location = jQuery(this).val()">
-            <option></option>
-            <?php wp_get_archives([
-                'type' => 'monthly',
-                'show_post_count' => true,
-                'post_type' => 'reports',
-                'format' => 'option'
-            ]) ?>
-        </select>
+        <p>By Month<br>
+            <select onchange="window.location = jQuery(this).val()">
+                <option></option>
+                <?php wp_get_archives([
+                    'type' => 'monthly',
+                    'show_post_count' => true,
+                    'post_type' => 'reports',
+                    'format' => 'option'
+                ]) ?>
+            </select>
         </p>
 
-        <p>Categories<br>
+        <p>By Category<br>
             <select onchange="window.location = jQuery(this).val()">
                 <option></option>
                 <?php
@@ -62,6 +47,23 @@
         </p>
 
     </div>
+
+    <hr><!-- Divider -->
+
+    <!-- Key Reports-->
+    <div class="padding-horizontal-1">
+        <h3>Special Reports</h3>
+        <?php zume_reports_nav() ?>
+    </div>
+
+    <hr><!-- Divider -->
+
+    <!-- Progress -->
+    <div class="padding-horizontal-1">
+        <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
+    </div>
+
+
 
 
 
