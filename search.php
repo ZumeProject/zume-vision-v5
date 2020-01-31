@@ -7,47 +7,25 @@
 
 get_header(); ?>
 
-<div class="content white-section">
+<main class="main" role="main" style="max-width:1100px; padding: 1em; margin: 0 auto;">
 
-    <div class="inner-content grid-x grid-margin-x grid-padding-x padding-vertical-1">
+    <header><h2 class="center"><?php _e( 'Results for:', 'zume' ); ?> <?php echo esc_attr( get_search_query() ); ?></h2></header>
 
-        <div class="cell medium-1"></div>
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <main class="main small-12 medium-10 large-10 cell" role="main">
+        <!-- To see additional archive styles, visit the /parts directory -->
+        <?php get_template_part( 'parts/loop', 'archive' ); ?>
 
-            <div class="grid-x grid-margin-x">
+    <?php endwhile; ?>
 
-                <div class="cell medium-8">
-                    <header><h2 class="center"><?php _e( 'Results for:', 'zume' ); ?> <?php echo esc_attr( get_search_query() ); ?></h2></header>
+        <?php zume_page_navi(); ?>
 
-                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <?php else : ?>
 
-                        <!-- To see additional archive styles, visit the /parts directory -->
-                            <?php get_template_part( 'parts/loop', 'archive' ); ?>
+        <?php get_template_part( 'parts/content', 'missing' ); ?>
 
-                    <?php endwhile; ?>
+    <?php endif; ?>
 
-                        <?php zume_page_navi(); ?>
-
-                    <?php else : ?>
-
-                        <?php get_template_part( 'parts/content', 'missing' ); ?>
-
-                    <?php endif; ?>
-                </div>
-                <div class="cell medium-4">
-
-                    <?php get_sidebar(); ?>
-
-                </div>
-            </div>
-
-        </main> <!-- end #main -->
-
-        <div class="cell medium-1"></div>
-
-    </div> <!-- end #inner-content -->
-
-</div> <!-- end #content -->
+</main> <!-- end #main -->
 
 <?php get_footer(); ?>
