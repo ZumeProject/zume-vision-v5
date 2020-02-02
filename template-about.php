@@ -44,12 +44,12 @@ Template Name: About
                             So what's left?
                         </div>
                         <div class="cell">
-                            A band of brothers and sisters<br>
+                            A band of brothers and sisters
                             loving God and loving others<br>
                             with immediate, radical, costly, obedience to Jesus.
                         </div>
                         <div class="cell">
-                            <strong>Zúme aspires to be a community of practice.</strong>
+                            <strong>Zúme is a community of practice <br>for those who want to see disciple making movements.</strong>
                         </div>
                         <div class="cell">
                             <strong>Inwardly,</strong> we want Jesus ... to know him and be
