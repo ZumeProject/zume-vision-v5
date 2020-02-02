@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<!-- Progress Section-->
+<!-- Statistics Section-->
 <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
     <div class="cell center" style="cursor:pointer;" onclick="window.location = '<?php site_url() ?>/articles'">
         <h1 class="center">Articles</h1>

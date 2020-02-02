@@ -58,7 +58,7 @@
 
     <hr><!-- Divider -->
 
-    <!-- Progress -->
+    <!-- Statistics -->
     <div class="padding-horizontal-1">
         <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
     </div>

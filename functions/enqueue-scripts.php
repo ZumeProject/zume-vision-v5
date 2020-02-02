@@ -51,7 +51,6 @@ function site_scripts() {
      * All Data Driven Pages
      */
     if ( 'template-maps' === substr( basename( get_page_template() ), 0, 13 )
-        || 'template-progress.php' === basename( get_page_template() )
         || 'template-statistics.php' === basename( get_page_template() )
     ) {
         wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', [ 'jquery', 'lodash' ], '1.2.0' );
@@ -97,47 +96,18 @@ function site_scripts() {
      * Progress Page
      * @todo is this still needed?
      */
-    if ( 'template-progress.php' === basename( get_page_template() ) ) {
+    if ( 'template-statistics.php' === basename( get_page_template() ) ) {
         wp_register_style( 'datatable-css', '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', false, '1.10' );
         wp_enqueue_style( 'datatable-css' );
         wp_register_script( 'datatable', '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js', [ 'jquery', 'rest-api', 'lodash' ], '1.10' );
         wp_enqueue_script( 'datatable' );
     }
 
-    /**
-     * Statistics Page
-     */
-    if ( 'template-statistics.php' === basename( get_page_template() ) ) {
-
-
-        wp_enqueue_script( 'statistics', get_template_directory_uri() . '/assets/scripts/statistics.js', array( 'jquery' ), 1.1, true );
-        wp_localize_script(
-            "statistics", "zumeStats", array(
-                'root' => esc_url_raw( rest_url() ),
-                'nonce' => wp_create_nonce( 'wp_rest' ),
-                'current_user_login' => wp_get_current_user()->user_login,
-                'current_user_id' => get_current_user_id(),
-                'theme_uri' => get_stylesheet_directory_uri(),
-                "translations" => []
-            )
-        );
-        if ( ! class_exists( 'DT_Mapping_Module' ) ) {
-            require_once( '../dt-mapping/loader.php' );
-            new DT_Mapping_Module_Loader( 'theme' );
-        }
-
-        wp_enqueue_script( 'mapping-drill-down', get_template_directory_uri() . '/dt-mapping/drill-down.js', [ 'jquery', 'lodash' ], '1.1' );
-        wp_localize_script(
-            'mapping-drill-down', 'mappingModule', array(
-                'mapping_module' => DT_Mapping_Module::instance()->localize_script(),
-            )
-        );
-    }
 
     /**
      * Home Page
      */
-    if ( 'template-home.php' === basename( get_page_template() ) || 'template-progress.php' === basename( get_page_template() ) || is_single() || is_archive() ) {
+    if ( 'template-home.php' === basename( get_page_template() ) || 'template-statistics.php' === basename( get_page_template() ) || is_single() || is_archive() ) {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
 
