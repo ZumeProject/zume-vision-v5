@@ -23,7 +23,7 @@ get_header(); ?>
         <!-- Progress Section-->
         <div class="grid-x grid-padding-x deep-blue-section padding-bottom-0">
             <div class="cell center">
-                <h2>Progress</h2>
+                <h2>Statistics</h2>
             </div>
         </div>
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
