@@ -4,7 +4,12 @@
  */
 
 get_header(); ?>
-
+<!-- Title Section-->
+<div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
+    <div class="cell center">
+        <h1 class="center title">Maps</h1>
+    </div>
+</div>
 <div class="content">
 
     <div class="inner-content grid-x grid-margin-x grid-padding-x">

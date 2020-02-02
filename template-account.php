@@ -8,7 +8,7 @@ get_header(); ?>
 <!-- Title Section-->
 <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
     <div class="cell center" style="cursor:pointer;" onclick="window.location = '<?php site_url() ?>/account'">
-        <h1 class="center">My Account</h1>
+        <h1 class="center title">My Account</h1>
     </div>
 </div>
 <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>

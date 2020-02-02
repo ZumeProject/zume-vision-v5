@@ -5,22 +5,18 @@
 
 get_header(); ?>
 
+<!-- Title Section-->
+<div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
+    <div class="cell center">
+        <h1 class="center title">Prayer</h1>
+        <h3>Tools to Feed Extraordinary Prayer</h3>
+    </div>
+</div>
+<div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
+
 <div id="content">
 
     <div id="main" class="cell" role="main">
-
-        <!-- Prayer Header -->
-        <div class="grid-x grid-padding-x deep-blue-section">
-
-            <div class="cell center padding-top-1">
-
-                <h2>Prayer</h2>
-
-                <h3>Tools to Feed Extraordinary Prayer</h3>
-
-            </div>
-        </div>
-        <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 
         <!-- Hero Stats-->
         <div class="grid-x white-section center">

@@ -6,22 +6,20 @@ Template Name: Roots
 
 <?php get_header(); ?>
 
+<!-- Title Section-->
+<div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
+    <div class="cell center">
+        <h1 class="center title">Roots of Zúme</h1>
+    </div>
+</div>
+<div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
+
 <div id="content" >
 
     <div id="inner-content grid-x grid-padding-x">
 
         <div id="main" class="cell " role="main">
 
-            <!-- Deep Blue Ribbon-->
-            <div class="grid-x deep-blue-section">
-                <div class="large-1 cell"></div>
-                <div class="cell large-10 center padding-top-1">
-                    <h2>Roots of Zúme</h2>
-                </div>
-                <div class="large-1 cell"></div>
-            </div>
-            <div class="blue-notch-wrapper"><div class="cell center blue-notch"></div></div><!--Blue notch -->
-            <!-- End Deep Blue Ribbon-->
             <div class="timeline">
                 <ul>
 

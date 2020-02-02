@@ -9,7 +9,7 @@ Template Name: Training
 <!-- Title Section-->
 <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
     <div class="cell center" style="cursor:pointer;" onclick="window.location = '<?php site_url() ?>/training'">
-        <h1 class="center">Training</h1>
+        <h1 class="center title">Training</h1>
     </div>
 </div>
 <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>

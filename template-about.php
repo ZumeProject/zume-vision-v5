@@ -6,14 +6,16 @@ Template Name: About
 
 <?php get_header(); ?>
 
+<!-- Title Section-->
+<div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
+    <div class="cell center">
+        <h1 class="center title">Who Are We?</h1>
+    </div>
+</div>
+<div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
+
 <div id="content" >
     <!-- Title Section-->
-    <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
-        <div class="cell center">
-            <h1 class="center">Who Are We?</h1>
-        </div>
-    </div>
-    <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 
     <div id="inner-content grid-x grid-padding-x">
 
@@ -26,8 +28,8 @@ Template Name: About
                         <div class="cell">
                         </div>
                         <div class="cell">
-                            <img src="<?php echo esc_url( zume_images_uri() . 'zume-logo.svg' ) ?>" style="width:300px;" />
-                            <img src="<?php echo esc_url( zume_images_uri( 'zume_images' ) . 'V1.1/V1.1-C/crowd_large.svg' ) ?>" />
+                            <img src="<?php echo esc_url( zume_images_uri() . 'zume-logo.svg' ) ?>" style="width:300px;" alt="Zume logo" />
+                            <img src="<?php echo esc_url( zume_images_uri( 'zume_images' ) . 'V1.1/V1.1-C/crowd_large.svg' ) ?>" alt="Crowd Image"/>
                         </div>
                     </div>
                     <div class="grid-x grid-padding-y content-large">
