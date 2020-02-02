@@ -108,7 +108,7 @@ get_header(); ?>
                         </li>
                         <li class="orbit-slide">
                             <figure class="orbit-figure">
-                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-mappinggulpd.png" alt="Space">
+                                <img class="orbit-image" src="<?php echo esc_url( zume_images_uri( 'vision' ) )?>dt-screen-mapping.png" alt="Space">
                                 <figcaption class="orbit-caption">Metrics : Saturation Mapping & Activity</figcaption>
                             </figure>
                         </li>
