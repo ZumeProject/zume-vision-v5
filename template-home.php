@@ -65,10 +65,6 @@ $post = get_post();
                 </div>
                 <div class="medium-1 cell"></div>
 
-                <div class="cell center">
-                    <a href="/progress" class="button primary-button-hollow large">View Progress</a>
-                </div>
-
             </div>
             <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
             <!-- End White Section-->

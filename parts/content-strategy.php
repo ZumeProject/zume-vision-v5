@@ -127,7 +127,7 @@
             <div class="cell medium-3"></div>
         </div>
 
-        <a class="button primary-button-hollow large" href="/progress">View Progress</a>
+        <a class="button primary-button-hollow large" href="/statistics">View Statistics</a>
         <a class="button primary-button-hollow large" href="/maps">View Maps</a>
         <a class="button primary-button-hollow large" href="/reports">View Reports</a>
 

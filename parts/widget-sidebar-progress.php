@@ -19,7 +19,7 @@
 
     <p>
         See the big picture<br>
-        <a href="/progress" class="button primary-button-hollow">Progress</a> <a href="/maps" class="button primary-button-hollow">Maps</a> <a href="/reports" class="button primary-button-hollow">Reports</a>
+        <a href="/statistics" class="button primary-button-hollow">Progress</a> <a href="/maps" class="button primary-button-hollow">Maps</a> <a href="/reports" class="button primary-button-hollow">Reports</a>
     </p>
 
 </div>
