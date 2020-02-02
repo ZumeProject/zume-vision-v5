@@ -1,6 +1,6 @@
 <div class="grid-x deep-blue-section">
     <div class="cell center">
-        <h2>Our Core Strategy</h2>
+        <h2>Our Community Goals</h2>
         <h3>Holiness, Prayer, Training Saturation, Church Saturation</h3>
     </div>
 </div>
@@ -69,7 +69,7 @@
 <!-- White Section-->
 <div class="grid-x white-section">
     <div class="cell center">
-        <h2>Training Saturation</h2>
+        <h2>Training Multiplication</h2>
         <h3>(1 Training &#xF7; Population)</h3>
 
         <div class="padding-vertical-2">
@@ -107,7 +107,7 @@
 <div class="grid-x white-section">
 
     <div class="cell center">
-        <h2>Simple Church Saturation</h2>
+        <h2>Simple Church Multiplication</h2>
         <h3>(2 Simple Churches &#xF7; Population)</h3>
 
         <div class="padding-vertical-2">
