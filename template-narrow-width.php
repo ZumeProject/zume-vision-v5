@@ -5,19 +5,16 @@
 
 get_header(); ?>
 
-<div class="content">
+<!-- Main -->
+<main role="main" id="post-main">
 
-    <main class="main narrow-width cell padding-horizontal-1" role="main">
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+        <?php get_template_part( 'parts/loop', 'page' ); ?>
 
-                <?php get_template_part( 'parts/loop', 'page' ); ?>
+    <?php endwhile;
+    endif; ?>
 
-        <?php endwhile;
-        endif; ?>
-
-    </main> <!-- end #main -->
-
-</div> <!-- end #content -->
+</main> <!-- end #main -->
 
 <?php get_footer(); ?>
