@@ -125,6 +125,10 @@ Sections
     padding-bottom: 3em;
     border-bottom: 1px solid $primary;
     color: $white;
+    h1 {
+        color: $white;
+        font-weight: 100;
+    }
 
     h2 {
         font-family: 'Roboto', sans-serif;
