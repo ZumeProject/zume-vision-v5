@@ -2,8 +2,58 @@
 body {
     background-position: center top;
     font-family: Roboto, sans-serif !important;
-    /*padding-bottom:25px;*/
+    font-size: 1.1rem;
 }
+h1 {
+    font-size: $jumbo-text;
+    font-weight:700;
+    text-align: left;
+    padding: $x-large-text 0 $large-text;
+    color: $primary-color;
+    line-height: $x-jumbo-text;
+
+
+    .title {
+        //font-weight:100;
+    }
+
+    .page-title {
+
+        //font-weight: 100;
+        //font-size: 3.5em;
+        //color: $primary;
+        //text-align:center;
+    }
+
+    @media (max-width: $breakpoint-medium ) {
+        font-size: 2.2rem;
+    }
+
+}
+h2 {
+    font-size: $x-large-text;
+    padding-top: $x-large-text;
+    padding-bottom: $small-text;
+}
+h3 {
+    font-size: $large-text;
+    padding-top: $large-text;
+}
+h4 {
+
+}
+h5 {
+
+}
+a {
+    text-decoration: underline;
+}
+figcaption {
+    text-align: center;
+    font-size: .8rem;
+}
+
+
 .thin-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
@@ -29,9 +79,7 @@ body {
     max-width: 780px;
     margin: 0 auto;
 }
-h1.title {
-    font-weight:100;
-}
+
 
 /***********
 Home
@@ -216,13 +264,7 @@ Post Section
         color: $primary;
     }
 }
-.page-title {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 100;
-    font-size: 3.5em;
-    color: $primary;
-    text-align:center;
-}
+
 .article-header {
     h2 {
         font-family: 'Roboto', sans-serif;
@@ -427,27 +469,7 @@ Progress
     max-width: 1100px;
     margin: 0 auto;
 
-    h1 {
-        font-size: $x-jumbo-text;
-        font-weight:700;
-        text-align: left;
-        padding: $medium-text 0;
-        color: $primary-color;
-        line-height: $x-jumbo-text;
 
-        @media (max-width: $breakpoint-medium ) {
-            font-size: 2.2rem;
-        }
-    }
-    h2 {
-        font-size: 2.2rem;
-    }
-    h3 {
-        font-size: 1.8rem;
-    }
-    h4 {
-
-    }
 
     .blog {
         max-width: 700px;
@@ -515,6 +537,8 @@ Progress
     }
 
     figure.wp-block-pullquote {
+        margin-top: $x-large-text;
+        margin-bottom: $x-large-text;
         border-top: 1px solid $light-gray;
         border-bottom: 1px solid $light-gray;
 

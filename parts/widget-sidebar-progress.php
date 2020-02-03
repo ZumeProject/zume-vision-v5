@@ -1,5 +1,5 @@
 <h3>Sobering Reality</h3>
-<div class="training padding-left-1">
+<div class=" padding-left-1">
     <p>
         Born with no access to the gospel today<br>
         <span class="progress-counter" id="births-among-unreached-today-count-1">--</span>
