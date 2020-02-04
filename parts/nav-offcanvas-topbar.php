@@ -20,7 +20,12 @@
     </div>
 
     <div class="cell large-2 hide-for-small show-for-large">
-        <a href="javascript:void(0)" data-open="search-box" rel="nofollow"><i class="fi-magnifying-glass large-text float-right"></i></a>
+        <a href="javascript:void(0)" data-open="search-box" rel="nofollow" title="Search"><i class="fi-magnifying-glass large-text float-right"></i></a>
+
+        <?php if ( ! is_user_logged_in() ) : ?>
+            <a href="/login" class="float-right padding-horizontal-1" title="Login"><i class="fi-torso large-text"></i></a>
+        <?php endif; ?>
+
     </div>
 
     <div class="cell small-3 show-for-small hide-for-large" id="top-mobile-menu-div">

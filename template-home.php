@@ -17,7 +17,7 @@ $post = get_post();
             <div class="grid-x grid-margin-x grid-margin-y white-section">
                 <div class="medium-1 cell"></div>
                 <div class="medium-10 cell center">
-                    <div class="grid-x center">
+                    <div class="grid-x grid-padding-x center">
                         <div class="cell"><img src="<?php echo esc_url( zume_images_uri() )?>zume-logo.svg" style="max-height:100px" id="home-logo" alt="welcome-graphic" /></div>
                         <div class="cell"><p class="large-text">to saturate the world with multiplying disciples<br>in our generation.</p></div>
                         <div class="cell"><img src="<?php echo esc_url( zume_images_uri() )?>vision/jesus-globe.png" alt="welcome-graphic" style="max-height:250px"  /></div>

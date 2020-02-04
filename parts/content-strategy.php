@@ -1,4 +1,4 @@
-<div class="grid-x deep-blue-section">
+<div class="grid-x grid-padding-x deep-blue-section">
     <div class="cell center">
         <h2>Our Community Goals</h2>
         <h3>Holiness, Prayer, Training and Church Multiplication</h3>
@@ -42,7 +42,7 @@
 <div class="grid-x grid-padding-x white-section">
     <div class="cell center">
         <h2>Extraordinary Prayer</h2>
-        <h3>Extraordinary prayer has proceeded every <a href="/articles/what-is-a-disciple-making-movement" class="underline">disciple making movement</a> in history.</h3>
+        <h3>Extraordinary prayer has preceded every <a href="/articles/what-is-a-disciple-making-movement" class="underline">disciple making movement</a> in history.</h3>
         <img src="<?php echo esc_url( zume_images_uri( 'zume_images' ) ) ?>V1.2/V1.2-A/worshiping.svg" alt="Extraordinary Prayer" />
 
         <div class="grid-x padding-bottom-1 content-large">
@@ -135,5 +135,5 @@
 
     </div>
 </div>
-<div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
-<!-- End White Section-->
+<!--<div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div>
+

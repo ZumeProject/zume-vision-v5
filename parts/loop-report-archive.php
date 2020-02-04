@@ -9,7 +9,7 @@ $post = get_post();
 
 <article id="post-<?php the_ID(); ?>" role="article">
 
-    <div class="grid-x grid-padding-x grid-padding-y article-section highlight-background border-bottom padding-top-1" data-post-id="<?php the_ID(); ?>">
+    <div class="grid-x grid-padding-x grid-padding-y article-section highlight-background" data-post-id="<?php the_ID(); ?>">
         <div class="cell">
             <span class="small-text"><?php echo get_the_date() ?></span>
             <header class="article-header">

@@ -120,11 +120,19 @@ Sections
     color: $white;
     .cell {
         padding-bottom: $medium-text;
+
+        @media (max-width: $breakpoint-medium ) {
+            padding-bottom: $small-text;
+        }
     }
     h1 {
         color: $white;
         font-weight: 100;
         font-size: $x-jumbo-text;
+
+        @media (max-width: $breakpoint-medium ) {
+            font-size: $x-large-text;
+        }
     }
 
     h2 {
@@ -133,12 +141,20 @@ Sections
         font-size: $x-jumbo-text;
         color: $white;
         text-align:center;
+
+        @media (max-width: $breakpoint-medium ) {
+            font-size: $x-large-text;
+        }
     }
     h3 {
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
         font-size: $large-text;
         color: $white;
+
+        @media (max-width: $breakpoint-medium ) {
+            font-size: $medium-text;
+        }
     }
 }
 .light-blue-section {
@@ -146,22 +162,34 @@ Sections
 }
 .white-section {
     background:white;
-    padding-bottom: 3em;
+    padding-bottom: $x-jumbo-text;
     border-bottom: 1px solid $white;
     color: $primary;
+
+    @media (max-width: $breakpoint-medium ) {
+        padding-bottom: $large-text;
+    }
 
     h2 {
         font-family: 'Roboto', sans-serif;
         font-weight: 100;
-        font-size: 3.5em;
+        font-size: $stupid-big-text;
         color: $primary;
         text-align:center;
+
+        @media (max-width: $breakpoint-medium ) {
+            font-size: $jumbo-text;
+        }
     }
     h3 {
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
-        font-size: 1.5em;
+        font-size: $large-text;
         color: $primary;
+
+        @media (max-width: $breakpoint-medium ) {
+            font-size: $large-text;
+        }
     }
 }
 .white-notch-wrapper {
@@ -497,6 +525,12 @@ Progress
 
         article {
 
+            .article-section {
+                padding-top: $x-large-text;
+                padding-bottom: $medium-text;
+                border-bottom: 1px solid $light-gray;
+            }
+
             header {
 
                 h3 {
@@ -618,5 +652,22 @@ Progress
 .pagination {
     a {
         color: $primary-color;
+    }
+}
+
+/**
+Detail edits for About page
+ */
+#about-zume-logo {
+    width: 300px;
+
+    @media (max-width: $breakpoint-medium ) {
+        height:80px;
+    }
+}
+
+#about-statement {
+    @media (max-width: $breakpoint-medium ) {
+        font-size: $large-text;
     }
 }

@@ -1,7 +1,7 @@
 <?php $post = get_post(); ?>
 
 <article id="post-<?php the_ID(); ?>" role="article">
-    <div class="grid-x grid-padding-x article-section highlight-background border-bottom padding-vertical-1" data-post-id="<?php the_ID(); ?>">
+    <div class="grid-x grid-padding-x article-section highlight-background" data-post-id="<?php the_ID(); ?>">
         <div class="cell"><span class="small-text"><?php echo get_the_date() ?></span></div>
         <?php if ( has_post_thumbnail( $post->ID ) ) : ?>
         <div class="cell medium-3 hide-for-small-only padding-top-1">

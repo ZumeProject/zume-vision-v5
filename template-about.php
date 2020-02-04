@@ -18,10 +18,10 @@ Template Name: About
 
     <!-- Header Image-->
     <div class="center">
-        <img src="<?php echo esc_url( zume_images_uri() . 'zume-logo.svg' ) ?>" style="width:300px;" alt="Zume logo" />
-        <img src="<?php echo esc_url( zume_images_uri( 'zume_images' ) . 'V1.1/V1.1-C/crowd_large.svg' ) ?>" alt="Crowd Image"/>
+        <img id="about-zume-logo" src="<?php echo esc_url( zume_images_uri() . 'zume-logo.svg' ) ?>" alt="Zume logo" />
+        <img id="about-group-image" src="<?php echo esc_url( zume_images_uri( 'zume_images' ) . 'V1.1/V1.1-C/crowd_large.svg' ) ?>" alt="Crowd Image"/>
         <br>
-        <h2>Zúme is a community of practice <br>for those who want to see disciple making movements.</h2>
+        <h2 id="about-statement">Zúme is a community of practice <br>for those who want to see disciple making movements.</h2>
 
         <?php if ( ! is_user_logged_in() ) : // hide action button if user is logged in ?>
             <p class="padding-top-1"><a class="button primary-button-hollow large" href="/login/?action=register">Join Our Community</a></p>
