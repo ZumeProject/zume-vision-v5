@@ -341,12 +341,12 @@ switch ($request_action) {
             <div id="login">
                 <br>
                 <div id="inner-content" class="grid-x grid-margin-x grid-padding-x">
-                    <div class="cell medium-3 large-4"></div>
-                    <div class="cell callout medium-6 large-4">
+                    <div class="cell medium-2"></div>
+                    <div class="cell callout medium-8">
                         <div class="grid-x grid-padding-x grid-padding-y">
                             <div class="cell center" style="padding-bottom: 0;">
                                 <h2 style="font-weight: bolder;">
-                                    <?php echo esc_html__( "Let's get started.", 'zume' ) ?>
+                                    Join the Community
                                 </h2>
                                 <span style="color:gray;"><?php esc_html_e( 'Sign up using:', 'zume' ) ?></span>
                             </div>
@@ -385,7 +385,7 @@ switch ($request_action) {
                             </div>
                         </div>
                     </div>
-                    <div class="cell medium-3 large-4"></div>
+                    <div class="cell medium-2"></div>
                 </div>
                 <div class="grid-x grid-padding-x">
                     <div class="cell medium-3 large-4"></div>

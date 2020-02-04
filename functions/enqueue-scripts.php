@@ -31,6 +31,8 @@ function zume_enqueue_style( $handle, $rel_src, $deps = array(), $media = 'all' 
 
 function site_scripts() {
     global $wp_styles; // Call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+    $zume_user = wp_get_current_user();
+    $zume_user_meta = zume_get_user_meta( $zume_user->ID );
 
     // Adding scripts file in the footer
     wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/scripts/js' ), true );
@@ -96,12 +98,12 @@ function site_scripts() {
      * Progress Page
      * @todo is this still needed?
      */
-    if ( 'template-statistics.php' === basename( get_page_template() ) ) {
-        wp_register_style( 'datatable-css', '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', false, '1.10' );
-        wp_enqueue_style( 'datatable-css' );
-        wp_register_script( 'datatable', '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js', [ 'jquery', 'rest-api', 'lodash' ], '1.10' );
-        wp_enqueue_script( 'datatable' );
-    }
+//    if ( 'template-statistics.php' === basename( get_page_template() ) ) {
+//        wp_register_style( 'datatable-css', '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', false, '1.10' );
+//        wp_enqueue_style( 'datatable-css' );
+//        wp_register_script( 'datatable', '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js', [ 'jquery', 'rest-api', 'lodash' ], '1.10' );
+//        wp_enqueue_script( 'datatable' );
+//    }
 
 
     /**
@@ -132,15 +134,25 @@ function site_scripts() {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
 
-        wp_enqueue_script( 'profile', get_template_directory_uri() . '/assets/scripts/profile.js', array( 'jquery', 'rest-api', 'lodash' ), 1.1, true );
+        wp_enqueue_script( 'zume-profile', get_template_directory_uri() . '/assets/scripts/profile.js', array( 'jquery', 'lodash', 'wp-i18n' ), filemtime( get_theme_file_path() . '/assets/scripts/profile.js' ), true );
         wp_localize_script(
-            "profile", "zumeProfile", array(
+            "zume-profile", "zumeProfile", array(
                 'root' => esc_url_raw( rest_url() ),
-                'nonce' => wp_create_nonce( 'wp_rest' ),
-                'current_user_login' => wp_get_current_user()->user_login,
-                'current_user_id' => get_current_user_id(),
                 'theme_uri' => get_stylesheet_directory_uri(),
-                'transfer_token' => Site_Link_System::generate_token(),
+                'nonce' => wp_create_nonce( 'wp_rest' ),
+                'current_user_id' => get_current_user_id(),
+                'user_profile_fields' => [
+                    'id' => $zume_user->data->ID,
+                    'name' => $zume_user_meta['zume_full_name'] ?? '',
+                    'email' => $zume_user->data->user_email,
+                    'phone' => $zume_user_meta['zume_phone_number'] ?? '',
+                    'location_grid_meta' => maybe_unserialize( $zume_user_meta['location_grid_meta'] ) ?? '',
+                    'affiliation_key' => $zume_user_meta['zume_affiliation_key'] ?? '',
+                    'facebook_sso_email' => $zume_user_meta['facebook_sso_email'] ?? false,
+                    'google_sso_email' => $zume_user_meta['google_sso_email'] ?? false,
+                ],
+                'logged_in' => is_user_logged_in(),
+                'map_key' => DT_Mapbox_API::get_key(),
             )
         );
     }
