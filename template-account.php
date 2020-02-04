@@ -7,21 +7,6 @@
 $zume_user = wp_get_current_user(); // Returns WP_User object
 $zume_user_meta = zume_get_user_meta( get_current_user_id() ); // Full array of user meta data
 
-
-function is_active_mapbox_key() {
-            $key = DT_Mapbox_API::get_key();
-            $url = DT_Mapbox_API::$mapbox_endpoint . 'Denver.json?access_token=' . $key;
-            $response = wp_remote_get( esc_url_raw( $url ) );
-            $data_result = json_decode( wp_remote_retrieve_body( $response ), true );
-            if ( isset( $data_result['features'] ) && ! empty( $data_result['features'] ) ) {
-                dt_write_log($data_result);
-            } else {
-                dt_write_log($data_result);
-            }
-
-        }
-        is_active_mapbox_key();
-
 get_header(); ?>
 
 <!-- Title Section-->
