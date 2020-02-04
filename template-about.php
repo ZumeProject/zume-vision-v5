@@ -22,7 +22,11 @@ Template Name: About
         <img src="<?php echo esc_url( zume_images_uri( 'zume_images' ) . 'V1.1/V1.1-C/crowd_large.svg' ) ?>" alt="Crowd Image"/>
         <br>
         <h2>Zúme is a community of practice <br>for those who want to see disciple making movements.</h2>
-        <p class="padding-top-1"><button class="button primary-button-hollow large" data-open="">Join Our Community</button></p>
+
+        <?php if ( ! is_user_logged_in() ) : // hide action button if user is logged in ?>
+            <p class="padding-top-1"><a class="button primary-button-hollow large" href="/login/?action=register">Join Our Community</a></p>
+        <?php endif; ?>
+
     </div>
 
     <!-- Content -->

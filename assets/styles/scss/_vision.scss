@@ -477,6 +477,10 @@ Progress
     .blog {
         max-width: 700px;
 
+        h2 {
+            padding-top: $large-text;
+        }
+
         ul, ol {
             padding-left: $jumbo-text;
             padding-right: $jumbo-text;
