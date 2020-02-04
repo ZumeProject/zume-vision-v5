@@ -24,7 +24,7 @@
             </div>
             <div class="cell medium-3"></div>
         </div>
-        </div>
+    </div>
 
 </div>
 <div class="grid-x blue-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
@@ -48,7 +48,7 @@
         <div class="grid-x padding-bottom-1">
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
-                <p>You have not because you ask not (James 4:2). If we want to see movement, we need to ask for it.</p>
+                <p>If we want to see movement, we need to ask for it. "You have not because you ask not" (James 4:2).</p>
             </div>
             <div class="cell medium-3"></div>
         </div>

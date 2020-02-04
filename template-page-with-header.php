@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Eyes to See
+Template Name: Page With Header
 */
 ?>
 <?php get_header(); ?>
@@ -8,6 +8,7 @@ Template Name: Eyes to See
 <!-- Title Section-->
 <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
     <div class="cell center">
+        <h1 class="center title"><?php the_title() ?></h1>
     </div>
 </div>
 <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
@@ -23,10 +24,9 @@ Template Name: Eyes to See
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <?php get_template_part( 'parts/loop', 'page' ); ?>
+                <?php the_content(); ?>
 
-            <?php endwhile;
-            endif; ?>
+            <?php endwhile; endif; ?>
 
         </div>
 

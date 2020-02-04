@@ -39,3 +39,25 @@ jQuery(document).ajaxComplete((event, xhr, settings) => {
 }).ajaxError((event, xhr) => {
   handleAjaxError(xhr)
 })
+
+
+/**
+ * Global Modals
+ */
+function open_join_community() {
+  jQuery('#training-modal-content').empty().html(`
+      <div class="grid-y padding-top-1 grid-padding-y training">
+        <div class="cell"><h2 class="center">${__('Session', 'zume')} ${_.escape( session_number )}</h2></div>
+        <div class="cell center">
+        ${__('Which group are you leading?', 'zume')}<br>
+          <select onchange="check_group_selection(${_.escape( session_number )})" id="group_selection">${list}</select><br>
+          <div id="create_new_group"></div>
+        </div>
+        <div class="cell center margin-bottom-1" id="continue_button">
+          <button type="submit" class="center button large" onclick="continue_to_session(${_.escape( session_number )} )">${__('Continue', 'zume')}</button>
+        </div>
+      </div>
+    `)
+
+  jQuery('#reveal-modal').foundation('open')
+}
