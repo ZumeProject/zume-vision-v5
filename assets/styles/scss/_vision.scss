@@ -5,21 +5,15 @@ body {
     font-size: 1.1rem;
 }
 h1 {
-    font-size: $jumbo-text;
+    font-size: $x-jumbo-text;
     font-weight:700;
     text-align: left;
-    padding: $x-large-text 0 $large-text;
     color: $primary-color;
     line-height: $x-jumbo-text;
 
-
-    .title {
-        //font-weight:100;
-    }
-
     .page-title {
 
-        //font-weight: 100;
+        font-weight: 100;
         //font-size: 3.5em;
         //color: $primary;
         //text-align:center;
@@ -32,12 +26,12 @@ h1 {
 }
 h2 {
     font-size: $x-large-text;
-    padding-top: $x-large-text;
-    padding-bottom: $small-text;
+    //padding-top: $x-large-text;
+    //padding-bottom: $small-text;
 }
 h3 {
     font-size: $large-text;
-    padding-top: $large-text;
+    //padding-top: $large-text;
 }
 h4 {
 
@@ -122,25 +116,28 @@ Sections
 }
 .deep-blue-section {
     background-color: $primary;
-    padding-bottom: 3em;
     border-bottom: 1px solid $primary;
     color: $white;
+    .cell {
+        padding-bottom: $medium-text;
+    }
     h1 {
         color: $white;
         font-weight: 100;
+        font-size: $x-jumbo-text;
     }
 
     h2 {
         font-family: 'Roboto', sans-serif;
         font-weight: 100;
-        font-size: 3.5em;
+        font-size: $x-jumbo-text;
         color: $white;
         text-align:center;
     }
     h3 {
         font-family: 'Roboto', sans-serif;
         font-weight: 300;
-        font-size: 1.5em;
+        font-size: $large-text;
         color: $white;
     }
 }
@@ -448,7 +445,7 @@ Progress
 // Posts
 /*********************/
 #post-nav {
-    padding: $small-text $small-text 0;
+    padding: $small-text;
     max-width: 1100px;
     margin: 0 auto;
 
@@ -473,7 +470,9 @@ Progress
     max-width: 1100px;
     margin: 0 auto;
 
-
+    h3 {
+        font-weight:bold;
+    }
 
     .blog {
         max-width: 700px;
@@ -496,6 +495,10 @@ Progress
 
             header {
 
+                h3 {
+                    font-weight:bold;
+                }
+
                 .hero-image {
                     width:700px;
                     height: 300px;
@@ -510,6 +513,16 @@ Progress
                 }
             }
 
+        }
+
+        article > header > h1 {
+            padding: $jumbo-text 0 $medium-text;
+        }
+
+        section {
+            h2 {
+                padding: $x-large-text 0 $small-text;
+            }
         }
 
         .reports-content {

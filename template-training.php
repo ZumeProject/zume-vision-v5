@@ -15,12 +15,12 @@ Template Name: Training
 <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 
 <!-- Challenge -->
-<div class="grid-x white-section">
+<div class="grid-x grid-padding-y white-section">
     <div class="medium-2 small-1 cell"></div>
     <div class="medium-8 small-10 cell ">
 
         <div class="grid-x">
-            <div class="cell center"><h1><?php esc_html_e( 'Zúme Training', 'zume' ) ?></h1></div>
+            <div class="cell center" ><h1 style="text-align:center !important;"><?php esc_html_e( 'Zúme Training', 'zume' ) ?></h1></div>
             <div class="cell center">
                 <h3><?php esc_html_e( 'Free, online, in-life training for small groups', 'zume' ) ?></h3>
             </div>
