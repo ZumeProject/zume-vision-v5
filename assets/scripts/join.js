@@ -26,8 +26,8 @@ jQuery(document).ready(function(){
                         <li>Connection to peer mentoring groups near you</li>
                         <li>Connection to local, regional, and global gatherings</li>
                         <li>Vision casting tools</li>
-                        <li>Support with Disciple.Tools DMM movement software</li>
-                        <li>Practitioner community</li>
+                        <li>Support with Disciple.Tools DMM software</li>
+                        <li>A practitioner community</li>
                     </ul>
                     <h3>What do I give?</h3>
                     <ul>
