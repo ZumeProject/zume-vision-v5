@@ -11,22 +11,29 @@ jQuery(document).ready(function(){
   jQuery('.join-the-community').on('click', function(){
 
     jQuery('#modal-content').empty().html(`
-    <div class="grid-y padding-top-1">
+    <div class="grid-y padding-top-1 blog">
         <div class="cell">
-            <h2 class="center">Join the Community</h2>
+            <h1 class="center">Join Us</h1>
+            <h3 class="center">Zúme is a community of practice for those who want to see disciple making movements.</h3>
             <hr>
         </div>
         <div class="cell ">
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-4">
-                    <h3>What is this?</h3>
+                    <h3>What does this get me?</h3>
                     <ul>
-                        <li>Peer mentoring groups</li>
-                        <li>Resource sharing</li>
+                        <li>Connection to coaching</li>
+                        <li>Connection to peer mentoring groups near you</li>
+                        <li>Connection to local, regional, and global gatherings</li>
                         <li>Vision casting tools</li>
-                        <li>Invitations to local, regional, and global gatherings</li>
-                        <li>Free hosting and tracking with Disciple Tools</li>
-                        <li>Non-exclusivity expected</li>
+                        <li>Support with Disciple.Tools DMM movement software</li>
+                        <li>Practitioner community</li>
+                    </ul>
+                    <h3>What do I give?</h3>
+                    <ul>
+                        <li>Not fees</li>
+                        <li>Not exclusivity (We want His kingdom, not a new denomination)</li>
+                        <li>Relationship</li>
                     </ul>
                 </div>
                 <div class="cell medium-8">
@@ -87,6 +94,14 @@ jQuery(document).ready(function(){
                                   <label for="user_email">${__('Email', 'zume')}</label>
                               </td>
                               <td>
+                                  <input type="email"
+                                         class="profile-input"
+                                         style="display:none;"
+                                         placeholder="name@email.com"
+                                         id="email"
+                                         name="email"
+                                         value=""
+                                  />
                                   <input type="text"
                                          class="profile-input"
                                          placeholder="name@email.com"
@@ -132,9 +147,14 @@ jQuery(document).ready(function(){
                       <div data-abide-error  class="alert alert-box" style="display:none;" id="alert">
                           <strong>${__('Oh snap!', 'zume')}</strong>
                       </div>
+                      <div class="cell">
+                        <div class="g-recaptcha" id="g-recaptcha"></div>
+                      </div>
+                      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+                      
                       <div class="cell request-form">
                            <p>${__('On submitting this request, we will do our best to connect you with a community near you.', 'zume')}</p>
-                          <button class="button" type="button" onclick="load_form_validator()" id="submit_request">${__('Submit', 'zume')}</button> <span id="request_spinner"></span>
+                          <button class="button" type="button" onclick="load_form_validator()" id="submit" disabled>${__('Submit', 'zume')}</button> <span id="request_spinner"></span>
                       </div>
                   </form>
                 </div>
@@ -155,7 +175,7 @@ jQuery(document).ready(function(){
 
     jQuery(document)
       .on("formvalid.zf.abide", function (ev, frm) {
-        send_coaching_request()
+        send_community_request()
       })
 
     jQuery('#reveal-modal').addClass('large').foundation('open')
@@ -233,9 +253,6 @@ function validate_user_address_v4(user_address){
       })
     })
 
-    // enable save button if not already enabled
-    jQuery('#submit_request').removeAttr('disabled')
-
   }); // end get request
 } // end validate_user_address
 
@@ -243,8 +260,14 @@ function load_form_validator() {
   jQuery('#connection-request-form').foundation('validateForm');
 }
 
-function send_coaching_request() {
+function send_community_request() {
+  let honey = jQuery('#email').val()
   let spinner = jQuery('#request_spinner')
+  if ( honey !== '' ) {
+    spinner.html('buzz, buzz, buzz. I caught a bee.')
+    return;
+  }
+
   spinner.html( `<img src="${zumeCore.theme_uri}/assets/images/spinner.svg" style="width: 40px; vertical-align:top; margin-left: 5px;" alt="spinner" />` )
 
   let name = jQuery('#zume_full_name').val()
@@ -290,7 +313,7 @@ function send_coaching_request() {
   zumeAPI.community_request( data ).done( function(data) {
     console.log('postsend')
     console.log(data)
-    // @todo success action
+    jQuery('#request_spinner').html('success')
   })
     .fail(function(e){
       console.log('coach_request error')

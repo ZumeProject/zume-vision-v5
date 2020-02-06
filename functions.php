@@ -64,7 +64,7 @@ require_once( get_template_directory().'/functions/rest-api.php' );
 require_once( get_template_directory().'/functions/statistics.php' );
 require_once( get_template_directory().'/functions/multi-role/multi-role.php' );
 
-
+add_action( 'wp_head', 'zume_captcha_header' );
 
 /**
  * GLOBAL FUNCTIONS

@@ -717,7 +717,13 @@ function zume_signup_header() {
             });
         }
     </script>
-    <!-- Google Captcha -->
+
+    <?php
+    zume_captcha_header();
+}
+
+function zume_captcha_header() {
+    ?><!-- Google Captcha -->
     <script>
         var verifyCallback = function(response) {
             jQuery('#submit').prop("disabled", false);
