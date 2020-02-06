@@ -1,13 +1,9 @@
-/**
- * REST API
- */
+window.zumeAPICore = zumeCore
 window.zumeAPI = {
 
   send_report: ( data ) => makeRequest('POST', 'send_report', { data: data } ),
 
-  get_population: ( data ) => makeRequest('POST', 'send_report', { data: data } ),
-
-  coaching_request: ( data ) => makeRequest('POST', 'coaching_request', data ),
+  community_request: ( data ) => makeRequest('POST', 'community_request', data ),
 
 }
 function makeRequest (type, url, data, base = 'zume/v4/') {
@@ -15,9 +11,9 @@ function makeRequest (type, url, data, base = 'zume/v4/') {
     type: type,
     contentType: 'application/json; charset=utf-8',
     dataType: 'json',
-    url: url.startsWith('http') ? url : `${restAPI.root}${base}${url}`,
+    url: url.startsWith('http') ? url : `${zumeCore.root}${base}${url}`,
     beforeSend: xhr => {
-      xhr.setRequestHeader('X-WP-Nonce', restAPI.nonce);
+      xhr.setRequestHeader('X-WP-Nonce', zumeCore.nonce);
     }
   }
 
@@ -31,12 +27,12 @@ function handleAjaxError (err) {
   if (_.get(err, "statusText") !== "abortPromise" && err.responseText){
     console.trace("error")
     console.log(err)
-    // jQuery("#errors").append(err.responseText)
   }
 }
 jQuery(document).ajaxComplete((event, xhr, settings) => {
   if (_.get(xhr, 'responseJSON.data.status') === 401) {
-    window.location.replace(restAPI.site_urls.login);
+    console.trace("error")
+    console.log(err)
   }
 }).ajaxError((event, xhr) => {
   handleAjaxError(xhr)

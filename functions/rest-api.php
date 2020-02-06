@@ -52,13 +52,10 @@ class Zume_REST_API {
         $version = '4';
         $namespace = 'zume/v' . $version;
 
-        register_rest_route( $namespace, '/coaching_request', array(
+        register_rest_route( $namespace, '/community_request', array(
             array(
                 'methods'         => WP_REST_Server::CREATABLE,
-                'callback'        => array( $this, 'coaching_request' ),
-                "permission_callback" => function () {
-                    return current_user_can( 'subscriber' );
-                }
+                'callback'        => array( $this, 'community_request' ),
             ),
         ) );
         register_rest_route( $namespace, '/update_profile', array(
@@ -183,8 +180,7 @@ class Zume_REST_API {
      * @param WP_REST_Request $request
      * @return array|WP_Error
      */
-    public function coaching_request( WP_REST_Request $request ) {
-        $user_id = get_current_user_id();
+    public function community_request( WP_REST_Request $request ) {
         $params = $request->get_params();
         if ( ! isset( $params['name'] ) ) {
             return new WP_Error( "log_param_error", "Missing parameters", array( 'status' => 400 ) );
@@ -195,20 +191,17 @@ class Zume_REST_API {
             'phone' => sanitize_text_field( wp_unslash( $params['phone'] ) ),
             'email' => sanitize_text_field( wp_unslash( $params['email'] ) ),
             'preference' => sanitize_text_field( wp_unslash( $params['preference'] ) ),
-            'affiliation_key' => sanitize_text_field( wp_unslash( $params['affiliation_key'] ) ),
         );
         $notes = [
             'preference' => 'Requested contact method is: ' .$args['preference'],
-            'affiliation' => 'Requested affiliation is: ' . $args['affiliation_key']
         ];
-        $zume_foreign_key = Zume_Integration::get_foreign_key( $user_id );
 
         // build fields for transfer
         $fields = [
             "title" => $args['name'],
             "sources" => [
                 "values" => [
-                    [ "value" => "zume_training" ],  //add new, or make sure it exists
+                    [ "value" => "zume_vision" ],  //add new, or make sure it exists
                 ],
             ],
             "contact_phone" => [
@@ -217,8 +210,6 @@ class Zume_REST_API {
             "contact_email" => [
                 [ "value" => $args['email'] ],
             ],
-            'zume_training_id' => $user_id,
-            'zume_foreign_key' => $zume_foreign_key,
             "notes" => $notes,
         ];
 
@@ -255,7 +246,7 @@ class Zume_REST_API {
         }
 
 
-        $site = Site_Link_System::get_site_connection_vars( 20125 ); // @todo remove hardcoded
+        $site = Site_Link_System::get_site_connection_vars( 189 ); // @todo remove hardcoded
         if ( ! $site ) {
             return new WP_Error( __METHOD__, 'Missing site to site data' );
         }
@@ -273,13 +264,6 @@ class Zume_REST_API {
         if ( is_wp_error( $result ) ) {
             return new WP_Error( 'failed_remote_post', $result->get_error_message() );
         }
-
-        $body = json_decode( $result['body'], true );
-
-        update_user_meta( $user_id, 'zume_global_network', [
-            "contact_id" => $body['post_id'],
-            "date_transferred" => time()
-        ] );
 
         return $result;
 

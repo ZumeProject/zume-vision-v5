@@ -1,5 +1,11 @@
 _ = _ || window.lodash
 const { __, _x, _n, _nx } = wp.i18n;
+if ( zumeAPICore === 'undefined') {
+  let zumeAPICore = window.zumeAPICore
+}
+if ( zumeAPI === 'undefined' ) {
+  let zumeAPI = window.zumeAPI
+}
 
 jQuery(document).ready(function(){
   jQuery('.join-the-community').on('click', function(){
@@ -136,7 +142,7 @@ jQuery(document).ready(function(){
         </div>
     </div>`)
 
-    var elem = new Foundation.Abide( jQuery('#connection-request-form') )
+    new Foundation.Abide( jQuery('#connection-request-form') )
 
     let validate_address_textbox = jQuery('#validate_address')
 
@@ -234,12 +240,12 @@ function validate_user_address_v4(user_address){
 } // end validate_user_address
 
 function load_form_validator() {
-  jQuery('#coaching-request-form').foundation('validateForm');
+  jQuery('#connection-request-form').foundation('validateForm');
 }
 
 function send_coaching_request() {
   let spinner = jQuery('#request_spinner')
-  spinner.html( `<img src="${zumeTraining.theme_uri}/assets/images/spinner.svg" style="width: 40px; vertical-align:top; margin-left: 5px;" alt="spinner" />` )
+  spinner.html( `<img src="${zumeCore.theme_uri}/assets/images/spinner.svg" style="width: 40px; vertical-align:top; margin-left: 5px;" alt="spinner" />` )
 
   let name = jQuery('#zume_full_name').val()
   let phone = jQuery('#zume_phone_number').val()
@@ -276,16 +282,15 @@ function send_coaching_request() {
   let data = {
     "name": name,
     "phone": phone,
+    "preference": preference,
     "email": email,
     "location_grid_meta": location_grid_meta,
-    "preference": preference,
-    "affiliation_key": affiliation_key
   }
 
-  API.coaching_request( data ).done( function(data) {
+  zumeAPI.community_request( data ).done( function(data) {
     console.log('postsend')
     console.log(data)
-    write_coaching_status()
+    // @todo success action
   })
     .fail(function(e){
       console.log('coach_request error')
