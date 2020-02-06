@@ -1,15 +1,17 @@
 _ = _ || window.lodash // make sure lodash is defined so plugins like gutenberg don't break it.
 const { __, _x, _n, _nx } = wp.i18n;
 
+const ZUME = zumeProfile
+
 jQuery(document).ready( function() {
   write_profile()
 })
 
 function write_profile() {
-  let fields = zumeProfile.user_profile_fields
+  let fields = ZUME.user_profile_fields
 
-  if ( ! zumeProfile.logged_in ) {
-    // window.location = `${zumeProfile.site_urls.login}` // @todo
+  if ( ! ZUME.logged_in ) {
+    // window.location = `${ZUME.site_urls.login}` // @todo
   } else { /* logged in */
 
     let location_grid_meta_label = ''
@@ -40,7 +42,7 @@ function write_profile() {
                        class="profile-input"
                        id="zume_full_name"
                        name="zume_full_name"
-                       value="${zumeProfile.user_profile_fields.name}"
+                       value="${ZUME.user_profile_fields.name}"
                        data-abide-ignore />
             </td>
         </tr>
@@ -56,7 +58,7 @@ function write_profile() {
                        class="profile-input"
                        id="zume_phone_number"
                        name="zume_phone_number"
-                       value="${zumeProfile.user_profile_fields.phone}"
+                       value="${ZUME.user_profile_fields.phone}"
                        data-abide-ignore
                 />
             </td>
@@ -72,7 +74,7 @@ function write_profile() {
                        placeholder="name@email.com"
                        id="user_email"
                        name="user_email"
-                       value="${zumeProfile.user_profile_fields.email}"
+                       value="${ZUME.user_profile_fields.email}"
                        data-abide-ignore
                 />
                 <span class="form-error">
@@ -99,7 +101,7 @@ function write_profile() {
                            data-abide-ignore
                     />
                     <div class="input-group-button">
-                        <button class="button hollow" id="spinner_button" style="display:none;"><img src="${zumeProfile.theme_uri}/assets/images/spinner.svg" alt="spinner" style="width: 18px;" /></button>
+                        <button class="button hollow" id="spinner_button" style="display:none;"><img src="${ZUME.theme_uri}/assets/images/spinner.svg" alt="spinner" style="width: 18px;" /></button>
                     </div>
                 </div>
 
@@ -108,16 +110,7 @@ function write_profile() {
                 </div>
             </td>
         </tr>
-        
-        <tr class="label-column">
-            <td style="vertical-align: top;">
-                <label for="zume_affiliation_key">${__('Affiliation Key', 'zume')}</label>
-            </td>
-            <td>
-                <input type="text" value="${zumeProfile.user_profile_fields.affiliation_key}"
-                 id="zume_affiliation_key" name="zume_affiliation_key" />
-            </td>
-        </tr>
+       
 
     </table>
     
@@ -140,7 +133,7 @@ function write_profile() {
             <td>
                 <div class="input-group">
                     <input class="input-group-field profile-input" type="text"
-                           value="${zumeProfile.user_profile_fields.facebook_sso_email}" id="facebook_email" readonly />
+                           value="${ZUME.user_profile_fields.facebook_sso_email}" id="facebook_email" readonly />
                     <div class="input-group-button">
                         <button name="unlink_facebook" value="true" type="button" onclick="unlink_facebook_sso()"  class="button">${__('Unlink', 'zume')}</button>
                     </div>
@@ -155,7 +148,7 @@ function write_profile() {
             <td>
                 <div class="input-group">
                     <input class="input-group-field profile-input" type="text"
-                           value="${zumeProfile.user_profile_fields.google_sso_email}" id="google_email" readonly />
+                           value="${ZUME.user_profile_fields.google_sso_email}" id="google_email" readonly />
                     <div class="input-group-button">
                         <button name="unlink_google" value="true" type="button" onclick="unlink_google_sso()" class="button">${__('Unlink', 'zume')}</button>
                     </div>
@@ -169,10 +162,10 @@ function write_profile() {
   `)
   } /* end if */
 
-  if ( zumeProfile.user_profile_fields.facebook_sso_email !== false ) {
+  if ( ZUME.user_profile_fields.facebook_sso_email !== false ) {
     jQuery('#facebook-row').show()
   }
-  if ( zumeProfile.user_profile_fields.google_sso_email !== false ) {
+  if ( ZUME.user_profile_fields.google_sso_email !== false ) {
     jQuery('#google-row').show()
   }
 
@@ -235,7 +228,7 @@ function validate_user_address_v4(user_address){
 
   let root = 'https://api.mapbox.com/geocoding/v5/mapbox.places/'
   let settings = '.json?types=country,region,postcode,district,place,locality,neighborhood,address&limit=6&access_token='
-  let key = zumeProfile.map_key
+  let key = ZUME.map_key
 
   let url = root + encodeURI( user_address ) + settings + key
 
@@ -284,7 +277,7 @@ function load_form_validator() {
   jQuery('#profile-fields').foundation('validateForm');
 }
 function check_address() {
-  let fields = zumeProfile.user_profile_fields
+  let fields = ZUME.user_profile_fields
   let default_address = ''
   if ( fields.location_grid_meta ) {
     default_address = fields.location_grid_meta.label
@@ -311,7 +304,7 @@ function check_address() {
 
 function update_profile() {
   let spinner = jQuery('#request_spinner')
-  spinner.html(`<img src="${zumeProfile.theme_uri}/assets/images/spinner.svg" alt="spinner" style="width: 40px; vertical-align:top; margin-left: 5px;" />`)
+  spinner.html(`<img src="${ZUME.theme_uri}/assets/images/spinner.svg" alt="spinner" style="width: 40px; vertical-align:top; margin-left: 5px;" />`)
 
   let name = jQuery('#zume_full_name').val()
   let phone = jQuery('#zume_phone_number').val()
@@ -364,9 +357,9 @@ function update_profile() {
     data: JSON.stringify(data),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
-    url: zumeProfile.root + 'zume/v4/update_profile',
+    url: ZUME.root + 'zume/v4/update_profile',
     beforeSend: function(xhr) {
-      xhr.setRequestHeader('X-WP-Nonce', zumeProfile.nonce);
+      xhr.setRequestHeader('X-WP-Nonce', ZUME.nonce);
     },
   })
     .done(function (response) {
@@ -387,9 +380,9 @@ function unlink_facebook_sso() {
     data: JSON.stringify({ type: 'facebook' } ),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
-    url: zumeProfile.root + 'zume/v4/unlink_profile',
+    url: ZUME.root + 'zume/v4/unlink_profile',
     beforeSend: function(xhr) {
-      xhr.setRequestHeader('X-WP-Nonce', zumeProfile.nonce);
+      xhr.setRequestHeader('X-WP-Nonce', ZUME.nonce);
     },
   })
     .done(function (response) {
@@ -410,9 +403,9 @@ function unlink_google_sso() {
     data: JSON.stringify({ type: 'google' }),
     contentType: "application/json; charset=utf-8",
     dataType: "json",
-    url: zumeProfile.root + 'zume/v4/unlink_profile',
+    url: ZUME.root + 'zume/v4/unlink_profile',
     beforeSend: function(xhr) {
-      xhr.setRequestHeader('X-WP-Nonce', zumeProfile.nonce);
+      xhr.setRequestHeader('X-WP-Nonce', ZUME.nonce);
     },
   })
     .done(function (response) {

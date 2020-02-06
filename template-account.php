@@ -2,6 +2,9 @@
 /**
  * Template Name: Account
  */
+if ( ! is_user_logged_in() ) {
+    wp_safe_redirect( '/login/?action=register' );
+}
 
 /* Build variables for page */
 $zume_user = wp_get_current_user(); // Returns WP_User object

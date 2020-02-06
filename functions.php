@@ -60,6 +60,7 @@ Site_Link_System::instance();
 
 // Register scripts and stylesheets
 require_once( get_template_directory().'/functions/enqueue-scripts.php' );
+require_once( get_template_directory().'/functions/rest-api.php' );
 require_once( get_template_directory().'/functions/statistics.php' );
 require_once( get_template_directory().'/functions/multi-role/multi-role.php' );
 

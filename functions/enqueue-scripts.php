@@ -157,6 +157,21 @@ function site_scripts() {
         );
     }
 
+    if ( 'template-join.php' === basename( get_page_template() ) ) {
+        wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
+        wp_enqueue_script( 'lodash' );
+
+        wp_enqueue_script( 'zume-join', get_template_directory_uri() . '/assets/scripts/profile.js', array( 'jquery', 'lodash', 'wp-i18n' ), filemtime( get_theme_file_path() . '/assets/scripts/profile.js' ), true );
+        wp_localize_script(
+            "zume-join", "zumeJoin", array(
+                'root' => esc_url_raw( rest_url() ),
+                'theme_uri' => get_stylesheet_directory_uri(),
+                'nonce' => wp_create_nonce( 'wp_rest' ),
+                'map_key' => DT_Mapbox_API::get_key(),
+            )
+        );
+    }
+
 }
 add_action( 'wp_enqueue_scripts', 'site_scripts', 999 );
 

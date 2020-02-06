@@ -20,6 +20,10 @@ a, a:visited {
 		//Highlight links on iOS, Similar to :hover for mobile devices.
 		-webkit-tap-highlight-color : rgba( 0, 0, 0, 0.3 );
 	}
+
+    .button {
+        text-decoration: none;
+    }
 }
 
 .white {
@@ -734,83 +738,12 @@ FOOTER STYLES
 }
 
 /*********************
-FOUNDATION STYLES
-*********************/
-
-/*********************
 PLUGIN STYLES
 *********************/
 // Makes Gravity Forms play nice with Foundation Form styles
 .gform_body ul {
     list-style: none outside none;
     margin: 0;
-}
-
-/*********************
-BUDDYPRESS STYLES
-*********************/
-#item-actions {
-  h2 {
-    font-size: 1.3rem;
-  }
-}
-
-
-#subnav {
-
-  border-top: 1px solid $light-gray;
-
-    li#groups-order-select {
-        display: none !important;
-    }
-
-    .feed {
-      display: none !important;
-    }
-
-    li {
-      #activity-filter-select {
-        display: none !important;
-      }
-
-      #groups-members-search {
-        display: none !important;
-      }
-
-      .last.filter {
-        display: none !important;
-      }
-    }
-
-    .last {
-      display: none !important;
-    }
-
-}
-
-.text-gray {
-  color: $dark-gray;
-
-}
-
-.text-small {
-  font-size: small;
-}
-
-
-/********************
-Overview pages
-********************/
-.overview {
-    table tbody tr:nth-child(2n) {
-        background-color: transparent;
-    }
-    table tr td:first-child {
-        width: 70px;
-    }
-    h1, h2, h3 {
-        font-weight: bold;
-    }
 }
 
 
@@ -992,102 +925,6 @@ ul.orbit-container {
 	font-size: 1.2rem;
 	color: $white;
 	margin: 0 auto;
-}
-
-
-/**************************************/
-// Dashboard
-/**************************************/
-
-.dashboard-group-images {
-    min-height: 10px; // Needed when for some reason there are no avatars
-    overflow: hidden;
-}
-
-.dashboard-group-images img {
-    width: 40px;
-    height: 40px;
-}
-
-.coach-item {
-    margin-bottom: 10px;
-    display: flex;
-
-    img {
-        height: 40px;
-        width: 40px;
-        margin-right: 1em;
-        margin-left: 1em;
-    }
-
-    @media only screen and (max-width: 500px) {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
-.coach-item__intro {
-    flex: 0 0 210px;
-    $white-space: nowrap;
-}
-.coach-item__text {
-    flex: 1 0;
-}
-
-@media only screen and (min-width: 640px) {
-    .dashboard-coaches {
-        padding-right: 0.5rem;
-    }
-
-    .dashboard-messages {
-        padding-left: 0.5rem;
-		padding-right: 0.5rem;
-    }
-}
-
-
-/**************************************/
-// Congratulations page after session 10 is complete
-/**************************************/
-
-.congratulations-more {
-    display: flex;
-    flex-wrap: wrap;
-    $congratulation-button-margin: 0.5rem;
-
-    // Easiest way to collapse margins with flex https://stackoverflow.com/q/20626685
-    margin: -1 * $congratulation-button-margin;
-
-    & > button {
-        margin: $congratulation-button-margin;
-        flex: 1 1 325px;
-
-        &.active {
-            background-color: #323a68;
-            color: $white;
-        }
-
-        & > span {
-            display: flex;
-            align-items: center;
-            font-size: 1.5rem;
-
-            & > span {
-                text-align: center;
-                flex-grow: 1;
-            }
-        }
-    }
-}
-
-.congratulations-more__text {
-    background-color: #F6F6F6;
-    border: 1px solid #21336A;
-    margin: 1rem 0;
-    padding: 1rem;
-
-    .button {
-        margin: 0;
-    }
 }
 
 /**************************************/

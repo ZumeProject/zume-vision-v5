@@ -42,6 +42,9 @@ h5 {
 a {
     text-decoration: underline;
 }
+.button {
+    text-decoration: none;
+}
 figcaption {
     text-align: center;
     font-size: .8rem;
@@ -670,4 +673,33 @@ Detail edits for About page
     @media (max-width: $breakpoint-medium ) {
         font-size: $large-text;
     }
+}
+
+// coaching request page
+.coach-title {
+    font-size: $x-large-text;
+    vertical-align: middle;
+    text-wrap: none;
+    color: $primary-color;
+
+    @media (max-width: $breakpoint-medium) {
+        font-size: $large-text;
+    }
+}
+.coach-body {
+    color: $primary-color;
+    @media (max-width: $breakpoint-medium) {
+        font-size: $small-text;
+    }
+}
+.coach-icon {
+    color: $primary-color;
+    font-size: $stupid-big-text;
+    vertical-align: middle;
+    @media (max-width: $breakpoint-medium) {
+        font-size: $x-jumbo-text;
+    }
+}
+.secondary-color {
+    color: #00aeff;
 }
