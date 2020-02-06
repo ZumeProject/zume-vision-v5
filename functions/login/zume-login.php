@@ -125,7 +125,7 @@ class Zume_User_Registration
 
             zume_update_user_ip_address_and_location( $user_id ); // record ip address and location
 
-            add_user_meta( $user_id, 'zume_language', zume_current_language(), true );
+            add_user_meta( $user_id, 'zume_language', 'en', true );
             add_user_meta( $user_id, 'zume_phone_number', null, true );
             add_user_meta( $user_id, 'zume_address', null, true );
             add_user_meta( $user_id, 'zume_affiliation_key', null, true );
@@ -133,6 +133,7 @@ class Zume_User_Registration
             add_user_meta( $user_id, 'google_sso_email', $user_email, true );
 
             add_user_to_blog( get_current_blog_id(), $user_id, 'subscriber' ); // add user to ZumeProject site.
+            add_user_to_blog( '1', $user_id, 'subscriber' ); // add user to Zume Training
 
         }
         // if no google_sso_email found but user with email does exist
@@ -151,6 +152,7 @@ class Zume_User_Registration
             }
 
             add_user_to_blog( get_current_blog_id(), $user_id, 'subscriber' ); // add user to ZumeProject site.
+            add_user_to_blog( '1', $user_id, 'subscriber' ); // add user to Zume Training
 
         }
 
@@ -343,7 +345,7 @@ class Zume_User_Registration
 
             zume_update_user_ip_address_and_location( $user_id ); // record ip address and location
 
-            add_user_meta( $user_id, 'zume_language', zume_current_language(), true );
+            add_user_meta( $user_id, 'zume_language', 'en', true );
             add_user_meta( $user_id, 'zume_phone_number', null, true );
             add_user_meta( $user_id, 'zume_address', null, true );
             add_user_meta( $user_id, 'zume_affiliation_key', null, true );
@@ -351,6 +353,7 @@ class Zume_User_Registration
             add_user_meta( $user_id, 'facebook_sso_email', $user_email, true );
 
             add_user_to_blog( get_current_blog_id(), $user_id, 'subscriber' ); // add user to ZumeProject site.
+            add_user_to_blog( '1', $user_id, 'subscriber' ); // add user to Zume Training
 
         }
         // if no facebook_sso_email found but user with email does exist
@@ -370,6 +373,7 @@ class Zume_User_Registration
             }
 
             add_user_to_blog( get_current_blog_id(), $user_id, 'subscriber' ); // add user to ZumeProject site.
+            add_user_to_blog( '1', $user_id, 'subscriber' ); // add user to Zume Training
         }
 
 
@@ -598,6 +602,7 @@ class Zume_User_Registration
     }
 
     public function custom_registration_function() {
+        dt_write_log($_POST);
         $error = new WP_Error();
 
         if ( ! ( isset( $_POST['login_form_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['login_form_nonce'] ) ), 'login_form' ) ) ) {
@@ -628,7 +633,7 @@ class Zume_User_Registration
             return $error;
         }
 
-        $current_language = zume_current_language();
+        $current_language = 'en';
 
         // sanitize user form input
         $password   = sanitize_text_field( wp_unslash( $_POST['password'] ) );
@@ -666,6 +671,7 @@ class Zume_User_Registration
         add_user_meta( $user_id, 'zume_affiliation_key', null, true );
 
         add_user_to_blog( get_current_blog_id(), $user_id, 'subscriber' ); // add user to ZumeProject site.
+        add_user_to_blog( '1', $user_id, 'subscriber' ); // add user to Zume Training
 
         // log user in
         $user = get_user_by( 'id', $user_id );

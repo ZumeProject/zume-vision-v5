@@ -63,8 +63,7 @@ function zume_register_url( $current_language = null ) {
 }
 
 function zume_profile_url() {
-    $page = get_page_by_title( 'Profile', OBJECT, 'page' );
-    return site_url( '/' )  . $page->post_name;
+    return site_url( '/account' );
 }
 
 /**

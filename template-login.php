@@ -337,6 +337,7 @@ switch ($request_action) {
 
         get_header(); ?>
 
+
         <!-- Title Section-->
         <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
             <div class="cell center">
@@ -345,107 +346,91 @@ switch ($request_action) {
         </div>
         <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 
-        <div id="content">
-            <div id="login">
-                <div id="inner-content" class="grid-x grid-margin-x grid-padding-x">
+        <main id="post-main" class="main" role="main">
+            <div class="grid-x grid-padding-x padding-1">
 
-                    <div class="cell medium-3 large-4"></div>
-                    <div class="cell callout medium-6  large-4">
+                <div class="cell medium-6">
+                    <i class="fi-torsos-all secondary-color" style="font-size:4em; vertical-align: middle;"></i>
+                    &nbsp;<span class="coach-title">Peer Mentoring Groups</span>
+                    <p class="coach-body">Connect with others near you who share your passion to see a disciple making movement where you live.</p>
+                </div>
 
-                        <div class="grid-x grid-padding-x padding-1">
+                <div class="cell medium-6">
+                    <i class="fi-compass secondary-color" style="font-size:4em; vertical-align: middle;"></i>
+                    &nbsp;<span class="coach-title">Coaching</span>
+                    <p class="coach-body">A coach is someone who will come alongside you as you implement the Zúme tools and training.</p>
+                </div>
 
-                            <div class="cell medium-6">
-                                <i class="fi-torsos-all secondary-color" style="font-size:4em; vertical-align: middle;"></i>
-                                &nbsp;<span class="coach-title">Peer Mentoring Groups</span>
-                                <p class="coach-body">Connect with others near you who share your passion to see a disciple making movement where you live.</p>
-                            </div>
+                <div class="cell medium-6">
+                    <i class="fi-map secondary-color" style="font-size:4em; vertical-align: middle;"></i>
+                    &nbsp;<span class="coach-title">Local</span>
+                    <p class="coach-body">On submitting this request, we will do our best to connect you with a coach near you.</p>
+                </div>
 
-                            <div class="cell medium-6">
-                                <i class="fi-compass secondary-color" style="font-size:4em; vertical-align: middle;"></i>
-                                &nbsp;<span class="coach-title">Coaching</span>
-                                <p class="coach-body">A coach is someone who will come alongside you as you implement the Zúme tools and training.</p>
-                            </div>
+                <div class="cell medium-6">
+                    <i class="fi-dollar secondary-color coach-icon" style="font-size:4em; vertical-align: middle;"></i>
+                    &nbsp;<span class="coach-title">It's Free</span>
+                    <p class="coach-body">Coaching is free. You can opt out at any time.</p>
+                </div>
 
-                            <div class="cell medium-6">
-                                <i class="fi-map secondary-color" style="font-size:4em; vertical-align: middle;"></i>
-                                &nbsp;<span class="coach-title">Local</span>
-                                <p class="coach-body">On submitting this request, we will do our best to connect you with a coach near you.</p>
-                            </div>
+            </div>
 
-                            <div class="cell medium-6">
-                                <i class="fi-dollar secondary-color coach-icon" style="font-size:4em; vertical-align: middle;"></i>
-                                &nbsp;<span class="coach-title">It's Free</span>
-                                <p class="coach-body">Coaching is free. You can opt out at any time.</p>
-                            </div>
+            <div class="center">
+                <hr>
+            </div>
 
-                        </div>
+            <div class="grid-x grid-padding-x grid-padding-y">
+                <div class="cell center" style="padding-bottom: 0;">
+                    <h2 style="font-weight: bolder;">
+                        Join the Community
+                    </h2>
+                    <span style="color:gray;"><?php esc_html_e( 'Sign up using:', 'zume' ) ?></span>
+                </div>
 
-                        <div class="center">
-                            <hr>
-                        </div>
+                <div class="cell">
 
-                        <div class="grid-x grid-padding-x grid-padding-y">
-                            <div class="cell center" style="padding-bottom: 0;">
-                                <h2 style="font-weight: bolder;">
-                                    Join the Community
-                                </h2>
-                                <span style="color:gray;"><?php esc_html_e( 'Sign up using:', 'zume' ) ?></span>
-                            </div>
+                    <p class="google_elements" style="display:none;">
+                        <?php zume_google_sign_in_button() ?>
+                    </p>
+                    <p class="facebook_elements" style="display:none;">
+                        <?php zume_facebook_login_button(); ?>
+                    </p>
 
-                            <div class="cell">
+                    <span><hr /></span>
 
-                                <p class="google_elements" style="display:none;">
-                                    <?php zume_google_sign_in_button() ?>
-                                </p>
-                                <p class="facebook_elements" style="display:none;">
-                                    <?php zume_facebook_login_button(); ?>
-                                </p>
-
-                                <span><hr /></span>
-
-                                <div class="button hollow" onclick="jQuery('#email_signup_form').toggle();" style="width:100%;">
+                    <div class="button hollow" onclick="jQuery('#email_signup_form').toggle();" style="width:100%;">
                                     <span style="float:left;">
                                         <img src="<?php echo esc_url( get_theme_file_uri( '/assets/images/public_mail_hollow.png' ) ) ?>" style="width:20px;" />
                                     </span>
-                                    <?php esc_html_e( 'Email', 'zume' ) ?>
-                                </div>
+                        <?php esc_html_e( 'Email', 'zume' ) ?>
+                    </div>
 
-                                <div id="email_signup_form" style="display:none;">
-                                    <?php if ( is_wp_error( $reg_status ) ) :?>
-                                        <div class="cell alert callout">
-                                            <?php echo esc_html( $reg_status->get_error_message() ) ?>
-                                        </div>
-                                    <?php endif; ?>
-                                    <div class="cell">
-                                        <div class="wp_register_form">
-                                            <?php
-                                            $register->registration_form();
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div id="email_signup_form" style="display:none;">
+                        <?php if ( is_wp_error( $reg_status ) ) :?>
+                            <div class="cell alert callout">
+                                <?php echo esc_html( $reg_status->get_error_message() ) ?>
+                            </div>
+                        <?php endif; ?>
+                        <div class="cell">
+                            <div class="wp_register_form">
+                                <?php
+                                $register->registration_form();
+                                ?>
                             </div>
                         </div>
                     </div>
-                    <div class="cell medium-3 large-4"></div>
-                </div>
-                <div class="grid-x grid-padding-x">
-                    <div class="cell medium-3 large-4"></div>
-                    <div class="cell medium-6 large-4">
-                        <p>
-                            <?php if ( ! isset( $_GET['checkemail'] ) || ! in_array( wp_unslash( $_GET['checkemail'] ), array( 'confirm', 'newpass' ) ) ) : ?>
-
-                                <a href="<?php echo esc_url( zume_login_url() ) ?>"><?php esc_html_e( 'Login', 'zume' ) ?></a>
-                                &nbsp;|&nbsp;
-                                <a href="<?php echo esc_url( zume_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'zume' ); ?></a>
-
-                            <?php endif; ?>
-                        </p>
-                    </div>
-                    <div class="cell medium-3 large-4"></div>
                 </div>
             </div>
-        </div>
+            <p>
+                <?php if ( ! isset( $_GET['checkemail'] ) || ! in_array( wp_unslash( $_GET['checkemail'] ), array( 'confirm', 'newpass' ) ) ) : ?>
+
+                    <a href="<?php echo esc_url( zume_login_url() ) ?>"><?php esc_html_e( 'Login', 'zume' ) ?></a>
+                    &nbsp;|&nbsp;
+                    <a href="<?php echo esc_url( zume_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'zume' ); ?></a>
+
+                <?php endif; ?>
+            </p>
+        </main>
 
         <?php
         zume_login_styles();

@@ -72,6 +72,7 @@ require_once( get_template_directory().'/functions/multi-role/multi-role.php' );
 
 
 function zume_get_user_meta( $user_id = null ) {
+
     if ( is_null( $user_id ) ) {
         $user_id = get_current_user_id();
     }

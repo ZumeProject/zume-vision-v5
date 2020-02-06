@@ -57,7 +57,7 @@ class Zume_REST_API {
                 'methods'         => WP_REST_Server::CREATABLE,
                 'callback'        => array( $this, 'coaching_request' ),
                 "permission_callback" => function () {
-                    return current_user_can( 'zume' );
+                    return current_user_can( 'subscriber' );
                 }
             ),
         ) );
@@ -66,7 +66,7 @@ class Zume_REST_API {
                 'methods'         => WP_REST_Server::CREATABLE,
                 'callback'        => array( $this, 'update_profile' ),
                 "permission_callback" => function () {
-                    return current_user_can( 'zume' );
+                    return current_user_can( 'subscriber' );
                 }
             ),
         ) );
@@ -75,7 +75,7 @@ class Zume_REST_API {
                 'methods'         => WP_REST_Server::CREATABLE,
                 'callback'        => array( $this, 'unlink_profile' ),
                 "permission_callback" => function () {
-                    return current_user_can( 'zume' );
+                    return current_user_can( 'subscriber' );
                 }
             ),
         ) );
