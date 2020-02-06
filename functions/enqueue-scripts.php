@@ -34,18 +34,37 @@ function site_scripts() {
     $zume_user = wp_get_current_user();
     $zume_user_meta = zume_get_user_meta( $zume_user->ID );
 
-    // Adding scripts file in the footer
-    wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery' ), filemtime( get_template_directory() . '/assets/scripts/js' ), true );
+    // main minimized scripts for loaded on all pages
+    wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/scripts/scripts.js', array( 'jquery', 'lodash', 'wp-i18n' ), filemtime( get_template_directory() . '/assets/scripts/scripts.js' ), true );
+    wp_localize_script(
+        "site-js", "zumeCore", array(
+            'root' => esc_url_raw( rest_url() ),
+            'nonce' => wp_create_nonce( 'wp_rest' ),
+            'theme_uri' => get_stylesheet_directory_uri(),
+        )
+    );
+    // join community
+    wp_enqueue_script( 'join', get_template_directory_uri() . '/assets/scripts/join.js', array( 'jquery', 'lodash', 'wp-i18n', 'site-js' ), filemtime( get_template_directory() . '/assets/scripts/join.js' ), true );
+    wp_localize_script(
+        "join", "zumeJoin", array(
+            'map_key' => DT_Mapbox_API::get_key(),
+        )
+    );
 
-    // Register main stylesheet
+    // lodash load
+    wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
+    wp_enqueue_script( 'lodash' );
+
+    // main stylesheet
     wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/styles/style.css', array(), filemtime( get_template_directory() . '/assets/styles/scss' ), 'all' );
     wp_style_add_data( 'site-css', 'rtl', 'replace' );
 
-    // Comment reply script for threaded comments
+    // script for threaded comments
     if ( is_singular() and comments_open() and ( get_option( 'thread_comments' ) == 1 )) {
         wp_enqueue_script( 'comment-reply' );
     }
 
+    // foundation styles
     wp_enqueue_style( 'foundations-icons', get_template_directory_uri() .'/assets/styles/foundation-icons/foundation-icons.css', array(), '3' );
 
 
@@ -55,7 +74,7 @@ function site_scripts() {
     if ( 'template-maps' === substr( basename( get_page_template() ), 0, 13 )
         || 'template-statistics.php' === basename( get_page_template() )
     ) {
-        wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', [ 'jquery', 'lodash' ], '1.2.0' );
+        wp_register_script( 'rest-api', get_template_directory_uri() . '/assets/scripts/api.js', array( 'jquery', 'lodash', 'wp-i18n', 'site-js' ), filemtime( get_theme_file_path() . '/assets/scripts/api.js' ), true );
         wp_enqueue_script( 'rest-api' );
         wp_localize_script(
             "rest-api", "restAPI", array(
@@ -71,9 +90,6 @@ function site_scripts() {
         wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js', [ 'jquery' ], '1.2.0' );
         wp_enqueue_script( 'mapbox' );
         wp_enqueue_style( 'mapbox-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css', array(), '3' );
-
-        wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
-        wp_enqueue_script( 'lodash' );
     }
 
     /**
@@ -81,7 +97,7 @@ function site_scripts() {
      */
     if ( 'template-maps' === substr( basename( get_page_template() ), 0, 13 ) ) {
 
-        wp_enqueue_script( 'zume', get_template_directory_uri() . '/assets/scripts/maps.js', array( 'jquery' ), 1.1, true );
+        wp_enqueue_script( 'zume', get_template_directory_uri() . '/assets/scripts/maps.js', array( 'jquery', 'lodash', 'wp-i18n', 'site-js' ), filemtime( get_theme_file_path() . '/assets/scripts/maps.js' ), true );
         wp_localize_script(
             "zume", "zumeMaps", array(
                 'root' => esc_url_raw( rest_url() ),
@@ -94,26 +110,13 @@ function site_scripts() {
         );
     }
 
-    /**
-     * Progress Page
-     * @todo is this still needed?
-     */
-//    if ( 'template-statistics.php' === basename( get_page_template() ) ) {
-//        wp_register_style( 'datatable-css', '//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css', false, '1.10' );
-//        wp_enqueue_style( 'datatable-css' );
-//        wp_register_script( 'datatable', '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js', [ 'jquery', 'rest-api', 'lodash' ], '1.10' );
-//        wp_enqueue_script( 'datatable' );
-//    }
-
 
     /**
      * Home Page
      */
     if ( 'template-home.php' === basename( get_page_template() ) || 'template-statistics.php' === basename( get_page_template() ) || is_single() || is_archive() ) {
-        wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
-        wp_enqueue_script( 'lodash' );
 
-        wp_enqueue_script( 'counters', get_template_directory_uri() . '/assets/scripts/counters.js', array( 'jquery', 'lodash' ), 1.1, true );
+        wp_enqueue_script( 'counters', get_template_directory_uri() . '/assets/scripts/counters.js', array( 'jquery', 'lodash', 'wp-i18n', 'site-js' ), 1.1, true );
         wp_localize_script(
             "counters", "zumeCounters", array(
                 'root' => esc_url_raw( rest_url() ),
@@ -134,7 +137,7 @@ function site_scripts() {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
 
-        wp_enqueue_script( 'zume-profile', get_template_directory_uri() . '/assets/scripts/profile.js', array( 'jquery', 'lodash', 'wp-i18n' ), filemtime( get_theme_file_path() . '/assets/scripts/profile.js' ), true );
+        wp_enqueue_script( 'zume-profile', get_template_directory_uri() . '/assets/scripts/profile.js', array( 'jquery', 'lodash', 'wp-i18n', 'site-js' ), filemtime( get_theme_file_path() . '/assets/scripts/profile.js' ), true );
         wp_localize_script(
             "zume-profile", "zumeProfile", array(
                 'root' => esc_url_raw( rest_url() ),
@@ -161,7 +164,7 @@ function site_scripts() {
         wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
         wp_enqueue_script( 'lodash' );
 
-        wp_enqueue_script( 'zume-join', get_template_directory_uri() . '/assets/scripts/profile.js', array( 'jquery', 'lodash', 'wp-i18n' ), filemtime( get_theme_file_path() . '/assets/scripts/profile.js' ), true );
+        wp_enqueue_script( 'zume-join', get_template_directory_uri() . '/assets/scripts/profile.js', array( 'jquery', 'lodash', 'wp-i18n', 'site-js' ), filemtime( get_theme_file_path() . '/assets/scripts/profile.js' ), true );
         wp_localize_script(
             "zume-join", "zumeJoin", array(
                 'root' => esc_url_raw( rest_url() ),

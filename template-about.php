@@ -24,7 +24,7 @@ Template Name: About
         <h2 id="about-statement">Zúme is a community of practice <br>for those who want to see disciple making movements.</h2>
 
         <?php if ( ! is_user_logged_in() ) : // hide action button if user is logged in ?>
-            <p class="padding-top-1"><a class="button primary-button-hollow large" href="/login/?action=register">Join Our Community</a></p>
+            <p class="padding-top-1"><button class="button primary-button-hollow large join-the-community" type="button">Join Our Community</button></p>
         <?php endif; ?>
 
     </div>
@@ -32,9 +32,9 @@ Template Name: About
     <!-- Content -->
     <div class="grid-x grid-margin-x">
 
-        <div class="cell large-2"></div> <!-- column -->
+        <div class="cell medium-2"></div> <!-- column -->
 
-        <div class="blog cell large-8">
+        <div class="blog cell medium-8">
 
             <!-- White Section-->
             <div id="post-main" class="grid-x grid-margin-x white-section">
@@ -88,7 +88,7 @@ Template Name: About
 
         </div><!-- center -->
 
-        <div class="cell large-2"></div> <!-- column-->
+        <div class="cell medium-2"></div> <!-- column-->
 
     </div>
 
