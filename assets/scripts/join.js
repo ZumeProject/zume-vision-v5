@@ -151,13 +151,16 @@ jQuery(document).ready(function(){
                             </td>
                           </tr>
                           <tr>
-                            <td colspan="2"><div class="g-recaptcha" id="g-recaptcha"></div></td>
+                            <td></td>
+                            <td><div class="g-recaptcha" id="g-recaptcha"></div></td>
                           </tr>
                           <tr>
-                            <td colspan="2"><p>${__('On submitting this request, we will do our best to connect you with a community near you.', 'zume')}</p></td>
+                            <td></td>
+                            <td><p>${__('On submitting this request, we will do our best to connect you with a community near you.', 'zume')}</p></td>
                           </tr>
                           <tr>
-                            <td colspan="2">
+                            <td></td>
+                            <td>
                                 <div data-abide-error  class="alert alert-box" style="display:none;" id="alert">
                                     <strong>${__('Oh snap!', 'zume')}</strong>
                                 </div>
