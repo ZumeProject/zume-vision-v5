@@ -700,6 +700,14 @@ Detail edits for About page
         font-size: $x-jumbo-text;
     }
 }
+
+#connection-request-form {
+    table {
+        tr {
+            border-bottom:none;
+        }
+    }
+}
 .secondary-color {
     color: #00aeff;
 }

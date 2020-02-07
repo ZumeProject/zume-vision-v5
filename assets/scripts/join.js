@@ -41,13 +41,14 @@ jQuery(document).ready(function(){
                         <li>Vision casting tools</li>
                         <li>Support with Disciple.Tools DMM software</li>
                     </ul>
+                    <a href="#">Read more</a>
                 </div>
                 <div class="cell medium-8">
                     <form id="connection-request-form" data-abide>
                       <div data-abide-error class="alert callout" style="display: none;">
                           <p><i class="fi-alert"></i> There are some errors in your form.</p>
                       </div>
-                      <table class="request-form">
+                      <table class="unstriped">
                           <tr style="vertical-align: top;">
                               <td style="width:150px;">
                                   <label for="zume_full_name">Name</label>
@@ -149,19 +150,23 @@ jQuery(document).ready(function(){
                                 </div>
                             </td>
                           </tr>
+                          <tr>
+                            <td colspan="2"><div class="g-recaptcha" id="g-recaptcha"></div></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2"><p>${__('On submitting this request, we will do our best to connect you with a community near you.', 'zume')}</p></td>
+                          </tr>
+                          <tr>
+                            <td colspan="2">
+                                <div data-abide-error  class="alert alert-box" style="display:none;" id="alert">
+                                    <strong>${__('Oh snap!', 'zume')}</strong>
+                                </div>
+                                <button class="button" type="button" onclick="load_form_validator()" id="submit" disabled>${__('Submit', 'zume')}</button> <span id="request_spinner"></span>
+                            </td>
+                          </tr>
                       </table>
-                      <div data-abide-error  class="alert alert-box" style="display:none;" id="alert">
-                          <strong>${__('Oh snap!', 'zume')}</strong>
-                      </div>
-                      <div class="cell">
-                        <div class="g-recaptcha" id="g-recaptcha"></div>
-                      </div>
-                      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                       
-                      <div class="cell request-form">
-                           <p>${__('On submitting this request, we will do our best to connect you with a community near you.', 'zume')}</p>
-                          <button class="button" type="button" onclick="load_form_validator()" id="submit" disabled>${__('Submit', 'zume')}</button> <span id="request_spinner"></span>
-                      </div>
+                      <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                   </form>
                 </div>
             </div>
