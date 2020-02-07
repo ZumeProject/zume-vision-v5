@@ -54,13 +54,13 @@ class Zume_Off_Canvas_Menu_Walker extends Walker_Nav_Menu {
     }
 }
 
-// The Off Canvas Menu
+//
 function zume_reports_nav() {
     wp_nav_menu(array(
         'container' => false,                           // Remove nav container
         'menu_class' => 'vertical menu accordion-menu sidebar-menu',       // Adding custom nav class
         'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
-        'theme_location' => 'playbook',                 // Where it's located in the theme
+        'theme_location' => 'reports',                 // Where it's located in the theme
         'depth' => 5,                                   // Limit the depth of the nav
         'fallback_cb' => false,                         // Fallback function (see below)
         'walker' => new Zume_Reports_Menu_Walker()

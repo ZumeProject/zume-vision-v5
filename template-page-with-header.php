@@ -36,4 +36,8 @@ Template Name: Page With Header
 
 </main> <!-- end #main -->
 
+<div class="padding-top-2">
+    <?php get_template_part( "parts/content", "join" ); ?>
+</div>
+
 <?php get_footer(); ?>
