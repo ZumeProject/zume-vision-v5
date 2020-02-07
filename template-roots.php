@@ -133,7 +133,7 @@ Template Name: Roots
             <br style="clear: both;" />
 
             <?php get_template_part( "parts/content", "join" ); ?>
-            
+
             <br style="clear: both;" />
 
 

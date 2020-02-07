@@ -11,29 +11,35 @@ jQuery(document).ready(function(){
   jQuery('.join-the-community').on('click', function(){
 
     jQuery('#modal-content').empty().html(`
-    <div class="grid-y padding-top-1 blog">
+    <div class="grid-y padding-1 blog">
         <div class="cell">
             <h1 class="center secondary-color">Join Us</h1>
             <h3 class="center">Zúme is a community of practice for those who want to see disciple making movements.</h3>
-            <hr>
         </div>
+        <div class="cell"><hr></div>
+        
         <div class="cell ">
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-4">
+                    <h3>Membership is ...</h3>
+                    <ul>
+                        <li>Free</li>
+                        <li>Non-exclusive</li>
+                    </ul>
+                    <h3>What is required?</h3>
+                    <ul>
+                        <li>Relationship with local practitioners</li>
+                        <li>Openness to working collaboratively</li>
+                        <li>Commitment to CPM/DMM principles and practice</li>
+                    </ul>
                     <h3>What does this get me?</h3>
                     <ul>
+                        <li>Relationship with local practitioners</li>
                         <li>Connection to coaching</li>
-                        <li>Connection to peer mentoring groups near you</li>
+                        <li>Connection to local peer mentoring groups</li>
                         <li>Connection to local, regional, and global gatherings</li>
                         <li>Vision casting tools</li>
                         <li>Support with Disciple.Tools DMM software</li>
-                        <li>A practitioner community</li>
-                    </ul>
-                    <h3>What do I give?</h3>
-                    <ul>
-                        <li>Not fees</li>
-                        <li>Not exclusivity (We want His kingdom, not a new denomination)</li>
-                        <li>Relationship</li>
                     </ul>
                 </div>
                 <div class="cell medium-8">
