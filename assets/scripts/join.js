@@ -41,7 +41,7 @@ jQuery(document).ready(function(){
                         <li>Vision casting tools</li>
                         <li>Support with Disciple.Tools DMM software</li>
                     </ul>
-                    <a href="#">Read more</a>
+                    
                 </div>
                 <div class="cell medium-8">
                     <form id="connection-request-form" data-abide>
