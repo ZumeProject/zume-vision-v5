@@ -22,6 +22,7 @@ $post = get_post();
                         <div class="cell"><p class="large-text">to saturate the world with multiplying disciples<br>in our generation.</p></div>
                         <div class="cell"><img src="<?php echo esc_url( zume_images_uri() )?>vision/jesus-globe.png" alt="welcome-graphic" style="max-height:250px"  /></div>
                         <div class="cell"><p class="large-text">Zúme is a community of practice <br>for those who want to see disciple making movements.</p></div>
+                        <div class="cell padding-top-1"><?php get_template_part( "parts/content", "join" ); ?></div>
                         <div class="cell padding-top-2">
                             <div class="grid-x">
                                 <div class="cell medium-4">

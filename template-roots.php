@@ -132,6 +132,10 @@ Template Name: Roots
             </div>
             <br style="clear: both;" />
 
+            <?php get_template_part( "parts/content", "join" ); ?>
+            
+            <br style="clear: both;" />
+
 
             <!-- Deep Blue Ribbon-->
             <div class="grid-x grid-margin-x grid-margin-y deep-blue-section">

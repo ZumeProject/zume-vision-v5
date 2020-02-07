@@ -9,15 +9,13 @@
     <hr class="show-for-small-only" />
 
     <?php get_template_part( 'parts/widget', 'sidebar-recent-articles' ); ?>
-    <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
 
-    <!-- subscribe section-->
-    <?php get_template_part( 'parts/widget', 'newsletter-subscribe' ); ?>
-
-    <?php if ( is_active_sidebar( 'articles' ) ) : ?>
-
-        <?php dynamic_sidebar( 'articles' ); ?>
-
+    <?php if ( ! is_user_logged_in() ) : ?>
+        <hr>
     <?php endif; ?>
+    <?php get_template_part( "parts/content", "join" ); ?>
+
+
+    <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
 
 </div>

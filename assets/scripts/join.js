@@ -13,7 +13,7 @@ jQuery(document).ready(function(){
     jQuery('#modal-content').empty().html(`
     <div class="grid-y padding-top-1 blog">
         <div class="cell">
-            <h1 class="center">Join Us</h1>
+            <h1 class="center secondary-color">Join Us</h1>
             <h3 class="center">Zúme is a community of practice for those who want to see disciple making movements.</h3>
             <hr>
         </div>
@@ -178,7 +178,7 @@ jQuery(document).ready(function(){
         send_community_request()
       })
 
-    jQuery('#reveal-modal').addClass('large').foundation('open')
+    jQuery('#join-modal').addClass('large').foundation('open')
 
   }) /* end onclick listener */
 })

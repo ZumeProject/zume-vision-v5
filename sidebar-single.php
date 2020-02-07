@@ -15,6 +15,6 @@
     <?php zume_related_posts() ?>
 
     <!-- subscribe section-->
-    <?php get_template_part( 'parts/widget', 'newsletter-subscribe' ); ?>
+    <?php get_template_part( "parts/content", "join" ); ?>
 
 </div>

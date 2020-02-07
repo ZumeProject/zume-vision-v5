@@ -48,6 +48,11 @@
 
     </div>
 
+    <?php if ( ! is_user_logged_in() ) : ?>
+        <hr>
+    <?php endif; ?>
+    <?php get_template_part( "parts/content", "join" ); ?>
+
     <hr><!-- Divider -->
 
     <!-- Key Reports-->

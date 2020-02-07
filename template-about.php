@@ -23,9 +23,9 @@ Template Name: About
         <br>
         <h2 id="about-statement">Zúme is a community of practice <br>for those who want to see disciple making movements.</h2>
 
-        <?php if ( ! is_user_logged_in() ) : // hide action button if user is logged in ?>
-            <p class="padding-top-1"><button class="button primary-button-hollow large join-the-community" type="button">Join Our Community</button></p>
-        <?php endif; ?>
+        <div class="padding-top-1">
+            <?php get_template_part( "parts/content", "join" ); ?>
+        </div>
 
     </div>
 

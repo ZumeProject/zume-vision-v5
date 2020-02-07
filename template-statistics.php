@@ -152,6 +152,6 @@ get_header(); ?>
 
 </div> <!-- end #content -->
 
-<?php //get_template_part( "parts/content", "fullmodal" ); ?>
+<?php get_template_part( "parts/content", "join" ); ?>
 
 <?php get_footer(); ?>
