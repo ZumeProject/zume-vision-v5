@@ -56,16 +56,22 @@
     <hr><!-- Divider -->
 
     <!-- Key Reports-->
-    <div class="padding-horizontal-1">
-        <h3>Special Reports</h3>
-        <?php zume_reports_nav() ?>
-    </div>
+<!--    <div class="padding-horizontal-1">-->
+<!--        <h3>Special Reports</h3>-->
+<!--        --><?php //zume_reports_nav() ?>
+<!--    </div>-->
 
-    <hr><!-- Divider -->
+<!--    <hr>-->
 
     <!-- Statistics -->
     <div class="padding-horizontal-1">
         <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
+    </div>
+
+    <hr>
+
+    <div class="padding-horizontal-1 center">
+        <a href="/feed/?post_type=reports">RSS Feed</a>
     </div>
 
 
