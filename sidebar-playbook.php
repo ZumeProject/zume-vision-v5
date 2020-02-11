@@ -19,13 +19,14 @@
             ]);
             global $post;
             $post_cat = wp_get_object_terms( $post->ID, 'playbook_categories' );
+            dt_write_log($post_cat);
             $list = [];
             foreach ( $post_cat as $cat ) {
                 $list[] = $cat->term_id;
             }
             foreach ( $categories as $category ) {
                 echo '<div class="cell">';
-                if ( array_search( $category->term_id, $list ) ) {
+                if ( array_search( $category->term_id, $list ) !== false ) {
                     echo '<i class="fi-check"></i>';
                 } else {
                     echo '<i class="fi-x"></i>';
