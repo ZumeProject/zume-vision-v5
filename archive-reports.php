@@ -3,7 +3,7 @@
 <!-- Statistics Section-->
 <div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
     <div class="cell center" style="cursor:pointer;" onclick="window.location = '<?php site_url() ?>/reports'">
-        <h1 class="center title">Activity Reports</h1>
+        <h1 class="center title">Reports</h1>
     </div>
 </div>
 <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
