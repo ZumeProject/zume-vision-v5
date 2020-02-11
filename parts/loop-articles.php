@@ -13,7 +13,7 @@ $thumb_url = $thumb_url_array[0];
     <header class="article-header center">
 
         <?php if ( has_post_thumbnail() ) : ?>
-            <div class="hero-image" style="background: url('<?php echo esc_url( $thumb_url ) ?>');"></div>
+            <div class="hero-image" style="background: url('<?php echo esc_url( $thumb_url ) ?>');background-repeat:no-repeat;"></div>
         <?php endif; ?>
 
         <h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
