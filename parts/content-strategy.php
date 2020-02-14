@@ -121,7 +121,7 @@
             <div class="cell medium-3"></div>
             <div class="cell medium-6">
                 <p>Our community aims to catalyze two multiplying simple churches for every population of 5,000 in the United States and 50,000 globally.</p>
-                <p>As the saying goes, "Plan your trust, don't trust your plan". We know it is the Father's heart to have families of believers in every tongue, tribe, and nation. He has also invited us to be his co-workers in reconciliation. So these goals of 1 training and 2 churches come from our trust in the one who can do it.,</p>
+                <p>As the saying goes, "Plan your trust, don't trust your plan". We know it is the Father's heart to have families of believers in every tongue, tribe, and nation. He has also invited us to be his co-workers in reconciliation. So these goals of 1 training and 2 churches come from our trust in the one who can do it.</p>
 
             </div>
             <div class="cell medium-3"></div>
