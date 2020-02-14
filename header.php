@@ -12,6 +12,16 @@
   <html class="no-js"  <?php language_attributes(); ?>>
 
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-102207784-2"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-102207784-2');
+        </script>
+
         <meta charset="utf-8">
 
         <!-- Force IE to use the latest rendering engine available -->
@@ -31,7 +41,7 @@
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
         <?php wp_head(); ?>
-
+        
     </head>
 
     <body <?php body_class(); ?>>
