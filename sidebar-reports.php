@@ -16,4 +16,12 @@
 
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
 
+    <hr>
+
+    <!-- Key Reports-->
+    <div class="padding-horizontal-1">
+        <h3>Special Reports</h3>
+        <?php zume_reports_nav() ?>
+    </div>
+
 </div>
