@@ -56,12 +56,12 @@
     <hr><!-- Divider -->
 
     <!-- Key Reports-->
-<!--    <div class="padding-horizontal-1">-->
-<!--        <h3>Special Reports</h3>-->
-<!--        --><?php //zume_reports_nav() ?>
-<!--    </div>-->
+    <div class="padding-horizontal-1">
+        <h3>Special Reports</h3>
+        <?php zume_reports_nav() ?>
+    </div>
 
-<!--    <hr>-->
+    <hr>
 
     <!-- Statistics -->
     <div class="padding-horizontal-1">
