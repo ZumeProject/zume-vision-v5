@@ -73,11 +73,8 @@
     <div class="padding-horizontal-1 center">
         <a href="/feed/?post_type=reports">RSS Feed</a>
     </div>
-
-
-
-
-
-
+    <div class="padding-horizontal-1 center">
+        <a href="/reports/?format=compact">Compact Format</a>
+    </div>
 
 </div>

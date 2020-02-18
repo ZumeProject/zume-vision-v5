@@ -602,7 +602,7 @@ class Zume_User_Registration
     }
 
     public function custom_registration_function() {
-        dt_write_log($_POST);
+        dt_write_log( $_POST );
         $error = new WP_Error();
 
         if ( ! ( isset( $_POST['login_form_nonce'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['login_form_nonce'] ) ), 'login_form' ) ) ) {

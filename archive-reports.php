@@ -1,3 +1,10 @@
+<?php
+$format = false;
+if ( isset( $_GET['format'] ) && $_GET['format'] === 'compact' ) {
+    $format = 'compact';
+}
+?>
+
 <?php get_header(); ?>
 
 <!-- Statistics Section-->
@@ -15,26 +22,39 @@
 
         <div class="blog cell large-8">
 
-            <?php /** Show Category Label on Category Pages */
+            <?php /** Show Category Bread Crumb */
             global $wp;
             $url_parts = explode( '/', $wp->request );
             if ( 'report-categories' === $url_parts[0] ) {
                 the_archive_title();
             } ?>
 
-            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
-                    <?php get_template_part( 'parts/loop', 'report-archive' ); ?>
-
+            <?php /* Show default full view*/
+            if ( ! $format ) : if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <?php get_template_part( 'parts/loop', 'report-archive' ); ?>
             <?php endwhile; ?>
-
-                <?php zume_page_navi(); ?>
-
+                    <?php zume_page_navi(); ?>
             <?php else : ?>
-
                 <?php get_template_part( 'parts/content', 'missing' ); ?>
+            <?php endif;
+/* have posts*/ endif; /* no format */ ?>
 
-            <?php endif; ?>
+
+            <?php /* Show compressed view */
+            if ( $format ) : if (have_posts()) : ?>
+                <table class=""><thead><tr><th>Date</th><th></th></tr></thead><tbody>
+                    <?php while (have_posts()) : the_post(); ?>
+                    <tr>
+                        <td><span class="small-text"><?php echo get_the_date() ?></span></td>
+                        <td><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>" style="text-decoration: none;"><?php the_title(); ?></a></td>
+                    </tr>
+                    <?php endwhile; ?>
+                    </tbody></table>
+                    <?php zume_page_navi(); ?>
+            <?php else : ?>
+                <?php get_template_part( 'parts/content', 'missing' ); ?>
+            <?php endif;
+/* have posts*/ endif; /* has format */  ?>
 
         </div>
 
