@@ -164,7 +164,7 @@ jQuery(document).ready(function(){
                                 <div data-abide-error  class="alert alert-box" style="display:none;" id="alert">
                                     <strong>${__('Oh snap!', 'zume')}</strong>
                                 </div>
-                                <button class="button" type="button" onclick="load_form_validator()" id="submit" disabled>${__('Submit', 'zume')}</button> <span id="request_spinner"></span>
+                                <button class="button membership-request-form" type="button" onclick="load_form_validator()" id="submit" disabled>${__('Submit', 'zume')}</button> <span id="request_spinner"></span>
                             </td>
                           </tr>
                       </table>
