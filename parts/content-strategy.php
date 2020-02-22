@@ -86,12 +86,12 @@
                 <p>We suspect, especially in places where the church has been, we will need a training movement before we see a
                     <a href="https://zume.vision/articles/what-is-a-disciple-making-movement/">disciple making movement</a>.</p>
                 <p>Live trainings are often best. But the people who need trained, so vastly extends beyond the live trainings available.
-                    <a href="/training">Zume.Training</a> is an online, in-life, on-demand training for groups to get paradigm-shifting multiplication training.</p>
+                    <a href="https://zume.training">Zume.Training</a> is an online, in-life, on-demand training for groups to get paradigm-shifting multiplication training.</p>
             </div>
             <div class="cell medium-3"></div>
         </div>
 
-        <a class="button primary-button-hollow large" href="/training">View Training</a>
+        <a class="button primary-button-hollow large" href="https://zume.training">View Training</a>
     </div>
 
 </div>
