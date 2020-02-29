@@ -85,8 +85,8 @@
                 <p>Disciple multiplication ideas are scriptural, but often missed. A simple training in multiplication principles can unlock even established believers from unfruitful lives.</p>
                 <p>We suspect, especially in places where the church has been, we will need a training movement before we see a
                     <a href="https://zume.vision/articles/what-is-a-disciple-making-movement/">disciple making movement</a>.</p>
-                <p>Live trainings are often best. But the people who need trained, so vastly extends beyond the live trainings available.
-                    <a href="https://zume.training">Zume.Training</a> is an online, in-life, on-demand training for groups to get paradigm-shifting multiplication training.</p>
+                <p>Live trainings are often best and preferred, yet the people who need trained vastly outnumber the live trainings available. For this reason,
+                    <a href="https://zume.training">Zume.Training</a> is an online, in-life, self-directed training for groups wanting beginning disciple making movement training.</p>
             </div>
             <div class="cell medium-3"></div>
         </div>
