@@ -45,6 +45,7 @@ function site_scripts() {
             'nonce' => wp_create_nonce( 'wp_rest' ),
             'theme_uri' => get_stylesheet_directory_uri(),
             'map_key' => DT_Mapbox_API::get_key(),
+            'logged_in' => is_user_logged_in(),
         )
     );
 

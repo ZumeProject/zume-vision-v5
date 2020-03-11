@@ -8,7 +8,13 @@ if ( zumeAPI === 'undefined' ) {
 }
 
 jQuery(document).ready(function(){
-  jQuery('.join-the-community').on('click', function(){
+  let button = jQuery('.join-the-community')
+
+  if ( zumeAPICore.logged_in ) {
+    button.hide()
+  }
+
+  button.on('click', function(){
 
     jQuery('#modal-content').empty().html(`
     <div class="grid-y padding-1 blog">
@@ -28,18 +34,17 @@ jQuery(document).ready(function(){
                     </ul>
                     <h3>What is required?</h3>
                     <ul>
-                        <li>Relationship with local practitioners</li>
                         <li>Openness to working collaboratively</li>
                         <li>Commitment to CPM/DMM principles and practice</li>
                     </ul>
                     <h3>What does this get me?</h3>
                     <ul>
-                        <li>Relationship with local practitioners</li>
+                        <li>Connection to local practitioners</li>
                         <li>Connection to coaching</li>
                         <li>Connection to local peer mentoring groups</li>
                         <li>Connection to local, regional, and global gatherings</li>
                         <li>Vision casting tools</li>
-                        <li>Support with Disciple.Tools DMM software</li>
+                        <li>Disciple making movement software</li>
                     </ul>
                     
                 </div>
