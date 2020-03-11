@@ -4,8 +4,9 @@ register_nav_menus(
     array(
         'main-nav' => __( 'The Main Menu', 'zume' ),   // Main nav in header
         'offcanvas-nav' => __( 'The Off-Canvas Menu', 'zume' ),
-        'footer-links' => __( 'Footer Links', 'zume' ), // Secondary nav in footer
-        'reports' => __( 'Reports', 'zume' ) // Secondary nav in footer
+        'footer-links' => __( 'Footer Links', 'zume' ),
+        'reports' => __( 'Reports', 'zume' ),
+        'top-articles' => __( 'Top Articles', 'zume' )
     )
 );
 
@@ -67,6 +68,25 @@ function zume_reports_nav() {
 }
 
 class Zume_Reports_Menu_Walker extends Walker_Nav_Menu {
+    public function start_lvl( &$output, $depth = 0, $args = array() ) {
+        $indent = str_repeat( "\t", $depth );
+        $output .= "\n$indent<ul class=\"vertical menu\">\n";
+    }
+}
+
+function zume_top_articles_nav() {
+    wp_nav_menu(array(
+        'container' => false,                           // Remove nav container
+        'menu_class' => 'vertical menu accordion-menu sidebar-menu underline',       // Adding custom nav class
+        'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
+        'theme_location' => 'top-articles',                 // Where it's located in the theme
+        'depth' => 5,                                   // Limit the depth of the nav
+        'fallback_cb' => false,                         // Fallback function (see below)
+        'walker' => new Zume_Top_Articles_Menu_Walker()
+    ));
+}
+
+class Zume_Top_Articles_Menu_Walker extends Walker_Nav_Menu {
     public function start_lvl( &$output, $depth = 0, $args = array() ) {
         $indent = str_repeat( "\t", $depth );
         $output .= "\n$indent<ul class=\"vertical menu\">\n";

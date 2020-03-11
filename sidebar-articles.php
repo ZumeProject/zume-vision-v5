@@ -8,12 +8,18 @@
 
     <hr class="show-for-small-only" />
 
-    <?php get_template_part( 'parts/widget', 'sidebar-recent-articles' ); ?>
+    <?php get_template_part( "parts/content", "top-articles" ); ?>
 
     <?php if ( ! is_user_logged_in() ) : ?>
         <hr>
-    <?php get_template_part( "parts/content", "join" ); ?>
+        <?php get_template_part( "parts/content", "join" ); ?>
     <?php endif; ?>
+
+    <hr>
+
+    <?php get_template_part( 'parts/widget', 'sidebar-recent-articles' ); ?>
+
+
 
     <hr>
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
