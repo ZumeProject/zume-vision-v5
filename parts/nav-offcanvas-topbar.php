@@ -30,6 +30,7 @@
 
     <div class="cell small-3 show-for-small hide-for-large" id="top-mobile-menu-div">
         <div class="mobile-menu">
+            <a href="javascript:void(0)" data-open="search-box" rel="nofollow" title="Search" style="padding-right:15px;"><i class="fi-magnifying-glass large-text"></i></a>
             <a data-toggle="off-canvas" style="cursor:pointer; float: right;"><img src="<?php echo esc_url( zume_images_uri() . 'hamburger.svg' ) ?>" alt="menu" /></a>
         </div>
     </div>
