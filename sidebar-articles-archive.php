@@ -10,11 +10,6 @@
 
     <?php get_template_part( "parts/content", "top-articles" ); ?>
 
-    <?php if ( ! is_user_logged_in() ) : ?>
-        <hr>
-        <?php get_template_part( "parts/content", "join" ); ?>
-    <?php endif; ?>
-
     <hr>
 
     <h3>Topics</h3>
@@ -35,6 +30,11 @@
         }
         ?>
     </div>
+
+    <?php if ( ! is_user_logged_in() ) : ?>
+        <hr>
+        <?php get_template_part( "parts/content", "join" ); ?>
+    <?php endif; ?>
 
     <hr>
 

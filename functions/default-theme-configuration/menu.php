@@ -77,7 +77,7 @@ class Zume_Reports_Menu_Walker extends Walker_Nav_Menu {
 function zume_top_articles_nav() {
     wp_nav_menu(array(
         'container' => false,                           // Remove nav container
-        'menu_class' => 'vertical menu accordion-menu sidebar-menu underline',       // Adding custom nav class
+        'menu_class' => 'vertical menu sidebar-menu underline',       // Adding custom nav class
         'items_wrap' => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',
         'theme_location' => 'top-articles',                 // Where it's located in the theme
         'depth' => 5,                                   // Limit the depth of the nav
