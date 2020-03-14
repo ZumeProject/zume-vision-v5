@@ -73,6 +73,9 @@ add_action( 'wp_head', 'zume_captcha_header' );
 
 function zume_get_user_meta( $user_id = null ) {
 
+    if ( ! is_user_logged_in() ) {
+        return [];
+    }
     if ( is_null( $user_id ) ) {
         $user_id = get_current_user_id();
     }

@@ -332,7 +332,7 @@ function send_community_request() {
   zumeAPI.community_request( data ).done( function(data) {
     console.log('postsend')
     console.log(data)
-    jQuery('#request_spinner').html('success')
+    jQuery('#connection-request-form').html('Excellent! Our volunteer network is being alerted. Please, be watching for a call or email in the next few days.')
   })
     .fail(function(e){
       console.log('coach_request error')

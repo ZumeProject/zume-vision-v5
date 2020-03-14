@@ -183,6 +183,7 @@ class Zume_REST_API {
      * @return array|WP_Error
      */
     public function community_request( WP_REST_Request $request ) {
+        dt_write_log('here');
         $params = $request->get_params();
         if ( ! isset( $params['name'] ) ) {
             return new WP_Error( "log_param_error", "Missing parameters", array( 'status' => 400 ) );
@@ -233,7 +234,12 @@ class Zume_REST_API {
             $args['location_grid_meta'] = [];
         }
 
-        Location_Grid_Geocoder::verify_location_grid_meta_filter( $args['location_grid_meta'] );
+        require_once ( get_stylesheet_directory() . '/dt-mapping/geocode-api/location-grid-geocoder.php' );
+        if ( class_exists( 'Location_Grid_Geocoder') ) {
+            $geocoder = new Location_Grid_Geocoder();
+            $geocoder->validate_location_grid_meta( $args['location_grid_meta'] );
+        }
+
 
         if ( $args['location_grid_meta'] ) {
             $fields['location_grid'] = [ "values" => [ [ "value" => $args['location_grid_meta']['grid_id'] ] ] ];
