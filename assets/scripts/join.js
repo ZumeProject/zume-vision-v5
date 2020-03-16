@@ -194,6 +194,7 @@ jQuery(document).ready(function(){
 
     jQuery(document)
       .on("formvalid.zf.abide", function (ev, frm) {
+        jQuery('#submit').prop('disabled', 'true')
         send_community_request()
       })
 
