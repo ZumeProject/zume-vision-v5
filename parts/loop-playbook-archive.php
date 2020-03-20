@@ -19,25 +19,7 @@
                 <section class="entry-content" itemprop="text">
                     <?php the_excerpt(); ?>
                 </section> <!-- end article section -->
-
-                <?php
-                $categories = wp_get_object_terms( $post->ID, 'playbook_categories' );
-
-                if ( ! empty( $categories ) ) {
-                    echo '<footer class="article-footer padding-bottom-1">Categories: ';
-
-                    $i = 0;
-                    foreach ( $categories as $category ) {
-                        if ( $i > 0 ) {
-                            echo ', ';
-                        }
-                        echo '<a href="'.site_url().'/playbook-categories/'.$category->slug.'">'. $category->name . '</a>';
-                        $i++;
-                    }
-                    echo '</footer> <!-- end article footer -->';
-                }
-                ?>
-
+                
             </div>
         </div>
 </article> <!-- end article -->

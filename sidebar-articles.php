@@ -12,13 +12,32 @@
 
     <hr>
 
-    <?php get_template_part( 'parts/widget', 'sidebar-recent-articles' ); ?>
+    <h3>Topics</h3>
+    <div class="grid-x padding-left-1">
+        <?php
+        /** Category List */
+        $categories = get_categories( [
+            'taxonomy' => 'article_topics',
+            'hide_empty' => false,
+        ]);
+
+        foreach ( $categories as $category ) {
+            if ( $category->count > 0 ) {
+                echo '<div class="cell"><a href="'. esc_url(site_url() ).'/article-topics/'.$category->slug.'/">' . esc_html( $category->name ) . '<span class="float-right">('.esc_html( $category->count ).')</span></a></div>';
+            } else {
+                echo '<div class="cell">' . esc_html( $category->name ) . '<span class="float-right">(0)</span></div>';
+            }
+        }
+        ?>
+    </div>
 
     <?php if ( ! is_user_logged_in() ) : ?>
         <hr>
         <?php get_template_part( "parts/content", "join" ); ?>
     <?php endif; ?>
 
+    <hr>
+    <?php get_template_part( 'parts/widget', 'sidebar-recent-articles' ); ?>
 
     <hr>
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>

@@ -184,6 +184,19 @@ class Zume_Playbook_Post_Type
             'rewrite' => array( 'slug' => 'playbook-categories' ),
             'show_in_rest' =>true,
         ));
+        register_taxonomy('playbook_topics', 'playbook', array(
+            'hierarchical' => true,
+            'labels' => [
+                'name' => _x( 'Playbook Topics', 'taxonomy general name' ),
+                'singular_name' => _x( 'Topics', 'taxonomy singular name' ),
+                'menu_name' => __( 'Topics' ),
+            ],
+            'show_ui' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'query_var' => true,
+            'rewrite' => array( 'slug' => 'playbook-topics' ),
+            'show_in_rest' =>true,
+        ));
     }
 
     /**

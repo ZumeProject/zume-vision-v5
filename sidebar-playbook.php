@@ -6,8 +6,12 @@
         <?php get_template_part( 'parts/widget', 'sidebar-recent-playbook' ); ?>
     </div>
 
-    <hr><!-- divider -->
+    <?php if ( ! is_user_logged_in() ) : ?>
+        <hr>
+        <?php get_template_part( "parts/content", "join" ); ?>
+    <?php endif; ?>
 
+    <hr><!-- divider -->
     <div class="padding-left-1">
         <h3>Target Audience</h3>
         <div class="grid-x padding-left-1">
@@ -33,9 +37,9 @@
                 }
 
                 if ( $category->count > 0 ) {
-                    echo '<a href="'. site_url().'/playbook-categories/'.$category->slug.'/">' . $category->name . '</a>';
+                    echo '<a href="'. esc_url( site_url() ).'/playbook-categories/'.esc_html( $category->slug ).'/">' . esc_html( $category->name ) . '</a>';
                 } else {
-                    echo $category->name;
+                    echo esc_html( $category->name );
                 }
                 echo '</div>';
             }
@@ -64,5 +68,27 @@
         </div>
 
     <?php endif; ?>
+
+    <hr>
+    <div class="padding-left-1">
+        <h3>Topics</h3>
+        <div class="grid-x padding-left-1">
+            <?php
+            /** Category List */
+            $categories = get_categories( [
+                'taxonomy' => 'playbook_topics',
+                'hide_empty' => false,
+            ]);
+
+            foreach ( $categories as $category ) {
+                if ( $category->count > 0 ) {
+                    echo '<div class="cell"><a href="'. esc_url( site_url() ).'/playbook-topics/'. esc_url( $category->slug ) . '/">' . esc_html( $category->name ) . '<span class="float-right">(' . esc_attr( $category->count ) . ')</span></a></div>';
+                } else {
+                    echo '<div class="cell">' . esc_html( $category->name ) . '<span class="float-right">(0)</span></div>';
+                }
+            }
+            ?>
+        </div>
+    </div>
 
 </div>
