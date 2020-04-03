@@ -264,8 +264,55 @@ class Zume_REST_API {
         $result = wp_remote_post( 'https://' . trailingslashit( $site['url'] ) . 'wp-json/dt-posts/v2/contacts', $args );
         if ( is_wp_error( $result ) ) {
             dt_write_log($result);
+            $data = array(
+                'payload'   => json_encode( array(
+                        "channel"       =>  '#errors',
+                        "text"          =>  'Failed Community Request: ' . maybe_serialize( $result ) . ' --- ' . maybe_serialize( $fields ),
+                        "username"	    =>  'error-bot',
+                        "icon_emoji"    =>  'ghost'
+                    )
+                )
+            );
+            // Post our data via the slack webhook endpoint using wp_remote_post
+            $posting_to_slack = wp_remote_post( 'https://hooks.slack.com/services/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', array(
+                    'method' => 'POST',
+                    'timeout' => 30,
+                    'redirection' => 5,
+                    'httpversion' => '1.0',
+                    'blocking' => true,
+                    'headers' => array(),
+                    'body' => $data,
+                    'cookies' => array()
+                )
+            );
             return new WP_Error( 'failed_remote_post', $result->get_error_message() );
         }
+
+        $body = json_decode( $result['body'], true );
+        if ( ! isset( $body['ID'] ) ) {
+            $data = array(
+                'payload'   => json_encode( array(
+                        "channel"       =>  '#errors',
+                        "text"          =>  'Failed Community Request: ' . maybe_serialize( $result ) . ' --- ' . maybe_serialize( $fields ),
+                        "username"	    =>  'error-bot',
+                        "icon_emoji"    =>  'ghost'
+                    )
+                )
+            );
+            // Post our data via the slack webhook endpoint using wp_remote_post
+            $posting_to_slack = wp_remote_post( 'https://hooks.slack.com/services/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', array(
+                    'method' => 'POST',
+                    'timeout' => 30,
+                    'redirection' => 5,
+                    'httpversion' => '1.0',
+                    'blocking' => true,
+                    'headers' => array(),
+                    'body' => $data,
+                    'cookies' => array()
+                )
+            );
+        }
+
 
         return $result;
 
