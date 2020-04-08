@@ -71,8 +71,8 @@ Template Name: About
                                 love for the world. We want to see spiritual families give birth to more spiritual families in every neighborhood in every city.
                             </li>
                             <li>
-                                <strong>In practice,</strong> we want to think differently about making disciples who make disciples. We seek to to
-                                prioritize Jesus ways, doing the things he did in the ways he did them and releasing practices, processes, and strategies that we don't
+                                <strong>In practice,</strong> we want to think differently about making disciples who make disciples. We seek to
+                                prioritize Jesus' ways, doing the things he did in the ways he did them and releasing practices, processes, and strategies that we don't
                                 see him doing.
                             </li>
                         </ul>
