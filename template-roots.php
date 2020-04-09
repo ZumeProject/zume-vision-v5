@@ -26,7 +26,7 @@ Template Name: Roots
                     <li>
                         <div class="content">
                             <h3>Zúme.Vision Launched</h3>
-                            <p>A new website focusing on communicating the global training and church saturation vision of Zume is launched</p>
+                            <p>A new website focusing on communicating the global training and church saturation vision of Zume was launched</p>
                         </div>
                         <div class="time">
                             <h4>November 2019</h4>
@@ -36,7 +36,7 @@ Template Name: Roots
                     <li>
                         <div class="content">
                             <h3>Zúme.Training Relaunched</h3>
-                            <p>A fourth version of the Zume Training is released in English. This new version offers better access to training elements, group tracking, and personal progress tracking.</p>
+                            <p>A fourth version of the Zume Training was released in English. This new version offered better access to training elements, group tracking, and personal progress tracking.</p>
                             <p>Also, the first version of the offline mobile app for Zúme training launched in beta.</p>
                         </div>
                         <div class="time">
@@ -89,7 +89,7 @@ Template Name: Roots
                     <li>
                         <div class="content">
                             <h3>Multilingual Zúme Training Launched</h3>
-                            <p>Valentines Day, a year after initial launch, a third full rebuild of the Zúme Training was released. This new site was fully multilingual ready.</p>
+                            <p>Valentine's Day, a year after initial launch, a third full rebuild of the Zúme Training was released. This new site was fully multilingual ready.</p>
                         </div>
                         <div class="time">
                             <h4>February 2018</h4>
@@ -109,7 +109,7 @@ Template Name: Roots
                     <li>
                         <div class="content">
                             <h3>Online Training Launched</h3>
-                            <p>On Valentines Day, ZúmeProject.com was launched and simply by word of mouth we saw over 1000 registrations in the first few months.</p>
+                            <p>On Valentine's Day, ZúmeProject.com was launched and simply by word of mouth we saw over 1000 registrations in the first few months.</p>
                             <p>Due to many technical inadequacies in the training platform, the team began immediate work on a replacement training system.</p>
                         </div>
                         <div class="time">
