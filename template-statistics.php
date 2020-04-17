@@ -57,15 +57,15 @@ get_header(); ?>
                         <h3>Trainings</h3>
                         <hr>
                         <p>Needed<br><span class="progress-counter" id="trainings-needed-count-1">?</span><br></p>
-                        <p>Reported<br><span class="progress-counter" id="trainings-reported-count-1">?</span></p>
+<!--                        <p>Reported<br><span class="progress-counter" id="trainings-reported-count-1">?</span></p>-->
                     </div>
                     <div class="cell medium-2">
                         <h3>New Churches</h3>
                         <hr>
                         <p>Needed<br>
                             <span class="progress-counter" id="churches-needed-count-1">?</span><br></p>
-                        <p>Reported<br>
-                            <span class="progress-counter" id="churches-reported-count-1">0</span></p>
+<!--                        <p>Reported<br>-->
+<!--                            <span class="progress-counter" id="churches-reported-count-1">0</span></p>-->
                     </div>
                     <div class="cell small-1"></div>
                 </div>

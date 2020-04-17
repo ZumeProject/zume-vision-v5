@@ -42,7 +42,7 @@ $post = get_post();
                                             Trainings Needed<br><span class="home-counter" id="trainings-needed-count-1">0</span>
                                         </div>
                                         <div class="cell">
-                                            Trainings Reported<br><span class="home-counter" id="trainings-reported-count-1">0</span>
+<!--                                            Trainings Reported<br><span class="home-counter" id="trainings-reported-count-1">0</span>-->
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@ $post = get_post();
                                             New Churches Needed<br><span class="home-counter" id="churches-needed-count-1">0</span>
                                         </div>
                                         <div class="cell">
-                                            New Churches Reported<br><span class="home-counter" id="churches-reported-count-1">0</span>
+<!--                                            New Churches Reported<br><span class="home-counter" id="churches-reported-count-1">0</span>-->
                                         </div>
                                     </div>
                                 </div>
