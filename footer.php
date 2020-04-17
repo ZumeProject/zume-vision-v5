@@ -13,7 +13,7 @@
                     <div class="grid-x grid-margin-x grid-padding-x">
 
                         <div class="cell center-text text-gray">
-                            &copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>.
+                            &copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>
                         </div>
 
                     </div> <!-- end #inner-footer -->
