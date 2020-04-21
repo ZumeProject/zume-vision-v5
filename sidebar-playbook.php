@@ -2,6 +2,10 @@
 
     <hr class="show-for-small-only" />
 
+    <?php get_template_part( "parts/content", "top-articles" ); ?>
+    
+    <hr>
+
     <div class="padding-left-1">
         <?php get_template_part( 'parts/widget', 'sidebar-recent-playbook' ); ?>
     </div>
