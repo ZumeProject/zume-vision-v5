@@ -1,4 +1,3 @@
-<?php if ( ! is_user_logged_in() ) : // hide action button if user is logged in ?>
 <div id="join">
     <div class="join-wrapper"><button class="button secondary-button large expanded join-the-community" type="button">Join Our Community</button></div>
     <div class="reveal large" id="join-modal" data-reveal data-v-offset="10">
@@ -8,5 +7,5 @@
         </button>
     </div>
 </div>
-<?php endif; ?>
+
 

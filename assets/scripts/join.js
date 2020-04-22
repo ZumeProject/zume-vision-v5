@@ -10,10 +10,6 @@ if ( zumeAPI === 'undefined' ) {
 jQuery(document).ready(function(){
   let button = jQuery('.join-the-community')
 
-  if ( zumeAPICore.logged_in ) {
-    button.hide()
-  }
-
   button.on('click', function(){
 
     jQuery('#modal-content').empty().html(`
@@ -23,7 +19,7 @@ jQuery(document).ready(function(){
             <h3 class="center">Zúme is a community of practice for those who want to see disciple making movements.</h3>
         </div>
         <div class="cell"><hr></div>
-        
+
         <div class="cell ">
             <div class="grid-x grid-padding-x">
                 <div class="cell medium-4">
@@ -46,7 +42,7 @@ jQuery(document).ready(function(){
                         <li>Vision casting tools</li>
                         <li>Disciple making movement software</li>
                     </ul>
-                    
+
                 </div>
                 <div class="cell medium-8">
                     <form id="connection-request-form" data-abide>
@@ -127,7 +123,7 @@ jQuery(document).ready(function(){
                                   </span>
                               </td>
                           </tr>
-                
+
                           <tr>
                               <td style="vertical-align: top;">
                                   <label for="validate_address">
@@ -149,7 +145,7 @@ jQuery(document).ready(function(){
                                         <button class="button hollow" id="spinner_button" style="display:none;"><img src="${zumeCore.theme_uri}/assets/images/spinner.svg" alt="spinner" style="width: 18px;" /></button>
                                     </div>
                                 </div>
-                
+
                                 <div id="possible-results">
                                     <input type="radio" style="display:none;" name="zume_user_address" id="zume_user_address" value="current" checked/>
                                 </div>
@@ -173,7 +169,7 @@ jQuery(document).ready(function(){
                             </td>
                           </tr>
                       </table>
-                      
+
                       <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
                   </form>
                 </div>
