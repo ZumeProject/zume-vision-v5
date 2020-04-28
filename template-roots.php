@@ -127,6 +127,16 @@ Template Name: Roots
                         </div>
                     </li>
 
+                    <li>
+                        <div class="content">
+                            <h3>Project Envisioned</h3>
+                            <p>The idea and name for Zúme Project was birthed from prayer for the nations and for the global church.</p>
+                        </div>
+                        <div class="time">
+                            <h4>April 2015</h4>
+                        </div>
+                    </li>
+
                     <div style="clear:both;"></div>
                 </ul>
             </div>
