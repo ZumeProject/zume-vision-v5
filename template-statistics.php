@@ -153,5 +153,7 @@ get_header(); ?>
 </div> <!-- end #content -->
 
 <?php get_template_part( "parts/content", "join" ); ?>
+<br><br><hr><br>
+<?php get_template_part( "parts/content", "transprogress" ); ?>
 
 <?php get_footer(); ?>
