@@ -29,7 +29,7 @@ function zume_head_cleanup() {
     // Remove post and comment feeds
     // remove_action( 'wp_head', 'feed_links', 2 );
     // Remove EditURI link
-    remove_action( 'wp_head', 'rsd_link' );
+//    remove_action( 'wp_head', 'rsd_link' );
     // Remove Windows live writer
     remove_action( 'wp_head', 'wlwmanifest_link' );
     // Remove index link
