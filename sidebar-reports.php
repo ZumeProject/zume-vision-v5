@@ -10,7 +10,8 @@
 
     <?php get_template_part( "parts/content", "join" ); ?>
     <hr>
-
+    <?php get_template_part( 'parts/content', 'reports-subscribe' ); ?>
+    <hr>
 
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
 
