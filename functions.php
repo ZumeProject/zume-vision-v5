@@ -40,7 +40,7 @@ require_once( get_template_directory().'/functions/default-theme-configuration/d
  require_once( get_template_directory().'/functions/default-theme-configuration/related-posts.php' );
 
 // Customize the WordPress admin
-require_once( get_template_directory().'/functions/admin/admin.php' );
+//require_once( get_template_directory().'/functions/admin/admin.php' );
 require_once( get_template_directory().'/functions/admin/admin-page.php' );
 
 // Custom Login

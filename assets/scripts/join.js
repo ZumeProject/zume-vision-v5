@@ -336,4 +336,10 @@ function send_community_request() {
       console.log(e)
       spinner.empty().html( `${__('Oops. Something went wrong. Try again!', 'zume')}`)
     })
+
+  /* zume vision logging */
+  if (typeof window.zume_vision_logging !== "undefined") {
+    window.zume_vision_logging({'action': 'joined_community'} )
+  }
+  /* end zume vision logging */
 }
