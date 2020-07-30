@@ -64,6 +64,11 @@ require_once( get_template_directory().'/functions/rest-api.php' );
 require_once( get_template_directory().'/functions/statistics.php' );
 require_once( get_template_directory().'/functions/multi-role/multi-role.php' );
 
+// maps
+require_once( get_template_directory().'/maps/base.php' );
+require_once( get_template_directory().'/maps/maps-last100.php' );
+
+
 add_action( 'wp_head', 'zume_captcha_header' );
 
 /**
@@ -86,5 +91,4 @@ function zume_get_user_meta( $user_id = null ) {
 /**
  * END GLOBAL FUNCTIONS
  */
-
 
