@@ -18,8 +18,28 @@ if ( ! function_exists( 'dt_get_url_path' ) ) {
 
 abstract class Zume_Map_Base
 {
-    /**
-     * Disciple_Tools_Counter constructor.
-     */
-    public function __construct(){}
+    public function __construct(){
+        // placeholder
+    }
 }
+
+//class Zume_Maps_Loader extends Zume_Map_Base {
+//    private static $_instance = null;
+//    public static function instance() {
+//        if (is_null( self::$_instance )) {
+//            self::$_instance = new self();
+//        }
+//        return self::$_instance;
+//    } // End instance()
+//
+//    public function __construct(){
+//        parent::__construct();
+//
+//        /**
+//         * Class for loading Maps
+//         */
+//
+//
+//    }
+//}
+//Zume_Maps_Loader::instance();
