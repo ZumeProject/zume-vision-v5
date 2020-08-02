@@ -346,10 +346,12 @@ class Zume_Maps_Last100 extends Zume_Map_Base
         $features = [];
         foreach ( $results as $result ) {
             if ( $result['timestamp'] > strtotime('-1 hour' ) ) {
-                // minutes
+                // @todo minutes
+                $time = date( 'm-d-Y h:i:s a', $result['timestamp'] );
             }
             else if ( $result['timestamp'] > strtotime('-24 hours' ) ) {
-                // hours
+                // @todo hours
+                $time = date( 'm-d-Y h:i:s a', $result['timestamp'] );
             } else {
                 // date
                 $time = date( 'm-d-Y h:i:s a', $result['timestamp'] );
