@@ -44,7 +44,7 @@ get_header(); ?>
 
         </div> <!-- end #inner-content -->
 
-<?php get_template_part( "parts/content", "join" ); ?>
+        <?php get_template_part( "parts/content", "join" ); ?>
 
     </div> <!-- end #content -->
 
