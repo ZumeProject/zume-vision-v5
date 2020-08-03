@@ -7,6 +7,7 @@ class Zume_Maps_Last100 extends Zume_Map_Base
 {
     public $target_url = 'maps/last-100-hours';
     public $namespace = 'zume/v4/';
+    public $ip_response;
 
     private static $_instance = null;
     public static function instance() {
@@ -26,6 +27,12 @@ class Zume_Maps_Last100 extends Zume_Map_Base
         if (strpos( $url_path, $this->target_url ) === 0) {
             add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ], 99 );
             add_action( 'wp_head', [ $this, 'head_scripts' ], 99 );
+
+            // get ip address
+            require_once( get_template_directory() . '/dt-mapping/geocode-api/ipstack-api.php' );
+            $ipstack = new DT_Ipstack_API();
+            $ip_address = $ipstack::get_real_ip_address();
+            $this->ip_response = $ipstack::geocode_ip_address($ip_address);
         }
     }
 
@@ -58,12 +65,15 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                 ]
             ]) ?>][0]
             /* ]]> */
+
         </script>
 
         <?php
     }
 
     public function short_code( $atts ){
+        // get current time zone
+        dt_write_log($this->ip_response);
         ob_start();
         ?>
         <div class="grid-x">
@@ -71,11 +81,12 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                 <div id="dynamic-styles"></div>
                 <div id="map-wrapper">
                     <div id='map'></div>
-                    <div id="spinner" class="loading-spinner active"></div>
+                    <div id="map-loader"><img src="<?php echo get_stylesheet_directory_uri() ?>/spinner.svg" width="100px" /> </div>
                 </div>
             </div>
             <div class="cell small-4 padding-1">
                 Last 100 Hours of Zúme Training<hr>
+                <div id="list-loader"><img src="<?php echo get_stylesheet_directory_uri() ?>/spinner.svg" width="100px" /> </div>
                 <div id="activity-wrapper">
                     <ul id="activity-list"></ul>
                 </div>
@@ -84,6 +95,7 @@ class Zume_Maps_Last100 extends Zume_Map_Base
 
         <script>
             jQuery(document).ready(function($) {
+
                 // console.log(dt_mapbox_metrics)
                 function write_all_points( ) {
                     let obj = window.dt_mapbox_metrics
@@ -104,6 +116,12 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                                 #activity-list {
                                     font-size:.7em;
                                     list-style-type:none;
+                                }
+                                #map-loader {
+                                    position: absolute;
+                                    top:30%;
+                                    left:30%;
+                                    z-index: 20;
                                 }
                             </style>
                          `)
@@ -129,10 +147,11 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                         let spinner = jQuery('#spinner')
                         spinner.show()
 
-                        makeRequest('POST', obj.settings.points_rest_url, { }, obj.settings.points_rest_base_url )
+                        makeRequest('POST', obj.settings.points_rest_url, { timezone_offset: "<?php echo $this->ip_response['time_zone']['gmt_offset'] ?? '' ?>" }, obj.settings.points_rest_base_url )
                             .then(points => {
                                 load_layer( points )
                                 load_list( points )
+
                             })
                     })
 
@@ -291,6 +310,8 @@ class Zume_Maps_Last100 extends Zume_Map_Base
 
                         let spinner = jQuery('#spinner')
                         spinner.hide()
+
+                        jQuery('#map-loader').hide()
                     }
 
                     function load_list( points ) {
@@ -300,6 +321,7 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                                 list_container.append(`<li><strong>${v.properties.time}</strong> - ${v.properties.note}</li>`)
                             }
                         })
+                        jQuery('#list-loader').hide()
                     }
                 }
                 write_all_points( )
@@ -329,13 +351,18 @@ class Zume_Maps_Last100 extends Zume_Map_Base
 
     public function points_geojson( WP_REST_Request $request ) {
         $params = $request->get_json_params() ?? $request->get_body_params();
+        if ( isset( $params['timezone_offset'] ) && ! empty( $params['timezone_offset']  ) ) {
+            $offset = sanitize_text_field( wp_unslash($params['timezone_offset'] ));
+        } else {
+            $offset = '-21600';
+        }
 
-        return self::query_contacts_points_geojson();
+        return self::query_contacts_points_geojson( $offset );
     }
 
 
 
-    public static function query_contacts_points_geojson() {
+    public static function query_contacts_points_geojson( $offset ) {
         global $wpdb;
 
         $timestamp = strtotime('-100 hours' );
@@ -347,14 +374,14 @@ class Zume_Maps_Last100 extends Zume_Map_Base
         foreach ( $results as $result ) {
             if ( $result['timestamp'] > strtotime('-1 hour' ) ) {
                 // @todo minutes
-                $time = date( 'm-d-Y h:i:s a', $result['timestamp'] );
+                $time = gmdate( 'h:i:s a', $result['timestamp'] + $offset );
             }
             else if ( $result['timestamp'] > strtotime('-24 hours' ) ) {
                 // @todo hours
-                $time = date( 'm-d-Y h:i:s a', $result['timestamp'] );
+                $time = gmdate( 'h:i:s a', $result['timestamp'] + $offset );
             } else {
                 // date
-                $time = date( 'm-d-Y h:i:s a', $result['timestamp'] );
+                $time = gmdate( 'm-d-Y h:i:s a', $result['timestamp'] + $offset );
             }
 
             $features[] = array(
