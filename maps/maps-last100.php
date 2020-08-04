@@ -77,14 +77,14 @@ class Zume_Maps_Last100 extends Zume_Map_Base
         ob_start();
         ?>
         <div class="grid-x">
-            <div class="cell small-8">
+            <div class="cell medium-8">
                 <div id="dynamic-styles"></div>
                 <div id="map-wrapper">
                     <div id='map'></div>
                     <div id="map-loader"><img src="<?php echo get_stylesheet_directory_uri() ?>/spinner.svg" width="100px" /> </div>
                 </div>
             </div>
-            <div class="cell small-4 padding-1">
+            <div class="cell medium-4 padding-1">
                 Last 100 Hours of Zúme Training<hr>
                 <div id="list-loader"><img src="<?php echo get_stylesheet_directory_uri() ?>/spinner.svg" width="100px" /> </div>
                 <div id="activity-wrapper">
