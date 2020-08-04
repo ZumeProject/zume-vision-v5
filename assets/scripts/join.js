@@ -339,7 +339,7 @@ function send_community_request() {
 
   /* zume vision logging */
   if (typeof window.zume_vision_logging !== "undefined") {
-    window.zume_vision_logging({'action': 'joined_community'} )
+    window.zume_vision_logging({'action': 'joined_community', 'language': 'en'} )
   }
   /* end zume vision logging */
 }
