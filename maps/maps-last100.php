@@ -73,7 +73,6 @@ class Zume_Maps_Last100 extends Zume_Map_Base
 
     public function short_code( $atts ){
         // get current time zone
-        dt_write_log($this->ip_response);
         ob_start();
         ?>
         <div class="grid-x">
@@ -81,36 +80,69 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                 <div id="dynamic-styles"></div>
                 <div id="map-wrapper">
                     <div id='map'></div>
-                    <div id="map-loader"><img src="<?php echo get_stylesheet_directory_uri() ?>/spinner.svg" width="100px" /> </div>
+                    <div id="map-loader"><img src="<?php echo get_stylesheet_directory_uri() ?>/spinner.svg" width="100px" /></div>
+                    <div id="map-header">Last 100 Hours of Zúme Training</div>
                 </div>
             </div>
             <div class="cell medium-4 padding-1">
-                Last 100 Hours of Zúme Training<hr>
-                <div id="list-loader"><img src="<?php echo get_stylesheet_directory_uri() ?>/spinner.svg" width="100px" /> </div>
+                <div class="grid-x grid-padding-x">
+                    <div class="cell medium-6">
+                        <div class="button-group expanded">
+                            <a class="button">Studying</a>
+                            <a class="button">Joining</a>
+                            <a class="button">Leading</a>
+                        </div>
+                    </div>
+                    <div class="cell medium-6">
+                        <select id="timezone-select">
+                            <?php
+                            $selected_tz = $this->ip_response['time_zone']['id'];
+                            $selected_tz = 'America/Denver';
+                            if ( ! empty( $selected_tz ) ) {
+                                echo '<option value="'.$selected_tz.'" selected>'.$selected_tz.'</option><option disabled>----</option>';
+                            }
+                            $tzlist = DateTimeZone::listIdentifiers(DateTimeZone::ALL);
+                            foreach( $tzlist as $tz ) {
+                                echo '<option value="'.$tz.'">'.$tz.'</option>';
+                            }
+                            ?>
+                        </select>
+                        Current Timezone: <?php echo esc_attr( $selected_tz ) ?>
+                    </div>
+                    <div class="cell medium-6">
+
+                    </div>
+                    <div class="cell medium-6">
+
+                    </div>
+                </div>
+                <hr>
+                <div id="list-loader"><img src="<?php echo get_stylesheet_directory_uri() ?>/spinner.svg" width="50px" /> </div>
                 <div id="activity-wrapper">
                     <ul id="activity-list"></ul>
                 </div>
             </div>
         </div>
-
         <script>
             jQuery(document).ready(function($) {
 
                 // console.log(dt_mapbox_metrics)
                 function write_all_points( ) {
                     let obj = window.dt_mapbox_metrics
+                    let tz_select = jQuery('#timezone-select')
 
                     let dynamic_styles = jQuery('#dynamic-styles')
                     dynamic_styles.empty().html(`
                             <style>
                                 #map-wrapper {
                                     height: ${window.innerHeight - 100}px !important;
+                                    position:relative;
                                 }
                                 #map {
                                     height: ${window.innerHeight - 100}px !important;
                                 }
                                 #activity-wrapper {
-                                    height: ${window.innerHeight - 100}px !important;
+                                    height: ${window.innerHeight - 200}px !important;
                                     overflow: scroll;
                                 }
                                 #activity-list {
@@ -119,9 +151,19 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                                 }
                                 #map-loader {
                                     position: absolute;
-                                    top:30%;
-                                    left:30%;
+                                    top:40%;
+                                    left:50%;
                                     z-index: 20;
+                                }
+                                #map-header {
+                                    position: absolute;
+                                    top:10px;
+                                    left:10px;
+                                    z-index: 20;
+                                    background-color: white;
+                                    padding:1em;
+                                    opacity: 0.8;
+                                    border-radius: 5px;
                                 }
                             </style>
                          `)
@@ -132,7 +174,7 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                         style: 'mapbox://styles/mapbox/light-v10',
                         center: [-30, 20],
                         minZoom: 1,
-                        maxZoom: 8,
+                        // maxZoom: 8,
                         zoom: 1
                     });
 
@@ -147,13 +189,21 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                         let spinner = jQuery('#spinner')
                         spinner.show()
 
-                        makeRequest('POST', obj.settings.points_rest_url, { timezone_offset: "<?php echo $this->ip_response['time_zone']['gmt_offset'] ?? '' ?>" }, obj.settings.points_rest_base_url )
+                        get_points( )
+                    })
+
+                    tz_select.on('change', function() {
+                        get_points()
+                    })
+
+                    function get_points( ) {
+                        let tz = tz_select.val()
+                        makeRequest('POST', obj.settings.points_rest_url, { timezone_offset: tz }, obj.settings.points_rest_base_url )
                             .then(points => {
                                 load_layer( points )
                                 load_list( points )
-
                             })
-                    })
+                    }
 
                     function load_layer( points ) {
 
@@ -176,7 +226,7 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                             source: 'pointsSource',
                             'paint': {
                                 'circle-radius': {
-                                    'base': 5,
+                                    'base': 2,
                                     'stops': [
                                         [12, 10],
                                         [22, 180]
@@ -318,7 +368,7 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                         let list_container = jQuery('#activity-list')
                         jQuery.each( points.features, function(i,v){
                             if ( v.properties.note ) {
-                                list_container.append(`<li><strong>${v.properties.time}</strong> - ${v.properties.note}</li>`)
+                                list_container.append(`<li class="${v.properties.action} "><strong>${v.properties.time}</strong> - ${v.properties.note}</li>`)
                             }
                         })
                         jQuery('#list-loader').hide()
@@ -336,8 +386,6 @@ class Zume_Maps_Last100 extends Zume_Map_Base
         DT_Mapbox_API::load_mapbox_header_scripts();
     }
 
-
-
     public function add_api_routes() {
         register_rest_route(
             'zume/v4', '/points_geojson', [
@@ -352,18 +400,56 @@ class Zume_Maps_Last100 extends Zume_Map_Base
     public function points_geojson( WP_REST_Request $request ) {
         $params = $request->get_json_params() ?? $request->get_body_params();
         if ( isset( $params['timezone_offset'] ) && ! empty( $params['timezone_offset']  ) ) {
-            $offset = sanitize_text_field( wp_unslash($params['timezone_offset'] ));
+            $tz_name = sanitize_text_field( wp_unslash($params['timezone_offset'] ));
         } else {
-            $offset = '-21600';
+            $tz_name = 'America/Denver';
         }
 
-        return self::query_contacts_points_geojson( $offset );
+        return self::query_contacts_points_geojson( $tz_name );
     }
 
+    public static function  time_elapsed_string($datetime, $full = false) {
+        $now = new DateTime;
+        $ago = new DateTime($datetime);
+        $diff = $now->diff($ago);
 
+        $diff->w = floor($diff->d / 7);
+        $diff->d -= $diff->w * 7;
 
-    public static function query_contacts_points_geojson( $offset ) {
+        $string = array(
+            'y' => 'year',
+            'm' => 'month',
+            'w' => 'week',
+            'd' => 'day',
+            'h' => 'hour',
+            'i' => 'minute',
+            's' => 'second',
+        );
+        foreach ($string as $k => &$v) {
+            if ($diff->$k) {
+                $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+            } else {
+                unset($string[$k]);
+            }
+        }
+
+        if (!$full) $string = array_slice($string, 0, 1);
+        return $string ? implode(', ', $string) . ' ago' : 'just now';
+    }
+
+    public static function query_contacts_points_geojson( $tz_name ) {
         global $wpdb;
+
+        $date = new DateTime(null, new DateTimeZone($tz_name ));
+        $tz = $date->getTimezone();
+
+//        dt_write_log( $tz->getName() );
+        dt_write_log( $date->getOffset() );
+//        dt_write_log( 24*60*60 + $date->getOffset() );
+
+//        $twenty_four_hour_seconds = 24*60*60 + $date->getOffset();
+//        $twenty_four_hour_minutes = $twenty_four_hour_seconds * 60;
+
 
         $timestamp = strtotime('-100 hours' );
         $results = $wpdb->get_results( $wpdb->prepare( "
@@ -372,16 +458,79 @@ class Zume_Maps_Last100 extends Zume_Map_Base
 
         $features = [];
         foreach ( $results as $result ) {
+            // set time label
             if ( $result['timestamp'] > strtotime('-1 hour' ) ) {
                 // @todo minutes
-                $time = gmdate( 'h:i:s a', $result['timestamp'] + $offset );
+                $time = self::time_elapsed_string( gmdate( 'h:i:s a', $result['timestamp']  ) );
             }
             else if ( $result['timestamp'] > strtotime('-24 hours' ) ) {
                 // @todo hours
-                $time = gmdate( 'h:i:s a', $result['timestamp'] + $offset );
+                $time = self::time_elapsed_string( gmdate( 'Y-m-d H:i:s', $result['timestamp'] ) );
             } else {
                 // date
-                $time = gmdate( 'm-d-Y h:i:s a', $result['timestamp'] + $offset );
+                $time = gmdate( 'm-d-Y h:i:s a', $result['timestamp'] + $date->getOffset() );
+            }
+
+            // set action category label
+            switch ( $result['action'] ) {
+                case 'studied_1':
+                case 'studied_2':
+                case 'studied_3':
+                case 'studied_4':
+                case 'studied_5':
+                case 'studied_6':
+                case 'studied_7':
+                case 'studied_8':
+                case 'studied_9':
+                case 'studied_10':
+                case 'studied_11':
+                case 'studied_12':
+                case 'studied_13':
+                case 'studied_14':
+                case 'studied_15':
+                case 'studied_16':
+                case 'studied_17':
+                case 'studied_18':
+                case 'studied_19':
+                case 'studied_20':
+                case 'studied_21':
+                case 'studied_22':
+                case 'studied_23':
+                case 'studied_24':
+                case 'studied_25':
+                case 'studied_26':
+                case 'studied_27':
+                case 'studied_28':
+                case 'studied_29':
+                case 'studied_30':
+                case 'studied_31':
+                case 'studied_32':
+                    $action_category = 'engaged_content';
+                    break;
+                case 'registered':
+                case 'updated_3_month':
+                case 'joined_group':
+                case 'started_group':
+                    $action_category = 'engaged_training';
+                    break;
+                case 'leading_1':
+                case 'leading_2':
+                case 'leading_3':
+                case 'leading_4':
+                case 'leading_5':
+                case 'leading_6':
+                case 'leading_7':
+                case 'leading_8':
+                case 'leading_9':
+                case 'leading_10':
+                    $action_category = 'leading_training';
+                    break;
+                case 'requested_coach':
+                case 'joined_community':
+                    $action_category = 'engaged_coaching';
+                    break;
+                default:
+                    break;
             }
 
             $features[] = array(
@@ -389,6 +538,7 @@ class Zume_Maps_Last100 extends Zume_Map_Base
                 'properties' => array(
                     "note" => $result['note'],
                     "action" => $result['action'],
+                    "action_category" => $action_category,
                     "time" => $time
                 ),
                 'geometry' => array(
