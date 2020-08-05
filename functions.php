@@ -65,9 +65,6 @@ require_once( get_template_directory().'/functions/statistics.php' );
 require_once( get_template_directory().'/functions/multi-role/multi-role.php' );
 
 // maps
-require_once( get_template_directory().'/maps/maps-base.php' );
-require_once( get_template_directory().'/maps/maps-last100.php' );
-
 add_action( 'wp_head', 'zume_captcha_header' );
 
 /**
