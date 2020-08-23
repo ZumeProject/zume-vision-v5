@@ -30,19 +30,19 @@ $post = get_post();
                                         <div class="cell">
                                             World Population<br><span class="home-counter" id="population-count-1">0</span>
                                         </div>
-
-                                        <div class="cell">
-                                            Deaths Without Christ Today<br><span class="home-counter" id="christless-deaths-today-count-1">0</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="cell medium-4">
-                                    <div class="grid-x center">
                                         <div class="cell">
                                             Trainings Needed<br><span class="home-counter" id="trainings-needed-count-1">0</span>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="cell medium-4">
+                                    <div class="grid-x center">
                                         <div class="cell">
-<!--                                            Trainings Reported<br><span class="home-counter" id="trainings-reported-count-1">0</span>-->
+                                            Born with No Access to the Gospel Today<br>
+                                            <span class="home-counter" id="births-among-unreached-today-count-1">--</span>
+                                        </div>
+                                        <div class="cell">
+                                            New Churches Needed<br><span class="home-counter" id="churches-needed-count-1">0</span>
                                         </div>
                                     </div>
                                 </div>
@@ -50,10 +50,12 @@ $post = get_post();
 
                                     <div class="grid-x center">
                                         <div class="cell">
-                                            New Churches Needed<br><span class="home-counter" id="churches-needed-count-1">0</span>
+                                            Deaths without Christ Today<br><span class="home-counter" id="christless-deaths-today-count-1">0</span>
                                         </div>
+
                                         <div class="cell">
-<!--                                            New Churches Reported<br><span class="home-counter" id="churches-reported-count-1">0</span>-->
+                                            Real-Time Blessings Prayer Map<br>
+                                            <a class="button secondary-button-hollow large hollow" href="/maps/" style="margin-top:10px;" type="button">View Map</a>
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +64,6 @@ $post = get_post();
                         </div>
                     </div>
 
-
                 </div>
                 <div class="medium-1 cell"></div>
 
@@ -70,13 +71,8 @@ $post = get_post();
             <div class="grid-x white-notch-wrapper"><div class="cell center white-notch"></div></div><!-- White Notch-->
             <!-- End White Section-->
 
-
             <!-- Strategy Section -->
             <?php get_template_part( 'parts/content', 'strategy' ); ?>
-
-
-
-
 
         </div> <!-- end #main -->
 
