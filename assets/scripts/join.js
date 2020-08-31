@@ -340,6 +340,12 @@ function send_community_request() {
   /* zume vision logging */
   if (typeof window.zume_vision_logging !== "undefined") {
     window.zume_vision_logging({'action': 'joined_community', 'language': 'en'} )
+    window.movement_logging({
+      "action": "joined_community",
+      "category": "joining",
+      "data-language": 'en',
+      "data-note": "is joining the Zúme Community!"
+    })
   }
   /* end zume vision logging */
 }
