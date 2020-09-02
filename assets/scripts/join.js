@@ -343,7 +343,8 @@ function send_community_request() {
     window.movement_logging({
       "action": "zume_vision",
       "category": "joining",
-      "data-language": 'en',
+      "data-language_code": 'en',
+      "data-language_name": 'English',
       "data-note": "is joining the Zúme Community!"
     })
   }
