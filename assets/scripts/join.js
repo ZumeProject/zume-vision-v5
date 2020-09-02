@@ -341,7 +341,7 @@ function send_community_request() {
   if (typeof window.zume_vision_logging !== "undefined") {
     window.zume_vision_logging({'action': 'joined_community', 'language': 'en'} )
     window.movement_logging({
-      "action": "joined_community",
+      "action": "zume_vision",
       "category": "joining",
       "data-language": 'en',
       "data-note": "is joining the Zúme Community!"
