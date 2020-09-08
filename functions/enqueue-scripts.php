@@ -80,8 +80,6 @@ function site_scripts() {
     if ( 'template-maps' === substr( basename( get_page_template() ), 0, 13 )
         || 'template-statistics.php' === basename( get_page_template() )
     ) {
-
-
         wp_register_script( 'mapbox', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.js', [ 'jquery' ], '1.2.0' );
         wp_enqueue_script( 'mapbox' );
         wp_enqueue_style( 'mapbox-css', 'https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.0/mapbox-gl.css', array(), '3' );
@@ -104,7 +102,6 @@ function site_scripts() {
                 'statistics' => Zume_Statistics::instance()->statistics(),
             )
         );
-
     }
 
     /**
