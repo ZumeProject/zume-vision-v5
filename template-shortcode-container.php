@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Map Shortcode Container
+ * Template Name: Shortcode Container
  */
 get_header();
 if ( have_posts() ) :
