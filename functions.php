@@ -4,6 +4,7 @@
  *
  */
 
+
 // Add permission for mapping system
 $current_user = wp_get_current_user();
 $current_user->add_cap( 'view_mapping' );
