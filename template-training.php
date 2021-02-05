@@ -28,7 +28,7 @@ Template Name: Training
                         webkitallowfullscreen mozallowfullscreen allowfullscreen>
                 </iframe>
             </div>
-            <a href="https://zume.training" class="button large secondary-button" >Get Started</a>
+            <a href="https://zume.training" class="button large secondary-button" target="_blank">Get Started</a>
         </div>
     </div>
 </div>
