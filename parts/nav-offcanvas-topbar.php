@@ -3,7 +3,6 @@
 
 <?php
     $zume_is_logged_in = is_user_logged_in();
-
 ?>
 
 <div class="grid-x margin-horizontal-1 top-bar">
