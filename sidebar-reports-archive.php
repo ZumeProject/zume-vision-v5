@@ -54,11 +54,15 @@
 
     <hr>
 
-    <!-- Key Reports-->
-    <div class="padding-horizontal-1">
-        <h3>Special Reports</h3>
-        <?php zume_reports_nav() ?>
+    <div class="padding-horizontal-1 center">
+        <a href="/share-your-story">Submit your own story</a>
     </div>
+
+    <!-- Key Reports-->
+<!--    <div class="padding-horizontal-1">-->
+<!--        <h3>Special Reports</h3>-->
+<!--        --><?php //zume_reports_nav() ?>
+<!--    </div>-->
 
     <hr>
 
@@ -76,10 +80,6 @@
         <a href="/reports/?format=compact">Compact Format</a>
     </div>
 
-    <hr>
 
-    <div class="padding-horizontal-1 center">
-        <a href="/share-your-story">Submit your own story</a>
-    </div>
 
 </div>
