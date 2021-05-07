@@ -15,13 +15,15 @@
 
     <?php get_template_part( 'parts/widget', 'sidebar-progress' ); ?>
 
-    <hr>
+<!--    <hr>-->
 
-    <!-- Key Reports-->
-    <div class="padding-horizontal-1">
-        <h3>Special Reports</h3>
-        <?php zume_reports_nav() ?>
-    </div>
+
+<!--    <div class="padding-horizontal-1">-->
+<!--        <h3>Special Reports</h3>-->
+<!--        --><?php //zume_reports_nav() ?>
+<!--    </div>-->
+<!---->
+    <hr>
 
     <div class="padding-horizontal-1 center">
         <a href="/share-your-story">Submit your own story</a>
