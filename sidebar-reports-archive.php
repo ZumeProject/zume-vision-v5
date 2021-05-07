@@ -81,7 +81,5 @@
     <div class="padding-horizontal-1 center">
         <a href="/share-your-story">Submit your own story</a>
     </div>
-
-
-
+    
 </div>
