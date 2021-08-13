@@ -56,6 +56,9 @@ class Zume_REST_API {
             array(
                 'methods'         => WP_REST_Server::CREATABLE,
                 'callback'        => array( $this, 'community_request' ),
+                "permission_callback" => function ( WP_REST_Request $request ) {
+                    return true;
+                }
             ),
         ) );
         register_rest_route( $namespace, '/update_profile', array(
