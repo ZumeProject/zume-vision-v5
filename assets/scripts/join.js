@@ -7,7 +7,7 @@ if ( zumeAPI === 'undefined' ) {
   let zumeAPI = window.zumeAPI
 }
 
-jQuery(document).ready(function(){
+jQuery(document).ready(function($){
   let button = jQuery('.join-the-community')
 
   button.on('click', function(){
@@ -82,23 +82,6 @@ jQuery(document).ready(function(){
                           </tr>
                           <tr>
                               <td style="vertical-align: top;">
-                                  <label>${__('How should we contact you?', 'zume')}</label>
-                              </td>
-                              <td>
-                                  <fieldset>
-                                      <input id="zume_contact_preference3" name="zume_contact_preference" class="zume_contact_preference" type="radio" value="phone" checked data-abide-ignore>
-                                      <label for="zume_contact_preference3">${__('Phone', 'zume')}</label>
-                                      <input id="zume_contact_preference2" name="zume_contact_preference" class="zume_contact_preference" type="radio" value="text" data-abide-ignore>
-                                      <label for="zume_contact_preference2">${__('SMS/Text', 'zume')}</label>
-                                      <input id="zume_contact_preference4" name="zume_contact_preference" class="zume_contact_preference" type="radio" value="whatsapp" data-abide-ignore>
-                                      <label for="zume_contact_preference4">${__('WhatsApp', 'zume')}</label>
-                                      <input id="zume_contact_preference1" name="zume_contact_preference" class="zume_contact_preference" type="radio" value="email" data-abide-ignore>
-                                      <label for="zume_contact_preference1">${__('Email', 'zume')}</label>
-                                  </fieldset>
-                              </td>
-                          </tr>
-                          <tr>
-                              <td style="vertical-align: top;">
                                   <label for="user_email">${__('Email', 'zume')}</label>
                               </td>
                               <td>
@@ -121,6 +104,34 @@ jQuery(document).ready(function(){
                                   <span class="form-error">
                                      ${__('Email is required.', 'zume')}
                                   </span>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style="vertical-align: top;">
+                                  <label>${__('How should we contact you?', 'zume')}</label>
+                              </td>
+                              <td>
+                                  <fieldset>
+                                      <input id="zume_contact_preference3" name="zume_contact_preference" class="zume_contact_preference" type="radio" value="phone" checked data-abide-ignore>
+                                      <label for="zume_contact_preference3">${__('Phone', 'zume')}</label>
+                                      <input id="zume_contact_preference2" name="zume_contact_preference" class="zume_contact_preference" type="radio" value="text" data-abide-ignore>
+                                      <label for="zume_contact_preference2">${__('SMS/Text', 'zume')}</label>
+                                      <input id="zume_contact_preference4" name="zume_contact_preference" class="zume_contact_preference" type="radio" value="whatsapp" data-abide-ignore>
+                                      <label for="zume_contact_preference4">${__('WhatsApp', 'zume')}</label>
+                                      <input id="zume_contact_preference1" name="zume_contact_preference" class="zume_contact_preference" type="radio" value="email" data-abide-ignore>
+                                      <label for="zume_contact_preference1">${__('Email', 'zume')}</label>
+                                  </fieldset>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style="vertical-align: top;">
+                                  <label for="user_email">${__('Language Preference', 'zume')}</label>
+                              </td>
+                              <td>
+                                  <select id="zume_contact_language" name="zume_contact_language">
+                                        <option value="en">English</option>
+                                  </select>
+
                               </td>
                           </tr>
 
@@ -176,6 +187,18 @@ jQuery(document).ready(function(){
             </div>
         </div>
     </div>`)
+
+    $.getJSON( zumeAPICore.theme_uri + "/languages.json", function( data ) {
+      let select = jQuery('#zume_contact_language')
+      select.empty()
+      if ( data ) {
+        window.languages = data
+        jQuery.each( data, function(i,v){
+          select.append(`<option value="${v.code}">${v.nativeName} (${v.enDisplayName})</option>`)
+        } )
+      }
+    });
+
 
     new Foundation.Abide( jQuery('#connection-request-form') )
 
@@ -290,6 +313,7 @@ function send_community_request() {
   let phone = jQuery('#zume_phone_number').val()
   let email = jQuery('#user_email').val()
   let preference = jQuery('input.zume_contact_preference:checked').val()
+  let language = jQuery('#zume_contact_language').val()
 
   /**************/
   // Get address
@@ -322,6 +346,7 @@ function send_community_request() {
     "name": name,
     "phone": phone,
     "preference": preference,
+    "language": language,
     "email": email,
     "location_grid_meta": location_grid_meta,
   }
@@ -337,13 +362,22 @@ function send_community_request() {
       spinner.empty().html( `${__('Oops. Something went wrong. Try again!', 'zume')}`)
     })
 
+  let language_name = ''
+  if ( window.languages ) {
+    jQuery.each(window.languages, function(i,v){
+      if ( v.code === language ) {
+        language_name = v.enDisplayName
+      }
+    })
+  }
+
   /* zume vision logging */
   if (typeof window.movement_logging !== "undefined") {
     window.movement_logging({
       "action": "zume_vision",
       "category": "joining",
-      "data-language_code": 'en',
-      "data-language_name": 'English',
+      "data-language_code": language,
+      "data-language_name": language_name,
       "data-note": "is joining the Zúme Community!"
     })
   }

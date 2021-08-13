@@ -198,6 +198,7 @@ class Zume_REST_API {
             'phone' => sanitize_text_field( wp_unslash( $params['phone'] ) ),
             'email' => sanitize_text_field( wp_unslash( $params['email'] ) ),
             'preference' => sanitize_text_field( wp_unslash( $params['preference'] ) ),
+            'language_preference' => sanitize_text_field( wp_unslash( $params['language'] ) ),
         );
         $notes = [
             'preference' => 'Requested contact method is: ' .$args['preference'],
@@ -217,6 +218,7 @@ class Zume_REST_API {
             "contact_email" => [
                 [ "value" => $args['email'] ],
             ],
+            "language_preference" => $args['language_preference'],
             "notes" => $notes,
         ];
 
