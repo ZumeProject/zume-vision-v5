@@ -22,7 +22,9 @@ $post = get_post();
                         <div class="cell"><p class="large-text">to saturate the world with multiplying disciples<br>in our generation.</p></div>
                         <div class="cell"><img src="<?php echo esc_url( zume_images_uri() )?>vision/jesus-globe.png" alt="disciple making movements" style="max-height:250px"  /></div>
                         <div class="cell"><h1 id="zume-vision" class="large-text">Zúme is a community of practice <br>for those who want to see disciple making movements.</h1></div>
-                        <div class="cell padding-top-1"><?php get_template_part( "parts/content", "join" ); ?></div>
+                        <div class="cell padding-top-1">
+                            <?php get_template_part( "parts/content", "join" ); ?>
+                        </div>
                         <div class="cell padding-top-2">
                             <div class="grid-x">
                                 <div class="cell medium-4">
@@ -54,14 +56,22 @@ $post = get_post();
                                         </div>
 
                                         <div class="cell">
-                                            Real-Time Blessings Prayer Map<br>
-                                            <a class="button secondary-button-hollow large hollow" href="/maps/" style="margin-top:10px;" type="button">View Map</a>
+                                            Prayer Maps<br>
+                                            <a class="button secondary-button-hollow large hollow" href="/maps/" style="margin-top:10px;" type="button">View Maps</a>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
                         </div>
+                    </div>
+                    <div class="grid-x">
+                        <div class="cell medium-4 hide-for-small-only"></div>
+                        <div class="cell medium-4 small-12">
+                            <hr>
+                            <?php get_template_part( 'parts/content', 'reports-subscribe' ); ?>
+                        </div>
+                        <div class="cell medium-4 hide-for-small-only"></div>
                     </div>
 
                 </div>
