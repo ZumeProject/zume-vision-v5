@@ -6,7 +6,7 @@
 
 <div id="sidebar2" class="sidebar small-12 medium-3 large-3 cell" role="complementary">
 
-    <div class="join-wrapper"><a class="button secondary-button large expanded" type="button">All Podcasts</a></div>
+    <div class="join-wrapper"><a class="button secondary-button large expanded" href="/category/podcasts/">All Podcasts</a></div>
 
     <hr>
 
