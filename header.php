@@ -38,6 +38,9 @@
         <?php } ?>
 
         <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+        <style>
+            #top-full-menu-div-wrapper ul { z-index:100;}
+        </style>
 
         <?php wp_head(); ?>
 

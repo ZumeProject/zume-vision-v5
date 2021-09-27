@@ -51,6 +51,7 @@ require_once( get_template_directory().'/functions/urls.php' );
 
 require_once( get_template_directory().'/functions/post-type-playbook.php' );
 require_once( get_template_directory().'/functions/post-type-reports.php' );
+//require_once( get_template_directory().'/functions/post-type-podcasts.php' );
 require_once( get_template_directory().'/functions/post-type-articles.php' );
 require_once( get_template_directory().'/functions/population-counters.php' );
 

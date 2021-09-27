@@ -3,7 +3,16 @@
  * The template for displaying all single posts and attachments
  */
 
-get_header(); ?>
+/**
+ * Customize Podcast posts for podcasting.
+ */
+$post = get_post();
+if ( has_category('Podcasts', $post) ) :
+    require_once ('single-category-podcasts.php');
+else :
+
+get_header();
+?>
 
 <div class="content">
 
@@ -13,26 +22,27 @@ get_header(); ?>
 
         <main class="main small-12 medium-10 large-10 cell" role="main">
 
-            <div class="grid-x grid-margin-x">
+                <div class="grid-x grid-margin-x">
 
-                <div class="cell medium-8">
+                    <div class="cell medium-8">
 
-
-                    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+                        <?php if (have_posts()) : while (have_posts()) : the_post();  ?>
 
                             <?php get_template_part( 'parts/loop', 'single' ); ?>
 
-                    <?php endwhile; else : ?>
+                        <?php endwhile; else : ?>
 
-                        <?php get_template_part( 'parts/content', 'missing' ); ?>
+                            <?php get_template_part( 'parts/content', 'missing' ); ?>
 
-                    <?php endif; ?>
+                        <?php endif; ?>
 
-                </div>
+                    </div>
 
-                <div class="cell medium-4">
+                    <div class="cell medium-4">
 
-                    <?php get_sidebar( 'single' ); ?>
+                        <?php get_sidebar( 'single' ); ?>
+
+                    </div>
 
                 </div>
 
@@ -45,3 +55,6 @@ get_header(); ?>
 </div> <!-- end #content -->
 
 <?php get_footer(); ?>
+
+<?php
+endif;
