@@ -6,7 +6,11 @@
 
 <div id="sidebar2" class="sidebar small-12 medium-3 large-3 cell" role="complementary">
 
-    <div class="join-wrapper"><button class="button secondary-button large expanded" type="button">All Podcasts</button></div>
+    <div class="join-wrapper"><a class="button secondary-button large expanded" type="button">All Podcasts</a></div>
+
+    <hr>
+
+    <p>Interviews and how-to conversations with disciple makers and movement practitioners.</p>
 
     <hr>
 
