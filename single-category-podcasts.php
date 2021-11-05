@@ -22,7 +22,7 @@ get_header();
 
             <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-                <?php get_template_part( 'parts/loop', 'podcasts' ); ?>
+                <?php get_template_part( 'parts/loop', 'podcast' ); ?>
 
             <?php endwhile; else : ?>
 
@@ -34,7 +34,7 @@ get_header();
 
         <div class="sidebar cell large-4">
 
-            <?php get_sidebar( 'podcasts' ); ?>
+            <?php get_sidebar( 'podcast' ); ?>
 
         </div>
 
