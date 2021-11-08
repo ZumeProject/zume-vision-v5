@@ -14,8 +14,7 @@
 
     <div class="padding-horizontal-1">
         <h3><a href="/multiplying-disciples-podcast/">Recent Episodes</a></h3>
-        <ol style="padding-left: 1.5em;
-        text-indent:-1.5em;">
+        <ol style="padding-left: 1.5em; text-indent:-1.5em;">
             <?php
             $recent_posts = wp_get_recent_posts( [
                 'post_type' => 'post',
@@ -45,5 +44,5 @@
     <hr>
 
     <?php get_template_part( "parts/content", "reports-subscribe" ); ?>
-    
+
 </div>
