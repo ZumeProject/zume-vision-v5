@@ -50,8 +50,8 @@
 
 <style>
     .entry-title {
-        font-weight: 900;
-        font-size: 2.8rem;
+        font-weight: 900 !important;
+        font-size: 2.8rem !important;
     }
 </style>
 
