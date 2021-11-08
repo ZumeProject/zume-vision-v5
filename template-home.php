@@ -56,7 +56,7 @@ $post = get_post();
                                         </div>
 
                                         <div class="cell">
-                                            Prayer Maps<br>
+                                            Saturation Maps<br>
                                             <a class="button secondary-button-hollow large hollow" href="/maps/" style="margin-top:10px;" type="button">View Maps</a>
                                         </div>
                                     </div>

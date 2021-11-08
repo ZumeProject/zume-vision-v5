@@ -35,7 +35,7 @@
 
     <!-- subscribe section-->
 
-    <a class="button secondary-button large expanded" href="/subscribe-to-podcast/">Subscribe to Podcast</a>
+    <a class="button secondary-button large expanded" href="/subscribe-to-podcast/">Subscribe to Our Podcast</a>
 
     <hr>
 
