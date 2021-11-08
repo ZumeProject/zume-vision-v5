@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<!-- Title Section-->
+<div class="grid-x grid-padding-x deep-blue-section padding-vertical-1">
+    <div class="cell center">
+        <h1 class="center title">Podcast</h1>
+        <h3>Zúme - Multiplying Disciples Podcast</h3>
+    </div>
+</div>
+<div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
+
 <!-- Bread Crumbs-->
 <nav id="post-nav" class="padding-bottom-1">
     <div class="breadcrumb hide-for-small-only">

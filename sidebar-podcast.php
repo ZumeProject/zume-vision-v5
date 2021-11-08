@@ -34,8 +34,17 @@
     <hr>
 
     <!-- subscribe section-->
-    <?php get_template_part( "parts/content", "join" ); ?>
 
     <a class="button secondary-button large expanded" href="/subscribe-to-podcast/">Subscribe to Podcast</a>
+
+    <hr>
+
+    <?php get_template_part( "parts/content", "join" ); ?>
+
+    <hr>
+
+    <?php get_template_part( "parts/content", "reports-subscribe" ); ?>
+
+
 
 </div>
