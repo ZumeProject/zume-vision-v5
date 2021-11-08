@@ -48,4 +48,11 @@
 
 </main> <!-- end #main -->
 
+<style>
+    .entry-title {
+        font-weight: 900;
+        font-size: 2.8rem;
+    }
+</style>
+
 <?php get_footer(); ?>
