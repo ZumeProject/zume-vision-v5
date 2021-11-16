@@ -1,8 +1,10 @@
+
 <div class="grid-x grid-padding-x deep-blue-section">
     <div class="cell center">
         <h2>Our Community Goals</h2>
         <h3>Holiness, Prayer, Training and Church Multiplication</h3>
     </div>
+
 </div>
 <div class="grid-x blue-notch-wrapper"><div class="cell center blue-notch"></div></div>
 <!-- White Section-->
