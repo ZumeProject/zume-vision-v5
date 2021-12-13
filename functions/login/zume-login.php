@@ -32,24 +32,28 @@ class Zume_User_Registration
             [
                 'methods'             => WP_REST_Server::CREATABLE,
                 'callback'            => [ $this, 'register_via_google' ],
+                'permission_callback' => '__return_true',
             ],
         ] );
         register_rest_route( $namespace, '/register_via_facebook', [
             [
                 'methods'             => WP_REST_Server::CREATABLE,
                 'callback'            => [ $this, 'register_via_facebook' ],
+                'permission_callback' => '__return_true',
             ],
         ] );
         register_rest_route( $namespace, '/link_account_via_google', [
             [
                 'methods'             => WP_REST_Server::CREATABLE,
                 'callback'            => [ $this, 'link_account_via_google' ],
+                'permission_callback' => '__return_true',
             ],
         ] );
         register_rest_route( $namespace, '/link_account_via_facebook', [
             [
                 'methods'             => WP_REST_Server::CREATABLE,
                 'callback'            => [ $this, 'link_account_via_facebook' ],
+                'permission_callback' => '__return_true',
             ],
         ] );
     }
