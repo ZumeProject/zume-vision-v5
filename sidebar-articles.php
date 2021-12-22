@@ -23,7 +23,7 @@
 
         foreach ( $categories as $category ) {
             if ( $category->count > 0 ) {
-                echo '<div class="cell"><a href="'. esc_url(site_url() ).'/article-topics/'.$category->slug.'/">' . esc_html( $category->name ) . '<span class="float-right">('.esc_html( $category->count ).')</span></a></div>';
+                echo '<div class="cell"><a href="'. esc_url( site_url() ).'/article-topics/'. esc_html( $category->slug ) .'/">' . esc_html( $category->name ) . '<span class="float-right">('.esc_html( $category->count ).')</span></a></div>';
             } else {
                 echo '<div class="cell">' . esc_html( $category->name ) . '<span class="float-right">(0)</span></div>';
             }
@@ -33,6 +33,8 @@
 
     <hr>
     <?php get_template_part( "parts/content", "join" ); ?>
+
+    <?php get_template_part( 'parts/widget', 'sidebar-seo-links' ); ?>
 
     <hr>
     <?php get_template_part( 'parts/widget', 'sidebar-recent-articles' ); ?>
