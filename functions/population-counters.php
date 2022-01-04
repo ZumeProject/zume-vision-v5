@@ -31,6 +31,7 @@ class Location_Grid_Counters
             array(
                 'methods' => WP_REST_Server::CREATABLE,
                 'callback' => array( $this, 'population' ),
+                'permission_callback' => '__return_true'
             ),
         ));
     }
