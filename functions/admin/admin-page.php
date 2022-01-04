@@ -34,6 +34,155 @@ if ( ! function_exists( 'vision_page' ) ) {
 add_action( 'after_setup_theme', 'vision_page' );
 
 
+if ( ! function_exists( 'seo_sidebar' ) ) {
+    function SEO_Sidebar() {
+        return SEO_Sidebar::instance();
+    }
+}
+add_action( 'after_setup_theme', 'seo_sidebar' );
+
+
+
+// ----------- SEO Class Start -----------
+
+/**
+ * Class SEO Sidebar Links
+ */
+class SEO_Sidebar {
+
+    public $token = 'seo_sidebar';
+    public $title = 'SEO Sidebar Links';
+    public $permissions = 'manage_options';
+
+    /**  Singleton */
+    private static $_instance = null;
+    public static function instance() {
+        if ( is_null( self::$_instance ) ) {
+            self::$_instance = new self();
+        }
+        return self::$_instance;
+    }
+    /**
+     * Constructor function.
+     * @access  public
+     * @since   0.1.0
+     */
+    public function __construct() {
+
+        if ( is_admin() ) {
+            add_action( "admin_menu", [ $this, "register_menu" ] );
+        }
+    } // End __construct()
+
+
+    /**
+     * Loads the subnav page
+     * @since 0.1
+     */
+    public function register_menu() {
+        add_menu_page( 'Extensions (DT)', 'Extensions (DT)', $this->permissions, 'dt_extensions', [ $this, 'extensions_menu' ], 'dashicons-admin-generic', 59 );
+        add_submenu_page( 'dt_extensions', $this->title, $this->title, $this->permissions, $this->token, [ $this, 'content' ] );
+    }
+
+    /**
+     * Menu stub. Replaced when Disciple Tools Theme fully loads.
+     */
+    public function extensions_menu() {}
+
+    /**
+     * Builds page contents
+     * @since 0.1
+     */
+    public function content() {
+        if ( !current_user_can( $this->permissions ) ) { // manage dt is a permission that is specific to Disciple Tools and allows admins, strategists and dispatchers into the wp-admin
+            wp_die( 'You do not have sufficient permissions to access this page.' );
+        }
+
+        $object = new SEO_Sidebar_Tab();
+        $object->content();
+    }
+
+    /**
+     * Method that runs only when the plugin is activated.
+     *
+     * @since  0.1
+     * @access public
+     * @return void
+     */
+    public static function activation() {
+
+    }
+
+    /**
+     * Method that runs only when the plugin is deactivated.
+     *
+     * @since  0.1
+     * @access public
+     * @return void
+     */
+    public static function deactivation() {
+
+    }
+
+    /**
+     * Magic method to output a string if trying to use the object as a string.
+     *
+     * @since  0.1
+     * @access public
+     * @return string
+     */
+    public function __toString() {
+        return $this->token;
+    }
+
+    /**
+     * Magic method to keep the object from being cloned.
+     *
+     * @since  0.1
+     * @access public
+     * @return void
+     */
+    public function __clone() {
+        _doing_it_wrong( __FUNCTION__, esc_html( 'Whoah, partner!' ), '0.1' );
+    }
+
+    /**
+     * Magic method to keep the object from being unserialized.
+     *
+     * @since  0.1
+     * @access public
+     * @return void
+     */
+    public function __wakeup() {
+        _doing_it_wrong( __FUNCTION__, esc_html( 'Whoah, partner!' ), '0.1' );
+    }
+
+    /**
+     * Magic method to prevent a fatal error when calling a method that doesn't exist.
+     *
+     * @param string $method
+     * @param array $args
+     *
+     * @return null
+     * @since  0.1
+     * @access public
+     */
+    public function __call( $method = '', $args = array() ) {
+        // @codingStandardsIgnoreLine
+        _doing_it_wrong( __FUNCTION__, esc_html('Whoah, partner!'), '0.1' );
+        unset( $method, $args );
+        return null;
+    }
+}
+
+
+
+
+
+
+// ----------- SEO Class End -----------
+
+
 /**
  * Class Vision_Page
  */
@@ -72,11 +221,6 @@ class Vision_Page {
         add_menu_page( 'Extensions (DT)', 'Extensions (DT)', $this->permissions, 'dt_extensions', [ $this, 'extensions_menu' ], 'dashicons-admin-generic', 59 );
         add_submenu_page( 'dt_extensions', $this->title, $this->title, $this->permissions, $this->token, [ $this, 'content' ] );
     }
-
-    /**
-     * Menu stub. Replaced when Disciple Tools Theme fully loads.
-     */
-    public function extensions_menu() {}
 
     /**
      * Builds page contents
@@ -164,6 +308,194 @@ class Vision_Page {
     }
 }
 
+
+/**
+ * Class SEO_Sidebar_Tab
+ */
+class SEO_Sidebar_Tab {
+    /**
+     * Packages and returns tab page
+     *
+     * @return void
+     */
+    public function content() {
+
+        ?>
+            <h2>SEO Sidebar Links</h2>
+            <div class="wrap">
+                <div id="poststuff">
+                    <div id="post-body" class="metabox-holder columns-1">
+                        <div id="post-body-content">
+                            <?php $this->seo_link_box(); ?>
+                        </div><!-- end post-body-content -->
+                    </div><!-- post-body meta box container -->
+                </div>
+                <!--poststuff end -->
+            </div><!-- wrap end -->
+        <?php
+    }
+
+    /**
+     * SEO Link Box
+     */
+    public function seo_link_box() {
+        if ( is_admin() && !empty( $_POST['seo_nonce'] ) ) {
+            if ( wp_verify_nonce( sanitize_key( wp_unslash( $_POST['seo_nonce'] ) ), 'seo_sidebar_links' ) ) {
+                $seo_links = [];
+
+                if ( isset( $_POST['seo_link_url_1'] ) && isset( $_POST['seo_link_anchor_1'] ) ) {
+                    $seo_links[] = [
+                        'url' => sanitize_text_field( wp_unslash( $_POST['seo_link_url_1'] ) ),
+                        'anchor' => sanitize_text_field( wp_unslash( $_POST['seo_link_anchor_1'] ) ),
+                    ];
+                } else {
+                    $seo_links[] = [
+                        'url' => null,
+                        'anchor' => null,
+                    ];
+                }
+
+                if ( isset( $_POST['seo_link_url_2'] ) && isset( $_POST['seo_link_anchor_2'] ) ) {
+                    $seo_links[] = [
+                        'url' => sanitize_text_field( wp_unslash( $_POST['seo_link_url_2'] ) ),
+                        'anchor' => sanitize_text_field( wp_unslash( $_POST['seo_link_anchor_2'] ) ),
+                    ];
+                } else {
+                    $seo_links[] = [
+                        'url' => null,
+                        'anchor' => null,
+                    ];
+                }
+
+                if ( isset( $_POST['seo_link_url_3'] ) && isset( $_POST['seo_link_anchor_3'] ) ) {
+                    $seo_links[] = [
+                        'url' => sanitize_text_field( wp_unslash( $_POST['seo_link_url_3'] ) ),
+                        'anchor' => sanitize_text_field( wp_unslash( $_POST['seo_link_anchor_3'] ) ),
+                    ];
+                } else {
+                    $seo_links[] = [
+                        'url' => null,
+                        'anchor' => null,
+                    ];
+                }
+
+                if ( isset( $_POST['seo_link_url_4'] ) && isset( $_POST['seo_link_anchor_4'] ) ) {
+                    $seo_links[] = [
+                        'url' => sanitize_text_field( wp_unslash( $_POST['seo_link_url_4'] ) ),
+                        'anchor' => sanitize_text_field( wp_unslash( $_POST['seo_link_anchor_4'] ) ),
+                    ];
+                } else {
+                    $seo_links[] = [
+                        'url' => null,
+                        'anchor' => null,
+                    ];
+                }
+
+                if ( isset( $_POST['seo_link_url_5'] ) && isset( $_POST['seo_link_anchor_5'] ) ) {
+                    $seo_links[] = [
+                        'url' => sanitize_text_field( wp_unslash( $_POST['seo_link_url_5'] ) ),
+                        'anchor' => sanitize_text_field( wp_unslash( $_POST['seo_link_anchor_5'] ) ),
+                    ];
+                } else {
+                    $seo_links[] = [
+                        'url' => null,
+                        'anchor' => null,
+                    ];
+                }
+
+                update_option( 'seo_links', $seo_links );
+                $this->admin_notice( 'Links updated.', 'success' );
+            }
+        }
+
+        // Get SEO Link Data
+        $seo_links = get_option( 'seo_links' );
+        ?>
+        <form method="post">
+            <?php wp_nonce_field( 'seo_sidebar_links', 'seo_nonce' ); ?>
+            <table class="widefat striped">
+                <thead>
+                    <th>#</th>
+                    <th>Anchor Text</th>
+                    <th>URL</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <label>1.</label><br>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_anchor_1" id="seo_link_anchor_1" style="width: 100%;" value="<?php echo esc_attr( $seo_links[0]['anchor'] ) ?>"/>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_url_1" id="seo_link_url_1" style="width: 100%;" value="<?php echo esc_attr( $seo_links[0]['url'] ) ?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>2.</label><br>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_anchor_2" id="seo_link_anchor_2" style="width: 100%;" value="<?php echo esc_attr( $seo_links[1]['anchor'] ) ?>"/>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_url_2" id="seo_link_url_2" style="width: 100%;" value="<?php echo esc_attr( $seo_links[1]['url'] ) ?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>3.</label><br>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_anchor_3" id="seo_link_anchor_3" style="width: 100%;" value="<?php echo esc_attr( $seo_links[2]['anchor'] ) ?>"/>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_url_3" id="seo_link_url_3" style="width: 100%;" value="<?php echo esc_attr( $seo_links[2]['url'] ) ?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>4.</label><br>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_anchor_4" id="seo_link_anchor_4" style="width: 100%;" value="<?php echo esc_attr( $seo_links[3]['anchor'] ) ?>"/>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_url_4" id="seo_link_url_4" style="width: 100%;" value="<?php echo esc_attr( $seo_links[3]['url'] ) ?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>5.</label><br>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_anchor_5" id="seo_link_anchor_5" style="width: 100%;" value="<?php echo esc_attr( $seo_links[4]['anchor'] ) ?>"/>
+                    </td>
+                    <td>
+                        <input type="text" name="seo_link_url_5" id="seo_link_url_5" style="width: 100%;" value="<?php echo esc_attr( $seo_links[4]['url'] ) ?>"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <br>
+                        <span style="float:right;"><button type="submit" class="button float-right">Save</button></span>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+        <?php
+    }
+
+    /**
+     * Admin Notice
+     */
+    public static function admin_notice( $notice, $type ) {
+            echo '<div class="notice notice-' . esc_attr( $type ) . ' is-dismissible"><p>';
+            echo esc_html( $notice );
+            echo '</p></div>';
+    }
+}
 
 /**
  * Class Disciple_Tools_Keys_Tab
