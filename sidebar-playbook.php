@@ -92,5 +92,7 @@
             ?>
         </div>
     </div>
-
+    <div class="padding-left-1">
+        <?php get_template_part( 'parts/widget', 'sidebar-seo-links' ); ?>
+    </div>
 </div>

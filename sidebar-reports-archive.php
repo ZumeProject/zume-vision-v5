@@ -63,6 +63,8 @@
 <!--        <h3>Special Reports</h3>-->
 <!--        --><?php //zume_reports_nav() ?>
 <!--    </div>-->
+    
+    <?php get_template_part( 'parts/widget', 'sidebar-seo-links' ); ?>
 
     <hr>
 
