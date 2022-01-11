@@ -41,6 +41,8 @@
 
     <?php get_template_part( "parts/content", "join" ); ?>
 
+    <?php get_template_part( 'parts/widget', 'sidebar-seo-links' ); ?>
+
     <hr>
 
     <?php get_template_part( "parts/content", "reports-subscribe" ); ?>
