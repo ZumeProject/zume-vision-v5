@@ -56,7 +56,7 @@ require_once( get_template_directory().'/functions/post-type-articles.php' );
 require_once( get_template_directory().'/functions/population-counters.php' );
 
 // Integrations
-require_once( get_template_directory().'/functions/report-send-integration.php' );
+//require_once( get_template_directory().'/functions/report-send-integration.php' );
 require_once( get_template_directory().'/functions/site-link-post-type.php' );
 Site_Link_System::instance();
 
