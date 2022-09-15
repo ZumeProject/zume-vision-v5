@@ -50,8 +50,8 @@ class Zume_Statistics
     public function statistics() : array {
 
         // world variables
-        $world_population = 7948118521; // world population estimate at Jan 1, 2019 @link https://www.census.gov/newsroom/press-releases/2019/new-years-population.html
-        $world_population_timestamp = 1641020400; // unix seconds at Jan 1, 2019
+        $world_population = 7868872451; // world population estimate at Jan 1, 2022 @link https://www.census.gov/newsroom/press-releases/2019/new-years-population.html
+        $world_population_timestamp = 1662950945; // unix seconds at Jan 1, 2022
         $current_timestamp = time(); // unix time stamp for right now
         $births_per_second = 4.3;
         $deaths_per_second = 1.8;
