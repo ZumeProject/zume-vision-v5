@@ -16,12 +16,7 @@
 
     <!-- subscribe section-->
 
-    <a class="button secondary-button large expanded" href="/subscribe-to-podcast/">Subscribe to Our Podcast</a>
-
-    <hr>
-
     <?php get_template_part( "parts/content", "join" ); ?>
-
 
     <hr>
 
