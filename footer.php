@@ -10,13 +10,7 @@
 
                 <footer class="footer" role="contentinfo">
 
-                    <div class="grid-x grid-margin-x grid-padding-x">
-
-                        <div class="cell center-text text-gray">
-                            &copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>
-                        </div>
-
-                    </div> <!-- end #inner-footer -->
+                    <?php do_shortcode('[zume_footer_logon_modal]' ); ?>
 
                     <div class="reveal" id="search-box" data-reveal>
                         <h1>Search</h1>
@@ -32,6 +26,14 @@
                             </button>
                         </form>
                     </div>
+
+                    <div class="grid-x grid-margin-x grid-padding-x">
+
+                        <div class="cell center-text text-gray">
+                            &copy; <?php echo date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>
+                        </div>
+
+                    </div> <!-- end #inner-footer -->
 
                 </footer> <!-- end .footer -->
 
