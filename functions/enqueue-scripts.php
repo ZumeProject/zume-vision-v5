@@ -57,6 +57,9 @@ function site_scripts() {
         )
     );
 
+    // js-cookie
+    wp_register_script( 'js-cookie', 'https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js', [ 'jquery' ], '3.0.1' );
+    wp_enqueue_script( 'js-cookie' );
     // lodash load
     wp_register_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js', false, '4.17.11' );
     wp_enqueue_script( 'lodash' );
@@ -151,7 +154,6 @@ function site_scripts() {
 
 }
 add_action( 'wp_enqueue_scripts', 'site_scripts', 999 );
-
 
 function zume_login_css() {
     zume_enqueue_style( 'zume_login_css', 'assets/styles/login.css', array() );
