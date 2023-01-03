@@ -10,6 +10,7 @@
 
                 <footer class="footer" role="contentinfo">
 
+                    <?php do_shortcode('[zume_logon_button_with_name]' ); ?>
                     <?php do_shortcode('[zume_footer_logon_modal]' ); ?>
 
                     <div class="reveal" id="search-box" data-reveal>

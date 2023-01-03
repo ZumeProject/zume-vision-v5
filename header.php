@@ -44,6 +44,8 @@
 
         <?php wp_head(); ?>
 
+        <?php do_shortcode('[zume_js_apis]' ); ?>
+
     </head>
 
     <body <?php body_class(); ?>>
