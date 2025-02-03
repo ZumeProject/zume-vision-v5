@@ -93,7 +93,7 @@ Template Name: Training
                     <img src="<?php echo esc_url( zume_images_uri() )?>home/biglife.png" class="center front-page-social-image" style="max-height: 60px">
                     <p class="text-center" style="color:#21336A">"Zúme brilliantly encapsulates the principles in our introductory training."</p>
                 </div>
-                <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch>>
+                <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch>
                     <img src="<?php echo esc_url( zume_images_uri() )?>home/teamexpansion.png" class="center front-page-social-image" style="max-height: 60px">
                     <p class="text-center" style="color:#21336A">
                         "The principles and life practices packed into the Zúme training course have enormous potential to impact, not only the USA, but the world as well."
