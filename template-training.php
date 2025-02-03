@@ -83,8 +83,7 @@ Template Name: Training
                     </p>
                 </div>
                 <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch>
-                    <img src="<?php echo esc_url( zume_images_uri() )?>home/2414.jpg"
-                         class="center front-page-social-image">
+                    <img src="<?php echo esc_url( zume_images_uri() )?>home/2414.jpg" class="center front-page-social-image">
                     <p class="text-center" style="color:#21336A">
                         "Zúme is a wonderful on-ramp for our coalition."
                     </p>
