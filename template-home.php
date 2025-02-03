@@ -100,13 +100,13 @@ $post = get_post();
                 <div class="cell center">
                     <h2>Stay Connected</h2>
                     <div class="grid-x">
-                        <div class="cell medium-4 hide-for-small-only"></div>
+                        <!-- <div class="cell medium-4 hide-for-small-only"></div>
                         <div class="cell medium-4">
                                 <h3>Get the Podcast</h3>
                                 <a href="/multiplying-disciples-podcast/" class="button secondary-button large expanded button-secondary-link" style="padding-bottom:8px;
                                 padding-top: 8px;"><i class="fi-microphone"></i> Podcast</a>
                         </div>
-                        <div class="cell medium-4 hide-for-small-only"></div>
+                        <div class="cell medium-4 hide-for-small-only"></div> -->
                         <div class="cell medium-4 hide-for-small-only"></div>
                         <div class="cell medium-4">
                             <?php get_template_part( 'parts/content', 'reports-subscribe' ); ?>
@@ -174,7 +174,7 @@ $post = get_post();
 
                 <div class="cell center"><a href="/about/" class="button secondary-button large">Learn More</a> </div>
             </div>
-            
+
         </div> <!-- end #main -->
 
     </div> <!-- end cell --><!-- content -->
