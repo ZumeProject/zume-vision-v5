@@ -70,30 +70,30 @@ Template Name: Training
         <div class="cell front-page-social" data-equalizer >
             <div class="grid-x grid-margin-x grid-margin-y">
                 <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch>
-                    <img src="/wp-content/themes/zume-training/assets/images/home/1body.jpg"
+                    <img src="<?php echo esc_url( zume_images_uri() )?>/assets/images/home/1body.jpg"
                          class="center front-page-social-image">
                     <p class="text-center" style="color:#21336A">
                         "Zúme will help us accelerate our training into more countries and languages."
                 </div>
                 <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch>
-                    <img src="/wp-content/themes/zume-training/assets/images/home/noplaceleft.png"
+                    <img src="<?php echo esc_url( zume_images_uri() )?>/assets/images/home/noplaceleft.png"
                          class="center front-page-social-image">
                     <p class="text-center" style="color:#21336A">
                         "Zúme is a helpful way to filter for faithful people that can spread quickly and conserve training bandwidth."
                     </p>
                 </div>
                 <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch>
-                    <img src="/wp-content/themes/zume-training/assets/images/home/2414.jpg"
+                    <img src="<?php echo esc_url( zume_images_uri() )?>/assets/images/home/2414.jpg"
                          class="center front-page-social-image">
                     <p class="text-center" style="color:#21336A">
                         "Zúme is a wonderful on-ramp for our coalition."
                     </p>
                 </div>
-                <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch><img src="/wp-content/themes/zume-training/assets/images/home/biglife.png" class="center front-page-social-image" style="max-height: 60px"><p class="text-center" style="color:#21336A">"Zúme brilliantly encapsulates the principles in our introductory training."</p>
+                <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch><img src="<?php echo esc_url( zume_images_uri() )?>/assets/images/home/biglife.png" class="center front-page-social-image" style="max-height: 60px"><p class="text-center" style="color:#21336A">"Zúme brilliantly encapsulates the principles in our introductory training."</p>
                 </div>
                 <div class="large-4 medium-6 small-12 cell centered">
 
-                    <img src="/wp-content/themes/zume-training/assets/images/home/teamexpansion.png"
+                    <img src="<?php echo esc_url( zume_images_uri() )?>/assets/images/home/teamexpansion.png"
                          class="center front-page-social-image" style="max-height: 60px">
 
                     <p class="text-center" style="color:#21336A">
@@ -102,7 +102,7 @@ Template Name: Training
                 </div>
                 <div class="large-4 medium-6 small-12 cell centered" data-equalizer-watch>
                     <div style="height: 75px" class="center">
-                        <img src="/wp-content/themes/zume-training/assets/images/home/finishingthetask-logo.png"
+                        <img src="<?php echo esc_url( zume_images_uri() )?>/assets/images/home/finishingthetask-logo.png"
                              class="center front-page-social-image" style="max-height: 60px; width:280px">
                     </div>
                     <p class="text-center" style="color:#21336A">
